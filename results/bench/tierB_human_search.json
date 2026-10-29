@@ -1,0 +1,50 @@
+{
+ "species": "human",
+ "command": "scripts/features/run_tierB.py human --threads 8 --species-jobs 4 --search-only",
+ "returncode": 0,
+ "threads": 8,
+ "species_jobs": 4,
+ "panel_dmin": null,
+ "wall_s": 12831.76,
+ "peak_rss_tree_gb": 4.764,
+ "peak_rss_single_process_gb": 1.882,
+ "max_processes_in_tree": 5,
+ "rss_samples": 24535,
+ "sample_interval_s": 0.5,
+ "lowpowermode_start": "1",
+ "lowpowermode_end": "0",
+ "loadavg_start": [
+  179.8681640625,
+  176.376953125,
+  161.5966796875
+ ],
+ "loadavg_end": [
+  147.02587890625,
+  144.9521484375,
+  140.21630859375
+ ],
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_count": 10,
+  "mem_total_gb": 25.8
+ },
+ "git_head_at_run": "8bfad79fc89dd1a89d0ac0f62cc2666a76db90aa",
+ "timings": null,
+ "note_realign": "realign_s re-aligns Tier A pairs (needed only because Tier B runs after a separate Tier A run; the integrated pipeline reuses its realignment)",
+ "panel_search_wall_s": null,
+ "n_species_cached": null,
+ "panel_search_s_sum_per_species_logs": null,
+ "n_capped_first_round_total": null,
+ "n_capped_final_total": null,
+ "n_pairs": null,
+ "calibration_summary": {
+  "self_excluded": null,
+  "n_retained": null,
+  "n_usable": null,
+  "core_size": null,
+  "core_frac_used": null
+ },
+ "features_summary": null,
+ "schema_hash": null,
+ "output": null
+}

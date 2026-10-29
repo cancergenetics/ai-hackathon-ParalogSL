@@ -1,0 +1,71 @@
+{
+ "species": "arabidopsis",
+ "command": "scripts/features/run_tierB.py arabidopsis --threads 8 --species-jobs 3",
+ "returncode": 0,
+ "threads": 8,
+ "species_jobs": 3,
+ "panel_dmin": null,
+ "wall_s": 11922.35,
+ "peak_rss_tree_gb": 4.038,
+ "peak_rss_single_process_gb": 1.81,
+ "max_processes_in_tree": 4,
+ "rss_samples": 22929,
+ "sample_interval_s": 0.5,
+ "lowpowermode_start": "1",
+ "lowpowermode_end": "0",
+ "loadavg_start": [
+  101.34375,
+  105.00927734375,
+  115.46337890625
+ ],
+ "loadavg_end": [
+  60.533203125,
+  106.15234375,
+  112.62939453125
+ ],
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_count": 10,
+  "mem_total_gb": 25.8
+ },
+ "git_head_at_run": "2ab485d9f6c239185fe51b16c1ef3f1af76b03f5",
+ "timings": {
+  "realign_s": 1687.9,
+  "panel_search_s": 10170.8,
+  "reduce_calibrate_s": 17.6,
+  "features_s": 19.8,
+  "total_s": 11914.6
+ },
+ "note_realign": "realign_s re-aligns Tier A pairs (needed only because Tier B runs after a separate Tier A run; the integrated pipeline reuses its realignment)",
+ "panel_search_wall_s": 10170.3,
+ "n_species_cached": 0,
+ "panel_search_s_sum_per_species_logs": 30395.8,
+ "n_capped_first_round_total": 96895,
+ "n_capped_final_total": 26461,
+ "n_pairs": 914960,
+ "calibration_summary": {
+  "self_excluded": [
+   "ARATH"
+  ],
+  "n_retained": 79,
+  "n_usable": 79,
+  "core_size": 737,
+  "core_frac_used": 0.8
+ },
+ "features_summary": {
+  "n_pairs": 914960,
+  "n_species_used": 79,
+  "n_conflict_pairs": 110543,
+  "frac_no_evidence": 0.006800297280755443,
+  "frac_younger_than_nearest": 0.0630169624901635,
+  "frac_older_than_panel": 0.42080965288100025,
+  "n_triplets": 38743,
+  "n_triplets_valid": 31749,
+  "n_triplets_missing_alignment": 6974,
+  "n_cigar_nident_mismatch": 73,
+  "n_cigar_nident_off_by_one": 4248,
+  "features_s": 19.73
+ },
+ "schema_hash": "1bdc41e7c777fd76621e8d28459f7f33da5b644716143119d5df4251d937d944",
+ "output": "data/interim/features/arabidopsis/tierB.parquet"
+}

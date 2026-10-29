@@ -1,0 +1,79 @@
+# Label-source config for the SEALED unseen-species test sets (DESIGN v3 §2.3, §6.3).
+# Read only by scripts/labels/build_unseen_labels.py, which writes only to data/labels/sealed/.
+# Pairs are unordered; gene IDs follow config/gene_ids.yaml. Test-only: never used for training,
+# model selection or threshold tuning. Thresholds below were fixed before any label was built.
+version: 1
+release: "UniProt 2026_03"
+
+arabidopsis:
+  status: available
+  id_type: agi_locus                 # AGI, e.g. AT1G01030 (config/gene_ids.yaml)
+  proteome: UP000006548_3702
+  source: "Cusack et al. 2021 Mol Biol Evol, Zenodo 3987384 (CC BY 4.0), Dataset_1.txt (RD4) and Dataset_2.txt (RD9)"
+  raw_dir: data/raw/cusack2021
+  columns_read:                      # whitelist; the ~4,100 other columns are measured features and are never read as features
+    pair_id: pair_ID                 # "<AGI>_<AGI>"
+    class: Class                     # positive / negative
+    single_lethal_proxy: continuous_lethality_binary_number_in_pair_noTF   # label QC only (see below)
+  endpoint: >
+    Organismal lethality of the double mutant (embryo, gametophyte or seedling lethal;
+    Lloyd & Meinke 2012 class "essential"). Endpoint is double-mutant LETHALITY, as in Cusack's RD4.
+  tiers:
+    strict:
+      positive: "Dataset_1 Class == positive (RD4: double mutant lethal, single mutants without phenotype)"
+      negative: "Dataset_1 Class == negative (single mutant at least as severe as the double)"
+      note: "Dataset_2-only positives (RD9 positives not in RD4) are NOT negatives for this tier; label NA (excluded)."
+    broad:
+      positive: "Dataset_2 Class == positive (RD9: double mutant more severe than both singles; any enhanced phenotype)"
+      negative: "Dataset_2 Class == negative (same 110 negatives as strict)"
+  negative_recheck:                  # D12: negatives with a lethal single mutant are untestable, not negative
+    rule: "exclude (label NA, flagged) any negative pair with proxy >= 1, i.e. at least one gene annotated as a lethal single mutant"
+    proxy_caveat: >
+      Lloyd & Meinke 2012 Suppl. Table S6 (single-mutant classes) is NOT on disk (publisher blocks scripts).
+      The re-check therefore uses Cusack's own per-gene binary lethality annotation as a proxy;
+      counts reported in results/labels/unseen_label_counts.json. Proxy is unverified against Table S6.
+  positives_with_lethal_single:
+    rule: "retained as in Cusack (no exclusion); flagged in column single_lethal_n; count reported. PI decides whether to drop (not tuned)."
+  duplicates: "pair key = sorted (gene_a, gene_b); duplicates across Dataset_1/Dataset_2 merged; class conflicts would be reported and the pair dropped."
+  mapping: "a gene maps iff its AGI is a TAIR cross-reference of a canonical accession in UP000006548 (idmapping + FASTA); a pair with an unmapped gene is dropped and counted."
+  known_answer: {strict_positive: 51, strict_negative: 110, broad_positive: 190, broad_negative: 110}   # before negative re-check
+  leakage_note: "41 genes occur in more than one RD9 pair (reviews/round1/data.md): bootstrap by family, not pair."
+
+pombe:
+  status: unavailable
+  reason: >
+    Needs the full Ryan et al. 2012 Mol Cell E-MAP S-score matrix with tested negatives
+    (data/raw/ryan2012_pombe/NIHMS380848-supplement-0[2-8]); manual download pending (see MANUAL_DOWNLOAD.txt).
+    PomBase/BioGRID hold significant interactions only, so no negatives. Not on disk at config time.
+  rule_if_obtained: "positive = authors' strong negative S-score threshold (pre-register, e.g. S < -2.5) and severe double-mutant defect; negative = tested, no interaction; thresholds not tuned."
+  action_now: "record 'unavailable' in counts JSON; write no sealed file; DESIGN §2.3: dropped and stated."
+
+worm:
+  status: partial                    # tested set derivable; positives need a table not on disk (see positives_source)
+  id_type: wormbase_gene
+  proteome: UP000001940_6239
+  source: "Tischler, Lehner, Chen, Fraser 2006 Genome Biol 7:R69 (PMC1779603; CC BY 2.0/BMC open access), Additional files 2 and 4 (.doc)"
+  raw_dir: data/raw/tischler2006
+  conversion: "macOS textutil -convert txt into data/interim/tischler2006 (raw never modified)"
+  endpoint: >
+    SYNTHETIC RNAi PHENOTYPE (combined RNAi phenotype worse than expected from the singles;
+    embryonic lethality or brood size), NOT strict lethality. Descriptive only (16 positives).
+  tested_set:
+    rule: "Additional file 2 duplicate pairs (consecutive rows share an SC/DM ortholog ID) minus pairs flagged 'Lga' (larval growth arrest, not amenable to analysis); cross-checked against Additional file 4 pair list."
+    expected_pairs: 143
+  positive:
+    definition: "pair listed with a synthetic phenotype in the paper (16 expected)"
+    positives_source: >
+      NOT contained in Additional files 2/4 (they list tested pairs, Ks/Ka, Lga flags only).
+      Table 4 / main text of PMC1779603 is required. Optional manual file
+      data/raw/tischler2006/positives_table4.tsv (columns: gpname_a, gpname_b; GPName = sequence names as in
+      Additional file 2) is read if present; otherwise worm labels are not written (status blocked_positives).
+  negative: "tested pair without synthetic phenotype (127 expected) -- written only together with positives"
+  mapping: "WBGene IDs from Additional file 2; a gene maps iff WormBase xref of a canonical accession in UP000001940 (idmapping + FASTA); unmapped pairs dropped and logged (merges/splits)."
+  known_answer: {tested_pairs: 143, positive: 16, negative: 127}
+
+outputs:
+  sealed_dir: data/labels/sealed
+  files: {arabidopsis: unseen_arabidopsis.tsv, worm: unseen_worm.tsv}
+  manifest: data/labels/sealed/MANIFEST.sha256
+  counts_json: results/labels/unseen_label_counts.json

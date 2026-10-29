@@ -1,0 +1,2 @@
+# Test node IDs (or file paths) that may skip at runtime. One per line; '#' comments.
+# xfail(strict=True) known-answer gaps are listed in results/labels/known_answer_gaps.json instead.

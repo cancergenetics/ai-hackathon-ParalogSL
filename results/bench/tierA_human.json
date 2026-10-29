@@ -1,0 +1,178 @@
+{
+ "species": "human",
+ "command": "-m slparalog.cli predict data/interim/proteomes/human.fasta -o data/interim/features/human/tierA.parquet --features-only -t 10 --workdir data/interim/features/human/work -v",
+ "returncode": 0,
+ "threads": 10,
+ "wall_s": 7057.44,
+ "peak_rss_tree_gb": 1.659,
+ "peak_rss_single_process_gb": 1.479,
+ "max_processes_in_tree": 2,
+ "rss_samples": 13519,
+ "sample_interval_s": 0.5,
+ "lowpowermode_start": "1",
+ "lowpowermode_end": "0",
+ "loadavg_start": [
+  123.8447265625,
+  138.55126953125,
+  145.0458984375
+ ],
+ "loadavg_end": [
+  154.431640625,
+  153.85205078125,
+  149.53515625
+ ],
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_count": 10,
+  "mem_total_gb": 25.8
+ },
+ "git_head_at_run": "7192e5c65a5f3bb75dac371fd3a6db9f395b1429",
+ "output": "data/interim/features/human/tierA.parquet",
+ "n_proteins": 20770,
+ "caller": {
+  "n_pairs": 686225,
+  "n_pairs_called_one_direction": 109343,
+  "n_pairs_found_one_direction": 86071,
+  "frac_called_one_direction": 0.15933986666180916,
+  "frac_found_one_direction": 0.12542679150424424
+ },
+ "saturation": {
+  "rule": "called_hits",
+  "rounds": [
+   {
+    "round": 0,
+    "cap": 1000,
+    "n_queries": 20770,
+    "n_capped": 0,
+    "n_prefilter_saturated": 13959
+   }
+  ],
+  "n_capped_first_round": 0,
+  "n_capped_final": 0
+ },
+ "n_search_hits_nonself": 1677180,
+ "features_summary": {
+  "n_pairs_missing_orientation": 0,
+  "n_pairs_missing_both_orientations": 0,
+  "n_genes_missing_selfscore": 0,
+  "n_genes_in_pairs": 16973,
+  "nw_cells": 348697661032
+ },
+ "pipeline_timings": {
+  "createdb_mask_s": 8.268558263778687,
+  "search_s": 4254.409526109695,
+  "realign_s": 1233.2612652778625,
+  "features_s": 1521.6922760009766,
+  "total_s": 7038.826865196228
+ },
+ "input": {
+  "sha256": "d410007762c7429171232c58fde51d78e133d7c66a820bf20357bf2f2d10b06c",
+  "n_records": 20770,
+  "n_kept": 20770,
+  "n_dropped_empty": 0,
+  "n_terminal_stops_stripped": 0,
+  "n_internal_stops_to_x": 0,
+  "n_nonstandard_to_x": 36
+ },
+ "schema_hash": "fe2d9c54fc6f4914e9288d6540612da8ff990226700a3cf162255d3dd3a24a2d",
+ "tool": {
+  "mmseqs_version": "8cc5ce367b5638c4306c2d7cfc652dd099a4643f",
+  "mmseqs_sha256": "837eaf6cc9be92ff320c42c4cf56ae0d75f2a53c6ff6b24a577e803e9e3951be",
+  "mmseqs_path": "bin/mmseqs"
+ },
+ "tool_matches_config": true,
+ "previous": {
+  "species": "human",
+  "command": "-m slparalog.cli predict data/interim/proteomes/human.fasta -o data/interim/features/human/tierA.parquet --features-only -t 10 --workdir data/interim/features/human/work -v",
+  "returncode": 0,
+  "threads": 10,
+  "wall_s": 8236.03,
+  "peak_rss_tree_gb": 2.076,
+  "peak_rss_single_process_gb": 1.589,
+  "max_processes_in_tree": 2,
+  "rss_samples": 15552,
+  "sample_interval_s": 0.5,
+  "lowpowermode_start": "1",
+  "lowpowermode_end": "1",
+  "loadavg_start": [
+   57.1455078125,
+   57.96630859375,
+   33.24658203125
+  ],
+  "loadavg_end": [
+   86.85400390625,
+   95.427734375,
+   93.0654296875
+  ],
+  "machine": {
+   "platform": "macOS-26.3.1-arm64-arm-64bit",
+   "cpu_count": 10,
+   "mem_total_gb": 25.8
+  },
+  "git_head_at_run": "4bf8da1e76ed63ae4e41d60913284e7a63a21e34",
+  "output": "data/interim/features/human/tierA.parquet",
+  "n_proteins": 20770,
+  "caller": {
+   "n_pairs": 693581,
+   "n_pairs_called_one_direction": 103095,
+   "n_pairs_found_one_direction": 77272,
+   "frac_called_one_direction": 0.14864161503847423,
+   "frac_found_one_direction": 0.11141020298998963
+  },
+  "saturation": {
+   "rounds": [
+    {
+     "round": 0,
+     "cap": 1000,
+     "n_queries": 20770,
+     "n_capped": 13959
+    },
+    {
+     "round": 1,
+     "cap": 5000,
+     "n_queries": 13959,
+     "n_capped": 623
+    },
+    {
+     "round": 2,
+     "cap": 20770,
+     "n_queries": 623,
+     "n_capped": 0
+    }
+   ],
+   "n_capped_first_round": 13959,
+   "n_capped_final": 0
+  },
+  "n_search_hits_nonself": 1772165,
+  "features_summary": {
+   "n_pairs_missing_orientation": 0,
+   "n_pairs_missing_both_orientations": 0,
+   "n_genes_missing_selfscore": 0,
+   "n_genes_in_pairs": 16995,
+   "nw_cells": 363436989036
+  },
+  "pipeline_timings": {
+   "createdb_mask_s": 2.5947022438049316,
+   "search_s": 7028.9600303173065,
+   "realign_s": 349.4860987663269,
+   "features_s": 832.2482471466064,
+   "total_s": 8221.098592042923
+  },
+  "input": {
+   "sha256": "d410007762c7429171232c58fde51d78e133d7c66a820bf20357bf2f2d10b06c",
+   "n_records": 20770,
+   "n_kept": 20770,
+   "n_dropped_empty": 0,
+   "n_terminal_stops_stripped": 0,
+   "n_internal_stops_to_x": 0,
+   "n_nonstandard_to_x": 36
+  },
+  "schema_hash": "78e21644aa0e067e8b18696ef3774c9c02330b2e28c89c800b9a9734727c80bb",
+  "tool": {
+   "mmseqs_version": "8cc5ce367b5638c4306c2d7cfc652dd099a4643f",
+   "mmseqs_sha256": "837eaf6cc9be92ff320c42c4cf56ae0d75f2a53c6ff6b24a577e803e9e3951be",
+   "mmseqs_path": "bin/mmseqs"
+  },
+  "tool_matches_config": true
+ }
+}

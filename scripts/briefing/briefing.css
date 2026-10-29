@@ -1,0 +1,28 @@
+/* Print stylesheet for docs/briefing/BRIEFING.pdf (rendered by scripts/briefing/render_pdf.sh) */
+@page { size: A4; margin: 18mm 17mm 20mm 17mm; }
+html { font-size: 10.5pt; }
+body {
+  font-family: "Source Serif 4", "Charter", "Georgia", serif;
+  line-height: 1.45;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: none;
+  margin: 0;
+}
+h1, h2, h3, h4 { font-family: "Helvetica Neue", "Arial", sans-serif; color: #12355b; line-height: 1.2; }
+h1 { font-size: 20pt; margin: 0 0 4pt 0; }
+h2 { font-size: 14pt; margin-top: 18pt; border-bottom: 1px solid #c9d3de; padding-bottom: 2pt; break-after: avoid; }
+h3 { font-size: 11.5pt; margin-top: 12pt; break-after: avoid; }
+p, li { text-align: left; hyphens: auto; }
+code { font-family: "SF Mono", "Menlo", monospace; font-size: 8.6pt; background: #f2f4f7; padding: 0 2px; border-radius: 2px; }
+blockquote { margin: 10pt 0; padding: 6pt 10pt; background: #eef3f9; border-left: 3px solid #0072b2; }
+blockquote p { margin: 4pt 0; }
+table { border-collapse: collapse; width: 100%; margin: 8pt 0 10pt 0; font-size: 8.6pt; break-inside: auto; }
+th, td { border-top: 1px solid #d5dbe3; border-bottom: 1px solid #d5dbe3; padding: 3pt 5pt; vertical-align: top; text-align: left; }
+th { background: #eef1f5; font-family: "Helvetica Neue", "Arial", sans-serif; }
+tr { break-inside: avoid; }
+figure { margin: 10pt 0 12pt 0; break-inside: avoid; }
+figure img, p img { display: block; max-width: 100%; max-height: 225mm; margin: 0 auto; }
+figcaption { font-size: 8.8pt; color: #333; margin-top: 4pt; line-height: 1.35; }
+hr { border: none; border-top: 1px solid #c9d3de; margin: 14pt 0; }
+a { color: #0b5394; text-decoration: none; }

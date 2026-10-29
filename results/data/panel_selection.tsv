@@ -1,0 +1,30 @@
+clade	ladder_S_min	ladder_F_max	upid	taxid	name	mnemonic	order	family	genus	n_proteins	busco_S	busco_D	busco_F
+Sacch post-WGD	85	8	UP000002428	284593	Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138)	CANGA	Saccharomycetales	Saccharomycetaceae	Nakaseomyces	5200	98.36	1.03	0.23
+Sacch post-WGD	85	8	UP000006310	1071383	Huiozyma naganishii (strain ATCC MYA-139 / BCRC 22969 / CBS 8797 / KCTC 17520 / NBRC 10181 / NCYC 3082 / Yp74L-3)	HUIN7	Saccharomycetales	Saccharomycetaceae	Huiozyma	5301	97.8	1.4	0.28
+Sacch post-WGD	85	8	UP000005220	1071382	Kazachstania africana (strain ATCC 22294 / BCRC 22015 / CBS 2517 / CECT 1963 / NBRC 1671 / NRRL Y-8276)	KAZAF	Saccharomycetales	Saccharomycetaceae	Kazachstania	5354	97.57	1.73	0.09
+Sacch pre-WGD	85	8	UP000005627	1076872	Torulaspora delbrueckii (strain ATCC 10662 / CBS 1146 / NBRC 0425 / NCYC 2629 / NRRL Y-866)	TORDC	Saccharomycetales	Saccharomycetaceae	Torulaspora	4974	99.91	0.0	0.09
+Sacch pre-WGD	85	8	UP000054304	1245769	Lachancea lanzarotensis	9SACH	Saccharomycetales	Saccharomycetaceae	Lachancea	5055	99.81	0.05	0.0
+Sacch pre-WGD	85	8	UP000000591	284811	Eremothecium gossypii (strain ATCC 10895 / CBS 109.51 / FGSC 9923 / NRRL Y-1056)	EREGS	Saccharomycetales	Saccharomycetaceae	Eremothecium	4760	99.44	0.05	0.09
+eudicots	85	8	UP001280121	168575	Dipteronia dyeriana	9ROSI	Sapindales	Sapindaceae	Dipteronia	32504	94.63	2.06	1.63
+eudicots	85	8	UP000187609	49451	Nicotiana attenuata	NICAT	Solanales	Solanaceae	Nicotiana	32918	94.17	3.18	1.13
+eudicots	85	8	UP001730764	151428	Prunus brigantina	9ROSA	Rosales	Rosaceae	Prunus	42103	93.64	2.67	0.64
+eudicots	85	8	UP000187406	3775	Cephalotus follicularis	CEPFO	Oxalidales	Cephalotaceae	Cephalotus	36460	93.51	2.45	1.07
+eudicots	85	8	UP000077755	79200	Daucus carota subsp. sativus	DAUCS	Apiales	Apiaceae	Daucus	35531	93.12	5.25	0.52
+eudicots	85	8	UP001459277	425828	Lithocarpus litseifolius	9ROSI	Fagales	Fagaceae	Lithocarpus	35004	92.26	3.44	1.93
+monocots	75	10	UP000829196	94219	Dendrobium nobile	DENNO	Asparagales	Orchidaceae	Dendrobium	28750	86.8	3.34	6.49
+monocots	75	10	UP000036987	29655	Zostera marina	ZOSMR	Alismatales	Zosteraceae	Zostera	20559	83.96	2.29	8.07
+monocots	75	10	UP000663760	51605	Spirodela intermedia	SPIIN	Alismatales	Araceae	Spirodela	21675	83.22	3.4	8.59
+basal angiosperm+liverwort	80	8	UP000017836	13333	Amborella trichopoda	AMBTC	Amborellales	Amborellaceae	Amborella	27406	88.54	1.8	5.08
+basal angiosperm+liverwort	80	8	UP001605036	41844	Riccia fluitans	9MARC	Marchantiales	Ricciaceae	Riccia	29203	80.3	3.22	2.85
+Hymenoptera	85	8	UP000005205	12957	Atta cephalotes	ATTCE	Hymenoptera	Formicidae	Atta	10634	93.86	1.45	2.45
+Hymenoptera	85	8	UP001607303	7453	Vespula maculifrons	VESMC	Hymenoptera	Vespidae	Vespula	21080	92.64	0.27	2.62
+Coleoptera	85	8	UP001153712	444603	Phyllotreta striolata	PHYSR	Coleoptera	Chrysomelidae	Phyllotreta	12162	94.02	2.07	0.24
+Coleoptera	85	8	UP001353858	1421715	Aquatica leii	9COLE	Coleoptera	Lampyridae	Aquatica	16446	93.88	1.51	1.41
+Lepidoptera	85	8	UP001231649	667449	Mythimna loreyi	9NEOP	Lepidoptera	Noctuidae	Mythimna	16857	97.45	0.87	0.42
+Lepidoptera	85	8	UP000824533	765133	Dendrolimus kikuchii	9NEOP	Lepidoptera	Lasiocampidae	Dendrolimus	15321	94.68	0.53	0.51
+Hemiptera	85	8	UP000478052	307492	Aphis craccivora	APHCR	Hemiptera	Aphididae	Aphis	31792	95.86	1.59	0.88
+Hemiptera	85	8	UP000291343	195883	Laodelphax striatellus	LAOST	Hemiptera	Delphacidae	Laodelphax	17309	91.87	3.47	1.24
+Polyneoptera/Palaeoptera	85	8	UP000027135	136037	Zootermopsis nevadensis	ZOONE	Blattodea	Termopsidae	Zootermopsis	14539	93.12	0.88	1.61
+Nematoda (not Rhabditidae)	85	8	UP001176961	53992	Cylicocyclus nassatus	CYLNA	Rhabditida	Strongylidae	Cylicocyclus	22417	90.74	3.45	1.47
+Nematoda (not Rhabditidae)	85	8	UP000278627	6280	Brugia pahangi	BRUPA	Rhabditida	Onchocercidae	Brugia	14545	90.0	1.15	3.55
+Nematoda (not Rhabditidae)	85	8	UP000276776	103827	Thelazia callipaeda	THECL	Rhabditida	Thelaziidae	Thelazia	10885	88.73	0.45	3.32

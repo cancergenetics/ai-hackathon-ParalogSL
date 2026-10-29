@@ -1,0 +1,53 @@
+order	timestamp_utc	description	model
+1	2026-10-27T20:44:30.985Z	Literature: SL paralog prediction methods	opus
+2	2026-10-27T20:44:41.186Z	Literature: human SL paralog labels	opus
+3	2026-10-27T20:44:51.091Z	Literature: yeast and unseen-species labels	opus
+4	2026-10-27T20:45:05.247Z	Compute feasibility of tools on M4	sonnet
+5	2026-10-27T23:34:13.210Z	Review R1: external PI	opus
+6	2026-10-27T23:34:16.812Z	Review R1: prior-work expert	opus
+7	2026-10-27T23:34:20.212Z	Review R1: statistics	opus
+8	2026-10-27T23:34:24.113Z	Review R1: data and labels	opus
+9	2026-10-27T23:34:27.761Z	Review R1: algorithms and compute	opus
+10	2026-10-27T23:34:31.712Z	Review R1: AI-agent failure modes	opus
+11	2026-10-27T23:34:35.762Z	Review R1: comparative genomics	opus
+12	2026-10-27T23:34:49.272Z	Acquire raw datasets with checksums	sonnet
+13	2026-10-27T23:47:42.980Z	Review R2: external PI	opus
+14	2026-10-27T23:47:46.386Z	Review R2: statistics	opus
+15	2026-10-27T23:47:50.386Z	Review R2: data and labels	opus
+16	2026-10-27T23:47:54.486Z	Review R2: algorithms and comparative genomics	opus
+17	2026-10-27T23:47:57.763Z	Review R2: AI-agent failure modes	opus
+18	2026-10-28T00:16:24.478Z	M1: proteomes, panel, Compara universe	opus
+19	2026-10-28T00:16:37.179Z	M1: human SL labels	opus
+20	2026-10-28T00:16:47.828Z	M1: yeast SL labels	opus
+21	2026-10-28T00:16:57.129Z	M1: sealed unseen-species labels	sonnet
+22	2026-10-28T00:17:08.781Z	M1: package skeleton and gates	sonnet
+23	2026-10-28T00:17:13.038Z	Review R3: design consistency check	opus
+24	2026-10-28T00:21:24.935Z	Fetch Tischler Table 4 positives	sonnet
+25	2026-10-28T00:38:11.860Z	M2: tool core, caller, Tier A	opus
+26	2026-10-28T00:38:22.015Z	M2: PLM embeddings module and runs	sonnet
+27	2026-10-28T00:39:49.650Z	Independent review of human labels	opus
+28	2026-10-28T01:41:30.633Z	Independent review of yeast labels	opus
+29	2026-10-28T01:41:47.412Z	M1: splits and power simulation	opus
+30	2026-10-28T03:22:28.463Z	M2: Tier B panel features	opus
+31	2026-10-28T03:31:58.947Z	M1 retrospective: stop / worked well	sonnet
+32	2026-10-28T03:32:13.252Z	M2: evaluation harness and baselines	opus
+33	2026-10-28T06:14:22.238Z	Review evaluation harness code	opus
+34	2026-10-28T06:14:27.687Z	Fetch ribosomal keyword lists (eval only)	sonnet
+35	2026-10-28T08:07:39.560Z	M2: Tier C PLM similarity features	opus (inherited)
+36	2026-10-28T08:28:47.995Z	Review Tier C feature code	sonnet
+37	2026-10-28T10:06:46.897Z	Review Tier B panel features	sonnet
+38	2026-10-28T10:17:58.148Z	Apply Tier B review fixes	sonnet
+39	2026-10-28T10:55:39.818Z	Adversarial review of Tier B gain	opus (inherited)
+40	2026-10-28T10:56:01.937Z	CLI predict/setup/train plumbing	sonnet
+41	2026-10-28T11:16:26.222Z	Panel-thinning test and mask ladder	sonnet
+42	2026-10-28T11:16:42.053Z	Write final_test.py with G15 guards	sonnet
+43	2026-10-28T11:36:34.443Z	Review final_test.py before access	opus (inherited)
+44	2026-10-28T11:37:03.776Z	Per-table registry hash fix	sonnet
+45	2026-10-28T11:55:21.339Z	Verify final_test fixes R1-R3	sonnet
+46	2026-10-28T12:01:31.975Z	Release refit and human e2e benchmark	sonnet
+47	2026-10-28T12:01:43.198Z	M3/M4 retro: stop doing / worked well	sonnet
+48	2026-10-28T12:03:29.248Z	Draft REPORT.md	opus (inherited)
+49	2026-10-28T14:31:48.910Z	Degraded-proteome robustness test	sonnet
+50	2026-10-29T11:03:07.009Z	Briefing figures from committed results	sonnet
+51	2026-10-29T11:03:26.658Z	Draft the research briefing	opus
+52	2026-10-29T11:03:49.424Z	Assemble clean public repository export	sonnet

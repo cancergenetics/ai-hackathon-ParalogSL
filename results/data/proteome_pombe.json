@@ -1,0 +1,49 @@
+{
+ "species": "pombe",
+ "n_fasta_accessions": 5129,
+ "n_records_genes": 5133,
+ "n_accessions_used": 5129,
+ "n_accessions_expanded": 3,
+ "n_extra_records_from_expansion": 4,
+ "n_accessions_dropped": 0,
+ "dropped_by_reason": {},
+ "n_records_accession_fallback_id": 0,
+ "n_records_not_matching_id_pattern": 0,
+ "n_genes_reached_from_multiple_accessions": 0,
+ "mapping_notes": {},
+ "id_source_counts": {
+  "PomBase": 5133
+ },
+ "n_records_with_identical_sequence_to_another": 86,
+ "n_identical_sequence_groups": 39,
+ "expanded_accessions": {
+  "O14460": [
+   "SPAC513.01c",
+   "SPCP31B10.07"
+  ],
+  "P09322": [
+   "SPAC1834.03c",
+   "SPBC1105.12",
+   "SPBC8D2.03c"
+  ],
+  "P09988": [
+   "SPAC1834.04",
+   "SPBC8D2.04"
+  ]
+ },
+ "multi_accession_genes": [],
+ "dropped_accessions": [],
+ "uniprot_release": "UniProt 2026_03",
+ "uniprot_proteome": "UP000002485",
+ "id_type": "pombase_systematic",
+ "id_pattern": "^SP",
+ "inputs_sha256": {
+  "data/raw/uniprot_2026_03/UP000002485_284812.fasta.gz": "5e51fa6738934a045be80b5295f7ba86599347e880cfea804d363f6c2eb096cc",
+  "data/raw/uniprot_2026_03/UP000002485_284812.idmapping.gz": "373195a1d5469ea798119f0b35e92b95b13ffe95cd906963319ce3fdd1145e08"
+ },
+ "outputs_sha256": {
+  "data/interim/proteomes/pombe.fasta": "f93fbd09dee08b75394799e88da20bcbcce62c8f66b3082e1b17b47c5df56f3b",
+  "data/interim/proteomes/pombe_gene2acc.tsv": "5936db009f6368efe45bdb73fe8fd89acec433e97153c8067f7b99307ed31e05"
+ },
+ "script": "scripts/data/build_gene_proteome.py"
+}

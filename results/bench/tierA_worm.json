@@ -1,0 +1,84 @@
+{
+ "species": "worm",
+ "command": "-m slparalog.cli predict data/interim/proteomes/worm.fasta -o data/interim/features/worm/tierA.parquet --features-only -t 10 --workdir data/interim/features/worm/work -v",
+ "returncode": 0,
+ "threads": 10,
+ "wall_s": 2561.79,
+ "peak_rss_tree_gb": 1.507,
+ "peak_rss_single_process_gb": 1.342,
+ "max_processes_in_tree": 2,
+ "rss_samples": 4912,
+ "sample_interval_s": 0.5,
+ "lowpowermode_start": "1",
+ "lowpowermode_end": "1",
+ "loadavg_start": [
+  136.71826171875,
+  145.37548828125,
+  152.787109375
+ ],
+ "loadavg_end": [
+  121.34765625,
+  109.89404296875,
+  114.7841796875
+ ],
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_count": 10,
+  "mem_total_gb": 25.8
+ },
+ "git_head_at_run": "8a124ea211e5ddaf818f7e3debdea9fe682a6b99",
+ "output": "data/interim/features/worm/tierA.parquet",
+ "n_proteins": 19980,
+ "caller": {
+  "n_pairs": 260434,
+  "n_pairs_called_one_direction": 26765,
+  "n_pairs_found_one_direction": 15214,
+  "frac_called_one_direction": 0.10277075957824247,
+  "frac_found_one_direction": 0.05841787170645922
+ },
+ "saturation": {
+  "rule": "called_hits",
+  "rounds": [
+   {
+    "round": 0,
+    "cap": 1000,
+    "n_queries": 19980,
+    "n_capped": 0,
+    "n_prefilter_saturated": 8698
+   }
+  ],
+  "n_capped_first_round": 0,
+  "n_capped_final": 0
+ },
+ "n_search_hits_nonself": 697179,
+ "features_summary": {
+  "n_pairs_missing_orientation": 0,
+  "n_pairs_missing_both_orientations": 0,
+  "n_genes_missing_selfscore": 0,
+  "n_genes_in_pairs": 14114,
+  "nw_cells": 71732784052
+ },
+ "pipeline_timings": {
+  "createdb_mask_s": 5.620041847229004,
+  "search_s": 2040.8227779865265,
+  "realign_s": 195.93367791175842,
+  "features_s": 297.1760320663452,
+  "total_s": 2549.2787551879883
+ },
+ "input": {
+  "sha256": "6e9c8d3fa7dea0d28ee91f32289b94f01b56daaf29c1ce2c75a5b4f6ef8100f5",
+  "n_records": 19980,
+  "n_kept": 19980,
+  "n_dropped_empty": 0,
+  "n_terminal_stops_stripped": 0,
+  "n_internal_stops_to_x": 0,
+  "n_nonstandard_to_x": 1
+ },
+ "schema_hash": "fe2d9c54fc6f4914e9288d6540612da8ff990226700a3cf162255d3dd3a24a2d",
+ "tool": {
+  "mmseqs_version": "8cc5ce367b5638c4306c2d7cfc652dd099a4643f",
+  "mmseqs_sha256": "837eaf6cc9be92ff320c42c4cf56ae0d75f2a53c6ff6b24a577e803e9e3951be",
+  "mmseqs_path": "bin/mmseqs"
+ },
+ "tool_matches_config": true
+}

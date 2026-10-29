@@ -1,0 +1,67 @@
+{
+  "arabidopsis": {
+    "class_conflicts_dropped": 0,
+    "genes_total": 553,
+    "genes_unmapped": 0,
+    "malformed_id_pairs_dropped": 0,
+    "mapping_loss_pairs": 0,
+    "negatives_excluded_lethal_single": 3,
+    "positives_with_lethal_single_retained": {
+      "broad": 7,
+      "strict": 3
+    },
+    "proxy": "continuous_lethality_binary_number_in_pair_noTF (Cusack per-gene lethality annotation); Lloyd&Meinke Table S6 not on disk",
+    "raw_dataset1": {
+      "neg": 110,
+      "pos": 51
+    },
+    "raw_dataset2": {
+      "neg": 110,
+      "pos": 190
+    },
+    "tiers_after_recheck": {
+      "broad": {
+        "neg": 107,
+        "pos": 190
+      },
+      "strict": {
+        "neg": 107,
+        "pos": 51
+      }
+    },
+    "tiers_before_recheck_mapped": {
+      "broad": {
+        "neg": 110,
+        "pos": 190
+      },
+      "strict": {
+        "neg": 110,
+        "pos": 51
+      }
+    },
+    "unique_pairs": 300
+  },
+  "config_version": 1,
+  "insects": {
+    "note": "stated limitation (DESIGN \u00a72.3)",
+    "status": "no_test_set"
+  },
+  "pombe": {
+    "reason": "full E-MAP S-score matrix not on disk (manual download pending); dropped per DESIGN \u00a72.3",
+    "status": "unavailable"
+  },
+  "uniprot_release": "UniProt 2026_03",
+  "worm": {
+    "malformed_id_pairs": 0,
+    "mapping_loss_pairs": 7,
+    "negatives": 120,
+    "positives": 16,
+    "s2_pairs": 153,
+    "s2_pairs_lga_excluded": 10,
+    "s4_pairs": 143,
+    "self_pairs_same_wbgene": 0,
+    "status": "written",
+    "tested_in_s4": 143,
+    "tested_pairs": 143
+  }
+}

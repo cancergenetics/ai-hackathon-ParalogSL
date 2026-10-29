@@ -1,0 +1,81 @@
+code	taxid	name	source	n_proteins	clade	upid	selection_group
+ANOGA	7165	Anopheles gambiae (African malaria mosquito)	QfO_2026_02	13029	insects	UP000007062	core
+ARATH	3702	Arabidopsis thaliana (Mouse-ear cress)	QfO_2026_02	27496	eudicots	UP000006548	core
+ASPFU	330879	Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 / Af293) (Neosartorya fumigata)	QfO_2026_02	9647	other_fungi	UP000002530	core
+BATDJ	684364	Batrachochytrium dendrobatidis (strain JAM81 / FGSC 10211) (Frog chytrid fungus)	QfO_2026_02	8610	other_fungi	UP000007241	core
+BOVIN	9913	Bos taurus (Bovine)	QfO_2026_02	22714	vertebrates	UP000009136	core
+BRAFL	7739	Branchiostoma floridae (Florida lancelet) (Amphioxus)	QfO_2026_02	26616	other_metazoa	UP000001554	core
+CAEEL	6239	Caenorhabditis elegans	QfO_2026_02	19789	nematodes	UP000001940	core
+CANAL	237561	Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)	QfO_2026_02	6036	other_fungi	UP000000559	core
+CANLF	9615	Canis lupus familiaris (Dog) (Canis familiaris)	QfO_2026_02	20990	vertebrates	UP000805418	core
+CHICK	9031	Gallus gallus (Chicken)	QfO_2026_02	18372	vertebrates	UP000000539	core
+CHLRE	3055	Chlamydomonas reinhardtii (Chlamydomonas smithii)	QfO_2026_02	17614	green_algae	UP000006906	core
+CIOIN	7719	Ciona intestinalis (Transparent sea squirt) (Ascidia intestinalis)	QfO_2026_02	16680	other_metazoa	UP000008144	core
+CRYD1	214684	Cryptococcus deneoformans (strain JEC21 / ATCC MYA-565) (Cryptococcus neoformans var. neoformans serotype D)	QfO_2026_02	6603	other_fungi	UP000002149	core
+DANRE	7955	Danio rerio (Zebrafish) (Brachydanio rerio)	QfO_2026_02	26677	vertebrates	UP000000437	core
+DICDI	44689	Dictyostelium discoideum (Social amoeba)	QfO_2026_02	12718	other_eukaryotes	UP000002195	core
+DROME	7227	Drosophila melanogaster (Fruit fly)	QfO_2026_02	13817	insects	UP000000803	core
+GIAIC	184922	Giardia intestinalis (strain ATCC 50803 / WB clone C6) (Giardia lamblia)	QfO_2026_02	4900	other_eukaryotes	UP000001548	core
+GORGO	9595	Gorilla gorilla gorilla (Western lowland gorilla)	QfO_2026_02	21788	vertebrates	UP000001519	core
+HELRO	6412	Helobdella robusta (Californian leech)	QfO_2026_02	23328	other_metazoa	UP000015101	core
+HUMAN	9606	Homo sapiens (Human)	QfO_2026_02	20652	vertebrates	UP000005640	core
+IXOSC	6945	Ixodes scapularis (Black-legged tick) (Deer tick)	QfO_2026_02	25977	other_metazoa	UP001735580	core
+LEIMA	5664	Leishmania major	QfO_2026_02	8038	other_eukaryotes	UP000000542	core
+LEPOC	7918	Lepisosteus oculatus (Spotted gar)	QfO_2026_02	18323	vertebrates	UP000018468	core
+MACMU	9544	Macaca mulatta (Rhesus macaque)	QfO_2026_02	21893	vertebrates	UP000006718	core
+MAIZE	4577	Zea mays (Maize)	QfO_2026_02	39346	monocots	UP000007305	core
+MONBE	81824	Monosiga brevicollis (Choanoflagellate)	QfO_2026_02	9156	other_eukaryotes	UP000001357	core
+MONDO	13616	Monodelphis domestica (Gray short-tailed opossum)	QfO_2026_02	21225	vertebrates	UP000002280	core
+MOUSE	10090	Mus musculus (Mouse)	QfO_2026_02	21853	vertebrates	UP000000589	core
+MYCMD	5270	Mycosarcoma maydis (Corn smut fungus) (Ustilago maydis)	QfO_2026_02	6788	other_fungi	UP000000561	core
+NEMVE	45351	Nematostella vectensis (Starlet sea anemone)	QfO_2026_02	24428	other_metazoa	UP000001593	core
+NEUCR	367110	Neurospora crassa (strain ATCC 24698 / 74-OR23-1A / CBS 708.71 / DSM 1257 / FGSC 987)	QfO_2026_02	9759	other_fungi	UP000001805	core
+TX35525	35525	Daphnia magna	QfO_2026_02	26600	other_metazoa	UP000076858	core
+ORYLA	8090	Oryzias latipes (Japanese rice fish) (Japanese killifish)	QfO_2026_02	23617	vertebrates	UP000001038	core
+ORYSJ	39947	Oryza sativa subsp. japonica (Rice)	QfO_2026_02	43678	monocots	UP000059680	core
+PANTR	9598	Pan troglodytes (Chimpanzee)	QfO_2026_02	23014	vertebrates	UP000002277	core
+PARTE	5888	Paramecium tetraurelia	QfO_2026_02	39350	other_eukaryotes	UP000000600	core
+PHANO	321614	Phaeosphaeria nodorum (strain SN15 / ATCC MYA-4574 / FGSC 10173) (Glume blotch fungus) (Parastagonospora nodorum)	QfO_2026_02	17429	other_fungi	UP000663193	core
+PHYPA	3218	Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)	QfO_2026_02	31356	other_land_plants	UP000006727	core
+PHYRM	164328	Phytophthora ramorum (Sudden oak death agent)	QfO_2026_02	15350	other_eukaryotes	UP000005238	core
+PLAF7	36329	Plasmodium falciparum (isolate 3D7)	QfO_2026_02	5361	other_eukaryotes	UP000001450	core
+PUCGT	418459	Puccinia graminis f. sp. tritici (strain CRL 75-36-700-3 / race SCCL) (Black stem rust fungus)	QfO_2026_02	15688	other_fungi	UP000008783	core
+RAT	10116	Rattus norvegicus (Rat)	QfO_2026_02	21545	vertebrates	UP000002494	core
+SCHPO	284812	Schizosaccharomyces pombe (strain 972 / ATCC 24843) (Fission yeast)	QfO_2026_02	5129	other_fungi	UP000002485	core
+SCLS1	665079	Sclerotinia sclerotiorum (strain ATCC 18683 / 1980 / Ss-1) (White mold) (Whetzelinia sclerotiorum)	QfO_2026_02	14445	other_fungi	UP000001312	core
+THAPS	35128	Thalassiosira pseudonana (Marine diatom) (Cyclotella nana)	QfO_2026_02	11735	other_eukaryotes	UP000001449	core
+TRICA	7070	Tribolium castaneum (Red flour beetle)	QfO_2026_02	16568	insects	UP000007266	core
+TRIV3	412133	Trichomonas vaginalis (strain ATCC PRA-98 / G3)	QfO_2026_02	50190	other_eukaryotes	UP000001542	core
+XENLA	8355	Xenopus laevis (African clawed frog)	QfO_2026_02	36352	vertebrates	UP000186698	core
+XENTR	8364	Xenopus tropicalis (Western clawed frog) (Silurana tropicalis)	QfO_2026_02	21609	vertebrates	UP000008143	core
+YARLI	284591	Yarrowia lipolytica (strain CLIB 122 / E 150) (Yeast) (Candida lipolytica)	QfO_2026_02	6449	other_fungi	UP000001300	core
+YEAST	559292	Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast)	QfO_2026_02	6066	saccharomycetaceae	UP000002311	core
+CANGA	284593	Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138)	gap_fill_UniProt_2026_03	5198	saccharomycetaceae	UP000002428	Sacch post-WGD
+HUIN7	1071383	Huiozyma naganishii (strain ATCC MYA-139 / BCRC 22969 / CBS 8797 / KCTC 17520 / NBRC 10181 / NCYC 3082 / Yp74L-3)	gap_fill_UniProt_2026_03	5301	saccharomycetaceae	UP000006310	Sacch post-WGD
+KAZAF	1071382	Kazachstania africana (strain ATCC 22294 / BCRC 22015 / CBS 2517 / CECT 1963 / NBRC 1671 / NRRL Y-8276)	gap_fill_UniProt_2026_03	5354	saccharomycetaceae	UP000005220	Sacch post-WGD
+TORDC	1076872	Torulaspora delbrueckii (strain ATCC 10662 / CBS 1146 / NBRC 0425 / NCYC 2629 / NRRL Y-866)	gap_fill_UniProt_2026_03	4974	saccharomycetaceae	UP000005627	Sacch pre-WGD
+TX1245769	1245769	Lachancea lanzarotensis	gap_fill_UniProt_2026_03	5055	saccharomycetaceae	UP000054304	Sacch pre-WGD
+EREGS	284811	Eremothecium gossypii (strain ATCC 10895 / CBS 109.51 / FGSC 9923 / NRRL Y-1056)	gap_fill_UniProt_2026_03	4758	saccharomycetaceae	UP000000591	Sacch pre-WGD
+TX168575	168575	Dipteronia dyeriana	gap_fill_UniProt_2026_03	32502	eudicots	UP001280121	eudicots
+NICAT	49451	Nicotiana attenuata	gap_fill_UniProt_2026_03	32918	eudicots	UP000187609	eudicots
+TX151428	151428	Prunus brigantina	gap_fill_UniProt_2026_03	42103	eudicots	UP001730764	eudicots
+CEPFO	3775	Cephalotus follicularis	gap_fill_UniProt_2026_03	36340	eudicots	UP000187406	eudicots
+DAUCS	79200	Daucus carota subsp. sativus	gap_fill_UniProt_2026_03	35531	eudicots	UP000077755	eudicots
+TX425828	425828	Lithocarpus litseifolius	gap_fill_UniProt_2026_03	35004	eudicots	UP001459277	eudicots
+DENNO	94219	Dendrobium nobile	gap_fill_UniProt_2026_03	28747	monocots	UP000829196	monocots
+ZOSMR	29655	Zostera marina	gap_fill_UniProt_2026_03	20358	monocots	UP000036987	monocots
+SPIIN	51605	Spirodela intermedia	gap_fill_UniProt_2026_03	21675	monocots	UP000663760	monocots
+AMBTC	13333	Amborella trichopoda	gap_fill_UniProt_2026_03	27398	other_land_plants	UP000017836	basal angiosperm+liverwort
+TX41844	41844	Riccia fluitans	gap_fill_UniProt_2026_03	29203	other_land_plants	UP001605036	basal angiosperm+liverwort
+ATTCE	12957	Atta cephalotes	gap_fill_UniProt_2026_03	10483	insects	UP000005205	Hymenoptera
+VESMC	7453	Vespula maculifrons	gap_fill_UniProt_2026_03	21080	insects	UP001607303	Hymenoptera
+PHYSR	444603	Phyllotreta striolata	gap_fill_UniProt_2026_03	11829	insects	UP001153712	Coleoptera
+TX1421715	1421715	Aquatica leii	gap_fill_UniProt_2026_03	16446	insects	UP001353858	Coleoptera
+TX667449	667449	Mythimna loreyi	gap_fill_UniProt_2026_03	16857	insects	UP001231649	Lepidoptera
+TX765133	765133	Dendrolimus kikuchii	gap_fill_UniProt_2026_03	15321	insects	UP000824533	Lepidoptera
+APHCR	307492	Aphis craccivora	gap_fill_UniProt_2026_03	31735	insects	UP000478052	Hemiptera
+LAOST	195883	Laodelphax striatellus	gap_fill_UniProt_2026_03	17309	insects	UP000291343	Hemiptera
+ZOONE	136037	Zootermopsis nevadensis	gap_fill_UniProt_2026_03	14539	insects	UP000027135	Polyneoptera/Palaeoptera
+CYLNA	53992	Cylicocyclus nassatus	gap_fill_UniProt_2026_03	22417	nematodes	UP001176961	Nematoda (not Rhabditidae)
+BRUPA	6280	Brugia pahangi	gap_fill_UniProt_2026_03	14545	nematodes	UP000278627	Nematoda (not Rhabditidae)
+THECL	103827	Thelazia callipaeda	gap_fill_UniProt_2026_03	10885	nematodes	UP000276776	Nematoda (not Rhabditidae)

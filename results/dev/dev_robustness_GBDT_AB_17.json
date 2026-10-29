@@ -1,0 +1,1521 @@
+{
+ "run_id": "dev_robustness_GBDT_AB_17",
+ "timestamp": "2026-10-28T18:06:19",
+ "git_hash": "b58dbc26a94c4fdd851556104466084dc86d7382",
+ "git_dirty_paths": "",
+ "tier": "primary",
+ "seeds": [
+  11,
+  23,
+  37,
+  41,
+  59
+ ],
+ "bootstrap": {
+  "B": 10000,
+  "seed": 11,
+  "ci_level": 0.95
+ },
+ "config": "GBDT_AB_17",
+ "gbdt_params": {
+  "early_stopping": false,
+  "l2_regularization": 1.0,
+  "learning_rate": 0.03,
+  "max_iter": 100,
+  "max_leaf_nodes": 7,
+  "min_samples_leaf": 50
+ },
+ "feature_set": "A+B",
+ "features": [
+  "ident_local_min",
+  "ident_local_max",
+  "ident_ens_min",
+  "ident_ens_max",
+  "ident_global",
+  "cov_min",
+  "cov_max",
+  "bits_pair",
+  "bsr_min",
+  "bsr_max",
+  "len_ratio",
+  "hits_all_min",
+  "hits_all_max",
+  "hits_r10_min",
+  "hits_r10_max",
+  "hits_r25_min",
+  "hits_r25_max",
+  "hits_r50_min",
+  "hits_r50_max",
+  "hits_r75_min",
+  "hits_r75_max",
+  "rank_min",
+  "rank_max",
+  "rbh",
+  "shared_third",
+  "shared_third_jacc",
+  "other_ident_min",
+  "other_ident_max",
+  "other_gap_min",
+  "other_gap_max",
+  "mc_deg_min",
+  "mc_deg_max",
+  "fam_mc_size",
+  "len_min",
+  "len_max",
+  "lowcomp_frac_min",
+  "lowcomp_frac_max",
+  "ident_local_min_pct",
+  "ident_local_max_pct",
+  "ident_ens_min_pct",
+  "ident_ens_max_pct",
+  "ident_global_pct",
+  "bsr_min_pct",
+  "bsr_max_pct",
+  "hits_all_max_pct",
+  "hits_r50_max_pct",
+  "rank_max_pct",
+  "shared_third_pct",
+  "fam_mc_size_pct",
+  "len_min_pct",
+  "tb_depth",
+  "tb_depth_range",
+  "tb_discordant_frac",
+  "tb_younger_than_nearest",
+  "tb_older_than_panel",
+  "tb_no_evidence",
+  "tb_rel_rate",
+  "tb_frac_pre",
+  "tb_frac_post",
+  "tb_frac_undet",
+  "tb_frac_absent",
+  "tb_n_post_single",
+  "tb_cons_min",
+  "tb_cons_max",
+  "tb_cons_both",
+  "tb_species_rank_min",
+  "tb_species_rank_max",
+  "tb_dupability_min",
+  "tb_dupability_max",
+  "tb_outgroup_ident_max",
+  "tb_depth_pct",
+  "tb_cons_min_pct",
+  "tb_species_rank_max_pct"
+ ],
+ "kinds": {
+  "yeast": [
+   "identity",
+   "fragments",
+   "split",
+   "fused",
+   "missing",
+   "haplotig",
+   "combined"
+  ],
+  "human": [
+   "combined"
+  ]
+ },
+ "degrade_seed": 11,
+ "rule_text": "ROBUSTNESS TEST (DESIGN \u00a76.5 'Robustness test'; reporting level 3 = exploratory; NO adoption decision depends on it). Model fixed: GBDT_AB_17 on feature set A+B (tb_asym_* excluded), hyper-parameters fixed, no re-tuning, seeds config/seeds.yaml, same dev folds as the incumbent. Degraded proteomes (scripts/robustness/degrade_proteome.py, seed 11 = seeds[0]): fragments (20% of proteins truncated to a random 50-80% of their length at a random N- or C-terminus), split (5% of genes split at a random internal point; longer piece keeps the gene ID, shorter gets a new ID), fused (2% of genes get another random non-labelled gene's sequence appended; donor removed), missing (15% of genes removed), haplotig (5% of genes get an extra near-identical copy, 1% random substitutions, new ID), combined (all of them: missing -> fused -> split -> fragments -> haplotig). Yeast: all six kinds (+ an identity control = natural proteome through the same route); human: combined only. Tier A+B features of each degraded proteome from `slparalog predict --features-only --tier-b` (existing panel databases; <=8 threads; runtime recorded). Evaluation (thinning N->T design): train on the NATURAL features of the training folds, evaluate the held-out fold on the DEGRADED features of the same labelled pairs; pairs map to degraded gene IDs through the mapping table; pairs that lose a gene or are no longer called are scored at the minimum score (one tie block), B1 (ident_global) identically; the population (natural labelled & called dev pairs) is unchanged. Reported per species x kind: per-fold mean AP of the model and of B1, natural and degraded, dAP vs B1 per species (T_pf for the combined kind, where both species exist), and the natural-to-degraded drops (model, B1, model-minus-B1) with 95% stratified group-bootstrap percentile CIs (same resamples, paired); pooled-OOF APs, prevalence and counts, and the number of lost pairs. No decision rule: no thresholds, nothing is adopted or rejected on this result.",
+ "statistic": "per-fold mean AP (seed x fold test sets with >=1 positive of the species), as slparalog.eval.perfold",
+ "incumbent_reproduction": {
+  "stored_T_pf": 0.14320689496186462,
+  "recomputed_T_pf": 0.14320689496186467,
+  "abs_diff": 5.551115123125783e-17
+ },
+ "b1_selected": "ident_global",
+ "population": {
+  "human": {
+   "n": 4415,
+   "n_pos": 123,
+   "n_neg": 4292,
+   "prevalence": 0.027859569648924123
+  },
+  "yeast": {
+   "n": 996,
+   "n_pos": 60,
+   "n_neg": 936,
+   "prevalence": 0.060240963855421686
+  }
+ },
+ "results": {
+  "identity": {
+   "species": [
+    "yeast"
+   ],
+   "drops": {
+    "yeast": {
+     "n_folds": 25,
+     "ap_model_natural": 0.6259981410236738,
+     "ap_model_degraded": 0.6259981410236738,
+     "ap_b1_natural": 0.586352483580718,
+     "ap_b1_degraded": 0.586352483580718,
+     "delta_natural": 0.039645657442955784,
+     "delta_degraded": 0.039645657442955784,
+     "delta_natural_ci": {
+      "lo": -0.023709436818326064,
+      "hi": 0.09700642389511305,
+      "se": 0.030649530317105985,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_degraded_ci": {
+      "lo": -0.023709436818326064,
+      "hi": 0.09700642389511305,
+      "se": 0.030649530317105985,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_model": 0.0,
+     "drop_model_ci": {
+      "lo": 0.0,
+      "hi": 0.0,
+      "se": 0.0,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_b1": 0.0,
+     "drop_b1_ci": {
+      "lo": 0.0,
+      "hi": 0.0,
+      "se": 0.0,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_delta": 0.0,
+     "drop_delta_ci": {
+      "lo": 0.0,
+      "hi": 0.0,
+      "se": 0.0,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "pooled_oof": {
+      "model_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5907297912434075,
+       "auroc": 0.8964565527065527,
+       "lift": 9.806114534640566,
+       "ap_above_chance": 0.5644945214513183,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "model_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5907297912434075,
+       "auroc": 0.8964565527065527,
+       "lift": 9.806114534640566,
+       "ap_above_chance": 0.5644945214513183,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "b1_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      },
+      "b1_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      }
+     }
+    }
+   },
+   "info": {
+    "species": [
+     "yeast"
+    ],
+    "per_species": {
+     "yeast": {
+      "n_pairs": 996,
+      "n_lost": 0,
+      "n_lost_gene_removed": 0,
+      "n_lost_not_called": 0,
+      "n_lost_pos": 0,
+      "n_lost_neg": 0,
+      "identical_feature_row_fraction_of_present": 1.0,
+      "feature_nan_rate_natural": 0.015706662265500358,
+      "feature_nan_rate_degraded_present": 0.015706662265500358,
+      "degrade_counts": {
+       "n_in": 6071,
+       "n_out": 6071,
+       "n_removed": 0,
+       "n_missing": 0,
+       "n_fused_targets": 0,
+       "n_fused_donors_removed": 0,
+       "n_split": 0,
+       "n_fragments": 0,
+       "n_haplotig_copies": 0,
+       "n_split_pieces_added": 0
+      },
+      "features_sha256": "42e53a5dbd37fc6cf578f72a57c80485e97a5c689f4f7c5e2d46e7823a344670",
+      "mapping_sha256": "1bcb3bbe531739ea43ee4a2435c1374bea0b8f23a51ab0b8654cb1f2a494f3f6",
+      "proteome_sha256": "1f9876bdff5e5efc2a0c23584d9ad11729d0bf40ad7f8c887453fa5db471d5e6",
+      "runtime": {
+       "species": "yeast",
+       "kind": "identity",
+       "command": ".venv/bin/slparalog predict data/interim/robustness/yeast/identity/proteome.fasta -o data/interim/robustness/yeast/identity/features.parquet --features-only --tier-b -t 8 --workdir data/interim/robustness/yeast/identity/work",
+       "threads": 8,
+       "wall_s": 63.25978112220764,
+       "tool_timings": {
+        "createdb_mask_s": 0.1339280605316162,
+        "search_s": 49.6011757850647,
+        "realign_s": 6.163271903991699,
+        "features_s": 4.453409194946289,
+        "tier_b_s": 2.3442671298980713,
+        "total_s": 62.83376407623291
+       },
+       "n_proteins": 6071,
+       "n_pairs": 18014,
+       "peak_rss_bytes_process_tree_max_child": 998031360,
+       "new_panel_hit_dirs": []
+      },
+      "meta_total_s": 62.83376407623291
+     }
+    },
+    "runtime": {}
+   }
+  },
+  "fragments": {
+   "species": [
+    "yeast"
+   ],
+   "drops": {
+    "yeast": {
+     "n_folds": 25,
+     "ap_model_natural": 0.6259981410236738,
+     "ap_model_degraded": 0.6207538743888914,
+     "ap_b1_natural": 0.586352483580718,
+     "ap_b1_degraded": 0.5379575597586979,
+     "delta_natural": 0.039645657442955784,
+     "delta_degraded": 0.08279631463019355,
+     "delta_natural_ci": {
+      "lo": -0.023709436818326064,
+      "hi": 0.09700642389511305,
+      "se": 0.030649530317105985,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_degraded_ci": {
+      "lo": 0.010216725451083306,
+      "hi": 0.1416482923685673,
+      "se": 0.03412399638808414,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_model": 0.005244266634782391,
+     "drop_model_ci": {
+      "lo": -0.01723822983776414,
+      "hi": 0.02236544956271949,
+      "se": 0.010146083736069254,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_b1": 0.04839492382202015,
+     "drop_b1_ci": {
+      "lo": 0.0013635118832531238,
+      "hi": 0.08770346392440663,
+      "se": 0.022167281437804418,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_delta": -0.04315065718723776,
+     "drop_delta_ci": {
+      "lo": -0.07619589740181754,
+      "hi": -0.006599167325270708,
+      "se": 0.017775560263540217,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "pooled_oof": {
+      "model_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5907297912434075,
+       "auroc": 0.8964565527065527,
+       "lift": 9.806114534640566,
+       "ap_above_chance": 0.5644945214513183,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "model_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5908577506785224,
+       "auroc": 0.9092592592592592,
+       "lift": 9.808238661263472,
+       "ap_above_chance": 0.5646306834143252,
+       "p_at_10": 0.8,
+       "p_at_50": 0.64,
+       "p_at_npos": 0.55
+      },
+      "b1_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      },
+      "b1_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5153443749517977,
+       "auroc": 0.8921029202279203,
+       "lift": 8.554716624199843,
+       "ap_above_chance": 0.4842767066794771,
+       "p_at_10": 0.7,
+       "p_at_50": 0.54,
+       "p_at_npos": 0.5166666666666667
+      }
+     }
+    }
+   },
+   "info": {
+    "species": [
+     "yeast"
+    ],
+    "per_species": {
+     "yeast": {
+      "n_pairs": 996,
+      "n_lost": 67,
+      "n_lost_gene_removed": 0,
+      "n_lost_not_called": 67,
+      "n_lost_pos": 0,
+      "n_lost_neg": 67,
+      "identical_feature_row_fraction_of_present": 0.0,
+      "feature_nan_rate_natural": 0.015706662265500358,
+      "feature_nan_rate_degraded_present": 0.015763009274960556,
+      "degrade_counts": {
+       "n_in": 6071,
+       "n_out": 6071,
+       "n_removed": 0,
+       "n_missing": 0,
+       "n_fused_targets": 0,
+       "n_fused_donors_removed": 0,
+       "n_split": 0,
+       "n_fragments": 1214,
+       "n_haplotig_copies": 0,
+       "n_split_pieces_added": 0
+      },
+      "features_sha256": "2f667caf1e77a10971cdb7680833a02b0d0e9271ac660ddc43fecd7470882a4c",
+      "mapping_sha256": "e77d3a23d9745f60004d56b8d9b064ea8be948c6aed9d0b6384721e2429b9b9d",
+      "proteome_sha256": "f5fe7edc8fcb2bc9b973f32f2417cdb38e0530d869f8db0c748928f26df40b7a",
+      "runtime": {
+       "species": "yeast",
+       "kind": "fragments",
+       "command": ".venv/bin/slparalog predict data/interim/robustness/yeast/fragments/proteome.fasta -o data/interim/robustness/yeast/fragments/features.parquet --features-only --tier-b -t 8 --workdir data/interim/robustness/yeast/fragments/work",
+       "threads": 8,
+       "wall_s": 1158.726585149765,
+       "tool_timings": {
+        "createdb_mask_s": 0.13506507873535156,
+        "search_s": 44.418309688568115,
+        "realign_s": 5.088976144790649,
+        "features_s": 4.05518102645874,
+        "tier_b_s": 1104.4287109375,
+        "total_s": 1158.2644488811493
+       },
+       "n_proteins": 6071,
+       "n_pairs": 16418,
+       "peak_rss_bytes_process_tree_max_child": 1101250560,
+       "new_panel_hit_dirs": [
+        "96ecea1d5f28d291_c492030ab100"
+       ]
+      },
+      "meta_total_s": 1158.2644488811493
+     }
+    },
+    "runtime": {}
+   }
+  },
+  "split": {
+   "species": [
+    "yeast"
+   ],
+   "drops": {
+    "yeast": {
+     "n_folds": 25,
+     "ap_model_natural": 0.6259981410236738,
+     "ap_model_degraded": 0.6090815776893549,
+     "ap_b1_natural": 0.586352483580718,
+     "ap_b1_degraded": 0.5456005746109346,
+     "delta_natural": 0.039645657442955784,
+     "delta_degraded": 0.0634810030784203,
+     "delta_natural_ci": {
+      "lo": -0.023709436818326064,
+      "hi": 0.09700642389511305,
+      "se": 0.030649530317105985,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_degraded_ci": {
+      "lo": -0.0007199788094633283,
+      "hi": 0.12303004634990405,
+      "se": 0.031348547049234024,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_model": 0.0169165633343189,
+     "drop_model_ci": {
+      "lo": 0.00028154004904707775,
+      "hi": 0.03700970277288978,
+      "se": 0.009599956836664167,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_b1": 0.040751908969783424,
+     "drop_b1_ci": {
+      "lo": 0.00812266815282612,
+      "hi": 0.07897443435229579,
+      "se": 0.01807145808031773,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_delta": -0.023835345635464522,
+     "drop_delta_ci": {
+      "lo": -0.05091503127677946,
+      "hi": -0.002610098274342678,
+      "se": 0.012352578535971128,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "pooled_oof": {
+      "model_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5907297912434075,
+       "auroc": 0.8964565527065527,
+       "lift": 9.806114534640566,
+       "ap_above_chance": 0.5644945214513183,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "model_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5730996715244479,
+       "auroc": 0.8912304131054131,
+       "lift": 9.513454547305834,
+       "ap_above_chance": 0.5457342658529382,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.5333333333333333
+      },
+      "b1_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      },
+      "b1_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5260670030038946,
+       "auroc": 0.8857995014245015,
+       "lift": 8.732712249864651,
+       "ap_above_chance": 0.4956866826836315,
+       "p_at_10": 1.0,
+       "p_at_50": 0.54,
+       "p_at_npos": 0.5
+      }
+     }
+    }
+   },
+   "info": {
+    "species": [
+     "yeast"
+    ],
+    "per_species": {
+     "yeast": {
+      "n_pairs": 996,
+      "n_lost": 8,
+      "n_lost_gene_removed": 0,
+      "n_lost_not_called": 8,
+      "n_lost_pos": 0,
+      "n_lost_neg": 8,
+      "identical_feature_row_fraction_of_present": 0.0,
+      "feature_nan_rate_natural": 0.015706662265500358,
+      "feature_nan_rate_degraded_present": 0.015806111696522657,
+      "degrade_counts": {
+       "n_in": 6071,
+       "n_out": 6375,
+       "n_removed": 0,
+       "n_missing": 0,
+       "n_fused_targets": 0,
+       "n_fused_donors_removed": 0,
+       "n_split": 304,
+       "n_fragments": 0,
+       "n_haplotig_copies": 0,
+       "n_split_pieces_added": 304
+      },
+      "features_sha256": "d29536ac85de77f9997e8af0ea76340d678d102b4a18da91bb2062ffbac0e0da",
+      "mapping_sha256": "10b11bf834233231ef1d51a9328b346166b5418e02cf3910f89acf9e5a6414e0",
+      "proteome_sha256": "02dcc6bc264fc8a45012e1337fc9154eb4e6a4adc35a7ede3f1cdfc4274fc661",
+      "runtime": {
+       "species": "yeast",
+       "kind": "split",
+       "command": ".venv/bin/slparalog predict data/interim/robustness/yeast/split/proteome.fasta -o data/interim/robustness/yeast/split/features.parquet --features-only --tier-b -t 8 --workdir data/interim/robustness/yeast/split/work",
+       "threads": 8,
+       "wall_s": 1315.9463822841644,
+       "tool_timings": {
+        "createdb_mask_s": 0.14235973358154297,
+        "search_s": 70.5841338634491,
+        "realign_s": 7.933588981628418,
+        "features_s": 5.771390199661255,
+        "tier_b_s": 1230.7097399234772,
+        "total_s": 1315.297770023346
+       },
+       "n_proteins": 6375,
+       "n_pairs": 18598,
+       "peak_rss_bytes_process_tree_max_child": 1103249408,
+       "new_panel_hit_dirs": [
+        "aae763b31e2de68b_c492030ab100"
+       ]
+      },
+      "meta_total_s": 1315.297770023346
+     }
+    },
+    "runtime": {}
+   }
+  },
+  "fused": {
+   "species": [
+    "yeast"
+   ],
+   "drops": {
+    "yeast": {
+     "n_folds": 25,
+     "ap_model_natural": 0.6259981410236738,
+     "ap_model_degraded": 0.628064924586493,
+     "ap_b1_natural": 0.586352483580718,
+     "ap_b1_degraded": 0.5908697408256015,
+     "delta_natural": 0.039645657442955784,
+     "delta_degraded": 0.03719518376089148,
+     "delta_natural_ci": {
+      "lo": -0.023709436818326064,
+      "hi": 0.09700642389511305,
+      "se": 0.030649530317105985,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_degraded_ci": {
+      "lo": -0.02639611382523074,
+      "hi": 0.09223791229926123,
+      "se": 0.030275419163414547,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_model": -0.0020667835628191966,
+     "drop_model_ci": {
+      "lo": -0.008246789922913562,
+      "hi": 0.003733002181202324,
+      "se": 0.002977113241331725,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_b1": -0.004517257244883499,
+     "drop_b1_ci": {
+      "lo": -0.012882812068840139,
+      "hi": 0.002239933526865772,
+      "se": 0.003783959446221206,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_delta": 0.0024504736820643025,
+     "drop_delta_ci": {
+      "lo": -0.004866735037541524,
+      "hi": 0.01177723703606863,
+      "se": 0.0041437460729045195,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "pooled_oof": {
+      "model_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5907297912434075,
+       "auroc": 0.8964565527065527,
+       "lift": 9.806114534640566,
+       "ap_above_chance": 0.5644945214513183,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "model_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5927238562762464,
+       "auroc": 0.8962428774928775,
+       "lift": 9.83921601418569,
+       "ap_above_chance": 0.5666164111657493,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "b1_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      },
+      "b1_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5720072051425612,
+       "auroc": 0.8947916666666667,
+       "lift": 9.495319605366516,
+       "ap_above_chance": 0.5445717695747767,
+       "p_at_10": 1.0,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      }
+     }
+    }
+   },
+   "info": {
+    "species": [
+     "yeast"
+    ],
+    "per_species": {
+     "yeast": {
+      "n_pairs": 996,
+      "n_lost": 0,
+      "n_lost_gene_removed": 0,
+      "n_lost_not_called": 0,
+      "n_lost_pos": 0,
+      "n_lost_neg": 0,
+      "identical_feature_row_fraction_of_present": 0.0,
+      "feature_nan_rate_natural": 0.015706662265500358,
+      "feature_nan_rate_degraded_present": 0.015789184133795455,
+      "degrade_counts": {
+       "n_in": 6071,
+       "n_out": 5950,
+       "n_removed": 121,
+       "n_missing": 0,
+       "n_fused_targets": 121,
+       "n_fused_donors_removed": 121,
+       "n_split": 0,
+       "n_fragments": 0,
+       "n_haplotig_copies": 0,
+       "n_split_pieces_added": 0
+      },
+      "features_sha256": "f7296114ed6ffdcbb1ab20b9758aee8d671e82071aa6ba324d7954058586fed8",
+      "mapping_sha256": "75da2ebd799a4d9374024c2371f42f63262597abc5a08ad0f7e5be74c9d523ab",
+      "proteome_sha256": "510e63ba55bab3c0fe7985d747b51914e1a08af30799b3cafb394565dde40e2d",
+      "runtime": {
+       "species": "yeast",
+       "kind": "fused",
+       "command": ".venv/bin/slparalog predict data/interim/robustness/yeast/fused/proteome.fasta -o data/interim/robustness/yeast/fused/features.parquet --features-only --tier-b -t 8 --workdir data/interim/robustness/yeast/fused/work",
+       "threads": 8,
+       "wall_s": 1426.1749529838562,
+       "tool_timings": {
+        "createdb_mask_s": 0.1492621898651123,
+        "search_s": 74.0978000164032,
+        "realign_s": 7.975043058395386,
+        "features_s": 6.418840169906616,
+        "tier_b_s": 1336.6410429477692,
+        "total_s": 1425.491191148758
+       },
+       "n_proteins": 5950,
+       "n_pairs": 18014,
+       "peak_rss_bytes_process_tree_max_child": 1101938688,
+       "new_panel_hit_dirs": [
+        "1f93d65e5d3bf452_c492030ab100"
+       ]
+      },
+      "meta_total_s": 1425.491191148758
+     }
+    },
+    "runtime": {}
+   }
+  },
+  "missing": {
+   "species": [
+    "yeast"
+   ],
+   "drops": {
+    "yeast": {
+     "n_folds": 25,
+     "ap_model_natural": 0.6259981410236738,
+     "ap_model_degraded": 0.44205877235900315,
+     "ap_b1_natural": 0.586352483580718,
+     "ap_b1_degraded": 0.422114317081559,
+     "delta_natural": 0.039645657442955784,
+     "delta_degraded": 0.01994445527744415,
+     "delta_natural_ci": {
+      "lo": -0.023709436818326064,
+      "hi": 0.09700642389511305,
+      "se": 0.030649530317105985,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_degraded_ci": {
+      "lo": -0.026943725105067096,
+      "hi": 0.06302928801454372,
+      "se": 0.023073277242811326,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_model": 0.18393936866467064,
+     "drop_model_ci": {
+      "lo": 0.09112751040305099,
+      "hi": 0.27639978205005106,
+      "se": 0.0474582090621237,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_b1": 0.164238166499159,
+     "drop_b1_ci": {
+      "lo": 0.06957173960610934,
+      "hi": 0.2585645079643665,
+      "se": 0.047963948917454674,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_delta": 0.019701202165511633,
+     "drop_delta_ci": {
+      "lo": -0.015345010966567943,
+      "hi": 0.05425404814872357,
+      "se": 0.017776164892775576,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "pooled_oof": {
+      "model_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5907297912434075,
+       "auroc": 0.8964565527065527,
+       "lift": 9.806114534640566,
+       "ap_above_chance": 0.5644945214513183,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "model_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.4231329099712348,
+       "auroc": 0.7083422364672365,
+       "lift": 7.024006305522498,
+       "ap_above_chance": 0.38615425035400625,
+       "p_at_10": 0.9,
+       "p_at_50": 0.48,
+       "p_at_npos": 0.4166666666666667
+      },
+      "b1_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      },
+      "b1_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.3961957879875774,
+       "auroc": 0.7160701566951566,
+       "lift": 6.576850080593784,
+       "ap_above_chance": 0.3574903897816529,
+       "p_at_10": 0.7,
+       "p_at_50": 0.46,
+       "p_at_npos": 0.4166666666666667
+      }
+     }
+    }
+   },
+   "info": {
+    "species": [
+     "yeast"
+    ],
+    "per_species": {
+     "yeast": {
+      "n_pairs": 996,
+      "n_lost": 283,
+      "n_lost_gene_removed": 283,
+      "n_lost_not_called": 0,
+      "n_lost_pos": 15,
+      "n_lost_neg": 268,
+      "identical_feature_row_fraction_of_present": 0.0,
+      "feature_nan_rate_natural": 0.015706662265500358,
+      "feature_nan_rate_degraded_present": 0.015715959960806162,
+      "degrade_counts": {
+       "n_in": 6071,
+       "n_out": 5160,
+       "n_removed": 911,
+       "n_missing": 911,
+       "n_fused_targets": 0,
+       "n_fused_donors_removed": 0,
+       "n_split": 0,
+       "n_fragments": 0,
+       "n_haplotig_copies": 0,
+       "n_split_pieces_added": 0
+      },
+      "features_sha256": "e0dd5b2980a3370cc09ae644db580168e6b2c75a1f11aa7234a4b912f0c0c526",
+      "mapping_sha256": "e7d63012eceae9788f91687a5da20bfac1b2496f683b72387b01b1ff8ce4bd3e",
+      "proteome_sha256": "7ad37d0f33b37b0a0f24a4c7f0044747bb88f0438722ed08ca37ddefde91b71a",
+      "runtime": {
+       "species": "yeast",
+       "kind": "missing",
+       "command": ".venv/bin/slparalog predict data/interim/robustness/yeast/missing/proteome.fasta -o data/interim/robustness/yeast/missing/features.parquet --features-only --tier-b -t 5 --workdir data/interim/robustness/yeast/missing/work",
+       "threads": 5,
+       "wall_s": 1902.6570239067078,
+       "tool_timings": {
+        "createdb_mask_s": 0.3429849147796631,
+        "search_s": 154.0055661201477,
+        "realign_s": 11.645798206329346,
+        "features_s": 7.560080051422119,
+        "tier_b_s": 1727.4041368961334,
+        "total_s": 1901.3968272209167
+       },
+       "n_proteins": 5160,
+       "n_pairs": 12869,
+       "peak_rss_bytes_process_tree_max_child": 1084473344,
+       "new_panel_hit_dirs": [
+        "07478e22bd4a95ca_c492030ab100",
+        "897d06f7644549ff_c492030ab100"
+       ]
+      },
+      "meta_total_s": 1901.3968272209167
+     }
+    },
+    "runtime": {}
+   }
+  },
+  "haplotig": {
+   "species": [
+    "yeast"
+   ],
+   "drops": {
+    "yeast": {
+     "n_folds": 25,
+     "ap_model_natural": 0.6259981410236738,
+     "ap_model_degraded": 0.6044155265510662,
+     "ap_b1_natural": 0.586352483580718,
+     "ap_b1_degraded": 0.586352483580718,
+     "delta_natural": 0.039645657442955784,
+     "delta_degraded": 0.01806304297034822,
+     "delta_natural_ci": {
+      "lo": -0.023709436818326064,
+      "hi": 0.09700642389511305,
+      "se": 0.030649530317105985,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_degraded_ci": {
+      "lo": -0.045419390427426924,
+      "hi": 0.0782727107041301,
+      "se": 0.03162657876385897,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_model": 0.021582614472607564,
+     "drop_model_ci": {
+      "lo": -0.004047932429653393,
+      "hi": 0.04761884201334477,
+      "se": 0.01347433764974312,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_b1": 0.0,
+     "drop_b1_ci": {
+      "lo": 0.0,
+      "hi": 0.0,
+      "se": 0.0,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_delta": 0.021582614472607564,
+     "drop_delta_ci": {
+      "lo": -0.004047932429653393,
+      "hi": 0.04761884201334477,
+      "se": 0.01347433764974312,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "pooled_oof": {
+      "model_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5907297912434075,
+       "auroc": 0.8964565527065527,
+       "lift": 9.806114534640566,
+       "ap_above_chance": 0.5644945214513183,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "model_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5650997144427445,
+       "auroc": 0.8919070512820513,
+       "lift": 9.38065525974956,
+       "ap_above_chance": 0.5372214910095872,
+       "p_at_10": 0.8,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.5166666666666667
+      },
+      "b1_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      },
+      "b1_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      }
+     }
+    }
+   },
+   "info": {
+    "species": [
+     "yeast"
+    ],
+    "per_species": {
+     "yeast": {
+      "n_pairs": 996,
+      "n_lost": 0,
+      "n_lost_gene_removed": 0,
+      "n_lost_not_called": 0,
+      "n_lost_pos": 0,
+      "n_lost_neg": 0,
+      "identical_feature_row_fraction_of_present": 0.0,
+      "feature_nan_rate_natural": 0.015706662265500358,
+      "feature_nan_rate_degraded_present": 0.015720415910216206,
+      "degrade_counts": {
+       "n_in": 6071,
+       "n_out": 6375,
+       "n_removed": 0,
+       "n_missing": 0,
+       "n_fused_targets": 0,
+       "n_fused_donors_removed": 0,
+       "n_split": 0,
+       "n_fragments": 0,
+       "n_haplotig_copies": 304,
+       "n_split_pieces_added": 0
+      },
+      "features_sha256": "43405ba2de4251cdb0c4c003cda134f362a743228a7a0a45aa6d033c7586aa73",
+      "mapping_sha256": "92065ffbe2eca8b2c87d88fbbf05d06e6c62b32f6793ad6c83aaa3982d59143a",
+      "proteome_sha256": "1c71c1dc611c8e8eb4e94e5875c39fe7ac431826fa433f95cdd1731ccf38d49c",
+      "runtime": {
+       "species": "yeast",
+       "kind": "haplotig",
+       "command": ".venv/bin/slparalog predict data/interim/robustness/yeast/haplotig/proteome.fasta -o data/interim/robustness/yeast/haplotig/features.parquet --features-only --tier-b -t 5 --workdir data/interim/robustness/yeast/haplotig/work",
+       "threads": 5,
+       "wall_s": 2187.3368558883667,
+       "tool_timings": {
+        "createdb_mask_s": 0.2986621856689453,
+        "search_s": 118.81260681152344,
+        "realign_s": 15.08600902557373,
+        "features_s": 10.35545802116394,
+        "tier_b_s": 2041.3709030151367,
+        "total_s": 2186.2488079071045
+       },
+       "n_proteins": 6375,
+       "n_pairs": 19586,
+       "peak_rss_bytes_process_tree_max_child": 1085997056,
+       "new_panel_hit_dirs": [
+        "9a1bb590df2e302a_c492030ab100"
+       ]
+      },
+      "meta_total_s": 2186.2488079071045
+     }
+    },
+    "runtime": {}
+   }
+  },
+  "combined": {
+   "species": [
+    "yeast",
+    "human"
+   ],
+   "drops": {
+    "yeast": {
+     "n_folds": 25,
+     "ap_model_natural": 0.6259981410236738,
+     "ap_model_degraded": 0.3926112194458215,
+     "ap_b1_natural": 0.586352483580718,
+     "ap_b1_degraded": 0.3292680969800967,
+     "delta_natural": 0.039645657442955784,
+     "delta_degraded": 0.06334312246572482,
+     "delta_natural_ci": {
+      "lo": -0.023709436818326064,
+      "hi": 0.09700642389511305,
+      "se": 0.030649530317105985,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_degraded_ci": {
+      "lo": -0.008856753259217412,
+      "hi": 0.1236238364824603,
+      "se": 0.03351303644934999,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_model": 0.2333869215778523,
+     "drop_model_ci": {
+      "lo": 0.12569946965226153,
+      "hi": 0.3266022446302611,
+      "se": 0.05140205173165406,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_b1": 0.25708438660062133,
+     "drop_b1_ci": {
+      "lo": 0.14433619854318355,
+      "hi": 0.3515834182258111,
+      "se": 0.05261809650853326,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_delta": -0.023697465022769038,
+     "drop_delta_ci": {
+      "lo": -0.08907332502313488,
+      "hi": 0.04687921119733395,
+      "se": 0.034802527945198496,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "pooled_oof": {
+      "model_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5907297912434075,
+       "auroc": 0.8964565527065527,
+       "lift": 9.806114534640566,
+       "ap_above_chance": 0.5644945214513183,
+       "p_at_10": 0.9,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.55
+      },
+      "model_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.38406219783841633,
+       "auroc": 0.713497150997151,
+       "lift": 6.375432484117711,
+       "ap_above_chance": 0.34457900539216096,
+       "p_at_10": 0.9,
+       "p_at_50": 0.5,
+       "p_at_npos": 0.45
+      },
+      "b1_natural": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.5671256032720857,
+       "auroc": 0.8937589031339032,
+       "lift": 9.414285014316624,
+       "ap_above_chance": 0.5393772445074758,
+       "p_at_10": 1.0,
+       "p_at_50": 0.56,
+       "p_at_npos": 0.55
+      },
+      "b1_degraded": {
+       "n": 996,
+       "n_pos": 60,
+       "n_neg": 936,
+       "prevalence": 0.060240963855421686,
+       "ap": 0.29749218678586803,
+       "auroc": 0.6974358974358974,
+       "lift": 4.938370300645409,
+       "ap_above_chance": 0.25245963465675697,
+       "p_at_10": 0.7,
+       "p_at_50": 0.36,
+       "p_at_npos": 0.3
+      }
+     }
+    },
+    "human": {
+     "n_folds": 25,
+     "ap_model_natural": 0.38717139268679973,
+     "ap_model_degraded": 0.22810108465308127,
+     "ap_b1_natural": 0.14040326020602614,
+     "ap_b1_degraded": 0.11054933714870818,
+     "delta_natural": 0.2467681324807736,
+     "delta_degraded": 0.11755174750437308,
+     "delta_natural_ci": {
+      "lo": 0.17650449500484577,
+      "hi": 0.31669989088755046,
+      "se": 0.035706188860967346,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_degraded_ci": {
+      "lo": 0.06875817067988542,
+      "hi": 0.17739567551287294,
+      "se": 0.027490779711472513,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_model": 0.15907030803371847,
+     "drop_model_ci": {
+      "lo": 0.09757608564248722,
+      "hi": 0.22494344092772117,
+      "se": 0.03265050251112841,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_b1": 0.02985392305731796,
+     "drop_b1_ci": {
+      "lo": 7.939582953872894e-05,
+      "hi": 0.07070266144652904,
+      "se": 0.017890698560926586,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop_delta": 0.1292163849764005,
+     "drop_delta_ci": {
+      "lo": 0.06986570140340612,
+      "hi": 0.18361115543185177,
+      "se": 0.029285379610942318,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "pooled_oof": {
+      "model_natural": {
+       "n": 4415,
+       "n_pos": 123,
+       "n_neg": 4292,
+       "prevalence": 0.027859569648924123,
+       "ap": 0.3606156506581344,
+       "auroc": 0.8601065320998038,
+       "lift": 12.944049574436287,
+       "ap_above_chance": 0.34229219423477714,
+       "p_at_10": 0.7,
+       "p_at_50": 0.6,
+       "p_at_npos": 0.3983739837398374
+      },
+      "model_degraded": {
+       "n": 4415,
+       "n_pos": 123,
+       "n_neg": 4292,
+       "prevalence": 0.027859569648924123,
+       "ap": 0.21568276277094736,
+       "auroc": 0.6480813235438971,
+       "lift": 7.741783720599452,
+       "ap_above_chance": 0.19320582423898708,
+       "p_at_10": 0.5,
+       "p_at_50": 0.42,
+       "p_at_npos": 0.2764227642276423
+      },
+      "b1_natural": {
+       "n": 4415,
+       "n_pos": 123,
+       "n_neg": 4292,
+       "prevalence": 0.027859569648924123,
+       "ap": 0.11830544751754216,
+       "auroc": 0.799461467354655,
+       "lift": 4.246492282845111,
+       "ap_above_chance": 0.09303787297063108,
+       "p_at_10": 0.0,
+       "p_at_50": 0.12,
+       "p_at_npos": 0.17886178861788618
+      },
+      "b1_degraded": {
+       "n": 4415,
+       "n_pos": 123,
+       "n_neg": 4292,
+       "prevalence": 0.027859569648924123,
+       "ap": 0.07946896742717438,
+       "auroc": 0.6143704680290045,
+       "lift": 2.8524836682193078,
+       "ap_above_chance": 0.05308841826443963,
+       "p_at_10": 0.2,
+       "p_at_50": 0.2,
+       "p_at_npos": 0.15447154471544716
+      }
+     }
+    },
+    "T_pf": {
+     "natural": 0.14320689496186467,
+     "natural_ci": {
+      "lo": 0.09506326496598196,
+      "hi": 0.187452628877064,
+      "se": 0.0235042413968878,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "degraded": 0.09044743498504895,
+     "degraded_ci": {
+      "lo": 0.0481686125527733,
+      "hi": 0.1300253233969031,
+      "se": 0.02103427417421827,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "drop": 0.05275945997681572,
+     "drop_ci": {
+      "lo": 0.007673320572393142,
+      "hi": 0.09623673558273808,
+      "se": 0.022419244164274005,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   },
+   "info": {
+    "species": [
+     "yeast",
+     "human"
+    ],
+    "per_species": {
+     "yeast": {
+      "n_pairs": 996,
+      "n_lost": 343,
+      "n_lost_gene_removed": 283,
+      "n_lost_not_called": 60,
+      "n_lost_pos": 16,
+      "n_lost_neg": 327,
+      "identical_feature_row_fraction_of_present": 0.0,
+      "feature_nan_rate_natural": 0.015706662265500358,
+      "feature_nan_rate_degraded_present": 0.01583838553357528,
+      "degrade_counts": {
+       "n_in": 6071,
+       "n_out": 5647,
+       "n_removed": 1032,
+       "n_missing": 911,
+       "n_fused_targets": 121,
+       "n_fused_donors_removed": 121,
+       "n_split": 304,
+       "n_fragments": 1214,
+       "n_haplotig_copies": 304,
+       "n_split_pieces_added": 304
+      },
+      "features_sha256": "9be97f4bf1a3e763df6d6622b284c3f9a485d02a5e55e932327eb381083b9973",
+      "mapping_sha256": "61a7fc50c3c22e39e1e35bb44ac288cb81370dc784ae3e91700314bb80b3978a",
+      "proteome_sha256": "7d41003431d7273029ea545bf0c8dbbabbe54e6dac305406537d141f538e527d",
+      "runtime": {
+       "species": "yeast",
+       "kind": "combined",
+       "command": ".venv/bin/slparalog predict data/interim/robustness/yeast/combined/proteome.fasta -o data/interim/robustness/yeast/combined/features.parquet --features-only --tier-b -t 5 --workdir data/interim/robustness/yeast/combined/work",
+       "threads": 5,
+       "wall_s": 1932.301638841629,
+       "tool_timings": {
+        "createdb_mask_s": 0.24130702018737793,
+        "search_s": 78.30891489982605,
+        "realign_s": 9.321800947189331,
+        "features_s": 6.558445930480957,
+        "tier_b_s": 1836.6037628650665,
+        "total_s": 1931.2781620025635
+       },
+       "n_proteins": 5647,
+       "n_pairs": 13107,
+       "peak_rss_bytes_process_tree_max_child": 1083392000,
+       "new_panel_hit_dirs": [
+        "7de57c75597af2e1_c492030ab100"
+       ]
+      },
+      "meta_total_s": 1931.2781620025635
+     },
+     "human": {
+      "n_pairs": 4415,
+      "n_lost": 1130,
+      "n_lost_gene_removed": 1095,
+      "n_lost_not_called": 35,
+      "n_lost_pos": 35,
+      "n_lost_neg": 1095,
+      "identical_feature_row_fraction_of_present": 0.0,
+      "feature_nan_rate_natural": 0.009826401278331964,
+      "feature_nan_rate_degraded_present": 0.01061695961301891,
+      "degrade_counts": {
+       "n_in": 20770,
+       "n_out": 19315,
+       "n_removed": 3531,
+       "n_missing": 3116,
+       "n_fused_targets": 415,
+       "n_fused_donors_removed": 415,
+       "n_split": 1038,
+       "n_fragments": 4154,
+       "n_haplotig_copies": 1038,
+       "n_split_pieces_added": 1038
+      },
+      "features_sha256": "383cbc6bab1ed253de3855c85bcb64f35ea83740bd95ff661ad68000b8804eef",
+      "mapping_sha256": "35496b2c3df5d33fd7a68a9f358f2d95f35b51e6b27351689eb158ad3d4c0c2f",
+      "proteome_sha256": "8c2f228033793247d7661e3de1008573fe968187cd9ad9a66cba7a8c9cdb7a9e",
+      "runtime": {
+       "species": "human",
+       "kind": "combined",
+       "command": ".venv/bin/slparalog predict data/interim/robustness/human/combined/proteome.fasta -o data/interim/robustness/human/combined/features.parquet --features-only --tier-b -t 5 --workdir data/interim/robustness/human/combined/work",
+       "threads": 5,
+       "wall_s": 8785.765158176422,
+       "tool_timings": {
+        "createdb_mask_s": 0.8654358386993408,
+        "search_s": 818.0206480026245,
+        "realign_s": 130.5887417793274,
+        "features_s": 218.4662048816681,
+        "tier_b_s": 7614.87205696106,
+        "total_s": 8784.230101108551
+       },
+       "n_proteins": 19315,
+       "n_pairs": 523230,
+       "peak_rss_bytes_process_tree_max_child": 2097610752,
+       "new_panel_hit_dirs": [
+        "07478e22bd4a95ca_c492030ab100",
+        "7de57c75597af2e1_c492030ab100",
+        "897d06f7644549ff_c492030ab100",
+        "9a1bb590df2e302a_c492030ab100"
+       ]
+      },
+      "meta_total_s": 8784.230101108551
+     }
+    },
+    "runtime": {}
+   }
+  }
+ },
+ "tables": {
+  "human": {
+   "tierA": "data/interim/features/human/tierA.parquet",
+   "tierB": "data/interim/features/human/tierB.parquet"
+  },
+  "yeast": {
+   "tierA": "data/interim/features/yeast/tierA.parquet",
+   "tierB": "data/interim/features/yeast/tierB.parquet"
+  }
+ },
+ "provenance": {
+  "label_files": {
+   "human": {
+    "path": "data/labels/dev/human_dev.tsv",
+    "sha256": "788c38b827d74ed7f0cc83bd18279e27e040bb34db315441de4d56ce39040881"
+   },
+   "yeast": {
+    "path": "data/labels/dev/yeast_dev.tsv",
+    "sha256": "c920d4aafc30798287297066e26c143b36d9fd1e51edd77ca411eb0d28a11938"
+   }
+  },
+  "feature_files": {
+   "human": {
+    "tierA": {
+     "path": "data/interim/features/human/tierA.parquet",
+     "sha256": "7764550083e0e53f87f58b888dc5c55f025b9186e88c8248a424dbe61de67d17",
+     "n_rows": 686225
+    },
+    "tierB": {
+     "path": "data/interim/features/human/tierB.parquet",
+     "sha256": "0ae50b04aad4d3dd4d9868aa68b2e4a1a9ec9c0897812137af3e1a3ad74cbc10",
+     "n_rows": 686225
+    }
+   },
+   "yeast": {
+    "tierA": {
+     "path": "data/interim/features/yeast/tierA.parquet",
+     "sha256": "8688b01f489c1a1901355a43b18a533b23be216e89b9581f54b78459d9f8ebdc",
+     "n_rows": 18014
+    },
+    "tierB": {
+     "path": "data/interim/features/yeast/tierB.parquet",
+     "sha256": "c695edfffdcfc0cd9411669d15ab10d4e0ea976af2263bb7f71c3d33676343a2",
+     "n_rows": 18014
+    }
+   }
+  }
+ },
+ "registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+ "reference_run": "results/dev/dev_primary_AB_ABC_noasym_6bb9438.json",
+ "runtime_s": 53.81531381607056
+}

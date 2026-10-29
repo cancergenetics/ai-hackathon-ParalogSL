@@ -1,0 +1,10 @@
+{
+  "lga_flagged_in_s2": 0,
+  "name_table_sha256": "cef13b3734c2859b693e3481f9597f27460f640ee74026cdc85b86fe43b0b30c",
+  "resolved_anchor_fallback": 1,
+  "resolved_direct": 15,
+  "source_sha256": "daace728899cab8dd74cc78e90c7cdab18ae8052d202e75076e31246efbe9f00",
+  "table4_rows": 16,
+  "unique_pairs": 16,
+  "unresolved": 0
+}

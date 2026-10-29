@@ -1,0 +1,229 @@
+{
+ "species": "yeast",
+ "old": "data/interim/features/yeast/tierA_prev_prefiltercap.parquet",
+ "new": "data/interim/features/yeast/tierA.parquet",
+ "relation": "new_subset",
+ "n_old": 18020,
+ "n_new": 18014,
+ "n_common": 18014,
+ "n_only_old": 6,
+ "n_only_new": 0,
+ "frac_new_not_in_old": 0.0,
+ "frac_old_not_in_new": 0.0003329633740288568,
+ "only_new_bits_pair_median": null,
+ "only_old_bits_pair_median": 48.0,
+ "feature_diffs_on_common_pairs": {
+  "ident_local_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "ident_local_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "ident_ens_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "ident_ens_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "ident_global": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "cov_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "cov_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "bits_pair": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "bsr_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "bsr_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "len_ratio": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "hits_all_min": {
+   "max_abs_diff": 2.0,
+   "n_pairs_differing": 213
+  },
+  "hits_all_max": {
+   "max_abs_diff": 2.0,
+   "n_pairs_differing": 109
+  },
+  "hits_r10_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "hits_r10_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "hits_r25_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "hits_r25_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "hits_r50_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "hits_r50_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "hits_r75_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "hits_r75_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "rank_min": {
+   "max_abs_diff": 1.0,
+   "n_pairs_differing": 18
+  },
+  "rank_max": {
+   "max_abs_diff": 1.0,
+   "n_pairs_differing": 21
+  },
+  "rbh": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "shared_third": {
+   "max_abs_diff": 3.0,
+   "n_pairs_differing": 214
+  },
+  "shared_third_jacc": {
+   "max_abs_diff": 0.12,
+   "n_pairs_differing": 315
+  },
+  "other_ident_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "other_ident_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "other_gap_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "other_gap_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "mc_deg_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "mc_deg_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "fam_mc_size": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "len_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "len_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "lowcomp_frac_min": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "lowcomp_frac_max": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "fragment_suspect": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "near_identical": {
+   "max_abs_diff": 0.0,
+   "n_pairs_differing": 0
+  },
+  "n_dir_called": {
+   "max_abs_diff": 1.0,
+   "n_pairs_differing": 7
+  },
+  "ident_local_min_pct": {
+   "max_abs_diff": 0.0002350095935989005,
+   "n_pairs_differing": 18014
+  },
+  "ident_local_max_pct": {
+   "max_abs_diff": 0.00023536078179170472,
+   "n_pairs_differing": 18014
+  },
+  "ident_ens_min_pct": {
+   "max_abs_diff": 0.0002042498207399865,
+   "n_pairs_differing": 18014
+  },
+  "ident_ens_max_pct": {
+   "max_abs_diff": 0.00021568500119589773,
+   "n_pairs_differing": 18014
+  },
+  "ident_global_pct": {
+   "max_abs_diff": 0.00018623140196666332,
+   "n_pairs_differing": 18014
+  },
+  "bsr_min_pct": {
+   "max_abs_diff": 0.00031695658586914505,
+   "n_pairs_differing": 18014
+  },
+  "bsr_max_pct": {
+   "max_abs_diff": 0.0003127977783218758,
+   "n_pairs_differing": 18013
+  },
+  "hits_all_max_pct": {
+   "max_abs_diff": 0.01709090919172873,
+   "n_pairs_differing": 18014
+  },
+  "hits_r50_max_pct": {
+   "max_abs_diff": 9.934929140698046e-05,
+   "n_pairs_differing": 18014
+  },
+  "rank_max_pct": {
+   "max_abs_diff": 0.016666433568070793,
+   "n_pairs_differing": 18014
+  },
+  "shared_third_pct": {
+   "max_abs_diff": 0.030036781110067662,
+   "n_pairs_differing": 18014
+  },
+  "fam_mc_size_pct": {
+   "max_abs_diff": 0.00013151997823379613,
+   "n_pairs_differing": 18014
+  },
+  "len_min_pct": {
+   "max_abs_diff": 0.00024335493407701136,
+   "n_pairs_differing": 18013
+  }
+ }
+}

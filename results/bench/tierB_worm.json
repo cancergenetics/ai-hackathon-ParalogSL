@@ -1,0 +1,71 @@
+{
+ "species": "worm",
+ "command": "scripts/features/run_tierB.py worm --threads 8 --species-jobs 3",
+ "returncode": 0,
+ "threads": 8,
+ "species_jobs": 3,
+ "panel_dmin": null,
+ "wall_s": 9209.7,
+ "peak_rss_tree_gb": 3.507,
+ "peak_rss_single_process_gb": 1.325,
+ "max_processes_in_tree": 4,
+ "rss_samples": 17689,
+ "sample_interval_s": 0.5,
+ "lowpowermode_start": "1",
+ "lowpowermode_end": "0",
+ "loadavg_start": [
+  106.3203125,
+  109.39208984375,
+  113.66748046875
+ ],
+ "loadavg_end": [
+  108.08154296875,
+  131.11572265625,
+  136.919921875
+ ],
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_count": 10,
+  "mem_total_gb": 25.8
+ },
+ "git_head_at_run": "b2cf73974a8974672cb05c5bd733e032452c8486",
+ "timings": {
+  "realign_s": 289.8,
+  "panel_search_s": 8867.4,
+  "reduce_calibrate_s": 19.4,
+  "features_s": 17.6,
+  "total_s": 9203.6
+ },
+ "note_realign": "realign_s re-aligns Tier A pairs (needed only because Tier B runs after a separate Tier A run; the integrated pipeline reuses its realignment)",
+ "panel_search_wall_s": 8867.1,
+ "n_species_cached": 0,
+ "panel_search_s_sum_per_species_logs": 26436.6,
+ "n_capped_first_round_total": 31152,
+ "n_capped_final_total": 5300,
+ "n_pairs": 260434,
+ "calibration_summary": {
+  "self_excluded": [
+   "CAEEL"
+  ],
+  "n_retained": 79,
+  "n_usable": 79,
+  "core_size": 1004,
+  "core_frac_used": 0.8
+ },
+ "features_summary": {
+  "n_pairs": 260434,
+  "n_species_used": 79,
+  "n_conflict_pairs": 12602,
+  "frac_no_evidence": 0.2569902547286453,
+  "frac_younger_than_nearest": 0.20534185244630118,
+  "frac_older_than_panel": 0.3817665896157952,
+  "n_triplets": 9235,
+  "n_triplets_valid": 6306,
+  "n_triplets_missing_alignment": 2927,
+  "n_cigar_nident_mismatch": 21,
+  "n_cigar_nident_off_by_one": 599,
+  "features_s": 17.59
+ },
+ "schema_hash": "1bdc41e7c777fd76621e8d28459f7f33da5b644716143119d5df4251d937d944",
+ "output": "data/interim/features/worm/tierB.parquet"
+}

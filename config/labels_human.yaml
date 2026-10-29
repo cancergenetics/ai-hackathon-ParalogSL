@@ -1,0 +1,321 @@
+# Human paralog SL label rules — PRE-REGISTERED before any label code was run.
+# Normative sources: DESIGN.md v3 §2.3; reviews/round2/data.md R2-4..R2-8, R2-12, R2-13, R2-15, §3 risks.
+# This file is committed alone, before scripts/labels/build_human_labels.py exists. Thresholds below are never
+# tuned against: the 13-pair candidate list, agreement with Dennler & Ryan, published counts, or any model result.
+# Raw tables are read from data/raw/<group>/ (paths below are relative to the project root).
+version: 2   # v2 = amendment per PI decision D4 (round-3 consistency), before any label code ran
+date: "2026-10-28"
+author: "label-builder agent (human), for the PI"
+species: human
+
+# ---------------------------------------------------------------------------------------------------------------
+# 1. Gene identifiers (config/gene_ids.yaml: human = Ensembl gene ID, ^ENSG\d{11}$)
+# ---------------------------------------------------------------------------------------------------------------
+gene_mapping:
+  release: "UniProt 2026_03"
+  files:
+    idmapping: data/raw/uniprot_2026_03/UP000005640_9606.idmapping.gz
+    gene2acc: data/raw/uniprot_2026_03/UP000005640_9606.gene2acc.gz
+    fasta: data/raw/uniprot_2026_03/UP000005640_9606.fasta.gz
+  # HGNC complete set is not on disk (R2-13); the UniProt HGNC cross-references stand in for it.
+  steps:
+    - "approved symbol -> HGNC ID: gene2acc column 3 (symbol of the HGNC ID in column 1); idmapping Gene_Name of accessions carrying exactly one HGNC ID"
+    - "if not an approved symbol: idmapping Gene_Synonym (alias/previous symbols) of accessions carrying exactly one HGNC ID; accept only if the synonym resolves to exactly one HGNC ID, else 'ambiguous_alias' (dropped)"
+    - "symbol matching is exact after stripping whitespace; a case-insensitive match is used only if the exact match fails and the case-insensitive match is unique (logged as 'case_fold')"
+    - "HGNC ID -> Ensembl gene: unversioned ENSG IDs from idmapping 'Ensembl' rows of accessions carrying exactly one HGNC ID; must be exactly one ENSG, else 'ambiguous_ensembl' (dropped). If no single-HGNC accession exists for an HGNC ID, the multi-HGNC accessions are used only if they carry exactly one ENSG"
+    - "Approved symbols take precedence over aliases; an approved symbol of one gene that is also an alias of another resolves to the approved one"
+  flags:
+    in_ref_proteome: "gene has >=1 HGNC-linked accession in the UP000005640 reference FASTA (pairs keep their label; flag reported)"
+  log: results/labels/human_mapping_report.tsv     # every unmapped / ambiguous symbol, per source and step
+  pair_rule: "unordered pair of distinct Ensembl gene IDs, stored as gene_a < gene_b (lexicographic); a source row whose two symbols map to the same gene is dropped and logged ('self_pair')"
+
+# ---------------------------------------------------------------------------------------------------------------
+# 2. Uniform per study x cell line call (R2-5). Applied to every study that has single + DKO LFCs.
+# ---------------------------------------------------------------------------------------------------------------
+line_call:
+  m: "median of all single-gene LFCs in that screen (study x line x timepoint), deduplicated per gene"
+  s: "1.4826 * MAD of the same single-gene LFCs"
+  T: "max(2 * s, 0.5)"             # SL depth below m, log2 units; 0.5 floor
+  T_multiplier: 2.0
+  T_floor: 0.5
+  a: "single LFC gene1 - m"
+  b: "single LFC gene2 - m"
+  ab: "DKO LFC - m"
+  testable: "(a + b) > -T and not study_flag_untestable"
+  SL: "testable and GI_strict and ab <= -T"
+  clear_negative: "testable and not SL and (not GI_relaxed or ab > -T/2)"
+  borderline: "testable and not SL and not clear_negative"
+  borderline_margin_dko: 0.5       # fraction of T: ab must be > -0.5*T for a GI_relaxed observation to count as clear_negative
+  untestable: "not testable (expected DKO already at SL depth, or study flag)"
+  untested: "pair/line missing from the significance table or from the LFC table (not a negative); logged"
+  # Studies with no LFCs but an authors' testability flag (Harle, Chan): DKO criterion not applied (no LFC recomputation
+  # from counts in this version; R2-5 'authors' calls only'); SL = testable and GI_strict;
+  # clear_negative = testable and not GI_relaxed; borderline = testable and not SL and GI_relaxed.
+  no_lfc_studies_rule: "authors_calls_with_authors_testability_flags"
+  # PI decision D4 (round-3 consistency): R2 normative rules win over DESIGN v3 wording. Testability is the
+  # screen-scaled R2-5 rule ((a + b) > -T), never a bare 'either single gene essential' rule. Study flags
+  # (Thompson filter; Harle/Chan single-depletion/expression) are the R2-6 'study_flag_untestable' term ANDed with it.
+  # Harle/Chan have no LFCs in this version, so for them only the R2-6 flag term can be evaluated (stated in QC).
+  # Gene IDs stay Ensembl gene IDs (override of R2-8's HGNC ID).
+  pi_decision_D4: applied
+  # Studies whose testability cannot be determined at all (no LFCs, no flag) would go to the lenient tier only.
+  # None of the sources below is in that class in this version.
+
+# ---------------------------------------------------------------------------------------------------------------
+# 3. Per-study rules (R2-6). 'lines' maps the study's own column/sheet label -> canonical line key (section 4).
+# ---------------------------------------------------------------------------------------------------------------
+studies:
+  dede2020:
+    publication: "Dede et al. 2020 Genome Biol 21:262, doi:10.1186/s13059-020-02173-2"
+    license_class: open             # CC BY 4.0 (BMC data CC0)
+    significance_table: data/raw/dede2020/13059_2020_2173_MOESM3_ESM.txt   # Table S2 zdLFC, 403 pairs x 3 lines
+    lfc_source: "in4mer Supp_table1.xlsx sheets Dede_<line> (gene1_mean, gene2_mean, obs_mean)"
+    timepoint: "as in the source tables (single endpoint)"
+    GI_strict: "zdLFC < -3"
+    GI_relaxed: "zdLFC < -2"
+    study_flag_untestable: none
+    lines: {A549: {sig_col: A549, lfc_sheet: Dede_A549, key: A549},
+            HT29: {sig_col: HT29, lfc_sheet: Dede_HT29, key: HT29},
+            OVCAR8: {sig_col: OVCAR8, lfc_sheet: Dede_OVCAR8, key: OVCAR8}}
+
+  thompson2021:
+    publication: "Thompson et al. 2021 Nat Commun 12:1302, doi:10.1038/s41467-021-21478-9"
+    license_class: open             # CC BY 4.0
+    significance_table: data/raw/thompson2021/41467_2021_21478_MOESM4_ESM.xlsx   # SD1, sheet '1', header row 3
+    lfc_source: "in4mer Supp_table1.xlsx sheets Thompson_<line> (timepoint chosen by the Hart lab; unverified, R2 risk 1)"
+    timepoint: D28
+    GI_strict: "{L}_D28_rra_fdr_low < 0.1 and {L}_D28_t_fdr_low < 0.1 and Passes-{L}-filter == 'Yes'"   # authors' rule
+    GI_relaxed: "{L}_D28_rra_fdr_low < 0.25 or {L}_D28_t_fdr_low < 0.25 or ({L}_D14_rra_fdr_low < 0.1 and {L}_D14_t_fdr_low < 0.1)"
+    study_flag_untestable: "Passes-{L}-filter == 'No' (authors' single-gene essentiality filter, used as given)"
+    exclusions: "none at this stage; non-paralog classes are removed only by the Compara universe (R2-4). 'Gene pair class' kept as author_pair_class cross-check; the non-targeting control pair is dropped"
+    lines: {A375: {sig_prefix: A375, filter_col: "Passes A375 filter?", lfc_sheet: Thompson_A375, key: A375},
+            MeWo: {sig_prefix: Mewo, filter_col: "Passes the Mewo filter?", lfc_sheet: Thompson_Mewo, key: MEWO},
+            RPE1: {sig_prefix: RPE, filter_col: "Passes RPE filter?", lfc_sheet: Thompson_RPE, key: RPE1}}
+
+  parrish2021:
+    publication: "Parrish et al. 2021 Cell Rep 36:109597, doi:10.1016/j.celrep.2021.109597"
+    license_class: nc_nd            # article CC BY-NC-ND 4.0; harmonised LFCs come from in4mer Supp_table1 (CC BY 4.0) but the underlying data are Parrish's -> flagged conservatively
+    significance_table: null        # Table S4 NOT obtained (PMC bot wall) -> pre-registered fallback (R2-6, R2-13)
+    fallback: "Chou-style ZdLFC from in4mer Supp_table1 deltaMean: per screen, drop values outside [Q1-1.5*IQR, Q3+1.5*IQR], fit a normal (mean, ML std) to the rest, Z = (deltaMean - mu)/sd (Chou 2025 notebook Calculate_dLFC_ZdLFC_RdLFC_Inzolia_Supptable1.ipynb, calculate_ZdLFC)"
+    lfc_source: "in4mer Supp_table1.xlsx sheets Parrish_<line>"
+    timepoint: "as in Supp_table1"
+    GI_strict: "ZdLFC < -2"
+    GI_relaxed: "ZdLFC < -1"
+    study_flag_untestable: none
+    lines: {PC9: {lfc_sheet: Parrish_PC9, key: PC9}, HeLa: {lfc_sheet: Parrish_HeLa, key: HELA}}
+
+  ito2021:
+    publication: "Ito et al. 2021 Nat Genet 53:1664, doi:10.1038/s41588-021-00967-z"
+    license_class: restricted       # no open licence on supplementary tables
+    significance_table: data/raw/ito2021/41588_2021_967_MOESM2_ESM.xlsx   # Supplementary table 10 (GEMINI FDR), header row 3
+    lfc_source: "in4mer Supp_table1.xlsx sheets Ito_<line>"
+    timepoint: "as in the source tables (single endpoint)"
+    GI_strict: "GEMINI sensitive-lethality FDR (Supp. table 10) < 0.05"
+    GI_relaxed: "GEMINI FDR < 0.25"
+    dropped_rules: "the 'GEMINI >= 90th percentile within screen' rule (Kebabci) is NOT used (R2-6)"
+    study_flag_untestable: none
+    pairs_without_gemini: untested  # 5,065 DKO rows vs 4,859 GEMINI pairs (R2 risk 4)
+    exclusions: "MELJUSO anchor screen: Supplementary tables 6, 7, 11, 12, 13 (DMSO and ERK inhibitor SCH772984) are not read"
+    line_qc_exclusions: none        # all 11 lines used; no pre-stated QC reason to drop one
+    lines: {A549_LUNG: {lfc_sheet: Ito_A549, key: A549},
+            GI1_CENTRAL_NERVOUS_SYSTEM: {lfc_sheet: Ito_TIGI1, key: GI1},
+            HS936T_SKIN: {lfc_sheet: Ito_Hs936, key: HS936T},
+            HS944T_SKIN: {lfc_sheet: Ito_HS944, key: HS944T},
+            HSC5_SKIN: {lfc_sheet: Ito_HSC5, key: HSC5},
+            IPC298_SKIN: {lfc_sheet: Ito_IPC298, key: IPC298},
+            MEL202_UVEA: {lfc_sheet: Ito_TIMEL_202, key: MEL202},
+            MELJUSO_SKIN: {lfc_sheet: Ito_Meljuso, key: MELJUSO},
+            MEWO_SKIN: {lfc_sheet: Ito_MeWo, key: MEWO},
+            PATU8988S_PANCREAS: {lfc_sheet: Ito_PATU8988s, key: PATU8988S},
+            PK1_PANCREAS: {lfc_sheet: Ito_TIPK1, key: PK1}}
+
+  chymera2020:
+    publication: "Gonatopoulos-Pournatzis et al. 2020 Nat Biotechnol 38:638, doi:10.1038/s41587-020-0437-z"
+    license_class: restricted
+    significance_table: data/raw/chymera2020/41587_2020_437_MOESM10_ESM.xlsx   # Table S8, header row 1 per sheet
+    lfc_source: "late sheet of the same table: Paralog1.Mean, Paralog2.Mean (singles), Pair.Mean (DKO). NOT the *_expected_LFC* columns. in4mer Supp_table1 Gonatopoulos_<line> used only as a logged cross-check"
+    timepoints: {HAP1: {early: HAP1.T12, late: HAP1.T18}, RPE1: {early: RPE1.T18, late: RPE1.T24}}
+    GI_strict: "(early_both_gi and early_effect_size < 0) or (late_both_gi and late_effect_size < 0)"   # either timepoint GI
+    GI_relaxed: "((early_gi1 or early_gi2) and early_effect_size < 0) or ((late_gi1 or late_gi2) and late_effect_size < 0)"
+    dko_timepoint: late
+    study_flag_untestable: none
+    exclusions: "Torin1: sheets Torin.T12, Torin.T18 and the 'HAP1 +/- Torin' / torin_* columns of the Summary sheet are not read"
+    duplicate_rows: "a gene pair with >1 row in a sheet: each row is called separately; identical calls -> that call; disagreeing calls -> line 'borderline' (if any row is testable)"
+    lines: {HAP1: {key: HAP1}, RPE1: {key: RPE1}}
+
+  in4mer2024:
+    publication: "Esmaeili Anvar et al. 2024 Nat Commun 15:3577 (in4mer), doi:10.1038/s41467-024-47795-3; scores from Chou et al. 2025 Genome Biol, doi:10.1186/s13059-025-03660-0"
+    license_class: open             # CC BY 4.0 (article and figshare)
+    significance_table: data/raw/chou2025/Chou2025_Supplementary_Table_1.xlsx   # sheet ZdLFC
+    lfc_source: data/raw/chou2025/In4mer_4screens_gene_level_log_fold_change_cleandup.txt   # singles = 1-gene rows; DKO = 'A_B' rows
+    GI_strict: "ZdLFC < -2"
+    GI_relaxed: "ZdLFC < -1"
+    study_flag_untestable: none
+    exclusions: "MelJuso_sel_T21 (selumetinib) column is not read"
+    screens: "prototype (K562_T8, A549_T21) and Inzolia (MelJuso_T21, A375_T21) are separate screens of ONE study; a pair in both counts once per line"
+    lines: {K562: {zdlfc_col: K562_ZdLFC, lfc_col: K562_T8, key: K562},
+            A549: {zdlfc_col: A549_ZdLFC, lfc_col: A549_T21, key: A549},
+            MelJuso: {zdlfc_col: MelJuso_ZdLFC, lfc_col: MelJuso_T21, key: MELJUSO},
+            A375: {zdlfc_col: A375_ZdLFC, lfc_col: A375_T21, key: A375}}
+
+  klingbeil2024:
+    publication: "Klingbeil et al. 2024 Cancer Discov 14:2471, doi:10.1158/2159-8290.CD-23-1529"
+    license_class: nc_nd            # article CC BY-NC-ND 4.0
+    significance_table: data/raw/klingbeil2024/cd-23-1529_supplementary_table_s6_suppst6.xlsx   # GEMINI sensitive-lethality FDR per GENE1:domain;GENE2:domain row
+    lfc_source: "data/raw/klingbeil2024/cd-23-1529_supplementary_table_s2_suppst2.xlsx (avrg LFC): singles = rows with GENE 2 == 'CUTTING_CONTROL' (per gene x domain); DKO = gene-pair x domain-combination rows"
+    GI_strict: "GEMINI FDR (S6) < 0.05"
+    GI_relaxed: "GEMINI FDR < 0.25"
+    study_flag_untestable: none
+    domain_collapse: "R2-5 call per domain-combination row; then per pair x line over TESTABLE rows: SL if n_SL/n_testable > 0.5; borderline if 0 < n_SL/n_testable <= 0.5 or (n_SL == 0 and any borderline row); clear_negative if all testable rows clear_negative; untestable if no testable row"
+    m_s_basis: "single-gene x domain LFCs (CUTTING_CONTROL rows), deduplicated per gene x domain"
+    lines: {A549: A549, ASPC1: ASPC1, CORL311: CORL311, H1048: NCIH1048, H1299: NCIH1299, H1436: NCIH1436,
+            H1836: NCIH1836, H209: NCIH209, H211: NCIH211, HEL: HEL, HPAFII: HPAFII, K562: K562,
+            MDAMB231: MDAMB231, MOLM13: MOLM13, NOMO1: NOMO1, PATU8902: PATU8902, RD: RD, RH30: RH30,
+            SET2: SET2, T3M4: T3M4, THP1: THP1, YAPC: YAPC}
+
+  harle2025:
+    publication: "Harle et al. 2025 Genome Biol 26:284, doi:10.1186/s13059-025-03737-w"
+    license_class: open             # CC BY 4.0
+    significance_table: data/raw/harle2025/13059_2025_3737_MOESM1_ESM.xlsx   # Table S4 (header row 5); S5 binary matrix = authors' calls (known-answer only)
+    lfc_source: none                # no LFC recomputation from S3 counts in this version
+    GI_strict: "mean_norm_gi < -0.5 and fdr < 0.01 and is_bassik_hit == 1"
+    GI_relaxed: "mean_norm_gi < -0.3 or (fdr < 0.1 and mean_norm_gi < 0)"
+    study_flag_untestable: "targetA__is_single_depleted == 1 or targetB__is_single_depleted == 1 or targetA__is_expressed == 0 or targetB__is_expressed == 0"
+    forbidden_columns_note: "is_expressed / tpm / copy-number / essentiality columns are read ONLY for testability here and never written to any output or feature table"
+    exclusions: "none here; sgrna_group != 'Paralog' kept as author_pair_class and removed only by the Compara universe (R2-4)"
+    lines_from: "cell_line_label column; key = Cellosaurus ID from Table S2 matched via DepMap ID (see cell_lines)"
+
+  chan2025:
+    publication: "Chan et al. 2025 Nat Genet 57:1672, doi:10.1038/s41588-025-02222-1"
+    license_class: open             # CC BY 4.0
+    significance_table: data/raw/chan2025/41588_2025_2222_MOESM4_ESM.xlsx   # Supplementary Table 6 (header row 3)
+    lfc_source: none
+    GI_strict: "as harle2025"
+    GI_relaxed: "as harle2025"
+    study_flag_untestable: "as harle2025"
+    lines: {"921": "921", Mel202: MEL202, Mel270: MEL270, Mel285: MEL285, MP38: MP38, MP41: MP41, MP46: MP46,
+            OMM1: OMM1, OMM23: OMM23, OMM25: OMM25}
+
+# ---------------------------------------------------------------------------------------------------------------
+# 4. Cell-line identity (R2-7b): calls on the same physical line from different studies are merged.
+#    key -> Cellosaurus ID. 'verified_in' = a source table that states the ID. Lines without a verified ID keep a
+#    'name:' key (merging then relies on the explicit study label -> key maps above, never on fuzzy matching).
+# ---------------------------------------------------------------------------------------------------------------
+cell_lines:
+  harle_s2_table: "data/raw/harle2025/13059_2025_3737_MOESM1_ESM.xlsx sheet 'Table S2' (Cellosaurus ID + DepMap ID per line); Harle lines are keyed by these IDs, matched via the DepMap ID in S4"
+  keys:   # canonical key -> Cellosaurus ID (null = not verified from a file on disk)
+    A549: {cellosaurus: CVCL_0023, verified_in: harle2025_S2}
+    A375: {cellosaurus: CVCL_0132, verified_in: harle2025_S2}
+    MEWO: {cellosaurus: CVCL_0445, verified_in: harle2025_S2}
+    NCIH1299: {cellosaurus: CVCL_0060, verified_in: harle2025_S2}
+    ASPC1: {cellosaurus: CVCL_0152, verified_in: harle2025_S2}
+    HPAFII: {cellosaurus: CVCL_0313, verified_in: harle2025_S2}
+    RPE1: {cellosaurus: null, note: "hTERT RPE-1 (Thompson, CHyMErA)"}
+    MELJUSO: {cellosaurus: null, note: "Mel JuSo (Ito, in4mer)"}
+    MEL202: {cellosaurus: null, note: "Mel 202 (Ito, Chan)"}
+    K562: {cellosaurus: null, note: "K-562 (in4mer, Klingbeil)"}
+  other_keys: "all other keys occur in one study only and get 'name:<key>'"
+  merge_rule:
+    SL: "SL in >=1 study and no study clear_negative for that line"
+    clear_negative: "all studies with a testable call are clear_negative"
+    line_discordant: "otherwise (counts as borderline)"
+    ignore: "untestable / untested study calls do not enter the merge; a line with only untestable calls is untestable"
+
+# ---------------------------------------------------------------------------------------------------------------
+# 5. Pair-level aggregation and tiers (R2-7, R2-15, DESIGN §2.3)
+# ---------------------------------------------------------------------------------------------------------------
+aggregation:
+  counting:
+    n_lines: "distinct canonical line keys (after merging)"
+    n_testable: "lines whose merged call is SL, clear_negative, borderline or line_discordant"
+    n_sl: "lines with merged call SL"
+    n_borderline: "lines with merged call borderline or line_discordant"
+    penetrance: "n_sl / n_testable"
+    n_studies_sl: "distinct publications contributing an SL study-call to a line whose merged call is SL (in4mer prototype+Inzolia = one study)"
+    n_studies_testable: "distinct publications with >=1 testable study-call"
+  tiers:
+    primary:          # 'robust'
+      positive: "n_sl >= 2 and ((n_studies_sl >= 2 and penetrance >= 0.10) or penetrance >= 0.25)"
+      negative: "n_testable >= 2 and n_sl == 0 and n_borderline <= floor(0.1 * n_testable)"
+      otherwise: ambiguous
+      penetrance_floor_two_study_route: 0.10      # R2-15
+      penetrance_single_route: 0.25
+      borderline_allowance_fraction: 0.10         # R2-7a
+      min_testable_lines_negative: 2
+      min_sl_lines_positive: 2
+      eligible_studies: [dede2020, thompson2021, parrish2021, ito2021, chymera2020, in4mer2024, klingbeil2024, harle2025, chan2025]
+    lenient:          # Dennler & Ryan-style
+      positive: "n_sl >= 1"
+      negative: "n_testable >= 1 and n_sl == 0"
+      otherwise: "untestable_or_untested"
+    two_studies:      # De Kegel 2021 screen-consensus style; penetrance floor added per PI decision D4 (R2-15)
+      positive: "n_studies_sl >= 2 and penetrance >= 0.10"
+      penetrance_floor: 0.10
+      negative: "testable in >= 2 distinct studies and n_sl == 0"
+      otherwise: ambiguous
+  ambiguity_reasons: [single_line_sl, low_penetrance, borderline_excess, too_few_testable, all_untestable]
+  label_values: {positive: 1, negative: 0, ambiguous: -1, untestable: -2}
+
+# ---------------------------------------------------------------------------------------------------------------
+# 6. Sources and licence classes (commit policy, DESIGN §2.3)
+# ---------------------------------------------------------------------------------------------------------------
+license_classes:
+  open: "CC BY / CC0: derived calls committed with attribution"
+  restricted: "no open licence (Ito, CHyMErA): derived binary calls only, flagged"
+  nc_nd: "CC BY-NC-ND (Parrish, Klingbeil): derived calls only, flagged"
+  pair_flag: "only_nonopen_evidence = True if no study of class 'open' has a testable call on the pair"
+excluded_sources:
+  flister2025: "no verified non-hit table (DESIGN §2.3)"
+  dekegel2021_depmap: "DepMap-inferred labels are not mixed in"
+  slkb_synlethdb: "never used"
+  chou2025_T2_rescoring_of_dede_parrish_thompson: "sensitivity only; not used in this version"
+crosscheck_only:
+  dennler2025_sl_lenient:
+    file: data/raw/_quarantine/dennler2025/ens111_human_SL-lenient.csv
+    column_whitelist: [A1_ensembl, A2_ensembl, SL]   # nothing else is read
+    use: "agreement table vs OUR lenient tier (report only, never tuned)"
+  candidate_13_pairs:
+    file: data/raw/chou2025/reference_paralog_13synthetic_lethals_221222.txt
+    use: "status of each pair in each tier (report only, never tuned)"
+
+outputs:
+  calls: data/interim/labels/human_calls.tsv           # per study x line x pair (not committed; data/interim is git-ignored)
+  labels: data/labels/human_labels_all.tsv             # pair, tiers, evidence codes, licence flag; NO split assignment
+  qc: results/labels/human_label_qc.json
+  mapping_report: results/labels/human_mapping_report.tsv
+  known_answer_gaps: results/labels/known_answer_gaps.json
+  forbidden_output_columns: "no expression, TPM, copy-number, essentiality, PPI or Dennler feature columns in any output"
+
+# ---------------------------------------------------------------------------------------------------------------
+# 7. Amendments after the first run of the label code (ID mapping only; no threshold, tier or study rule changed)
+# ---------------------------------------------------------------------------------------------------------------
+amendments_after_first_run:
+  - what: "gene2acc layout"
+    detail: "Section 1 described gene2acc column 3 as a symbol. On disk, column 3 is the HGNC ID and column 1 is the
+             symbol on isoform rows (the HGNC ID on canonical rows). Approved symbol of an HGNC ID = most frequent
+             symbol over gene2acc column 1 and idmapping Gene_Name of single-HGNC accessions."
+    found_by: "first run mapped <5% of symbols"
+  - what: "Ensembl xref disambiguation"
+    detail: "UniProt Ensembl xrefs include alternate-haplotype/patch genes (several ENSG per HGNC ID). Rule: keep the
+             ENSG also given as OpenTargets xref (primary assembly); else the ENSG of reference-proteome accessions;
+             else drop ENSG IDs owned unambiguously by another HGNC ID (read-through genes); else 'ambiguous_ensembl'."
+    found_by: "~7% of symbols 'ambiguous_ensembl' in the second run"
+  - what: "Ito Table 10 header row"
+    detail: "header is row 4 (0-based 3), not row 3; parser bug fixed before any label was produced from it"
+
+# ---------------------------------------------------------------------------------------------------------------
+# 8. Numeric thresholds read by the parsers (PI decision D8, 2026-10-28). These are the SAME values as the rule
+#    strings in section 3 (moved verbatim from the parser code; no value changed). tests/test_human_label_rules.py
+#    asserts each number appears in the corresponding section-3 rule string.
+# ---------------------------------------------------------------------------------------------------------------
+thresholds:
+  dede2020: {gi_strict_zdlfc_lt: -3, gi_relaxed_zdlfc_lt: -2}
+  thompson2021: {gi_strict_fdr_lt: 0.1, gi_relaxed_fdr_lt: 0.25, gi_relaxed_d14_fdr_lt: 0.1}
+  parrish2021: {gi_strict_zdlfc_lt: -2, gi_relaxed_zdlfc_lt: -1}
+  ito2021: {gi_strict_fdr_lt: 0.05, gi_relaxed_fdr_lt: 0.25}
+  chymera2020: {effect_size_lt: 0}
+  in4mer2024: {gi_strict_zdlfc_lt: -2, gi_relaxed_zdlfc_lt: -1}
+  klingbeil2024: {gi_strict_fdr_lt: 0.05, gi_relaxed_fdr_lt: 0.25, domain_sl_fraction_gt: 0.5}
+  harle_chan: {gi_strict_gi_lt: -0.5, gi_strict_fdr_lt: 0.01, bassik_hit_eq: 1, gi_relaxed_gi_lt: -0.3,
+               gi_relaxed_fdr_lt: 0.1, gi_relaxed_direction_gi_lt: 0}
+  not_moved: "Chou ZdLFC outlier fence 1.5*IQR (method constant of the Chou notebook, section 3 parrish2021.fallback)"

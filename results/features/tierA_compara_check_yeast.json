@@ -1,0 +1,35 @@
+{
+ "species": "yeast",
+ "n_compara_pairs_in_proteome": 5395,
+ "n_called_pairs": 18020,
+ "caller_recall_of_compara": 0.8224281742354032,
+ "frac_called_pairs_in_compara": 0.24622641509433962,
+ "recall_by_compara_identity": {
+  "compara_ident_max_0-0.2": {
+   "n": 2144,
+   "recall": 0.5862873134328358
+  },
+  "compara_ident_max_0.2-0.3": {
+   "n": 1083,
+   "recall": 0.9409048938134811
+  },
+  "compara_ident_max_0.3-0.5": {
+   "n": 761,
+   "recall": 0.9921156373193167
+  },
+  "compara_ident_max_0.5-1.01": {
+   "n": 1407,
+   "recall": 0.9992892679459844
+  }
+ },
+ "ident_ens_min_vs_compara": {
+  "spearman": 0.9641386936646172,
+  "median_diff": 1.9354838709517708e-07,
+  "frac_absdiff_lt_0.05": 0.8733378408834799
+ },
+ "ident_ens_max_vs_compara": {
+  "spearman": 0.9484873252520039,
+  "median_diff": 1.2374581948026986e-07,
+  "frac_absdiff_lt_0.05": 0.8185711066035609
+ }
+}

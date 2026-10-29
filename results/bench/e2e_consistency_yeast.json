@@ -1,0 +1,51 @@
+{
+ "species": "yeast",
+ "model_id": "AB-gbdt-7ff069ac",
+ "n_ref_pairs": 18014,
+ "reference": "frozen model on data/interim/features/yeast/tier{A,B}.parquet",
+ "tsv": {
+  "file": "results/release/yeast_predictions.tsv",
+  "vs_reference_rounded_to_6g_(exact_expected)": {
+   "n_pred": 18014,
+   "n_ref": 18014,
+   "pair_sets_equal": true,
+   "only_in_pred": 0,
+   "only_in_ref": 0,
+   "pred_duplicates": 0,
+   "n_compared": 18014,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "tolerance": 0.0,
+   "within_tolerance": true
+  },
+  "vs_reference_full_precision_(limited_by_%.6g)": {
+   "n_pred": 18014,
+   "n_ref": 18014,
+   "pair_sets_equal": true,
+   "only_in_pred": 0,
+   "only_in_ref": 0,
+   "pred_duplicates": 0,
+   "n_compared": 18014,
+   "max_abs_diff": 4.952474945696395e-07,
+   "max_rel_diff": 4.83283690434825e-06,
+   "tolerance": 5e-06,
+   "within_tolerance": true
+  }
+ },
+ "parquet": {
+  "file": "results/release/yeast_predictions_fullprec.parquet",
+  "vs_reference_full_precision": {
+   "n_pred": 18014,
+   "n_ref": 18014,
+   "pair_sets_equal": true,
+   "only_in_pred": 0,
+   "only_in_ref": 0,
+   "pred_duplicates": 0,
+   "n_compared": 18014,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "tolerance": 1e-12,
+   "within_tolerance": true
+  }
+ }
+}

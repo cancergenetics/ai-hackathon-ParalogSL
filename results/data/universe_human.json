@@ -1,0 +1,53 @@
+{
+ "species": "human",
+ "ensembl_release": "116",
+ "paralog_types_kept": [
+  "within_species_paralog",
+  "other_paralog"
+ ],
+ "n_pairs": 141164,
+ "n_genes": 15700,
+ "n_pairs_by_type": {
+  "other_paralog": 128020,
+  "within_species_paralog": 13144
+ },
+ "parse_counts": {
+  "rows_total": 3878214,
+  "within_species_rows_other_paralog": 128020,
+  "within_species_rows_within_species_paralog": 13144,
+  "within_species_rows_gene_split": 9
+ },
+ "n_genes_in_proteome": 15685,
+ "frac_genes_in_proteome": 0.999045,
+ "n_pairs_both_in_proteome": 140837,
+ "frac_pairs_both_in_proteome": 0.997684,
+ "n_proteome_genes": 20770,
+ "frac_proteome_genes_in_universe": 0.755176,
+ "genes_not_in_proteome_examples": [
+  "ENSG00000243543",
+  "ENSG00000254104",
+  "ENSG00000268500",
+  "ENSG00000274175",
+  "ENSG00000275249",
+  "ENSG00000275869",
+  "ENSG00000276760",
+  "ENSG00000278817",
+  "ENSG00000281179",
+  "ENSG00000283128",
+  "ENSG00000285437",
+  "ENSG00000289731",
+  "ENSG00000293137",
+  "ENSG00000293164",
+  "ENSG00000293488"
+ ],
+ "inputs_sha256": {
+  "data/raw/ensembl_116/Compara.116.protein_default.homologies.homo_sapiens.tsv.gz": "fc101ab6e90966091064e5f2e695e46da50d9bc50f4543340ded7d0ccd6e7933",
+  "data/interim/proteomes/human_gene2acc.tsv": "9e88d659210add8c47d49fbcc7cbf43b64c5dfba50a05a9818bb42c6cdc7d407"
+ },
+ "source_url": "https://ftp.ensembl.org/pub/release-116/tsv/ensembl-compara/homologies/homo_sapiens/Compara.116.protein_default.homologies.tsv.gz",
+ "output_sha256": {
+  "data/interim/universe/human_paralog_pairs.tsv": "68e7e62ab17922f1b952f399f15ff3b78b7251ab5ff623d4f838759016524eee"
+ },
+ "script": "scripts/data/build_paralog_universe.py",
+ "note": "Ensembl identity/homology_type columns are for evaluation only, never features."
+}

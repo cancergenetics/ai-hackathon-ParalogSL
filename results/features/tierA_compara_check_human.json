@@ -1,0 +1,35 @@
+{
+ "species": "human",
+ "n_compara_pairs_in_proteome": 140837,
+ "n_called_pairs": 693581,
+ "caller_recall_of_compara": 0.8885165119961373,
+ "frac_called_pairs_in_compara": 0.18042016721911355,
+ "recall_by_compara_identity": {
+  "compara_ident_max_0-0.2": {
+   "n": 34415,
+   "recall": 0.6767979078890018
+  },
+  "compara_ident_max_0.2-0.3": {
+   "n": 34712,
+   "recall": 0.8983636782668818
+  },
+  "compara_ident_max_0.3-0.5": {
+   "n": 55511,
+   "recall": 0.9818234223847526
+  },
+  "compara_ident_max_0.5-1.01": {
+   "n": 16199,
+   "recall": 0.9974689795666399
+  }
+ },
+ "ident_ens_min_vs_compara": {
+  "spearman": 0.966848284069811,
+  "median_diff": -3.478260869327343e-07,
+  "frac_absdiff_lt_0.05": 0.835594872778417
+ },
+ "ident_ens_max_vs_compara": {
+  "spearman": 0.9405067698940354,
+  "median_diff": -2.312935421522333e-07,
+  "frac_absdiff_lt_0.05": 0.7368543025188595
+ }
+}

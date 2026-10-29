@@ -1,0 +1,152 @@
+# Reference panel: QfO core + gap-filling rule (DESIGN v3 §2.2; reviews/round2/algorithms_comparative.md change 8, the reviewer's
+# tested select.py reproduced exactly). Frozen before any result exists. Selection uses only UniProt proteome metadata
+# (BUSCO, protein count, taxonomy) from a saved, checksummed snapshot - never labels or results.
+# Used by scripts/data/build_panel.py.
+
+uniprot_release: "2026_03"          # REST snapshot and gap-fill FASTAs must come from this release (x-uniprot-release header)
+
+core:
+  source: "QfO 2026_02"
+  species_list: "data/raw/qfo/species_list.tsv"   # upid, taxid, oscode, n_proteins, name
+  fasta_dir: "data/raw/qfo"
+
+snapshot:
+  dir: "data/raw/panel_meta"
+  endpoint: "https://rest.uniprot.org/proteomes/stream"
+  fields: "upid,organism,organism_id,protein_count,busco,cpd,lineage"
+  # candidate pools: (proteome_type:REFERENCE) AND (taxonomy_id:<taxid>)
+  queries:
+    Saccharomycetaceae: 4893
+    Embryophyta: 3193
+    Pterygota: 7496
+    Nematoda: 6231
+  # the core QfO proteomes are also snapshotted (by UPID) to get their lineage for clade labels
+
+filters:
+  max_protein_count: 50000           # no polyploid / isoform-inflated sets
+  max_busco_duplicated_pct: 10       # removes e.g. Nasonia (D=53%), Selaginella (D=65%)
+  ladder:                            # [min BUSCO single %, max BUSCO fragmented %]; next step only if a clade's quota is unmet
+    - [85, 8]
+    - [80, 8]
+    - [75, 10]
+  # candidates also exclude: core UPIDs, core taxids, and units (at the clade's unit rank) already represented in the core.
+  # ranking inside a clade: BUSCO single desc, fragmented asc, UPID asc; at most one proteome per unit.
+
+# predicate: a proteome belongs to a clade if any 'rank_in' condition holds (taxonLineage rank -> name in list)
+# or any name in 'lineage_any' occurs in its taxonLineage.
+clades:
+  - name: "Sacch post-WGD"
+    rank_in: {genus: [Saccharomyces, Kazachstania, Naumovozyma, Nakaseomyces, Tetrapisispora, Vanderwaltozyma, Huiozyma,
+                      Maudiozyma, Monosporozyma, Arxiozyma, Henningerozyma]}
+    unit: genus
+    quota: 3
+  - name: "Sacch pre-WGD"
+    rank_in: {genus: [Kluyveromyces, Lachancea, Eremothecium, Zygosaccharomyces, Torulaspora, Zygotorulaspora]}
+    unit: genus
+    quota: 3
+  - name: "eudicots"
+    lineage_any: [eudicotyledons]
+    unit: order
+    quota: 6
+  - name: "monocots"
+    lineage_any: [Liliopsida]
+    unit: family
+    quota: 3
+  - name: "basal angiosperm+liverwort"
+    rank_in: {order: [Amborellales, Nymphaeales]}
+    lineage_any: [Marchantiophyta]
+    unit: order
+    quota: 2
+  - name: "Hymenoptera"
+    rank_in: {order: [Hymenoptera]}
+    unit: family
+    quota: 2
+  - name: "Coleoptera"
+    rank_in: {order: [Coleoptera]}
+    unit: family
+    quota: 2
+  - name: "Lepidoptera"
+    rank_in: {order: [Lepidoptera]}
+    unit: family
+    quota: 2
+  - name: "Hemiptera"
+    rank_in: {order: [Hemiptera]}
+    unit: family
+    quota: 2
+  - name: "Polyneoptera/Palaeoptera"
+    rank_in: {order: [Blattodea, Orthoptera, Phasmatodea, Odonata, Ephemeroptera]}
+    unit: order
+    quota: 1
+  - name: "Nematoda (not Rhabditidae)"
+    lineage_any: [Nematoda]
+    unit: family
+    quota: 3
+    exclude_units: [Rhabditidae]     # keeps Caenorhabditis congeners of the C. elegans test species out
+
+gap_fill_fasta:
+  dir: "data/raw/panel_extra"
+  url: "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/{upid}/{upid}_{taxid}.fasta.gz"
+
+panel:
+  fasta: "data/interim/panel/panel.fasta"          # headers '<code>|<index>' (0-based index within species, file order)
+  index: "data/interim/panel/panel_index.tsv"      # code, index, accession (traceability only; never a feature input)
+  species_table: "config/panel_species.tsv"
+
+# coarse clade label for config/panel_species.tsv (first lineage name that matches wins)
+clade_labels:
+  - [Vertebrata, vertebrates]
+  - [Insecta, insects]
+  - [Nematoda, nematodes]
+  - [Metazoa, other_metazoa]
+  - [Saccharomycetaceae, saccharomycetaceae]
+  - [Fungi, other_fungi]
+  - [eudicotyledons, eudicots]
+  - [Liliopsida, monocots]
+  - [Embryophyta, other_land_plants]
+  - [Viridiplantae, green_algae]
+  - [Eukaryota, other_eukaryotes]
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Tier B: per-species panel search, divergence calibration, duplication classification (src/slparalog/panel.py,
+# src/slparalog/features/tier_b.py). Spec: DESIGN v3 §2.2 and §4 Tier B; reviews/round2/algorithms_comparative.md
+# changes 2, 3, 4, 5, 6, 7, 9, 10, 11 (normative, D4). Every value below (plus the pinned scoring settings of
+# config/caller.yaml `mmseqs.scoring`, which the panel search reuses verbatim, and the sha256 of the species table and
+# panel FASTA) enters the feature-schema hash.
+tier_b:
+  db_dir: "data/interim/panel/db"            # per-species MMseqs2 DBs, built once (panel.build_dbs), stamped
+  cache_dir: "data/interim/panel/hits"       # per-(query proteome, settings) per-species hit tables (parquet)
+  layout: per_species                        # one search per panel species (change 2); see results/bench/panel_db_layout.json
+  search:
+    sensitivity: 5.7                         # -s (change 2 setting; acceptance benchmark of change 2 pending)
+    max_seqs: 50                             # --max-seqs per species
+    evalue: 10                               # -e (permissive; presence decided by bitscore, change 3)
+    keep_min_bits: 40                        # hits stored
+    # saturation (change 4, analogue of PI decision D11 for the self-search): a query is capped in species s when its
+    # aligned hits with bits >= presence_min_bits reach saturation_fraction * cap; capped queries are re-searched in s
+    # with cap *= research_cap_factor (max_research_rounds rounds). Prefilter counts are logged only.
+    saturation_fraction: 0.95
+    research_cap_factor: 5
+    max_research_rounds: 1
+  presence_min_bits: 50                      # "A has a hit in s" <=> bits >= 50 (change 3)
+  rbh_min_cov: 0.5                           # pseudo-RBH: both coverages >= 0.5 (change 5.1)
+  self_exclusion_median_identity: 0.98       # species with median RBH identity >= this are removed (change 9)
+  core:                                      # core gene set G* (change 5.2)
+    min_species_frac: 0.8                    # RBH in >= 80% of retained species
+    fallback_step: 0.1                       # if |G*| < min_size, lower the fraction in steps of 0.1 (logged)
+    min_size: 200
+  kimura:
+    formula: "-ln(1 - p - 0.2 p^2), p = 1 - identity"
+    cap: 3.0                                 # d = 3 if the argument is <= 0; d is also clipped at 3 (monotone)
+  # Bin edges in d (change 5 table; from the reviewer's human core-set values). FROZEN before any yeast d_s was
+  # computed (git history of this file). Used internally only (discordance weights 1/n_bin); no per-bin feature or
+  # bin-missingness pattern is a registered model feature (DESIGN §4: no feature constant within a proteome).
+  bins:
+    edges: [0.0, 0.03, 0.12, 0.35, 0.70, 0.95]   # B1=[0,0.03) B2=[0.03,0.12) B3=[0.12,0.35) B4=[0.35,0.70) B5=[0.70,0.95) B6=[0.95,inf)
+    labels: [B1, B2, B3, B4, B5, B6]
+  mask_ladder: [0.03, 0.12, 0.35, 0.70]      # --panel-dmin c removes species with d_s < c (change 7a); none = natural panel
+  outgroup:                                  # divergence asymmetry (change 10)
+    n_nearest_post: 3                        # median over the 3 nearest post species
+    min_shared_columns: 30                   # O columns covered by both alignments
+  n_post_single_ratio: 0.9                   # change 11: a = b and second hit < 0.9 x best (for both A and B)
+  dupability_bsr: 0.5                        # change 11: hits >= 0.5 x self-bits, median over species where present
+  fragment_ratio: 0.5                        # change 11: len < 0.5 x median length of best hits in retained species

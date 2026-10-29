@@ -1,0 +1,86 @@
+{
+ "tests/test_label_known_answers_yeast.py::test_costanzo_stringent_count_readme": {
+  "species": "yeast",
+  "expected": 380059,
+  "tolerance_rel": 0.01,
+  "observed": 421628,
+  "rel_diff": 0.1094,
+  "per_file": {
+   "SGA_NxN.txt": 156162,
+   "SGA_ExN_NxE.txt": 165772,
+   "SGA_ExE.txt": 62608,
+   "SGA_DAmP.txt": 37086
+  },
+  "note": "Readme: HighestConfidence = raw (already reciprocal-filtered) + p<0.05 & (eps<-0.12 | eps>0.16) = 380,059 allele interactions. Applying that threshold to all four raw files gives more; which screens/rows the readme count covers is not stated. Not used for any label rule; the label thresholds are unaffected."
+ },
+ "tests/test_label_known_answers_yeast.py::test_costanzo_intermediate_counts_readme": {
+  "species": "yeast",
+  "expected": {
+   "neg": 550000,
+   "pos": 350000
+  },
+  "tolerance_rel": 0.05,
+  "observed": {
+   "neg": 598968,
+   "pos": 376894
+  },
+  "rel_diff": {
+   "neg": 0.089,
+   "pos": 0.0768
+  },
+  "per_file": {
+   "SGA_NxN.txt": {
+    "neg": 240885,
+    "pos": 156592
+   },
+   "SGA_ExN_NxE.txt": {
+    "neg": 229118,
+    "pos": 140597
+   },
+   "SGA_ExE.txt": {
+    "neg": 75597,
+    "pos": 47318
+   },
+   "SGA_DAmP.txt": {
+    "neg": 53368,
+    "pos": 32387
+   }
+  },
+  "note": "Readme gives rounded '~550,000 negative and ~350,000 positive'; unit (allele pairs vs gene pairs) and file coverage not stated."
+ },
+ "tests/test_label_known_answers_yeast.py::test_nxn_dmf_min": {
+  "species": "yeast",
+  "expected": -0.1525,
+  "tolerance": "exact (4 dp)",
+  "observed_all_nxn_rows": -0.2718,
+  "observed_sn_dma_rows": -0.1525,
+  "note": "Pre-registered as the minimum over all NxN rows; the reviewer's value (data.md R2-2) is reproduced on the sn x dma (null x null) rows only, so the reviewer's population was null x null. Test kept as pre-registered (xfail strict); no label rule depends on it (DMF <= 0.5 is far from either floor)."
+ },
+ "human": {
+  "xfail_gaps": [],
+  "not_testable_or_not_tested": [
+   {
+    "id": "parrish2021_hits_PC9_87_HeLa_70",
+    "status": "not_testable",
+    "reason": "Parrish Table S4 (GI, FDR) not obtained; labels use the pre-registered ZdLFC fallback from in4mer Supp_table1, which is a different statistic"
+   },
+   {
+    "id": "ito2021_table4_3284_single_rows",
+    "status": "not_tested",
+    "reason": "the singles/controls row definition of Table 4 is not documented; Supp_table1 (5,065 DKO rows) and Table 10 (4,859 GEMINI pairs) sizes are tested instead"
+   },
+   {
+    "id": "klingbeil2024_pair_count",
+    "status": "not_testable",
+    "reason": "paper text (2,529) and Fig. 1 (2,726) disagree; no single published count to reproduce"
+   },
+   {
+    "id": "chymera2020_dekegel_72_sl",
+    "status": "not_tested",
+    "reason": "De Kegel re-threshold (hit and LFC <= -0.9) is not part of our rule set"
+   }
+  ],
+  "test_file": "tests/test_label_known_answers_human.py",
+  "note": "all known-answer tests in the test file reproduce their published counts exactly"
+ }
+}

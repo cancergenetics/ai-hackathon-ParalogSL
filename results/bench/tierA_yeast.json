@@ -1,0 +1,172 @@
+{
+ "species": "yeast",
+ "command": "-m slparalog.cli predict data/interim/proteomes/yeast.fasta -o data/interim/features/yeast/tierA.parquet --features-only -t 10 --workdir data/interim/features/yeast/work -v",
+ "returncode": 0,
+ "threads": 10,
+ "wall_s": 510.21,
+ "peak_rss_tree_gb": 1.104,
+ "peak_rss_single_process_gb": 0.954,
+ "max_processes_in_tree": 2,
+ "rss_samples": 964,
+ "sample_interval_s": 0.5,
+ "lowpowermode_start": "1",
+ "lowpowermode_end": "1",
+ "loadavg_start": [
+  94.6318359375,
+  98.11669921875,
+  95.880859375
+ ],
+ "loadavg_end": [
+  96.8447265625,
+  101.34814453125,
+  98.9375
+ ],
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_count": 10,
+  "mem_total_gb": 25.8
+ },
+ "git_head_at_run": "f761d2ce80c408faab92911421e508a12a966ef8",
+ "output": "data/interim/features/yeast/tierA.parquet",
+ "n_proteins": 6071,
+ "caller": {
+  "n_pairs": 18014,
+  "n_pairs_called_one_direction": 1244,
+  "n_pairs_found_one_direction": 548,
+  "frac_called_one_direction": 0.06905739980015543,
+  "frac_found_one_direction": 0.03042078383479516
+ },
+ "saturation": {
+  "rule": "called_hits",
+  "rounds": [
+   {
+    "round": 0,
+    "cap": 1000,
+    "n_queries": 6071,
+    "n_capped": 0,
+    "n_prefilter_saturated": 435
+   }
+  ],
+  "n_capped_first_round": 0,
+  "n_capped_final": 0
+ },
+ "n_search_hits_nonself": 75891,
+ "features_summary": {
+  "n_pairs_missing_orientation": 0,
+  "n_pairs_missing_both_orientations": 0,
+  "n_genes_missing_selfscore": 0,
+  "n_genes_in_pairs": 3204,
+  "nw_cells": 11178556878
+ },
+ "pipeline_timings": {
+  "createdb_mask_s": 1.6288440227508545,
+  "search_s": 451.5609321594238,
+  "realign_s": 25.889402151107788,
+  "features_s": 21.626338958740234,
+  "total_s": 502.43375277519226
+ },
+ "input": {
+  "sha256": "c66dc7632ba837886939864c67cc731ba083807f7dabaa52405cda8a08ff0685",
+  "n_records": 6071,
+  "n_kept": 6071,
+  "n_dropped_empty": 0,
+  "n_terminal_stops_stripped": 0,
+  "n_internal_stops_to_x": 0,
+  "n_nonstandard_to_x": 0
+ },
+ "schema_hash": "10f25a182d0f84c498d992db7a84c76312ec0dc92d9b528f0ca6db8c4da64064",
+ "tool": {
+  "mmseqs_version": "8cc5ce367b5638c4306c2d7cfc652dd099a4643f",
+  "mmseqs_sha256": "837eaf6cc9be92ff320c42c4cf56ae0d75f2a53c6ff6b24a577e803e9e3951be",
+  "mmseqs_path": "bin/mmseqs"
+ },
+ "tool_matches_config": true,
+ "previous": {
+  "species": "yeast",
+  "command": "-m slparalog.cli predict data/interim/proteomes/yeast.fasta -o data/interim/features/yeast/tierA.parquet --features-only -t 10 --workdir data/interim/features/yeast/work -v",
+  "returncode": 0,
+  "threads": 10,
+  "wall_s": 402.83,
+  "peak_rss_tree_gb": 1.157,
+  "peak_rss_single_process_gb": 1.006,
+  "max_processes_in_tree": 2,
+  "rss_samples": 763,
+  "sample_interval_s": 0.5,
+  "lowpowermode_start": "1",
+  "lowpowermode_end": "1",
+  "loadavg_start": [
+   7.01806640625,
+   7.35595703125,
+   6.51708984375
+  ],
+  "loadavg_end": [
+   69.1220703125,
+   60.16552734375,
+   33.56591796875
+  ],
+  "machine": {
+   "platform": "macOS-26.3.1-arm64-arm-64bit",
+   "cpu_count": 10,
+   "mem_total_gb": 25.8
+  },
+  "git_head_at_run": "bfae7f888ce8fa3f78503ff3b759a5372ec15a4f",
+  "output": "data/interim/features/yeast/tierA.parquet",
+  "n_proteins": 6071,
+  "caller": {
+   "n_pairs": 18020,
+   "n_pairs_called_one_direction": 1243,
+   "n_pairs_found_one_direction": 545,
+   "frac_called_one_direction": 0.06897891231964484,
+   "frac_found_one_direction": 0.030244173140954494
+  },
+  "saturation": {
+   "rounds": [
+    {
+     "round": 0,
+     "cap": 1000,
+     "n_queries": 6071,
+     "n_capped": 435
+    },
+    {
+     "round": 1,
+     "cap": 5000,
+     "n_queries": 435,
+     "n_capped": 0
+    }
+   ],
+   "n_capped_first_round": 435,
+   "n_capped_final": 0
+  },
+  "n_search_hits_nonself": 76940,
+  "features_summary": {
+   "n_pairs_missing_orientation": 0,
+   "n_pairs_missing_both_orientations": 0,
+   "n_genes_missing_selfscore": 0,
+   "n_genes_in_pairs": 3204,
+   "nw_cells": 11189316232
+  },
+  "pipeline_timings": {
+   "createdb_mask_s": 0.7967188358306885,
+   "search_s": 347.7284758090973,
+   "realign_s": 24.907896995544434,
+   "features_s": 22.817162036895752,
+   "total_s": 396.86888003349304
+  },
+  "input": {
+   "sha256": "c66dc7632ba837886939864c67cc731ba083807f7dabaa52405cda8a08ff0685",
+   "n_records": 6071,
+   "n_kept": 6071,
+   "n_dropped_empty": 0,
+   "n_terminal_stops_stripped": 0,
+   "n_internal_stops_to_x": 0,
+   "n_nonstandard_to_x": 0
+  },
+  "schema_hash": "78e21644aa0e067e8b18696ef3774c9c02330b2e28c89c800b9a9734727c80bb",
+  "tool": {
+   "mmseqs_version": "8cc5ce367b5638c4306c2d7cfc652dd099a4643f",
+   "mmseqs_sha256": "837eaf6cc9be92ff320c42c4cf56ae0d75f2a53c6ff6b24a577e803e9e3951be",
+   "mmseqs_path": "bin/mmseqs"
+  },
+  "tool_matches_config": true
+ }
+}

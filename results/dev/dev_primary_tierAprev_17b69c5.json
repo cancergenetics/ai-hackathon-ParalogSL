@@ -1,0 +1,7229 @@
+{
+ "run_id": "dev_primary_tierAprev_17b69c5",
+ "timestamp": "2026-10-28T06:13:15",
+ "git_hash": "17b69c5ae1bf1659a56febfda4e5e80f115637ef",
+ "git_dirty_paths": "src/slparalog/features/registry.py",
+ "tier": "primary",
+ "seeds": [
+  11,
+  23,
+  37,
+  41,
+  59
+ ],
+ "bootstrap": {
+  "B": 10000,
+  "seed": 11,
+  "ci_level": 0.95,
+  "strata_group_counts": {
+   "human_only:0": 820,
+   "human_only:1": 88,
+   "mixed:0": 26,
+   "mixed:1": 24,
+   "yeast_only:0": 202,
+   "yeast_only:1": 40
+  }
+ },
+ "tables": {
+  "human": {
+   "tierA": "data/interim/features/human/tierA_prev_prefiltercap.parquet"
+  },
+  "yeast": {
+   "tierA": "data/interim/features/yeast/tierA_prev_prefiltercap.parquet"
+  }
+ },
+ "tables_skipped": {},
+ "provenance": {
+  "label_files": {
+   "human": {
+    "path": "data/labels/dev/human_dev.tsv",
+    "sha256": "788c38b827d74ed7f0cc83bd18279e27e040bb34db315441de4d56ce39040881"
+   },
+   "yeast": {
+    "path": "data/labels/dev/yeast_dev.tsv",
+    "sha256": "d1cb15031327af7626ac9a9a42e802f5898ab0d27726a0a1f09312e05f9fc842"
+   }
+  },
+  "feature_files": {
+   "human": {
+    "tierA": {
+     "path": "data/interim/features/human/tierA_prev_prefiltercap.parquet",
+     "sha256": "d6c8dc25acb0044cc4e954cfa4eea44c5c56c3a6410e1416ee1199abeaa95be0",
+     "n_rows": 693581
+    }
+   },
+   "yeast": {
+    "tierA": {
+     "path": "data/interim/features/yeast/tierA_prev_prefiltercap.parquet",
+     "sha256": "736c09675954f3f56de8977a16fc72f7a9a19490cfd98c2c0f7bf0cb04883897",
+     "n_rows": 18020
+    }
+   }
+  }
+ },
+ "registry_hash": "3bad3676bdb0c5e20b4ce197367ef892f5e6c987ba032d5443a966f5e0a79616",
+ "features": [
+  "ident_local_min",
+  "ident_local_max",
+  "ident_ens_min",
+  "ident_ens_max",
+  "ident_global",
+  "cov_min",
+  "cov_max",
+  "bits_pair",
+  "bsr_min",
+  "bsr_max",
+  "len_ratio",
+  "hits_all_min",
+  "hits_all_max",
+  "hits_r10_min",
+  "hits_r10_max",
+  "hits_r25_min",
+  "hits_r25_max",
+  "hits_r50_min",
+  "hits_r50_max",
+  "hits_r75_min",
+  "hits_r75_max",
+  "rank_min",
+  "rank_max",
+  "rbh",
+  "shared_third",
+  "shared_third_jacc",
+  "other_ident_min",
+  "other_ident_max",
+  "other_gap_min",
+  "other_gap_max",
+  "mc_deg_min",
+  "mc_deg_max",
+  "fam_mc_size",
+  "len_min",
+  "len_max",
+  "lowcomp_frac_min",
+  "lowcomp_frac_max",
+  "ident_local_min_pct",
+  "ident_local_max_pct",
+  "ident_ens_min_pct",
+  "ident_ens_max_pct",
+  "ident_global_pct",
+  "bsr_min_pct",
+  "bsr_max_pct",
+  "hits_all_max_pct",
+  "hits_r50_max_pct",
+  "rank_max_pct",
+  "shared_third_pct",
+  "fam_mc_size_pct",
+  "len_min_pct"
+ ],
+ "lr_log1p_columns": [
+  "bits_pair",
+  "hits_all_min",
+  "hits_all_max",
+  "hits_r10_min",
+  "hits_r10_max",
+  "hits_r25_min",
+  "hits_r25_max",
+  "hits_r50_min",
+  "hits_r50_max",
+  "hits_r75_min",
+  "hits_r75_max",
+  "rank_min",
+  "rank_max",
+  "shared_third",
+  "mc_deg_min",
+  "mc_deg_max",
+  "fam_mc_size",
+  "len_min",
+  "len_max"
+ ],
+ "population_counts": {
+  "human": {
+   "labelled": 4420,
+   "labelled_pos": 123,
+   "labelled_neg": 4297,
+   "called": 4415,
+   "called_pos": 123,
+   "called_neg": 4292,
+   "not_called": 5,
+   "not_called_pos": 0,
+   "not_called_neg": 5,
+   "caller_recall_all": 0.998868778280543,
+   "caller_recall_pos": 1.0
+  },
+  "yeast": {
+   "labelled": 1205,
+   "labelled_pos": 62,
+   "labelled_neg": 1143,
+   "called": 996,
+   "called_pos": 60,
+   "called_neg": 936,
+   "not_called": 209,
+   "not_called_pos": 2,
+   "not_called_neg": 207,
+   "caller_recall_all": 0.8265560165975103,
+   "caller_recall_pos": 0.967741935483871
+  }
+ },
+ "population_note": "primary population = labelled dev pairs (tier) called by the caller; not-called labelled pairs are excluded and enter only the end-to-end analysis",
+ "b1_variants": {
+  "ident_local_min": {
+   "ap": {
+    "human": 0.11130015625202985,
+    "yeast": 0.5380616133461384
+   },
+   "species_mean_ap": 0.32468088479908414,
+   "description": "local identity, min over orientations"
+  },
+  "ident_local_max": {
+   "ap": {
+    "human": 0.11371925922124546,
+    "yeast": 0.5369367289941224
+   },
+   "species_mean_ap": 0.3253279941076839,
+   "description": "local identity, max over orientations"
+  },
+  "ident_ens_min": {
+   "ap": {
+    "human": 0.11739954763350198,
+    "yeast": 0.5659346544145915
+   },
+   "species_mean_ap": 0.34166710102404674,
+   "description": "Ensembl-style identity, min (identical / longer)"
+  },
+  "ident_ens_max": {
+   "ap": {
+    "human": 0.11432929984846826,
+    "yeast": 0.5466888658943609
+   },
+   "species_mean_ap": 0.3305090828714146,
+   "description": "Ensembl-style identity, max (identical / shorter)"
+  },
+  "ident_ens_mean": {
+   "ap": {
+    "human": 0.11766459173689886,
+    "yeast": 0.5643742412130917
+   },
+   "species_mean_ap": 0.34101941647499523,
+   "description": "Ensembl-style identity, mean of min and max"
+  },
+  "ident_global": {
+   "ap": {
+    "human": 0.11830544751754216,
+    "yeast": 0.5671256032720857
+   },
+   "species_mean_ap": 0.3427155253948139,
+   "description": "global Needleman-Wunsch identity"
+  },
+  "ident_x_cov": {
+   "ap": {
+    "human": 0.1192221983577515,
+    "yeast": 0.5633393992830935
+   },
+   "species_mean_ap": 0.3412807988204225,
+   "description": "local identity (max over orientations) x min coverage of the two proteins"
+  }
+ },
+ "b1_selected": "ident_global",
+ "b0_per_seed_ap": {
+  "human": [
+   0.03276452890730253,
+   0.030664974565606178,
+   0.02791313301244812,
+   0.02979335516886191,
+   0.02872860881204117
+  ],
+  "yeast": [
+   0.059691143598388924,
+   0.0687395794162133,
+   0.05830318252177295,
+   0.07259045279373695,
+   0.07352070319847455
+  ]
+ },
+ "b2_columns": [
+  "b1_selected",
+  "fam_mc_size",
+  "rbh"
+ ],
+ "b3_diagnostics": {
+  "frac_pairs_with_gene_seen_in_training": 0.0
+ },
+ "selection": {
+  "LR": {
+   "selected": {
+    "name": "LR_00",
+    "params": {
+     "C": 0.01
+    },
+    "T": 0.026055421392729816,
+    "T_se": 0.021067743565603203
+   },
+   "best": {
+    "name": "LR_01",
+    "params": {
+     "C": 0.1
+    },
+    "T": 0.03347086813298433,
+    "T_se": 0.020440528498244563
+   },
+   "threshold": 0.01303033963473977,
+   "n_eligible": 2,
+   "all": [
+    {
+     "name": "LR_00",
+     "params": {
+      "C": 0.01
+     },
+     "T": 0.026055421392729816,
+     "T_se": 0.021067743565603203
+    },
+    {
+     "name": "LR_01",
+     "params": {
+      "C": 0.1
+     },
+     "T": 0.03347086813298433,
+     "T_se": 0.020440528498244563
+    },
+    {
+     "name": "LR_02",
+     "params": {
+      "C": 1.0
+     },
+     "T": 0.00784187754481458,
+     "T_se": 0.02408637528812923
+    }
+   ]
+  },
+  "GBDT": {
+   "selected": {
+    "name": "GBDT_17",
+    "params": {
+     "l2_regularization": 1.0,
+     "learning_rate": 0.03,
+     "max_iter": 100,
+     "max_leaf_nodes": 7,
+     "min_samples_leaf": 50
+    },
+    "T": 0.010083238014481133,
+    "T_se": 0.022129811204188797
+   },
+   "best": {
+    "name": "GBDT_09",
+    "params": {
+     "l2_regularization": 0.0,
+     "learning_rate": 0.1,
+     "max_iter": 100,
+     "max_leaf_nodes": 7,
+     "min_samples_leaf": 50
+    },
+    "T": 0.0260656508693949,
+    "T_se": 0.02056364722738252
+   },
+   "threshold": 0.005502003642012379,
+   "n_eligible": 29,
+   "all": [
+    {
+     "name": "GBDT_00",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20
+     },
+     "T": 0.013104528964534054,
+     "T_se": 0.020510363563194384
+    },
+    {
+     "name": "GBDT_01",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 50
+     },
+     "T": 0.012534051743592664,
+     "T_se": 0.020759133901946895
+    },
+    {
+     "name": "GBDT_02",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "T": -0.0003934003009296999,
+     "T_se": 0.021757451403428475
+    },
+    {
+     "name": "GBDT_03",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50
+     },
+     "T": 0.002582366721021745,
+     "T_se": 0.021286607930713724
+    },
+    {
+     "name": "GBDT_04",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20
+     },
+     "T": 0.020065961688247563,
+     "T_se": 0.019345302081529656
+    },
+    {
+     "name": "GBDT_05",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 50
+     },
+     "T": 0.025036434574815747,
+     "T_se": 0.01987834481583036
+    },
+    {
+     "name": "GBDT_06",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "T": 0.021005144888335672,
+     "T_se": 0.019181840610713916
+    },
+    {
+     "name": "GBDT_07",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50
+     },
+     "T": 0.019896762833963855,
+     "T_se": 0.02083461724314125
+    },
+    {
+     "name": "GBDT_08",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20
+     },
+     "T": 0.016698306973675484,
+     "T_se": 0.020100955655642298
+    },
+    {
+     "name": "GBDT_09",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 50
+     },
+     "T": 0.0260656508693949,
+     "T_se": 0.02056364722738252
+    },
+    {
+     "name": "GBDT_10",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "T": 0.018324621933400273,
+     "T_se": 0.01940305606550366
+    },
+    {
+     "name": "GBDT_11",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50
+     },
+     "T": 0.018903321182694388,
+     "T_se": 0.02044464557260168
+    },
+    {
+     "name": "GBDT_12",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20
+     },
+     "T": 0.018902707270994065,
+     "T_se": 0.020476566397890795
+    },
+    {
+     "name": "GBDT_13",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 50
+     },
+     "T": 0.022494448766592776,
+     "T_se": 0.02114062973025557
+    },
+    {
+     "name": "GBDT_14",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "T": 0.01597279802637462,
+     "T_se": 0.020269355155146843
+    },
+    {
+     "name": "GBDT_15",
+     "params": {
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50
+     },
+     "T": 0.016400456432415,
+     "T_se": 0.021964658299427252
+    },
+    {
+     "name": "GBDT_16",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20
+     },
+     "T": 0.017551981492315002,
+     "T_se": 0.020169662303091255
+    },
+    {
+     "name": "GBDT_17",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 50
+     },
+     "T": 0.010083238014481133,
+     "T_se": 0.022129811204188797
+    },
+    {
+     "name": "GBDT_18",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "T": 0.013897778251610315,
+     "T_se": 0.020342740053587077
+    },
+    {
+     "name": "GBDT_19",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50
+     },
+     "T": 0.005607933716247959,
+     "T_se": 0.021663480631117032
+    },
+    {
+     "name": "GBDT_20",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20
+     },
+     "T": 0.014627525110929407,
+     "T_se": 0.020427163667792
+    },
+    {
+     "name": "GBDT_21",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 50
+     },
+     "T": 0.014367463636905803,
+     "T_se": 0.021235325080942797
+    },
+    {
+     "name": "GBDT_22",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "T": 0.01664981484064558,
+     "T_se": 0.020645255191757046
+    },
+    {
+     "name": "GBDT_23",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50
+     },
+     "T": 0.015798307025698677,
+     "T_se": 0.021096032686702782
+    },
+    {
+     "name": "GBDT_24",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20
+     },
+     "T": 0.01248156018472213,
+     "T_se": 0.020747484597429068
+    },
+    {
+     "name": "GBDT_25",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 50
+     },
+     "T": 0.017977269237790583,
+     "T_se": 0.02036177080406587
+    },
+    {
+     "name": "GBDT_26",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "T": 0.015900338772597333,
+     "T_se": 0.02000434776291028
+    },
+    {
+     "name": "GBDT_27",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50
+     },
+     "T": 0.012931138957329294,
+     "T_se": 0.021360112038741823
+    },
+    {
+     "name": "GBDT_28",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20
+     },
+     "T": 0.011370844489473203,
+     "T_se": 0.020801103042945045
+    },
+    {
+     "name": "GBDT_29",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 50
+     },
+     "T": 0.015870596416138846,
+     "T_se": 0.020939496952020024
+    },
+    {
+     "name": "GBDT_30",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "T": 0.008304925537280336,
+     "T_se": 0.021275258149300966
+    },
+    {
+     "name": "GBDT_31",
+     "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50
+     },
+     "T": 0.0036139087735662934,
+     "T_se": 0.022192687597620837
+    }
+   ]
+  }
+ },
+ "results": {
+  "B0": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.03276452890730253,
+     "auroc": 0.5252388637586283,
+     "lift": 1.1760601229735015,
+     "ap_above_chance": 0.005045525425382264,
+     "p_at_10": 0.0,
+     "p_at_50": 0.04,
+     "p_at_npos": 0.04878048780487805,
+     "ap_ci": {
+      "lo": 0.017554376892502617,
+      "hi": 0.06490969093016767,
+      "se": 0.01335566588487983,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.4686924074367236,
+      "hi": 0.5780808064827834,
+      "se": 0.028029243896865914,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.08554091861023963,
+      "lo": -0.12526207678950518,
+      "hi": -0.05296478711145486,
+      "se": 0.018521746648227373,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.7230513928579303
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.059691143598388924,
+     "auroc": 0.4906517094017094,
+     "lift": 0.9908729837332562,
+     "ap_above_chance": -0.0005850651453040935,
+     "p_at_10": 0.0,
+     "p_at_50": 0.04,
+     "p_at_npos": 0.03333333333333333,
+     "ap_ci": {
+      "lo": 0.043724934421075515,
+      "hi": 0.09507578729931192,
+      "se": 0.013145535796231502,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.41921505213929877,
+      "hi": 0.560686100795961,
+      "se": 0.03568052812886489,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.5074344596736968,
+      "lo": -0.6311958166741247,
+      "hi": -0.3829572965795327,
+      "se": 0.06338074868647622,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.8947479301692691
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.2964876891419682,
+    "lo": -0.3631313370641789,
+    "hi": -0.22985045007783902,
+    "se": 0.033964800079304754,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "B1": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.11830544751754216,
+     "auroc": 0.799461467354655,
+     "lift": 4.246492282845111,
+     "ap_above_chance": 0.09303787297063108,
+     "p_at_10": 0.0,
+     "p_at_50": 0.12,
+     "p_at_npos": 0.17886178861788618,
+     "ap_ci": {
+      "lo": 0.08853010320536682,
+      "hi": 0.16751337551056006,
+      "se": 0.020335878961366495,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7248716465510656,
+      "hi": 0.8574819605094344,
+      "se": 0.03456563795760639,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5671256032720857,
+     "auroc": 0.8937589031339032,
+     "lift": 9.414285014316624,
+     "ap_above_chance": 0.5393772445074758,
+     "p_at_10": 1.0,
+     "p_at_50": 0.56,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.44452501740535877,
+      "hi": 0.6979899889020117,
+      "se": 0.06446353513852027,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8409714761319391,
+      "hi": 0.9389269607639695,
+      "se": 0.02506182383326311,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   }
+  },
+  "B2": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1706780337794177,
+     "auroc": 0.8581545170064935,
+     "lift": 6.126370074277473,
+     "ap_above_chance": 0.1469113511500767,
+     "p_at_10": 0.1,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.2682926829268293,
+     "ap_ci": {
+      "lo": 0.1333894823442658,
+      "hi": 0.2288291599897103,
+      "se": 0.0244660997754987,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7468659117069011,
+      "hi": 0.922122860880062,
+      "se": 0.04909441393132855,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.05237258626187555,
+      "lo": 0.02067261030510974,
+      "hi": 0.08703353084199368,
+      "se": 0.016766896911637384,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.44268955792682174
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5676402628845593,
+     "auroc": 0.8970975783475783,
+     "lift": 9.422828363883683,
+     "ap_above_chance": 0.5399248951207489,
+     "p_at_10": 0.8,
+     "p_at_50": 0.64,
+     "p_at_npos": 0.5833333333333334,
+     "ap_ci": {
+      "lo": 0.44476113649791477,
+      "hi": 0.712004347140001,
+      "se": 0.06835563577554006,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8425817179183906,
+      "hi": 0.9501102947115074,
+      "se": 0.0275529776436603,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0005146596124735447,
+      "lo": -0.057859329518443615,
+      "hi": 0.07212974329243185,
+      "se": 0.03316703431052925,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0009074878818804422
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.026443622937174546,
+    "lo": -0.006952317781707428,
+    "hi": 0.06700674069473335,
+    "se": 0.01876119276018163,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "B3": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.023921100810648705,
+     "auroc": 0.4569609559096523,
+     "lift": 0.8586313827562116,
+     "ap_above_chance": -0.004051337353445007,
+     "p_at_10": 0.004206730769230769,
+     "p_at_50": 0.004206730769230769,
+     "p_at_npos": 0.004206730769230769,
+     "ap_ci": {
+      "lo": 0.01011150381271837,
+      "hi": 0.1443181081761767,
+      "se": 0.048635828976684156,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.2525179142612177,
+      "hi": 0.7503151576454007,
+      "se": 0.15920672547106687,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.09438434670689345,
+      "lo": -0.13198933651308042,
+      "hi": 0.016746403588568017,
+      "se": 0.04448410972148696,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.7978022034268395
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.06340886880399438,
+     "auroc": 0.49640313390313395,
+     "lift": 1.0525872221463066,
+     "ap_above_chance": 0.0033709757786094027,
+     "p_at_10": 0.1,
+     "p_at_50": 0.0862992125984252,
+     "p_at_npos": 0.07454068241469816,
+     "ap_ci": {
+      "lo": 0.04396422772573605,
+      "hi": 0.11645492964002009,
+      "se": 0.0186642669776621,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.33150811174480643,
+      "hi": 0.6157874070091645,
+      "se": 0.07406526619893099,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.5037167344680913,
+      "lo": -0.636994800730658,
+      "hi": -0.3608581071914004,
+      "se": 0.0702893779338898,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.8881925477563509
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.29905054058749236,
+    "lo": -0.36582924420996366,
+    "hi": -0.20049750004083283,
+    "se": 0.04229191868368683,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "B4": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15327277471507172,
+     "auroc": 0.7553474416384425,
+     "lift": 5.501620328187331,
+     "ap_above_chance": 0.1290072927229827,
+     "p_at_10": 0.13999999999999999,
+     "p_at_50": 0.41200000000000003,
+     "p_at_npos": 0.2975609756097561,
+     "ap_ci": {
+      "lo": 0.10666154112769438,
+      "hi": 0.2267885829251332,
+      "se": 0.030892227461707795,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.5901234784404161,
+      "hi": 0.8616387003568907,
+      "se": 0.08022961007909475,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03496732719752957,
+      "lo": -0.02730028084830713,
+      "hi": 0.10754800801010267,
+      "se": 0.03426627452751697,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.29556819175503035
+    }
+   }
+  },
+  "LR_sel": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1793078006369673,
+     "auroc": 0.8256332446828661,
+     "lift": 6.436129591969192,
+     "ap_above_chance": 0.15578842959277972,
+     "p_at_10": 0.2,
+     "p_at_50": 0.36,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.1348477176818029,
+      "hi": 0.24836394617074045,
+      "se": 0.02942407974431219,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7595029630300124,
+      "hi": 0.8813131111630287,
+      "se": 0.030980524576320327,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.061002353119425146,
+      "lo": 0.025333287131749812,
+      "hi": 0.10805345082291626,
+      "se": 0.021008076982844612,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.5156343549639151
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5582340929381202,
+     "auroc": 0.9002314814814815,
+     "lift": 9.266685942772796,
+     "ap_above_chance": 0.5299157655623586,
+     "p_at_10": 0.8,
+     "p_at_50": 0.66,
+     "p_at_npos": 0.5833333333333334,
+     "ap_ci": {
+      "lo": 0.4358363927300136,
+      "hi": 0.6987789984150162,
+      "se": 0.06711182365373483,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.848437865599585,
+      "hi": 0.9496997992221792,
+      "se": 0.02595121492884249,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.008891510333965513,
+      "lo": -0.07281894532933315,
+      "hi": 0.06899590786021785,
+      "se": 0.03573734344919811,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.015678202998886115
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.026055421392729816,
+    "lo": -0.011285350826106018,
+    "hi": 0.07168929008016106,
+    "se": 0.021067743565603203,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_sel": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16449517708484288,
+     "auroc": 0.8281469021586767,
+     "lift": 5.904440705931555,
+     "ap_above_chance": 0.14055130634426402,
+     "p_at_10": 0.0,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.12635253165702484,
+      "hi": 0.22340157699251395,
+      "se": 0.024513382877021685,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7620468586666787,
+      "hi": 0.8753780189048553,
+      "se": 0.02951675079231901,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04618972956730072,
+      "lo": 0.011364276234962004,
+      "hi": 0.08589040682117442,
+      "se": 0.018924464858244092,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3904277489880741
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5411023497337473,
+     "auroc": 0.8928596866096866,
+     "lift": 8.982299005580204,
+     "ap_above_chance": 0.5116858336910388,
+     "p_at_10": 0.7,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.42157619898453985,
+      "hi": 0.6810069380455461,
+      "se": 0.06672799744332476,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.842192509121716,
+      "hi": 0.9459457413350937,
+      "se": 0.026502251386252954,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.026023253538338453,
+      "lo": -0.09660856871573076,
+      "hi": 0.05584455882254813,
+      "se": 0.039061009078761574,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.045886225887519116
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.010083238014481133,
+    "lo": -0.02976724161788641,
+    "hi": 0.0556289971633079,
+    "se": 0.022129811204188797,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "LOSO_GBDT": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.17630944326946074,
+     "auroc": 0.780497276081801,
+     "lift": 6.328505626298123,
+     "ap_above_chance": 0.15270414539484373,
+     "p_at_10": 0.3,
+     "p_at_50": 0.3,
+     "p_at_npos": 0.2601626016260163,
+     "ap_ci": {
+      "lo": 0.12854938104700386,
+      "hi": 0.2543159519583411,
+      "se": 0.032389761280317654,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.712535202888715,
+      "hi": 0.8457786263577945,
+      "se": 0.03416937180801625,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.058003995751918586,
+      "lo": 0.020421808433120806,
+      "hi": 0.11226893285275351,
+      "se": 0.023300286901019693,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.49029015120641706
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5298385276792515,
+     "auroc": 0.9031784188034188,
+     "lift": 8.795319559475576,
+     "ap_above_chance": 0.49969997176125486,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.4128828666613325,
+      "hi": 0.6639618007799255,
+      "se": 0.06429815082426621,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8586629935168392,
+      "hi": 0.945504917935471,
+      "se": 0.022339467139541845,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.037287075592834173,
+      "lo": -0.1405137157979302,
+      "hi": 0.06798639451815913,
+      "se": 0.05277584946384656,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.06574747353620225
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.010358460079542206,
+    "lo": -0.044226883656861476,
+    "hi": 0.07194237796312462,
+    "se": 0.0293367943321276,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "LOSO_LR": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15782923121223064,
+     "auroc": 0.7932587760173968,
+     "lift": 5.6651711853821,
+     "ap_above_chance": 0.13369432800605738,
+     "p_at_10": 0.1,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.09537130480557908,
+      "hi": 0.2640850933224841,
+      "se": 0.045064564606707345,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7307233677018279,
+      "hi": 0.852646980486173,
+      "se": 0.031246613563036405,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03952378369468848,
+      "lo": -0.010450538770854343,
+      "hi": 0.1182538086790094,
+      "se": 0.03437428065535111,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3340825340171081
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5717497115727109,
+     "auroc": 0.9017628205128205,
+     "lift": 9.491045212107002,
+     "ap_above_chance": 0.5442977700068591,
+     "p_at_10": 0.8,
+     "p_at_50": 0.66,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.4485143913335286,
+      "hi": 0.7052717467386062,
+      "se": 0.06558238110978748,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8514333630556283,
+      "hi": 0.9484918440554624,
+      "se": 0.024838188832570707,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.004624108300625207,
+      "lo": -0.06103383703584829,
+      "hi": 0.07983416246764134,
+      "se": 0.035780573426319726,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.008153587624938785
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.022073945997656844,
+    "lo": -0.019290155991242244,
+    "hi": 0.07795147580268606,
+    "se": 0.024985628983681923,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  }
+ },
+ "results_all_configs": {
+  "B0": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.03276452890730253,
+     "auroc": 0.5252388637586283,
+     "lift": 1.1760601229735015,
+     "ap_above_chance": 0.005045525425382264,
+     "p_at_10": 0.0,
+     "p_at_50": 0.04,
+     "p_at_npos": 0.04878048780487805,
+     "ap_ci": {
+      "lo": 0.017554376892502617,
+      "hi": 0.06490969093016767,
+      "se": 0.01335566588487983,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.4686924074367236,
+      "hi": 0.5780808064827834,
+      "se": 0.028029243896865914,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.08554091861023963,
+      "lo": -0.12526207678950518,
+      "hi": -0.05296478711145486,
+      "se": 0.018521746648227373,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.7230513928579303
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.059691143598388924,
+     "auroc": 0.4906517094017094,
+     "lift": 0.9908729837332562,
+     "ap_above_chance": -0.0005850651453040935,
+     "p_at_10": 0.0,
+     "p_at_50": 0.04,
+     "p_at_npos": 0.03333333333333333,
+     "ap_ci": {
+      "lo": 0.043724934421075515,
+      "hi": 0.09507578729931192,
+      "se": 0.013145535796231502,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.41921505213929877,
+      "hi": 0.560686100795961,
+      "se": 0.03568052812886489,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.5074344596736968,
+      "lo": -0.6311958166741247,
+      "hi": -0.3829572965795327,
+      "se": 0.06338074868647622,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.8947479301692691
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.2964876891419682,
+    "lo": -0.3631313370641789,
+    "hi": -0.22985045007783902,
+    "se": 0.033964800079304754,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "b1_ident_local_min": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.11130015625202985,
+     "auroc": 0.7865114904643922,
+     "lift": 3.995042193924486,
+     "ap_above_chance": 0.08583182429000741,
+     "p_at_10": 0.0,
+     "p_at_50": 0.12,
+     "p_at_npos": 0.18699186991869918,
+     "ap_ci": {
+      "lo": 0.08011631779198121,
+      "hi": 0.16129827620176432,
+      "se": 0.020831920110152183,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7150690209959973,
+      "hi": 0.8444639182600432,
+      "se": 0.03353003541371116,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.007005291265512303,
+      "lo": -0.019536598005058775,
+      "hi": 0.00624405086130736,
+      "se": 0.0064760683325563026,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.059213598464885275
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5380616133461384,
+     "auroc": 0.8683226495726495,
+     "lift": 8.931822781545899,
+     "ap_above_chance": 0.5084501783042242,
+     "p_at_10": 1.0,
+     "p_at_50": 0.54,
+     "p_at_npos": 0.4666666666666667,
+     "ap_ci": {
+      "lo": 0.4205866009854732,
+      "hi": 0.6684201301137073,
+      "se": 0.06351424307463431,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8127988974013298,
+      "hi": 0.9227926823109681,
+      "se": 0.028369106990585667,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.029063989925947276,
+      "lo": -0.06617580063462783,
+      "hi": 0.0011536388142370263,
+      "se": 0.016890774545199612,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.05124788893017662
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.01803464059572979,
+    "lo": -0.0373849814677574,
+    "hi": -0.0015317178692713417,
+    "se": 0.009046782657126785,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "b1_ident_local_max": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.11371925922124546,
+     "auroc": 0.7926232582456301,
+     "lift": 4.081874223266656,
+     "ap_above_chance": 0.08832025383546102,
+     "p_at_10": 0.0,
+     "p_at_50": 0.14,
+     "p_at_npos": 0.17886178861788618,
+     "ap_ci": {
+      "lo": 0.0820772641717806,
+      "hi": 0.16428279098850457,
+      "se": 0.020950870276967012,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7211177811097479,
+      "hi": 0.8503392154759324,
+      "se": 0.03355640462705346,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.0045861882962967004,
+      "lo": -0.017830856609299072,
+      "hi": 0.009608664560541717,
+      "se": 0.006867772200716345,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.03876565612599259
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5369367289941224,
+     "auroc": 0.869088319088319,
+     "lift": 8.913149701302432,
+     "ap_above_chance": 0.5072531859809251,
+     "p_at_10": 1.0,
+     "p_at_50": 0.54,
+     "p_at_npos": 0.4666666666666667,
+     "ap_ci": {
+      "lo": 0.41934316493321494,
+      "hi": 0.6673801003504889,
+      "se": 0.06347271750318872,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8138119901637805,
+      "hi": 0.9227265886183253,
+      "se": 0.027921906865771708,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.03018887427796335,
+      "lo": -0.06781598989693219,
+      "hi": 0.00042297100631192506,
+      "se": 0.017299714171574693,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.05323137256330124
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.017387531287130026,
+    "lo": -0.03749146040080054,
+    "hi": -0.000685872111569059,
+    "se": 0.00935110952921542,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "b1_ident_ens_min": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.11739954763350198,
+     "auroc": 0.7994908280862865,
+     "lift": 4.213975632535863,
+     "ap_above_chance": 0.0921060118364192,
+     "p_at_10": 0.0,
+     "p_at_50": 0.12,
+     "p_at_npos": 0.17073170731707318,
+     "ap_ci": {
+      "lo": 0.08799812841982288,
+      "hi": 0.1660260493779055,
+      "se": 0.02016954460686357,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7230791684630171,
+      "hi": 0.8575572291015905,
+      "se": 0.03498260486157714,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.0009058998840401761,
+      "lo": -0.0037005143753643137,
+      "hi": 0.001517419506029102,
+      "se": 0.0013287552326754091,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.00765729645632629
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5659346544145915,
+     "auroc": 0.8949608262108262,
+     "lift": 9.394515263282218,
+     "ap_above_chance": 0.5381099527745011,
+     "p_at_10": 1.0,
+     "p_at_50": 0.56,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.44365427216290976,
+      "hi": 0.6971733917116779,
+      "se": 0.06451627134772192,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.841554661443366,
+      "hi": 0.9395458799222168,
+      "se": 0.025099327866822858,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.0011909488574942673,
+      "lo": -0.006615592564543937,
+      "hi": 0.003304050284811004,
+      "se": 0.002498883101006779,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.0020999737106259797
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.0010484243707672217,
+    "lo": -0.004012234621276286,
+    "hi": 0.0014464050296577311,
+    "se": 0.001401171618039207,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "b1_ident_ens_max": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.11432929984846826,
+     "auroc": 0.794309132513506,
+     "lift": 4.103771210008027,
+     "ap_above_chance": 0.0889477769876485,
+     "p_at_10": 0.0,
+     "p_at_50": 0.14,
+     "p_at_npos": 0.17073170731707318,
+     "ap_ci": {
+      "lo": 0.08222870212752442,
+      "hi": 0.16677262190583797,
+      "se": 0.021728087623447512,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7258893649808973,
+      "hi": 0.8519778477150564,
+      "se": 0.032581036418981635,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.003976147669073893,
+      "lo": -0.014640853551553906,
+      "hi": 0.00978570697830761,
+      "se": 0.006179019759587106,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.03360916806881875
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5466888658943609,
+     "auroc": 0.8881232193732194,
+     "lift": 9.075035173846391,
+     "ap_above_chance": 0.5176304598619482,
+     "p_at_10": 1.0,
+     "p_at_50": 0.54,
+     "p_at_npos": 0.5,
+     "ap_ci": {
+      "lo": 0.42599992624762334,
+      "hi": 0.6778164837077515,
+      "se": 0.06412439800495681,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8330475129018476,
+      "hi": 0.9351125831881698,
+      "se": 0.026188562872191935,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.02043673737772478,
+      "lo": -0.048015258940984525,
+      "hi": -0.0004109374930130436,
+      "se": 0.012034180295180125,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.03603564582486318
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.012206442523399336,
+    "lo": -0.026773327449287967,
+    "hi": 3.298931711375801e-05,
+    "se": 0.006762677624773718,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "b1_ident_ens_mean": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.11766459173689886,
+     "auroc": 0.7979110313004342,
+     "lift": 4.223489207466735,
+     "ap_above_chance": 0.09237865156533281,
+     "p_at_10": 0.0,
+     "p_at_50": 0.12,
+     "p_at_npos": 0.17886178861788618,
+     "ap_ci": {
+      "lo": 0.08684908490108408,
+      "hi": 0.16792458876561786,
+      "se": 0.02083421865602505,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7265988063601646,
+      "hi": 0.856591224245764,
+      "se": 0.03357835026228091,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.0006408557806432957,
+      "lo": -0.00494966351167848,
+      "hi": 0.0042063662249064125,
+      "se": 0.0023221129514133117,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.0054169591856559896
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5643742412130917,
+     "auroc": 0.8934294871794872,
+     "lift": 9.368612404137322,
+     "ap_above_chance": 0.5364495130857257,
+     "p_at_10": 1.0,
+     "p_at_50": 0.56,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4416083467478491,
+      "hi": 0.6950554047135934,
+      "se": 0.06451072370155209,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8399188791059244,
+      "hi": 0.9388979189786126,
+      "se": 0.025298867765335086,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.002751362058994067,
+      "lo": -0.010198186741589519,
+      "hi": 0.0033550609451094625,
+      "se": 0.003409106212689879,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.00485141570600911
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.0016961089198186813,
+    "lo": -0.005869520511134557,
+    "hi": 0.002268673917804074,
+    "se": 0.0020597709879319,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "b1_ident_global": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.11830544751754216,
+     "auroc": 0.799461467354655,
+     "lift": 4.246492282845111,
+     "ap_above_chance": 0.09303787297063108,
+     "p_at_10": 0.0,
+     "p_at_50": 0.12,
+     "p_at_npos": 0.17886178861788618,
+     "ap_ci": {
+      "lo": 0.08853010320536682,
+      "hi": 0.16751337551056006,
+      "se": 0.020335878961366495,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7248716465510656,
+      "hi": 0.8574819605094344,
+      "se": 0.03456563795760639,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "se": 0.0,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5671256032720857,
+     "auroc": 0.8937589031339032,
+     "lift": 9.414285014316624,
+     "ap_above_chance": 0.5393772445074758,
+     "p_at_10": 1.0,
+     "p_at_50": 0.56,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.44452501740535877,
+      "hi": 0.6979899889020117,
+      "se": 0.06446353513852027,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8409714761319391,
+      "hi": 0.9389269607639695,
+      "se": 0.02506182383326311,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "se": 0.0,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "se": 0.0,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "b1_ident_x_cov": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1192221983577515,
+     "auroc": 0.8007211374536858,
+     "lift": 4.279398420727421,
+     "ap_above_chance": 0.09398089602737018,
+     "p_at_10": 0.0,
+     "p_at_50": 0.12,
+     "p_at_npos": 0.17073170731707318,
+     "ap_ci": {
+      "lo": 0.0891925254433161,
+      "hi": 0.16965393123435712,
+      "se": 0.020644372309230385,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7258067149844891,
+      "hi": 0.8581989441995395,
+      "se": 0.0344153110088273,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0009167508402093405,
+      "lo": -0.0031482894066618664,
+      "hi": 0.006066908862829192,
+      "se": 0.0023394827703180627,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.007749016291692001
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5633393992830935,
+     "auroc": 0.8935719373219373,
+     "lift": 9.351434028099352,
+     "ap_above_chance": 0.5353483351345739,
+     "p_at_10": 1.0,
+     "p_at_50": 0.56,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.440931891205912,
+      "hi": 0.6943368084307879,
+      "se": 0.06458559279555501,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8391948717970356,
+      "hi": 0.9381118594516443,
+      "se": 0.025337414302916188,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.0037862039889922094,
+      "lo": -0.009297419136419465,
+      "hi": 0.0003351764250033552,
+      "se": 0.0024649857078856696,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.006676129533118136
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.0014347265743914345,
+    "lo": -0.0048637742960523575,
+    "hi": 0.0017990325512588984,
+    "se": 0.0016885594138894026,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "B1": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.11830544751754216,
+     "auroc": 0.799461467354655,
+     "lift": 4.246492282845111,
+     "ap_above_chance": 0.09303787297063108,
+     "p_at_10": 0.0,
+     "p_at_50": 0.12,
+     "p_at_npos": 0.17886178861788618,
+     "ap_ci": {
+      "lo": 0.08853010320536682,
+      "hi": 0.16751337551056006,
+      "se": 0.020335878961366495,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7248716465510656,
+      "hi": 0.8574819605094344,
+      "se": 0.03456563795760639,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5671256032720857,
+     "auroc": 0.8937589031339032,
+     "lift": 9.414285014316624,
+     "ap_above_chance": 0.5393772445074758,
+     "p_at_10": 1.0,
+     "p_at_50": 0.56,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.44452501740535877,
+      "hi": 0.6979899889020117,
+      "se": 0.06446353513852027,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8409714761319391,
+      "hi": 0.9389269607639695,
+      "se": 0.02506182383326311,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   }
+  },
+  "B2": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1706780337794177,
+     "auroc": 0.8581545170064935,
+     "lift": 6.126370074277473,
+     "ap_above_chance": 0.1469113511500767,
+     "p_at_10": 0.1,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.2682926829268293,
+     "ap_ci": {
+      "lo": 0.1333894823442658,
+      "hi": 0.2288291599897103,
+      "se": 0.0244660997754987,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7468659117069011,
+      "hi": 0.922122860880062,
+      "se": 0.04909441393132855,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.05237258626187555,
+      "lo": 0.02067261030510974,
+      "hi": 0.08703353084199368,
+      "se": 0.016766896911637384,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.44268955792682174
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5676402628845593,
+     "auroc": 0.8970975783475783,
+     "lift": 9.422828363883683,
+     "ap_above_chance": 0.5399248951207489,
+     "p_at_10": 0.8,
+     "p_at_50": 0.64,
+     "p_at_npos": 0.5833333333333334,
+     "ap_ci": {
+      "lo": 0.44476113649791477,
+      "hi": 0.712004347140001,
+      "se": 0.06835563577554006,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8425817179183906,
+      "hi": 0.9501102947115074,
+      "se": 0.0275529776436603,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0005146596124735447,
+      "lo": -0.057859329518443615,
+      "hi": 0.07212974329243185,
+      "se": 0.03316703431052925,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0009074878818804422
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.026443622937174546,
+    "lo": -0.006952317781707428,
+    "hi": 0.06700674069473335,
+    "se": 0.01876119276018163,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "B3": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.023921100810648705,
+     "auroc": 0.4569609559096523,
+     "lift": 0.8586313827562116,
+     "ap_above_chance": -0.004051337353445007,
+     "p_at_10": 0.004206730769230769,
+     "p_at_50": 0.004206730769230769,
+     "p_at_npos": 0.004206730769230769,
+     "ap_ci": {
+      "lo": 0.01011150381271837,
+      "hi": 0.1443181081761767,
+      "se": 0.048635828976684156,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.2525179142612177,
+      "hi": 0.7503151576454007,
+      "se": 0.15920672547106687,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.09438434670689345,
+      "lo": -0.13198933651308042,
+      "hi": 0.016746403588568017,
+      "se": 0.04448410972148696,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.7978022034268395
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.06340886880399438,
+     "auroc": 0.49640313390313395,
+     "lift": 1.0525872221463066,
+     "ap_above_chance": 0.0033709757786094027,
+     "p_at_10": 0.1,
+     "p_at_50": 0.0862992125984252,
+     "p_at_npos": 0.07454068241469816,
+     "ap_ci": {
+      "lo": 0.04396422772573605,
+      "hi": 0.11645492964002009,
+      "se": 0.0186642669776621,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.33150811174480643,
+      "hi": 0.6157874070091645,
+      "se": 0.07406526619893099,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.5037167344680913,
+      "lo": -0.636994800730658,
+      "hi": -0.3608581071914004,
+      "se": 0.0702893779338898,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.8881925477563509
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.29905054058749236,
+    "lo": -0.36582924420996366,
+    "hi": -0.20049750004083283,
+    "se": 0.04229191868368683,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "B4": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15327277471507172,
+     "auroc": 0.7553474416384425,
+     "lift": 5.501620328187331,
+     "ap_above_chance": 0.1290072927229827,
+     "p_at_10": 0.13999999999999999,
+     "p_at_50": 0.41200000000000003,
+     "p_at_npos": 0.2975609756097561,
+     "ap_ci": {
+      "lo": 0.10666154112769438,
+      "hi": 0.2267885829251332,
+      "se": 0.030892227461707795,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.5901234784404161,
+      "hi": 0.8616387003568907,
+      "se": 0.08022961007909475,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03496732719752957,
+      "lo": -0.02730028084830713,
+      "hi": 0.10754800801010267,
+      "se": 0.03426627452751697,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.29556819175503035
+    }
+   }
+  },
+  "LR_00": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1793078006369673,
+     "auroc": 0.8256332446828661,
+     "lift": 6.436129591969192,
+     "ap_above_chance": 0.15578842959277972,
+     "p_at_10": 0.2,
+     "p_at_50": 0.36,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.1348477176818029,
+      "hi": 0.24836394617074045,
+      "se": 0.02942407974431219,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7595029630300124,
+      "hi": 0.8813131111630287,
+      "se": 0.030980524576320327,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.061002353119425146,
+      "lo": 0.025333287131749812,
+      "hi": 0.10805345082291626,
+      "se": 0.021008076982844612,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.5156343549639151
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5582340929381202,
+     "auroc": 0.9002314814814815,
+     "lift": 9.266685942772796,
+     "ap_above_chance": 0.5299157655623586,
+     "p_at_10": 0.8,
+     "p_at_50": 0.66,
+     "p_at_npos": 0.5833333333333334,
+     "ap_ci": {
+      "lo": 0.4358363927300136,
+      "hi": 0.6987789984150162,
+      "se": 0.06711182365373483,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.848437865599585,
+      "hi": 0.9496997992221792,
+      "se": 0.02595121492884249,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.008891510333965513,
+      "lo": -0.07281894532933315,
+      "hi": 0.06899590786021785,
+      "se": 0.03573734344919811,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.015678202998886115
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.026055421392729816,
+    "lo": -0.011285350826106018,
+    "hi": 0.07168929008016106,
+    "se": 0.021067743565603203,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "LR_01": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.17850790612089654,
+     "auroc": 0.8188802764076103,
+     "lift": 6.407417931087465,
+     "ap_above_chance": 0.15496561172501355,
+     "p_at_10": 0.2,
+     "p_at_50": 0.3,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.13665274672838276,
+      "hi": 0.24296221526160258,
+      "se": 0.027430085903999066,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7491682836945719,
+      "hi": 0.8762296935346762,
+      "se": 0.0323687680228128,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.06020245860335438,
+      "lo": 0.023569929503894294,
+      "hi": 0.10483758600294661,
+      "se": 0.020735289928366495,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.5088730896726261
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5738648809347,
+     "auroc": 0.9085113960113961,
+     "lift": 9.52615702351602,
+     "ap_above_chance": 0.5465485271484628,
+     "p_at_10": 0.8,
+     "p_at_50": 0.62,
+     "p_at_npos": 0.5833333333333334,
+     "ap_ci": {
+      "lo": 0.4499839230407689,
+      "hi": 0.7114975302899642,
+      "se": 0.06651902202837567,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8593142357705155,
+      "hi": 0.952664248801579,
+      "se": 0.023915411639538794,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.006739277662614285,
+      "lo": -0.056683669410045455,
+      "hi": 0.08092498896076133,
+      "se": 0.034706872194112524,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.011883218856160616
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.03347086813298433,
+    "lo": -0.0028543808832737954,
+    "hi": 0.07737696246502875,
+    "se": 0.020440528498244563,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "LR_02": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.12786240328298606,
+     "auroc": 0.7921165488448921,
+     "lift": 4.589532605645394,
+     "ap_above_chance": 0.10286871167157118,
+     "p_at_10": 0.1,
+     "p_at_50": 0.2,
+     "p_at_npos": 0.17073170731707318,
+     "ap_ci": {
+      "lo": 0.07375346592870101,
+      "hi": 0.22520211070691304,
+      "se": 0.0418477556440038,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7297978994488501,
+      "hi": 0.8463147486227656,
+      "se": 0.029806016993882314,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.009556955765443909,
+      "lo": -0.038317527805743386,
+      "hi": 0.08515514467901897,
+      "se": 0.03332593908722627,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.08078204314325266
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.573252402596271,
+     "auroc": 0.913105413105413,
+     "lift": 9.515989883098099,
+     "ap_above_chance": 0.5458967873780832,
+     "p_at_10": 0.8,
+     "p_at_50": 0.64,
+     "p_at_npos": 0.5833333333333334,
+     "ap_ci": {
+      "lo": 0.44871563739408815,
+      "hi": 0.7120130186596428,
+      "se": 0.06676560160525116,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8653458369734032,
+      "hi": 0.9533458787869891,
+      "se": 0.022694015726907383,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.00612679932418525,
+      "lo": -0.05689261677298104,
+      "hi": 0.07832360727979402,
+      "se": 0.034104185800149726,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.010803249383974256
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.00784187754481458,
+    "lo": -0.031108807688329132,
+    "hi": 0.06133208064593155,
+    "se": 0.02408637528812923,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_00": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15162263137577137,
+     "auroc": 0.7698573257866783,
+     "lift": 5.442389573366102,
+     "ap_above_chance": 0.1273098596281525,
+     "p_at_10": 0.0,
+     "p_at_50": 0.22,
+     "p_at_npos": 0.25203252032520324,
+     "ap_ci": {
+      "lo": 0.10850411701095694,
+      "hi": 0.2219433880813728,
+      "se": 0.028916776062055796,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7080698061067332,
+      "hi": 0.83298373501368,
+      "se": 0.03227936132826906,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03331718385822921,
+      "lo": -0.003945802554914375,
+      "hi": 0.08196169212755451,
+      "se": 0.021830167252011215,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.28162003151451653
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5600174773429246,
+     "auroc": 0.8979522792022792,
+     "lift": 9.296290123892549,
+     "ap_above_chance": 0.5318134694802916,
+     "p_at_10": 0.7,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.4398920047913713,
+      "hi": 0.6929077201217199,
+      "se": 0.06459071777559636,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8500535806326065,
+      "hi": 0.9477371006112194,
+      "se": 0.024999808269740836,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.007108125929161102,
+      "lo": -0.06885157526181437,
+      "hi": 0.0639217609805177,
+      "se": 0.03380716158955262,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.0125336008251965
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.013104528964534054,
+    "lo": -0.023018408650087183,
+    "hi": 0.05698602149496197,
+    "se": 0.020510363563194384,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_01": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15999466763931114,
+     "auroc": 0.8147375718864365,
+     "lift": 5.742898029492347,
+     "ap_above_chance": 0.13592182144164927,
+     "p_at_10": 0.1,
+     "p_at_50": 0.22,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.12077017595485828,
+      "hi": 0.21954083927617912,
+      "se": 0.025129690251046864,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7565196939879919,
+      "hi": 0.8607404143607448,
+      "se": 0.02664909566783669,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04168922012176898,
+      "lo": 0.006755077750719309,
+      "hi": 0.08173793593551117,
+      "se": 0.0189984434640538,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.35238631015353183
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5505044866375021,
+     "auroc": 0.8959490740740741,
+     "lift": 9.138374478182534,
+     "ap_above_chance": 0.5216906716783676,
+     "p_at_10": 0.7,
+     "p_at_50": 0.62,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.43112657422955075,
+      "hi": 0.6856396776825079,
+      "se": 0.06507324150791245,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8481522424435027,
+      "hi": 0.9460107972195159,
+      "se": 0.02490666390381123,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.016621116634583655,
+      "lo": -0.08373465225471349,
+      "hi": 0.05884918875515126,
+      "se": 0.03606268952059604,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.02930764638148331
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.012534051743592664,
+    "lo": -0.025642787762849874,
+    "hi": 0.055214544615468285,
+    "se": 0.020759133901946895,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_02": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1471775759943877,
+     "auroc": 0.7663321437501422,
+     "lift": 5.282837382237574,
+     "ap_above_chance": 0.12273741799049898,
+     "p_at_10": 0.0,
+     "p_at_50": 0.28,
+     "p_at_npos": 0.24390243902439024,
+     "ap_ci": {
+      "lo": 0.1042603655804071,
+      "hi": 0.21513852909699277,
+      "se": 0.028467945148425315,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7047681315070968,
+      "hi": 0.8291881788522883,
+      "se": 0.032077786656118844,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.028872128476845532,
+      "lo": -0.00981514536002695,
+      "hi": 0.07826919278764816,
+      "se": 0.0224709533381349,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.24404732903414628
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5374666741933808,
+     "auroc": 0.8922097578347579,
+     "lift": 8.921946791610122,
+     "ap_above_chance": 0.5078171020262898,
+     "p_at_10": 0.7,
+     "p_at_50": 0.58,
+     "p_at_npos": 0.5333333333333333,
+     "ap_ci": {
+      "lo": 0.418112109363253,
+      "hi": 0.6734333870725401,
+      "se": 0.0653303141932654,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8430480751177852,
+      "hi": 0.9427357098066681,
+      "se": 0.025370970031496715,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.029658929078704932,
+      "lo": -0.09791445173601576,
+      "hi": 0.04579060024051966,
+      "se": 0.03665503346399908,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.05229693194520735
+    }
+   },
+   "T_vs_B1": {
+    "point": -0.0003934003009296999,
+    "lo": -0.03943703874131196,
+    "hi": 0.045684987914855625,
+    "se": 0.021757451403428475,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_03": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15555129836748696,
+     "auroc": 0.8104168087347229,
+     "lift": 5.583406360101259,
+     "ap_above_chance": 0.13135111423402956,
+     "p_at_10": 0.0,
+     "p_at_50": 0.2,
+     "p_at_npos": 0.22764227642276422,
+     "ap_ci": {
+      "lo": 0.11563055605288282,
+      "hi": 0.21632815734815908,
+      "se": 0.02555490473942913,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7636734238113612,
+      "hi": 0.8516212738241072,
+      "se": 0.02254486403099883,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.037245850849944806,
+      "lo": 0.0016785585384017838,
+      "hi": 0.07966006346458461,
+      "se": 0.019833354991630026,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3148278598449328
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5350444858641844,
+     "auroc": 0.8895121082621082,
+     "lift": 8.88173846534546,
+     "ap_above_chance": 0.5052396452144526,
+     "p_at_10": 0.7,
+     "p_at_50": 0.58,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.41400724524723614,
+      "hi": 0.6715169569660742,
+      "se": 0.06580674153742257,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8374675618013409,
+      "hi": 0.9407299810366156,
+      "se": 0.02648090661354644,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.032081117407901316,
+      "lo": -0.10162981995831026,
+      "hi": 0.04445030725939452,
+      "se": 0.037187630902668495,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.05656792291303059
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.002582366721021745,
+    "lo": -0.03682779166517724,
+    "hi": 0.046184852819495054,
+    "se": 0.021286607930713724,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_04": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15720009599576254,
+     "auroc": 0.8000363694224082,
+     "lift": 5.642588811555216,
+     "ap_above_chance": 0.13304716305249104,
+     "p_at_10": 0.0,
+     "p_at_50": 0.28,
+     "p_at_npos": 0.25203252032520324,
+     "ap_ci": {
+      "lo": 0.11803550209720574,
+      "hi": 0.21803031342436358,
+      "se": 0.02544229192897739,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7563170754049113,
+      "hi": 0.8426426219221819,
+      "se": 0.022198085483990913,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.038894648478220384,
+      "lo": 0.0007040385664135205,
+      "hi": 0.08418599426479258,
+      "se": 0.021205596181719345,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3287646451990569
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5683628781703605,
+     "auroc": 0.9001602564102564,
+     "lift": 9.434823777627983,
+     "ap_above_chance": 0.5406938318992297,
+     "p_at_10": 0.9,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5333333333333333,
+     "ap_ci": {
+      "lo": 0.44920982405717963,
+      "hi": 0.6944155109891372,
+      "se": 0.06306402384402036,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8503441555642639,
+      "hi": 0.9481540331113315,
+      "se": 0.02500003366343619,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0012372748982747428,
+      "lo": -0.0597218980522925,
+      "hi": 0.06405005763896522,
+      "se": 0.03176827148384311,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0021816593910346516
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.020065961688247563,
+    "lo": -0.016646649918023462,
+    "hi": 0.05929058693449789,
+    "se": 0.019345302081529656,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_05": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1659074795059812,
+     "auroc": 0.8375082399472644,
+     "lift": 5.955134325356967,
+     "ap_above_chance": 0.1420040824834359,
+     "p_at_10": 0.1,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.2682926829268293,
+     "ap_ci": {
+      "lo": 0.12978846356043444,
+      "hi": 0.22109586072679274,
+      "se": 0.023225801407653148,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7729077555328212,
+      "hi": 0.8827561091076968,
+      "se": 0.029169997607432215,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04760203198843904,
+      "lo": 0.009605885304423302,
+      "hi": 0.08805758946324273,
+      "se": 0.01992166215802246,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.4023655122168459
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5695964404332782,
+     "auroc": 0.8998219373219373,
+     "lift": 9.455300911192417,
+     "ap_above_chance": 0.5420064686661806,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4488301809361862,
+      "hi": 0.6986942267184019,
+      "se": 0.06392084353719371,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8513053384805287,
+      "hi": 0.9478493327211472,
+      "se": 0.024700389474178814,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0024708371611924518,
+      "lo": -0.061748938102003506,
+      "hi": 0.07197372059136421,
+      "se": 0.03403720626580473,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0043567723744735165
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.025036434574815747,
+    "lo": -0.013472601614084057,
+    "hi": 0.06506814488528635,
+    "se": 0.01987834481583036,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_06": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1600153297453813,
+     "auroc": 0.8234851756718872,
+     "lift": 5.743639681511044,
+     "ap_above_chance": 0.13594307568170047,
+     "p_at_10": 0.1,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.22764227642276422,
+     "ap_ci": {
+      "lo": 0.12494578197006377,
+      "hi": 0.2148149719021513,
+      "se": 0.02304388098945427,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7677502566430787,
+      "hi": 0.8678802843203751,
+      "se": 0.025877561649505793,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04170988222783914,
+      "lo": 0.001993784595627689,
+      "hi": 0.08522931807106633,
+      "se": 0.02092393838782321,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.35256096065782994
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5674260108209179,
+     "auroc": 0.8991631054131054,
+     "lift": 9.419271779627238,
+     "ap_above_chance": 0.539696908950464,
+     "p_at_10": 0.9,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.4470444588728769,
+      "hi": 0.6946723025486592,
+      "se": 0.06346592924949356,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8492602260968437,
+      "hi": 0.9470330436396894,
+      "se": 0.025186780923046766,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.00030040754883220444,
+      "lo": -0.06269126043534803,
+      "hi": 0.06393080610646601,
+      "se": 0.03252440134405887,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0005297019691916649
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.021005144888335672,
+    "lo": -0.016351609066987332,
+    "hi": 0.05923586016037809,
+    "se": 0.019181840610713916,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_07": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1659180879316409,
+     "auroc": 0.8545526182195652,
+     "lift": 5.955515107464996,
+     "ap_above_chance": 0.142014994925022,
+     "p_at_10": 0.1,
+     "p_at_50": 0.2,
+     "p_at_npos": 0.21951219512195122,
+     "ap_ci": {
+      "lo": 0.13216077864757092,
+      "hi": 0.21671090833634885,
+      "se": 0.021558923319783756,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7792926831703451,
+      "hi": 0.9031359202978001,
+      "se": 0.03427637619503895,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04761264041409874,
+      "lo": 0.00813981778520415,
+      "hi": 0.08871944646724672,
+      "se": 0.020086759538378657,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.40245518201550956
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5593064885259147,
+     "auroc": 0.8962606837606837,
+     "lift": 9.284487709530184,
+     "ap_above_chance": 0.5310569044570631,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5333333333333333,
+     "ap_ci": {
+      "lo": 0.4380416890629309,
+      "hi": 0.6904528837620453,
+      "se": 0.06462964377911165,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8470503407214457,
+      "hi": 0.9436399347656005,
+      "se": 0.024795823480480088,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.00781911474617103,
+      "lo": -0.0775687712947348,
+      "hi": 0.06682794711759532,
+      "se": 0.036606158955150604,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.013787271639753018
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.019896762833963855,
+    "lo": -0.020679232220800065,
+    "hi": 0.06170410326108003,
+    "se": 0.02083461724314125,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_08": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15609227116125118,
+     "auroc": 0.800161389311936,
+     "lift": 5.602824204690439,
+     "ap_above_chance": 0.13190759020897577,
+     "p_at_10": 0.0,
+     "p_at_50": 0.22,
+     "p_at_npos": 0.2682926829268293,
+     "ap_ci": {
+      "lo": 0.11611857351260611,
+      "hi": 0.2187175163726898,
+      "se": 0.025946810524946202,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7563248435992382,
+      "hi": 0.8435269879132334,
+      "se": 0.022299027943241297,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03778682364370903,
+      "lo": -0.0013046175130140753,
+      "hi": 0.08374593106349708,
+      "se": 0.02174916527689397,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3194005384925833
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5627353935757277,
+     "auroc": 0.9012464387464387,
+     "lift": 9.34140753335708,
+     "ap_above_chance": 0.5347056111126333,
+     "p_at_10": 0.8,
+     "p_at_50": 0.62,
+     "p_at_npos": 0.6,
+     "ap_ci": {
+      "lo": 0.44200562209991345,
+      "hi": 0.6945490521895976,
+      "se": 0.06456457879481166,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8527950140816655,
+      "hi": 0.9487464965636507,
+      "se": 0.02457985404188513,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.004390209696358061,
+      "lo": -0.06590569157126394,
+      "hi": 0.06178769164163351,
+      "se": 0.032961132881220295,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.0077411594028348185
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.016698306973675484,
+    "lo": -0.020699944748287114,
+    "hi": 0.05749858638366988,
+    "se": 0.020100955655642298,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_09": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16816057035403936,
+     "auroc": 0.8301244895021177,
+     "lift": 6.0360074643340145,
+     "ap_above_chance": 0.14432174233762438,
+     "p_at_10": 0.0,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.2601626016260163,
+     "ap_ci": {
+      "lo": 0.12995176348809515,
+      "hi": 0.22534026122993167,
+      "se": 0.02431767134332131,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7733078601167732,
+      "hi": 0.87295137270209,
+      "se": 0.025812766934293626,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04985512283649721,
+      "lo": 0.008680463608749156,
+      "hi": 0.09408826097644364,
+      "se": 0.021424164814410368,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.4214102045394381
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5694017821743783,
+     "auroc": 0.9037037037037036,
+     "lift": 9.45206958409468,
+     "ap_above_chance": 0.5417993323137615,
+     "p_at_10": 0.8,
+     "p_at_50": 0.62,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.45021144460137663,
+      "hi": 0.6997881179769347,
+      "se": 0.06389388111457113,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8566380788818229,
+      "hi": 0.9493280179407477,
+      "se": 0.023676927557602406,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0022761789022925916,
+      "lo": -0.06260564777098498,
+      "hi": 0.07152446682389679,
+      "se": 0.03440382967203466,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.00401353578318453
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.0260656508693949,
+    "lo": -0.013497064095590657,
+    "hi": 0.06708109926706901,
+    "se": 0.02056364722738252,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_10": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15961453412004079,
+     "auroc": 0.824220141083051,
+     "lift": 5.729253399512033,
+     "ap_above_chance": 0.13553079406802893,
+     "p_at_10": 0.0,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.22764227642276422,
+     "ap_ci": {
+      "lo": 0.12299852478248478,
+      "hi": 0.21568485740291524,
+      "se": 0.02369966896233119,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7709493624990483,
+      "hi": 0.8674007959196054,
+      "se": 0.024922811628304904,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04130908660249863,
+      "lo": 0.0012682464535112021,
+      "hi": 0.0853165620084766,
+      "se": 0.02104018247610973,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.34917315702113694
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5624657605363876,
+     "auroc": 0.8988425925925926,
+     "lift": 9.336931624904034,
+     "ap_above_chance": 0.5344186939041048,
+     "p_at_10": 0.8,
+     "p_at_50": 0.58,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.43960725394176364,
+      "hi": 0.6912499966673251,
+      "se": 0.06423574814921511,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8488955810786122,
+      "hi": 0.9469547072955371,
+      "se": 0.025184973353739707,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.004659842735698083,
+      "lo": -0.0693170880665008,
+      "hi": 0.05882386193906173,
+      "se": 0.032887950326662,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.008216597361876632
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.018324621933400273,
+    "lo": -0.020453818976214604,
+    "hi": 0.056436908226491556,
+    "se": 0.01940305606550366,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_11": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16786191015153631,
+     "auroc": 0.8560244432826435,
+     "lift": 6.025287262756364,
+     "ap_above_chance": 0.14401452314050156,
+     "p_at_10": 0.1,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.2601626016260163,
+     "ap_ci": {
+      "lo": 0.13405997237826403,
+      "hi": 0.21911237309083775,
+      "se": 0.02180731958247858,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7806059488714431,
+      "hi": 0.904684014718406,
+      "se": 0.034351439344306275,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04955646263399416,
+      "lo": 0.009602994138280108,
+      "hi": 0.09121423083733847,
+      "se": 0.020539311861972265,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.41888572059748985
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5553757830034803,
+     "auroc": 0.8982371794871795,
+     "lift": 9.219237997857773,
+     "ap_above_chance": 0.5268742306319085,
+     "p_at_10": 0.8,
+     "p_at_50": 0.56,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4334048514559925,
+      "hi": 0.6853356844284129,
+      "se": 0.06456175684136445,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8489795235809197,
+      "hi": 0.9454408836557725,
+      "se": 0.024708989804738363,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.011749820268605382,
+      "lo": -0.07913985922645075,
+      "hi": 0.06039391469832798,
+      "se": 0.0354919939232367,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.02071819752240711
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.018903321182694388,
+    "lo": -0.021102012111702043,
+    "hi": 0.05956335728024526,
+    "se": 0.02044464557260168,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_12": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1586712949800586,
+     "auroc": 0.8420108502110184,
+     "lift": 5.695396482414298,
+     "ap_above_chance": 0.13456052361066143,
+     "p_at_10": 0.2,
+     "p_at_50": 0.28,
+     "p_at_npos": 0.22764227642276422,
+     "ap_ci": {
+      "lo": 0.1237926125747911,
+      "hi": 0.21419762198521275,
+      "se": 0.02289094183240682,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7675055442429349,
+      "hi": 0.8913767414704863,
+      "se": 0.03390525860317122,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04036584746251645,
+      "lo": -0.0013348717723307185,
+      "hi": 0.08565378075624941,
+      "se": 0.02168793162746053,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3412002431801042
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5645651703515574,
+     "auroc": 0.9006766381766381,
+     "lift": 9.371781827835854,
+     "ap_above_chance": 0.536652681271529,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.44079051443994827,
+      "hi": 0.6950562484706974,
+      "se": 0.06442089846227672,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8501055374672664,
+      "hi": 0.9464485387197394,
+      "se": 0.024734263082086472,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.0025604329205283216,
+      "lo": -0.07177891125300281,
+      "hi": 0.06621097078111897,
+      "se": 0.03490455358513165,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.004514754590086656
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.018902707270994065,
+    "lo": -0.02103481863225931,
+    "hi": 0.05945382364090369,
+    "se": 0.020476566397890795,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_13": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16225299644109892,
+     "auroc": 0.8554637480205183,
+     "lift": 5.823959181198794,
+     "ap_above_chance": 0.13824486935867936,
+     "p_at_10": 0.1,
+     "p_at_50": 0.28,
+     "p_at_npos": 0.24390243902439024,
+     "ap_ci": {
+      "lo": 0.12892015133738777,
+      "hi": 0.21301526667933535,
+      "se": 0.021361943878517597,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7738855179985451,
+      "hi": 0.9075655628683542,
+      "se": 0.0375381188266666,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04394754892355676,
+      "lo": 0.0008902626475648465,
+      "hi": 0.08753110544210024,
+      "se": 0.02167354671544895,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3714752773074146
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5681669518817145,
+     "auroc": 0.8983974358974359,
+     "lift": 9.43157140123646,
+     "ap_above_chance": 0.5404853462331065,
+     "p_at_10": 0.8,
+     "p_at_50": 0.62,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.44695746024229,
+      "hi": 0.6980742232113811,
+      "se": 0.06473945613016831,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8485084528554055,
+      "hi": 0.9450759262695615,
+      "se": 0.024788519628388316,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0010413486096287894,
+      "lo": -0.06996803371086494,
+      "hi": 0.07328619639028977,
+      "se": 0.03619546173543215,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0018361869110135043
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.022494448766592776,
+    "lo": -0.01905195355661881,
+    "hi": 0.06416193332970668,
+    "se": 0.02114062973025557,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_14": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15826333930454106,
+     "auroc": 0.8479587661673448,
+     "lift": 5.680753195362185,
+     "ap_above_chance": 0.13414087675432174,
+     "p_at_10": 0.2,
+     "p_at_50": 0.22,
+     "p_at_npos": 0.24390243902439024,
+     "ap_ci": {
+      "lo": 0.1241647904481565,
+      "hi": 0.21443046138277633,
+      "se": 0.022908249272977542,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7638662857712855,
+      "hi": 0.9022776512943035,
+      "se": 0.03894400333273976,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.039957891786998906,
+      "lo": -0.0007195166242449465,
+      "hi": 0.08571750189135037,
+      "se": 0.02178208009766311,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.337751917814892
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5591133075378361,
+     "auroc": 0.899269943019943,
+     "lift": 9.281280905128078,
+     "ap_above_chance": 0.5308513400723127,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4348349305758297,
+      "hi": 0.6893244819519175,
+      "se": 0.06441511670136917,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8466674796531585,
+      "hi": 0.9453676226097942,
+      "se": 0.02540205637544151,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.008012295734249664,
+      "lo": -0.07605114611955827,
+      "hi": 0.05971390327928373,
+      "se": 0.034473901578704384,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.014127903392162078
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.01597279802637462,
+    "lo": -0.02358091414940902,
+    "hi": 0.05662245872365876,
+    "se": 0.020269355155146843,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_15": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1701488434181431,
+     "auroc": 0.8665772585032467,
+     "lift": 6.107375151960177,
+     "ap_above_chance": 0.14636699526819705,
+     "p_at_10": 0.3,
+     "p_at_50": 0.28,
+     "p_at_npos": 0.21951219512195122,
+     "ap_ci": {
+      "lo": 0.13528248728917988,
+      "hi": 0.23012770464179153,
+      "se": 0.024089110097676777,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7793382139951613,
+      "hi": 0.9199474137981735,
+      "se": 0.04050674397973285,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.05184339590060094,
+      "lo": 0.00923252072798765,
+      "hi": 0.1026281529303143,
+      "se": 0.023641165724245933,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.4382164726008384
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5480831202363148,
+     "auroc": 0.8912393162393163,
+     "lift": 9.098179795922825,
+     "ap_above_chance": 0.5191140894822324,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5166666666666667,
+     "ap_ci": {
+      "lo": 0.42230712403344095,
+      "hi": 0.6800287476106074,
+      "se": 0.0655549838408672,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8346663717367107,
+      "hi": 0.9409200797546695,
+      "se": 0.027134584598773468,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.01904248303577094,
+      "lo": -0.09149172106324736,
+      "hi": 0.05524570824478959,
+      "se": 0.037404636209912176,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.03357718806187471
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.016400456432415,
+    "lo": -0.025595572377025564,
+    "hi": 0.060299762763011536,
+    "se": 0.021964658299427252,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_16": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16514650571314804,
+     "auroc": 0.816713264989127,
+     "lift": 5.9278196969394195,
+     "ap_above_chance": 0.14122130072776062,
+     "p_at_10": 0.0,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.24390243902439024,
+     "ap_ci": {
+      "lo": 0.12757264028299192,
+      "hi": 0.22411976449131515,
+      "se": 0.024465946896444903,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7611210432147898,
+      "hi": 0.8633829723908251,
+      "se": 0.026364694331855627,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.046841058195605884,
+      "lo": 0.011128379293388153,
+      "hi": 0.08861668809910121,
+      "se": 0.01962974438622463,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3959332319727742
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5553885080611098,
+     "auroc": 0.8945868945868947,
+     "lift": 9.219449233814423,
+     "ap_above_chance": 0.5268877713983605,
+     "p_at_10": 0.8,
+     "p_at_50": 0.62,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.4367606506882692,
+      "hi": 0.6887690921260536,
+      "se": 0.06434067831401478,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8458523203691554,
+      "hi": 0.9471934390366868,
+      "se": 0.02589494226593953,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.011737095210975879,
+      "lo": -0.07446071652680918,
+      "hi": 0.05966326937532139,
+      "se": 0.03412722822732187,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.02069575971047255
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.017551981492315002,
+    "lo": -0.019972244905416763,
+    "hi": 0.059434098225204034,
+    "se": 0.020169662303091255,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_17": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16449517708484288,
+     "auroc": 0.8281469021586767,
+     "lift": 5.904440705931555,
+     "ap_above_chance": 0.14055130634426402,
+     "p_at_10": 0.0,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.12635253165702484,
+      "hi": 0.22340157699251395,
+      "se": 0.024513382877021685,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7620468586666787,
+      "hi": 0.8753780189048553,
+      "se": 0.02951675079231901,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04618972956730072,
+      "lo": 0.011364276234962004,
+      "hi": 0.08589040682117442,
+      "se": 0.018924464858244092,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3904277489880741
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5411023497337473,
+     "auroc": 0.8928596866096866,
+     "lift": 8.982299005580204,
+     "ap_above_chance": 0.5116858336910388,
+     "p_at_10": 0.7,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.42157619898453985,
+      "hi": 0.6810069380455461,
+      "se": 0.06672799744332476,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.842192509121716,
+      "hi": 0.9459457413350937,
+      "se": 0.026502251386252954,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.026023253538338453,
+      "lo": -0.09660856871573076,
+      "hi": 0.05584455882254813,
+      "se": 0.039061009078761574,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.045886225887519116
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.010083238014481133,
+    "lo": -0.02976724161788641,
+    "hi": 0.0556289971633079,
+    "se": 0.022129811204188797,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_18": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16371578220680563,
+     "auroc": 0.821731108736996,
+     "lift": 5.876464865390624,
+     "ap_above_chance": 0.13974957559250858,
+     "p_at_10": 0.0,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.2682926829268293,
+     "ap_ci": {
+      "lo": 0.1254617306290646,
+      "hi": 0.22135869124068575,
+      "se": 0.02427119985265873,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7692901434595459,
+      "hi": 0.8654788311183474,
+      "se": 0.02479640872286453,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.045410334689263476,
+      "lo": 0.008274341214571077,
+      "hi": 0.08727602317792248,
+      "se": 0.02011124741330287,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.38383976090813654
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5495108250860429,
+     "auroc": 0.8944533475783475,
+     "lift": 9.121879696428312,
+     "ap_above_chance": 0.5206333138736098,
+     "p_at_10": 0.7,
+     "p_at_50": 0.58,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.42994061664423344,
+      "hi": 0.681833297575668,
+      "se": 0.06422634522133909,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8452923642458117,
+      "hi": 0.9455120187282678,
+      "se": 0.0257361657269775,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.017614778186042845,
+      "lo": -0.0834444108773643,
+      "hi": 0.05351373716424372,
+      "se": 0.03475262417265822,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.031059747760306844
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.013897778251610315,
+    "lo": -0.024557507091994068,
+    "hi": 0.05530340490952227,
+    "se": 0.020342740053587077,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_19": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1630114757283592,
+     "auroc": 0.8249778373832201,
+     "lift": 5.851184271062649,
+     "ap_above_chance": 0.13902508512132009,
+     "p_at_10": 0.1,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.22764227642276422,
+     "ap_ci": {
+      "lo": 0.12356684157135121,
+      "hi": 0.22384782542949277,
+      "se": 0.025474909599830946,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7692973666457982,
+      "hi": 0.8679243105119989,
+      "se": 0.0253826924505471,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04470602821081704,
+      "lo": 0.0075594542662138576,
+      "hi": 0.08807081433157082,
+      "se": 0.020346537468527326,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3778864722538504
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5336354424937646,
+     "auroc": 0.8861467236467236,
+     "lift": 8.858348345396493,
+     "ap_above_chance": 0.5037402785510572,
+     "p_at_10": 0.7,
+     "p_at_50": 0.58,
+     "p_at_npos": 0.5333333333333333,
+     "ap_ci": {
+      "lo": 0.41333739304470396,
+      "hi": 0.6707791032541455,
+      "se": 0.06610611676730074,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8316212425867714,
+      "hi": 0.940048074897183,
+      "se": 0.027790792480628452,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.03349016077832112,
+      "lo": -0.10264110250625269,
+      "hi": 0.043994028240496884,
+      "se": 0.03768721103973965,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.059052457841960226
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.005607933716247959,
+    "lo": -0.0350205934051162,
+    "hi": 0.050245908812483385,
+    "se": 0.021663480631117032,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_20": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15686721502747228,
+     "auroc": 0.8103524045492085,
+     "lift": 5.630640279238131,
+     "ap_above_chance": 0.13270474239195948,
+     "p_at_10": 0.0,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.24390243902439024,
+     "ap_ci": {
+      "lo": 0.1178799852668872,
+      "hi": 0.2165323333304407,
+      "se": 0.025037532671050106,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7639990834203504,
+      "hi": 0.8524356228162079,
+      "se": 0.022601498643586643,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03856176750993012,
+      "lo": 0.0013470364747132332,
+      "hi": 0.08169507957353454,
+      "se": 0.020446027467729194,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3259509035221073
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5578188859840144,
+     "auroc": 0.8988603988603988,
+     "lift": 9.259793507334638,
+     "ap_above_chance": 0.5294739427778615,
+     "p_at_10": 0.9,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.43519605509550907,
+      "hi": 0.6925617259168841,
+      "se": 0.06555726856086005,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8484360544391161,
+      "hi": 0.9482740953431197,
+      "se": 0.025502893168500015,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.009306717288071309,
+      "lo": -0.07413463570910332,
+      "hi": 0.06187507115842,
+      "se": 0.034959452030039154,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.016410328213671388
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.014627525110929407,
+    "lo": -0.023556828660573976,
+    "hi": 0.055989986605374194,
+    "se": 0.020427163667792,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_21": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15735892302556917,
+     "auroc": 0.8178573864023823,
+     "lift": 5.648289798031609,
+     "ap_above_chance": 0.13321054174228514,
+     "p_at_10": 0.1,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.11866927046305864,
+      "hi": 0.21704290283390515,
+      "se": 0.024884090072606314,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.768670703265289,
+      "hi": 0.8603849805141783,
+      "se": 0.023445800641909608,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.039053475508027014,
+      "lo": 0.002373490914745311,
+      "hi": 0.08100059456173396,
+      "se": 0.0198047141609944,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.33010716182140487
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5568070550378703,
+     "auroc": 0.9019408831908832,
+     "lift": 9.242997113628647,
+     "ap_above_chance": 0.5283972508736312,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4344967381311121,
+      "hi": 0.6940788604668359,
+      "se": 0.06668999531153133,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8524902994851999,
+      "hi": 0.9488460084998415,
+      "se": 0.024623128933834768,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.010318548234215408,
+      "lo": -0.07700431264977654,
+      "hi": 0.06709930218098634,
+      "se": 0.03711380891976712,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.018194467283228932
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.014367463636905803,
+    "lo": -0.024358664834622196,
+    "hi": 0.058354620612042135,
+    "se": 0.021235325080942797,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_22": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15689011221751537,
+     "auroc": 0.8296509293145121,
+     "lift": 5.631462158051466,
+     "ap_above_chance": 0.1327282957689493,
+     "p_at_10": 0.1,
+     "p_at_50": 0.22,
+     "p_at_npos": 0.21138211382113822,
+     "ap_ci": {
+      "lo": 0.12170964646286771,
+      "hi": 0.21276920406326855,
+      "se": 0.02324892238643052,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7765020276499626,
+      "hi": 0.8716062823124594,
+      "se": 0.024706003999775867,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03858466469997321,
+      "lo": 0.0006746060217773809,
+      "hi": 0.08107169109622701,
+      "se": 0.020194764506172597,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3261444465120842
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5618405682534037,
+     "auroc": 0.8997507122507122,
+     "lift": 9.3265534330065,
+     "ap_above_chance": 0.5337534251927244,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4393609705405467,
+      "hi": 0.6903426902587555,
+      "se": 0.06465647726768477,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.851873852946672,
+      "hi": 0.9475140454453983,
+      "se": 0.024365357357932077,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.005285035018682049,
+      "lo": -0.07468803354947678,
+      "hi": 0.06670057139520956,
+      "se": 0.035989535358248136,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.009318985050559392
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.01664981484064558,
+    "lo": -0.02306343076176529,
+    "hi": 0.058443545330339804,
+    "se": 0.020645255191757046,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_23": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15749451169734532,
+     "auroc": 0.8358413080868926,
+     "lift": 5.653156659705525,
+     "ap_above_chance": 0.13335001610992067,
+     "p_at_10": 0.2,
+     "p_at_50": 0.22,
+     "p_at_npos": 0.22764227642276422,
+     "ap_ci": {
+      "lo": 0.12181969263917611,
+      "hi": 0.21420567874454013,
+      "se": 0.023461166315739836,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7795774538707374,
+      "hi": 0.8778533867210867,
+      "se": 0.025712646617979517,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03918906417980317,
+      "lo": 0.0018979026744441099,
+      "hi": 0.08153766749659237,
+      "se": 0.01985489746044481,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.33125325166444486
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5595331531436799,
+     "auroc": 0.8959223646723647,
+     "lift": 9.288250342185087,
+     "ap_above_chance": 0.5312980988580184,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4378745693270238,
+      "hi": 0.6901527453011126,
+      "se": 0.06476602172439691,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.845927389182534,
+      "hi": 0.9446232972463613,
+      "se": 0.025229775683996918,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.007592450128405814,
+      "lo": -0.0790702976234996,
+      "hi": 0.06705902711999552,
+      "se": 0.03709993225786791,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.01338759894563113
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.015798307025698677,
+    "lo": -0.024576061347211395,
+    "hi": 0.05810284715223483,
+    "se": 0.021096032686702782,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_24": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15509977933306698,
+     "auroc": 0.8077497177581282,
+     "lift": 5.567199396386103,
+     "ap_above_chance": 0.1308866555814284,
+     "p_at_10": 0.1,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.11580997954761998,
+      "hi": 0.21639775523391125,
+      "se": 0.02557886832278904,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7646717445784731,
+      "hi": 0.8491322007150124,
+      "se": 0.021633590860972152,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03679433181552483,
+      "lo": -0.0011183609862367076,
+      "hi": 0.0815485939919856,
+      "se": 0.021010494073797587,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.31101130664392285
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5552943918260052,
+     "auroc": 0.8985042735042735,
+     "lift": 9.217886904311685,
+     "ap_above_chance": 0.526787622071262,
+     "p_at_10": 0.9,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4329385900995744,
+      "hi": 0.689803106677539,
+      "se": 0.0658522118492911,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.846800991180123,
+      "hi": 0.9482020543340921,
+      "se": 0.025980147152040094,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.01183121144608057,
+      "lo": -0.07765936389698645,
+      "hi": 0.05982395441256266,
+      "se": 0.035273749569855434,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.02086171278076543
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.01248156018472213,
+    "lo": -0.02572226158072792,
+    "hi": 0.054517515048020444,
+    "se": 0.020747484597429068,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_25": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15195224787350417,
+     "auroc": 0.8122485395403815,
+     "lift": 5.4542209297684625,
+     "ap_above_chance": 0.12764892226503283,
+     "p_at_10": 0.1,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.22764227642276422,
+     "ap_ci": {
+      "lo": 0.11207871451871669,
+      "hi": 0.21508267635677694,
+      "se": 0.026257952619018782,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7676748886214395,
+      "hi": 0.8530952731045842,
+      "se": 0.02178992430719943,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.033646800355962014,
+      "lo": -0.003933038466213811,
+      "hi": 0.07789373314232266,
+      "se": 0.020626410688914673,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.284406179613774
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5694333413917049,
+     "auroc": 0.9009259259259258,
+     "lift": 9.4525934671023,
+     "ap_above_chance": 0.5418329145578398,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.44876651941469986,
+      "hi": 0.6988548028842454,
+      "se": 0.06414088885424436,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8499180758884003,
+      "hi": 0.9487811010261902,
+      "se": 0.02536143881027178,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0023077381196191515,
+      "lo": -0.06317556260141459,
+      "hi": 0.07392410640302892,
+      "se": 0.03471294917041088,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.0040691834512573966
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.017977269237790583,
+    "lo": -0.020181582373385753,
+    "hi": 0.05936519258305209,
+    "se": 0.02036177080406587,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_26": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15480666451665973,
+     "auroc": 0.8377961645413285,
+     "lift": 5.556678242610184,
+     "ap_above_chance": 0.13058514068990043,
+     "p_at_10": 0.1,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.21138211382113822,
+     "ap_ci": {
+      "lo": 0.11969489678689398,
+      "hi": 0.20849118881583015,
+      "se": 0.022453620688157046,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.77998525117937,
+      "hi": 0.8799660911659224,
+      "se": 0.0263117326782246,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03650121699911757,
+      "lo": -0.001186367216895387,
+      "hi": 0.07589484916757791,
+      "se": 0.01950298223426433,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3085336961656413
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5624250638181628,
+     "auroc": 0.8975961538461538,
+     "lift": 9.336256059381503,
+     "ap_above_chance": 0.5343753884218913,
+     "p_at_10": 0.8,
+     "p_at_50": 0.62,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4391434804491092,
+      "hi": 0.6905477267021569,
+      "se": 0.06444929064700076,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8495240636654822,
+      "hi": 0.9461790293821628,
+      "se": 0.024648239771848844,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.004700539453922903,
+      "lo": -0.0742923163609987,
+      "hi": 0.06400347462616467,
+      "se": 0.03503177759032299,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.00828835698265551
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.015900338772597333,
+    "lo": -0.02349133742589542,
+    "hi": 0.055644449691459916,
+    "se": 0.02000434776291028,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_27": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15407082372267672,
+     "auroc": 0.8354719311405603,
+     "lift": 5.53026574581803,
+     "ap_above_chance": 0.12982821219375995,
+     "p_at_10": 0.1,
+     "p_at_50": 0.22,
+     "p_at_npos": 0.21951219512195122,
+     "ap_ci": {
+      "lo": 0.11893172368931182,
+      "hi": 0.20935801877707316,
+      "se": 0.02305164616523514,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7836778119939853,
+      "hi": 0.8750727827462537,
+      "se": 0.02367669830608363,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.035765376205134564,
+      "lo": -0.00022931822490212655,
+      "hi": 0.07627454307735787,
+      "se": 0.01913011970497834,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3023138575240276
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5572225049816097,
+     "auroc": 0.8959045584045584,
+     "lift": 9.249893582694721,
+     "ap_above_chance": 0.5288393322240207,
+     "p_at_10": 0.8,
+     "p_at_50": 0.64,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.43329384030781437,
+      "hi": 0.6901379036635571,
+      "se": 0.06571465398015053,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8447941459746886,
+      "hi": 0.9444887200525375,
+      "se": 0.025595957404069225,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.009903098290475976,
+      "lo": -0.0830832459040072,
+      "hi": 0.06750925472299728,
+      "se": 0.038151096242063316,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.01746191361021099
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.012931138957329294,
+    "lo": -0.02776926214332495,
+    "hi": 0.055545734013398546,
+    "se": 0.021360112038741823,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_28": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.14942626002114454,
+     "auroc": 0.8181813015707046,
+     "lift": 5.363552341409375,
+     "ap_above_chance": 0.12505054473284088,
+     "p_at_10": 0.2,
+     "p_at_50": 0.22,
+     "p_at_npos": 0.21138211382113822,
+     "ap_ci": {
+      "lo": 0.11273045742316165,
+      "hi": 0.21121097204645584,
+      "se": 0.025162839058694673,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7712507966817461,
+      "hi": 0.8576444006145301,
+      "se": 0.02213805152291049,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03112081250360238,
+      "lo": -0.008408554880468856,
+      "hi": 0.07979886640771194,
+      "se": 0.022237871086674018,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.2630547718353191
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5587464797474297,
+     "auroc": 0.8999821937321937,
+     "lift": 9.275191563807335,
+     "ap_above_chance": 0.5304609976799574,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.4381241012461044,
+      "hi": 0.6880747432968938,
+      "se": 0.06431331316412854,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8483148467789299,
+      "hi": 0.9468390339736686,
+      "se": 0.025257705924848276,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.008379123524655974,
+      "lo": -0.0779699251377984,
+      "hi": 0.059904191550035714,
+      "se": 0.03515953310368229,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.014774722700424459
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.011370844489473203,
+    "lo": -0.028486400070666346,
+    "hi": 0.0535354530056787,
+    "se": 0.020801103042945045,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_29": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15018573683882797,
+     "auroc": 0.8339603270217231,
+     "lift": 5.390813236938418,
+     "ap_above_chance": 0.12583178661310007,
+     "p_at_10": 0.1,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.22764227642276422,
+     "ap_ci": {
+      "lo": 0.1163360454937517,
+      "hi": 0.20341790382249184,
+      "se": 0.02217892493922157,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7734233327593489,
+      "hi": 0.8779497721691643,
+      "se": 0.027456098430989583,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03188028932128581,
+      "lo": -0.007092864738275041,
+      "hi": 0.07291467445200481,
+      "se": 0.020092307966043308,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.2694743986033157
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5669865067830776,
+     "auroc": 0.9026887464387464,
+     "lift": 9.411976012599089,
+     "ap_above_chance": 0.5392292315768646,
+     "p_at_10": 0.8,
+     "p_at_50": 0.62,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.44349575319845913,
+      "hi": 0.6964958263056358,
+      "se": 0.06471141197522781,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8502941376717641,
+      "hi": 0.9482100279512946,
+      "se": 0.02522115720813325,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.000139096489008117,
+      "lo": -0.0714225269173772,
+      "hi": 0.07335424673332958,
+      "se": 0.03660832674489616,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.0002452657545446435
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.015870596416138846,
+    "lo": -0.0246845391960119,
+    "hi": 0.05736148569835584,
+    "se": 0.020939496952020024,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_30": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.14973764701891046,
+     "auroc": 0.8400919843308406,
+     "lift": 5.374729362508046,
+     "ap_above_chance": 0.12537085544932192,
+     "p_at_10": 0.2,
+     "p_at_50": 0.2,
+     "p_at_npos": 0.2032520325203252,
+     "ap_ci": {
+      "lo": 0.11504792794443357,
+      "hi": 0.20812101382849232,
+      "se": 0.02371103696130785,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7793863989205084,
+      "hi": 0.8829982773786725,
+      "se": 0.027426865796297023,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.0314321995013683,
+      "lo": -0.0073411709056766476,
+      "hi": 0.07585138435290947,
+      "se": 0.020906488131877343,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.26568683151050654
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5523032548452781,
+     "auroc": 0.8966702279202279,
+     "lift": 9.168234030431616,
+     "ap_above_chance": 0.5236047455404882,
+     "p_at_10": 0.9,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.55,
+     "ap_ci": {
+      "lo": 0.42769851856252883,
+      "hi": 0.6833015951258734,
+      "se": 0.06543648040369718,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8443459763179942,
+      "hi": 0.9431352618227632,
+      "se": 0.025450697557762535,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.01482234842680763,
+      "lo": -0.08932816835207923,
+      "hi": 0.05717536853630946,
+      "se": 0.03717660730416057,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.02613591828915618
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.008304925537280336,
+    "lo": -0.03356519435899706,
+    "hi": 0.05041599813977406,
+    "se": 0.021275258149300966,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_31": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.14940649398055125,
+     "auroc": 0.8270520310049327,
+     "lift": 5.362842853041738,
+     "ap_above_chance": 0.12503021223768263,
+     "p_at_10": 0.2,
+     "p_at_50": 0.2,
+     "p_at_npos": 0.2032520325203252,
+     "ap_ci": {
+      "lo": 0.1112683432322102,
+      "hi": 0.21188462930586727,
+      "se": 0.025526088457169624,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7779398554421927,
+      "hi": 0.8666811525412478,
+      "se": 0.022976502812732398,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.031101046463009097,
+      "lo": -0.007222358977394211,
+      "hi": 0.07712453541757612,
+      "se": 0.021440432686994644,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.26288769550022173
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5432523743562092,
+     "auroc": 0.8943019943019943,
+     "lift": 9.017989414313073,
+     "ap_above_chance": 0.5139736804046842,
+     "p_at_10": 0.8,
+     "p_at_50": 0.58,
+     "p_at_npos": 0.5333333333333333,
+     "ap_ci": {
+      "lo": 0.41982228125530985,
+      "hi": 0.6761703700904698,
+      "se": 0.06601538358686006,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8383008608834941,
+      "hi": 0.9423772266441439,
+      "se": 0.026653876673926977,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.02387322891587651,
+      "lo": -0.09999121298177854,
+      "hi": 0.053358484387735154,
+      "se": 0.03896275692886241,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.04209513514843555
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.0036139087735662934,
+    "lo": -0.03887415644016603,
+    "hi": 0.04812134769808511,
+    "se": 0.022192687597620837,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "LR_sel": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1793078006369673,
+     "auroc": 0.8256332446828661,
+     "lift": 6.436129591969192,
+     "ap_above_chance": 0.15578842959277972,
+     "p_at_10": 0.2,
+     "p_at_50": 0.36,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.1348477176818029,
+      "hi": 0.24836394617074045,
+      "se": 0.02942407974431219,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7595029630300124,
+      "hi": 0.8813131111630287,
+      "se": 0.030980524576320327,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.061002353119425146,
+      "lo": 0.025333287131749812,
+      "hi": 0.10805345082291626,
+      "se": 0.021008076982844612,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.5156343549639151
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5582340929381202,
+     "auroc": 0.9002314814814815,
+     "lift": 9.266685942772796,
+     "ap_above_chance": 0.5299157655623586,
+     "p_at_10": 0.8,
+     "p_at_50": 0.66,
+     "p_at_npos": 0.5833333333333334,
+     "ap_ci": {
+      "lo": 0.4358363927300136,
+      "hi": 0.6987789984150162,
+      "se": 0.06711182365373483,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.848437865599585,
+      "hi": 0.9496997992221792,
+      "se": 0.02595121492884249,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.008891510333965513,
+      "lo": -0.07281894532933315,
+      "hi": 0.06899590786021785,
+      "se": 0.03573734344919811,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.015678202998886115
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.026055421392729816,
+    "lo": -0.011285350826106018,
+    "hi": 0.07168929008016106,
+    "se": 0.021067743565603203,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_sel": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16449517708484288,
+     "auroc": 0.8281469021586767,
+     "lift": 5.904440705931555,
+     "ap_above_chance": 0.14055130634426402,
+     "p_at_10": 0.0,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.12635253165702484,
+      "hi": 0.22340157699251395,
+      "se": 0.024513382877021685,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7620468586666787,
+      "hi": 0.8753780189048553,
+      "se": 0.02951675079231901,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.04618972956730072,
+      "lo": 0.011364276234962004,
+      "hi": 0.08589040682117442,
+      "se": 0.018924464858244092,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3904277489880741
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5411023497337473,
+     "auroc": 0.8928596866096866,
+     "lift": 8.982299005580204,
+     "ap_above_chance": 0.5116858336910388,
+     "p_at_10": 0.7,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.42157619898453985,
+      "hi": 0.6810069380455461,
+      "se": 0.06672799744332476,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.842192509121716,
+      "hi": 0.9459457413350937,
+      "se": 0.026502251386252954,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.026023253538338453,
+      "lo": -0.09660856871573076,
+      "hi": 0.05584455882254813,
+      "se": 0.039061009078761574,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.045886225887519116
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.010083238014481133,
+    "lo": -0.02976724161788641,
+    "hi": 0.0556289971633079,
+    "se": 0.022129811204188797,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "LOSO_GBDT": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.17630944326946074,
+     "auroc": 0.780497276081801,
+     "lift": 6.328505626298123,
+     "ap_above_chance": 0.15270414539484373,
+     "p_at_10": 0.3,
+     "p_at_50": 0.3,
+     "p_at_npos": 0.2601626016260163,
+     "ap_ci": {
+      "lo": 0.12854938104700386,
+      "hi": 0.2543159519583411,
+      "se": 0.032389761280317654,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.712535202888715,
+      "hi": 0.8457786263577945,
+      "se": 0.03416937180801625,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.058003995751918586,
+      "lo": 0.020421808433120806,
+      "hi": 0.11226893285275351,
+      "se": 0.023300286901019693,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.49029015120641706
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5298385276792515,
+     "auroc": 0.9031784188034188,
+     "lift": 8.795319559475576,
+     "ap_above_chance": 0.49969997176125486,
+     "p_at_10": 0.8,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.4128828666613325,
+      "hi": 0.6639618007799255,
+      "se": 0.06429815082426621,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8586629935168392,
+      "hi": 0.945504917935471,
+      "se": 0.022339467139541845,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": -0.037287075592834173,
+      "lo": -0.1405137157979302,
+      "hi": 0.06798639451815913,
+      "se": 0.05277584946384656,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": -0.06574747353620225
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.010358460079542206,
+    "lo": -0.044226883656861476,
+    "hi": 0.07194237796312462,
+    "se": 0.0293367943321276,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "LOSO_LR": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.15782923121223064,
+     "auroc": 0.7932587760173968,
+     "lift": 5.6651711853821,
+     "ap_above_chance": 0.13369432800605738,
+     "p_at_10": 0.1,
+     "p_at_50": 0.24,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.09537130480557908,
+      "hi": 0.2640850933224841,
+      "se": 0.045064564606707345,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7307233677018279,
+      "hi": 0.852646980486173,
+      "se": 0.031246613563036405,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.03952378369468848,
+      "lo": -0.010450538770854343,
+      "hi": 0.1182538086790094,
+      "se": 0.03437428065535111,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.3340825340171081
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5717497115727109,
+     "auroc": 0.9017628205128205,
+     "lift": 9.491045212107002,
+     "ap_above_chance": 0.5442977700068591,
+     "p_at_10": 0.8,
+     "p_at_50": 0.66,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.4485143913335286,
+      "hi": 0.7052717467386062,
+      "se": 0.06558238110978748,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.8514333630556283,
+      "hi": 0.9484918440554624,
+      "se": 0.024838188832570707,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B1": {
+      "point": 0.004624108300625207,
+      "lo": -0.06103383703584829,
+      "hi": 0.07983416246764134,
+      "se": 0.035780573426319726,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B1": 0.008153587624938785
+    }
+   },
+   "T_vs_B1": {
+    "point": 0.022073945997656844,
+    "lo": -0.019290155991242244,
+    "hi": 0.07795147580268606,
+    "se": 0.024985628983681923,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  }
+ },
+ "models_vs_B2": {
+  "LR_sel": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.1793078006369673,
+     "auroc": 0.8256332446828661,
+     "lift": 6.436129591969192,
+     "ap_above_chance": 0.15578842959277972,
+     "p_at_10": 0.2,
+     "p_at_50": 0.36,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.1348477176818029,
+      "hi": 0.24836394617074045,
+      "se": 0.02942407974431219,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7595029630300124,
+      "hi": 0.8813131111630287,
+      "se": 0.030980524576320327,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B2": {
+      "point": 0.008629766857549598,
+      "lo": -0.02604101905437937,
+      "hi": 0.04849064212704717,
+      "se": 0.019021027658203585,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B2": 0.050561672562402515
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5582340929381202,
+     "auroc": 0.9002314814814815,
+     "lift": 9.266685942772796,
+     "ap_above_chance": 0.5299157655623586,
+     "p_at_10": 0.8,
+     "p_at_50": 0.66,
+     "p_at_npos": 0.5833333333333334,
+     "ap_ci": {
+      "lo": 0.4358363927300136,
+      "hi": 0.6987789984150162,
+      "se": 0.06711182365373483,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.848437865599585,
+      "hi": 0.9496997992221792,
+      "se": 0.02595121492884249,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B2": {
+      "point": -0.009406169946439058,
+      "lo": -0.042119483589924525,
+      "hi": 0.02030541754439795,
+      "se": 0.016037565764480552,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B2": -0.01657065321378015
+    }
+   },
+   "T_vs_B2": {
+    "point": -0.0003882015444447301,
+    "lo": -0.02426703971200246,
+    "hi": 0.02459693661558084,
+    "se": 0.012498894495360346,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  },
+  "GBDT_sel": {
+   "per_species": {
+    "human": {
+     "n": 4415,
+     "n_pos": 123,
+     "n_neg": 4292,
+     "prevalence": 0.027859569648924123,
+     "ap": 0.16449517708484288,
+     "auroc": 0.8281469021586767,
+     "lift": 5.904440705931555,
+     "ap_above_chance": 0.14055130634426402,
+     "p_at_10": 0.0,
+     "p_at_50": 0.26,
+     "p_at_npos": 0.23577235772357724,
+     "ap_ci": {
+      "lo": 0.12635253165702484,
+      "hi": 0.22340157699251395,
+      "se": 0.024513382877021685,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.7620468586666787,
+      "hi": 0.8753780189048553,
+      "se": 0.02951675079231901,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B2": {
+      "point": -0.006182856694574829,
+      "lo": -0.03903216496147381,
+      "hi": 0.025922913325371538,
+      "se": 0.01659566898425746,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B2": -0.0362252631909592
+    },
+    "yeast": {
+     "n": 996,
+     "n_pos": 60,
+     "n_neg": 936,
+     "prevalence": 0.060240963855421686,
+     "ap": 0.5411023497337473,
+     "auroc": 0.8928596866096866,
+     "lift": 8.982299005580204,
+     "ap_above_chance": 0.5116858336910388,
+     "p_at_10": 0.7,
+     "p_at_50": 0.6,
+     "p_at_npos": 0.5666666666666667,
+     "ap_ci": {
+      "lo": 0.42157619898453985,
+      "hi": 0.6810069380455461,
+      "se": 0.06672799744332476,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "auroc_ci": {
+      "lo": 0.842192509121716,
+      "hi": 0.9459457413350937,
+      "se": 0.026502251386252954,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "delta_ap_vs_B2": {
+      "point": -0.026537913150811998,
+      "lo": -0.0872266642691046,
+      "hi": 0.027564798253192715,
+      "se": 0.029214240789452204,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "rel_gain_vs_B2": -0.04675128754249236
+    }
+   },
+   "T_vs_B2": {
+    "point": -0.016360384922693413,
+    "lo": -0.0506980549144695,
+    "hi": 0.01516165149263716,
+    "se": 0.016718197188986882,
+    "n_ok": 10000,
+    "n_dropped": 0
+   }
+  }
+ },
+ "per_seed_ap": {
+  "LR_00": {
+   "human": [
+    0.175333100079083,
+    0.17775539882817235,
+    0.17844203569165695,
+    0.18303452915717772,
+    0.18366353159198803
+   ],
+   "yeast": [
+    0.567391509887837,
+    0.5540768762129311,
+    0.5674697858095925,
+    0.5705916534754069,
+    0.5571773701871126
+   ]
+  },
+  "LR_01": {
+   "human": [
+    0.17479043722866383,
+    0.17152135583195882,
+    0.1772630074355904,
+    0.17568672009431713,
+    0.18274217773276624
+   ],
+   "yeast": [
+    0.5847491607056469,
+    0.5568985117678037,
+    0.5770916830770262,
+    0.5681782087115841,
+    0.5607493485406839
+   ]
+  },
+  "LR_02": {
+   "human": [
+    0.11324593431619179,
+    0.09376687765846353,
+    0.1420949311805006,
+    0.1318271492256622,
+    0.13076222048200267
+   ],
+   "yeast": [
+    0.5834185816199552,
+    0.5520756942775671,
+    0.5766766960356307,
+    0.5641023972166408,
+    0.5614694058098684
+   ]
+  },
+  "GBDT_00": {
+   "human": [
+    0.12964631198278012,
+    0.14211025593298307,
+    0.12814507270232758,
+    0.16823429939013823,
+    0.1500224261297714
+   ],
+   "yeast": [
+    0.5584586533740498,
+    0.5157058078745639,
+    0.5700489018362637,
+    0.49470857775522276,
+    0.5669956941566426
+   ]
+  },
+  "GBDT_01": {
+   "human": [
+    0.1479865380972716,
+    0.15681387182392095,
+    0.14073563157002944,
+    0.16361656184722687,
+    0.16600501839171897
+   ],
+   "yeast": [
+    0.5437044067838488,
+    0.519848367686067,
+    0.5714620155106788,
+    0.4978542298886913,
+    0.5679242856055158
+   ]
+  },
+  "GBDT_02": {
+   "human": [
+    0.11311684861093912,
+    0.14525098413612564,
+    0.12102852948572991,
+    0.15818824149451385,
+    0.153273274165574
+   ],
+   "yeast": [
+    0.5326242426506679,
+    0.5031099541166872,
+    0.5473763431736085,
+    0.47697378766370174,
+    0.5682375682705999
+   ]
+  },
+  "GBDT_03": {
+   "human": [
+    0.1362203850708495,
+    0.14386942270989958,
+    0.13805642641360566,
+    0.16079918187079464,
+    0.16237369683434558
+   ],
+   "yeast": [
+    0.5478312417858184,
+    0.5285820276258891,
+    0.5404759886533745,
+    0.4817969223277078,
+    0.5571917654484557
+   ]
+  },
+  "GBDT_04": {
+   "human": [
+    0.1340803478643818,
+    0.1557401234893233,
+    0.13367992741910714,
+    0.1630373973168852,
+    0.16080110083691285
+   ],
+   "yeast": [
+    0.5557902458015657,
+    0.5374043844937642,
+    0.578260741754254,
+    0.48796280172214446,
+    0.5863370248584138
+   ]
+  },
+  "GBDT_05": {
+   "human": [
+    0.15041022540316898,
+    0.1647638515302488,
+    0.1419651175770389,
+    0.15923218500651287,
+    0.1773436136770586
+   ],
+   "yeast": [
+    0.5598260812600817,
+    0.5544744600063872,
+    0.5734120192025699,
+    0.4810418559723092,
+    0.6016680794186311
+   ]
+  },
+  "GBDT_06": {
+   "human": [
+    0.12006492995838879,
+    0.17152129112044984,
+    0.1471029931710178,
+    0.16253133631516095,
+    0.16184172579651424
+   ],
+   "yeast": [
+    0.5559557902740159,
+    0.5332938408300545,
+    0.5635473283741271,
+    0.48008994174022585,
+    0.5947615853249234
+   ]
+  },
+  "GBDT_07": {
+   "human": [
+    0.14532129348748987,
+    0.16324163003134598,
+    0.13902200077289525,
+    0.16272155867274354,
+    0.1810115095247669
+   ],
+   "yeast": [
+    0.5545178570002353,
+    0.5483149022017054,
+    0.5128085015247358,
+    0.4724053740813291,
+    0.5925550742967587
+   ]
+  },
+  "GBDT_08": {
+   "human": [
+    0.12796139528062245,
+    0.1441042909130644,
+    0.12326241517310646,
+    0.16474074037976585,
+    0.1605877312372165
+   ],
+   "yeast": [
+    0.5473303020594313,
+    0.522316048180381,
+    0.5602127986781756,
+    0.4857988822678276,
+    0.590891965830812
+   ]
+  },
+  "GBDT_09": {
+   "human": [
+    0.13528299590816048,
+    0.16151782452407862,
+    0.14714297521887376,
+    0.1574044416568567,
+    0.18731033098660566
+   ],
+   "yeast": [
+    0.5641310081708496,
+    0.5397526643289792,
+    0.5401552808323767,
+    0.4868333186634385,
+    0.6003577720278469
+   ]
+  },
+  "GBDT_10": {
+   "human": [
+    0.12036876363278856,
+    0.14884552889478098,
+    0.13744985981850427,
+    0.16278774367826399,
+    0.16932655244768216
+   ],
+   "yeast": [
+    0.5374001268684063,
+    0.5418239634596822,
+    0.5198271979365425,
+    0.5091020505582545,
+    0.5806201029500377
+   ]
+  },
+  "GBDT_11": {
+   "human": [
+    0.14276074731801697,
+    0.16626753204074543,
+    0.1432075534634672,
+    0.16821468389717054,
+    0.1787039479810108
+   ],
+   "yeast": [
+    0.5400565014839355,
+    0.5390198923723868,
+    0.5157880773219482,
+    0.4612237320603846,
+    0.5747141152205663
+   ]
+  },
+  "GBDT_12": {
+   "human": [
+    0.12816575184407475,
+    0.1510510397152102,
+    0.14716718959880867,
+    0.16346335473291757,
+    0.14975744734834184
+   ],
+   "yeast": [
+    0.5410733531002709,
+    0.5452055681015836,
+    0.5660101777111913,
+    0.505269088386895,
+    0.5823405175234291
+   ]
+  },
+  "GBDT_13": {
+   "human": [
+    0.13688951918307746,
+    0.1615764226253703,
+    0.13674530976656898,
+    0.155752391585791,
+    0.17346809531181445
+   ],
+   "yeast": [
+    0.5645977287300098,
+    0.54875675735386,
+    0.5542391221168497,
+    0.48696794728116816,
+    0.5965198226282671
+   ]
+  },
+  "GBDT_14": {
+   "human": [
+    0.12353855774750093,
+    0.1480288496683767,
+    0.13636893207913084,
+    0.16794868970187993,
+    0.16244259173952133
+   ],
+   "yeast": [
+    0.5400666887939072,
+    0.5466503241651893,
+    0.5242058603663327,
+    0.502366430051629,
+    0.576066166381182
+   ]
+  },
+  "GBDT_15": {
+   "human": [
+    0.1405122075210923,
+    0.15770900317515327,
+    0.14220944482481532,
+    0.1634443362037641,
+    0.19260916294630245
+   ],
+   "yeast": [
+    0.5328577159399994,
+    0.5138312746261494,
+    0.49941694246113005,
+    0.45394643533189155,
+    0.562677735094266
+   ]
+  },
+  "GBDT_16": {
+   "human": [
+    0.14723490588992832,
+    0.1659260241031929,
+    0.14587425677901258,
+    0.16598715995220098,
+    0.17432969294521317
+   ],
+   "yeast": [
+    0.5473981147326934,
+    0.5213946123535307,
+    0.5668911529095277,
+    0.4893117575871462,
+    0.5746244284820515
+   ]
+  },
+  "GBDT_17": {
+   "human": [
+    0.15097162635392714,
+    0.16674936263050047,
+    0.14340077426261544,
+    0.162712253607366,
+    0.18098918230669142
+   ],
+   "yeast": [
+    0.5398081456730952,
+    0.526912596836568,
+    0.5731096037350821,
+    0.5177683039721697,
+    0.5658021021376272
+   ]
+  },
+  "GBDT_18": {
+   "human": [
+    0.13795164663141612,
+    0.16053706553197863,
+    0.13925325449730566,
+    0.16682792799883572,
+    0.1800819719778286
+   ],
+   "yeast": [
+    0.5505831438608192,
+    0.5373447761544534,
+    0.5639787749697839,
+    0.474534256212866,
+    0.5743105109667502
+   ]
+  },
+  "GBDT_19": {
+   "human": [
+    0.14564790040904774,
+    0.1547563697859686,
+    0.14045489261367006,
+    0.16587455286369882,
+    0.1774241013379996
+   ],
+   "yeast": [
+    0.5455580380292386,
+    0.5430995613698043,
+    0.5576173489037879,
+    0.476683208944885,
+    0.5579379845586819
+   ]
+  },
+  "GBDT_20": {
+   "human": [
+    0.1345333605430008,
+    0.154335753594259,
+    0.13653829135393716,
+    0.16549711014717458,
+    0.16171576276491115
+   ],
+   "yeast": [
+    0.5619500426142411,
+    0.5404922931365325,
+    0.5585276556795524,
+    0.4836601906051916,
+    0.5881271552213019
+   ]
+  },
+  "GBDT_21": {
+   "human": [
+    0.14063105190065053,
+    0.1528729421023227,
+    0.1366639699220608,
+    0.15518362773917432,
+    0.17561460559860648
+   ],
+   "yeast": [
+    0.5511818027150505,
+    0.5517890837047249,
+    0.5613691023498764,
+    0.4905222751757838,
+    0.5909893341922429
+   ]
+  },
+  "GBDT_22": {
+   "human": [
+    0.1308261274822284,
+    0.15459989399060597,
+    0.1401159378182682,
+    0.1603041864185357,
+    0.16788823628166433
+   ],
+   "yeast": [
+    0.5526532773690914,
+    0.549151017692327,
+    0.5446050276437182,
+    0.507319593240744,
+    0.586201987217626
+   ]
+  },
+  "GBDT_23": {
+   "human": [
+    0.13451511043852946,
+    0.15833541651570462,
+    0.13285276660011647,
+    0.16444802955364668,
+    0.17973852167399823
+   ],
+   "yeast": [
+    0.5581724098508274,
+    0.544812119925099,
+    0.524775065620565,
+    0.4786698912270669,
+    0.5867497678672388
+   ]
+  },
+  "GBDT_24": {
+   "human": [
+    0.13176827586538417,
+    0.15235027833132359,
+    0.13513445779140495,
+    0.15813933123953638,
+    0.15650144678073152
+   ],
+   "yeast": [
+    0.5650047782432736,
+    0.5411331515641316,
+    0.549321935457784,
+    0.4930147979729783,
+    0.5795778062687471
+   ]
+  },
+  "GBDT_25": {
+   "human": [
+    0.13379434459069756,
+    0.13957105452764512,
+    0.12765650318284708,
+    0.15537421398956588,
+    0.16271333274972152
+   ],
+   "yeast": [
+    0.5624139442554342,
+    0.551965649810176,
+    0.5355401922862427,
+    0.49116556662901056,
+    0.6045108364090317
+   ]
+  },
+  "GBDT_26": {
+   "human": [
+    0.12959024012050366,
+    0.15368709688896334,
+    0.13333817079994353,
+    0.15943316417615375,
+    0.16523328319637642
+   ],
+   "yeast": [
+    0.5575709564408192,
+    0.5422088887535623,
+    0.5405953937610221,
+    0.4911283974995901,
+    0.5628993540672524
+   ]
+  },
+  "GBDT_27": {
+   "human": [
+    0.1386293657879863,
+    0.13983291385539254,
+    0.12362666838522698,
+    0.1608258737955297,
+    0.1680807584991766
+   ],
+   "yeast": [
+    0.5553085797982434,
+    0.5591177187352975,
+    0.5301879917439759,
+    0.4627574829847751,
+    0.582262911387734
+   ]
+  },
+  "GBDT_28": {
+   "human": [
+    0.12865712384008177,
+    0.14044719843348444,
+    0.12399880168978539,
+    0.15143518394991004,
+    0.14822330333151923
+   ],
+   "yeast": [
+    0.5573810728518394,
+    0.5320625331358888,
+    0.551081694463228,
+    0.49147406023718493,
+    0.582682603564432
+   ]
+  },
+  "GBDT_29": {
+   "human": [
+    0.1319733139037203,
+    0.1429207353301266,
+    0.13259124354289906,
+    0.14721636403508467,
+    0.15869255319462786
+   ],
+   "yeast": [
+    0.5665737878457909,
+    0.552611356433898,
+    0.5368892636917822,
+    0.49550548768576436,
+    0.6011878866943358
+   ]
+  },
+  "GBDT_30": {
+   "human": [
+    0.12990105057882467,
+    0.14608563401846636,
+    0.1306401971665086,
+    0.14705955259550943,
+    0.15998471975361053
+   ],
+   "yeast": [
+    0.5631398602123606,
+    0.5387833594804694,
+    0.5271836436814804,
+    0.47636755797688796,
+    0.55644975918124
+   ]
+  },
+  "GBDT_31": {
+   "human": [
+    0.13338936433642964,
+    0.1351362981019018,
+    0.12157401645572939,
+    0.15571357218671758,
+    0.1574929489196815
+   ],
+   "yeast": [
+    0.5281432105083911,
+    0.5467260322130746,
+    0.5133519853572575,
+    0.4784997847049184,
+    0.5615247108279866
+   ]
+  }
+ },
+ "loso": {
+  "GBDT": {
+   "train_yeast_test_human": {
+    "n": 4415,
+    "n_pos": 123,
+    "n_neg": 4292,
+    "prevalence": 0.027859569648924123,
+    "ap": 0.17630944326946074,
+    "auroc": 0.780497276081801,
+    "lift": 6.328505626298123,
+    "ap_above_chance": 0.15270414539484373,
+    "p_at_10": 0.3,
+    "p_at_50": 0.3,
+    "p_at_npos": 0.2601626016260163,
+    "ap_ci": {
+     "lo": 0.12854938104700386,
+     "hi": 0.2543159519583411,
+     "se": 0.032389761280317654,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "auroc_ci": {
+     "lo": 0.712535202888715,
+     "hi": 0.8457786263577945,
+     "se": 0.03416937180801625,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "delta_ap_vs_B1": {
+     "point": 0.058003995751918586,
+     "lo": 0.020421808433120806,
+     "hi": 0.11226893285275351,
+     "se": 0.023300286901019693,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "rel_gain_vs_B1": 0.49029015120641706
+   },
+   "train_human_test_yeast": {
+    "n": 996,
+    "n_pos": 60,
+    "n_neg": 936,
+    "prevalence": 0.060240963855421686,
+    "ap": 0.5298385276792515,
+    "auroc": 0.9031784188034188,
+    "lift": 8.795319559475576,
+    "ap_above_chance": 0.49969997176125486,
+    "p_at_10": 0.8,
+    "p_at_50": 0.6,
+    "p_at_npos": 0.5666666666666667,
+    "ap_ci": {
+     "lo": 0.4128828666613325,
+     "hi": 0.6639618007799255,
+     "se": 0.06429815082426621,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "auroc_ci": {
+     "lo": 0.8586629935168392,
+     "hi": 0.945504917935471,
+     "se": 0.022339467139541845,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "delta_ap_vs_B1": {
+     "point": -0.037287075592834173,
+     "lo": -0.1405137157979302,
+     "hi": 0.06798639451815913,
+     "se": 0.05277584946384656,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "rel_gain_vs_B1": -0.06574747353620225
+   }
+  },
+  "LR": {
+   "train_yeast_test_human": {
+    "n": 4415,
+    "n_pos": 123,
+    "n_neg": 4292,
+    "prevalence": 0.027859569648924123,
+    "ap": 0.15782923121223064,
+    "auroc": 0.7932587760173968,
+    "lift": 5.6651711853821,
+    "ap_above_chance": 0.13369432800605738,
+    "p_at_10": 0.1,
+    "p_at_50": 0.24,
+    "p_at_npos": 0.23577235772357724,
+    "ap_ci": {
+     "lo": 0.09537130480557908,
+     "hi": 0.2640850933224841,
+     "se": 0.045064564606707345,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "auroc_ci": {
+     "lo": 0.7307233677018279,
+     "hi": 0.852646980486173,
+     "se": 0.031246613563036405,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "delta_ap_vs_B1": {
+     "point": 0.03952378369468848,
+     "lo": -0.010450538770854343,
+     "hi": 0.1182538086790094,
+     "se": 0.03437428065535111,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "rel_gain_vs_B1": 0.3340825340171081
+   },
+   "train_human_test_yeast": {
+    "n": 996,
+    "n_pos": 60,
+    "n_neg": 936,
+    "prevalence": 0.060240963855421686,
+    "ap": 0.5717497115727109,
+    "auroc": 0.9017628205128205,
+    "lift": 9.491045212107002,
+    "ap_above_chance": 0.5442977700068591,
+    "p_at_10": 0.8,
+    "p_at_50": 0.66,
+    "p_at_npos": 0.5666666666666667,
+    "ap_ci": {
+     "lo": 0.4485143913335286,
+     "hi": 0.7052717467386062,
+     "se": 0.06558238110978748,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "auroc_ci": {
+     "lo": 0.8514333630556283,
+     "hi": 0.9484918440554624,
+     "se": 0.024838188832570707,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "delta_ap_vs_B1": {
+     "point": 0.004624108300625207,
+     "lo": -0.06103383703584829,
+     "hi": 0.07983416246764134,
+     "se": 0.035780573426319726,
+     "n_ok": 10000,
+     "n_dropped": 0
+    },
+    "rel_gain_vs_B1": 0.008153587624938785
+   }
+  }
+ },
+ "controls": {
+  "shuffled_label": {
+   "GBDT_sel": {
+    "per_permutation": [
+     {
+      "seed": 11,
+      "species": "human",
+      "ap": 0.030671336399319495,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.5288720175179384
+     },
+     {
+      "seed": 11,
+      "species": "yeast",
+      "ap": 0.062354671338509485,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.49753383190883194
+     },
+     {
+      "seed": 23,
+      "species": "human",
+      "ap": 0.026712804226774946,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.46880659044241885
+     },
+     {
+      "seed": 23,
+      "species": "yeast",
+      "ap": 0.08574415725349754,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.5262108262108263
+     },
+     {
+      "seed": 37,
+      "species": "human",
+      "ap": 0.023165277062866335,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.4327629774433812
+     },
+     {
+      "seed": 37,
+      "species": "yeast",
+      "ap": 0.07495841981682176,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.463826566951567
+     },
+     {
+      "seed": 41,
+      "species": "human",
+      "ap": 0.02352136226152573,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.43724380393850537
+     },
+     {
+      "seed": 41,
+      "species": "yeast",
+      "ap": 0.07790865926095147,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.5552617521367522
+     },
+     {
+      "seed": 59,
+      "species": "human",
+      "ap": 0.02985416406389147,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.4963592692776881
+     },
+     {
+      "seed": 59,
+      "species": "yeast",
+      "ap": 0.05321154769076705,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.4298967236467236
+     }
+    ],
+    "human": {
+     "ap_mean": 0.02678498880287559,
+     "ap_sd": 0.0034742738924273134,
+     "auroc_mean": 0.47280893172398636,
+     "prevalence": 0.027859569648924123,
+     "ap_over_prevalence": 0.9614286631276076
+    },
+    "yeast": {
+     "ap_mean": 0.07083549107210947,
+     "ap_sd": 0.012959786462672407,
+     "auroc_mean": 0.4945459401709402,
+     "prevalence": 0.060240963855421686,
+     "ap_over_prevalence": 1.1758691517970172
+    }
+   },
+   "LR_sel": {
+    "per_permutation": [
+     {
+      "seed": 11,
+      "species": "human",
+      "ap": 0.027625614876964626,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.502856515051637
+     },
+     {
+      "seed": 11,
+      "species": "yeast",
+      "ap": 0.06153520037972611,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.4933760683760684
+     },
+     {
+      "seed": 23,
+      "species": "human",
+      "ap": 0.03007319193348723,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.5167962327339956
+     },
+     {
+      "seed": 23,
+      "species": "yeast",
+      "ap": 0.07127704580281125,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.5419337606837606
+     },
+     {
+      "seed": 37,
+      "species": "human",
+      "ap": 0.03418879822281619,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.5415994211200267
+     },
+     {
+      "seed": 37,
+      "species": "yeast",
+      "ap": 0.05139052683276196,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.40997150997151
+     },
+     {
+      "seed": 41,
+      "species": "human",
+      "ap": 0.03488090582650168,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.4610241023193084
+     },
+     {
+      "seed": 41,
+      "species": "yeast",
+      "ap": 0.08208360666648548,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.5736111111111111
+     },
+     {
+      "seed": 59,
+      "species": "human",
+      "ap": 0.026016496605177717,
+      "prevalence": 0.027859569648924123,
+      "auroc": 0.47608899900741786
+     },
+     {
+      "seed": 59,
+      "species": "yeast",
+      "ap": 0.05552056617265405,
+      "prevalence": 0.060240963855421686,
+      "auroc": 0.4864316239316239
+     }
+    ],
+    "human": {
+     "ap_mean": 0.03055700149298949,
+     "ap_sd": 0.003915653840384244,
+     "auroc_mean": 0.4996730540464771,
+     "prevalence": 0.027859569648924123,
+     "ap_over_prevalence": 1.0968224519638097
+    },
+    "yeast": {
+     "ap_mean": 0.06436138917088777,
+     "ap_sd": 0.012412635334367289,
+     "auroc_mean": 0.5010648148148148,
+     "prevalence": 0.060240963855421686,
+     "ap_over_prevalence": 1.068399060236737
+    }
+   }
+  },
+  "species_identification": {
+   "n": 5411,
+   "n_target_pos": 4415,
+   "target_prevalence": 0.8159305119201626,
+   "auroc": 0.9567734130178699,
+   "auroc_ci": {
+    "lo": 0.8789215800683411,
+    "hi": 0.9999969767862537,
+    "se": 0.03679715200423797,
+    "n_ok": 10000,
+    "n_dropped": 0
+   },
+   "ap": 0.9894529050514862
+  },
+  "source_library_human": {
+   "n": 4415,
+   "n_target_pos": 356,
+   "target_prevalence": 0.08063420158550397,
+   "auroc": 0.9284088486952286,
+   "auroc_ci": {
+    "lo": 0.8852958838538632,
+    "hi": 0.9548774949877036,
+    "se": 0.02070297153372014,
+    "n_ok": 10000,
+    "n_dropped": 0
+   },
+   "ap": 0.5389424200933316,
+   "definition": "human pair tested in >= 3 studies (n_studies_testable)",
+   "target_rate_in_pos": 0.6097560975609756,
+   "target_rate_in_neg": 0.06547064305684995
+  }
+ },
+ "strata": {
+  "identity_tertiles": {
+   "human_q1": {
+    "n": 1472,
+    "n_pos": 12,
+    "n_neg": 1460,
+    "prevalence": 0.008152173913043478,
+    "ap": {
+     "B0": 0.01370653482148577,
+     "B1": 0.011791856123719038,
+     "B2": 0.026031207114625452,
+     "B3": 0.00574797260865308,
+     "LR_sel": 0.021656057338536858,
+     "GBDT_sel": 0.01101940284105721
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": 0.014239350990906414,
+      "lo": -0.023583260591032905,
+      "hi": 0.06989137143168084,
+      "se": 0.022649426352459784,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": 0.00986420121481782,
+      "lo": -0.018209243490978938,
+      "hi": 0.07801941560237713,
+      "se": 0.02448675228816404,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": -0.000772453282661829,
+      "lo": -0.027754754384630157,
+      "hi": 0.011421307968854946,
+      "se": 0.00957649013013755,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    },
+    "b1_range": [
+     0.03935543848775953,
+     0.3341288782816229
+    ]
+   },
+   "human_q2": {
+    "n": 1471,
+    "n_pos": 10,
+    "n_neg": 1461,
+    "prevalence": 0.006798096532970768,
+    "ap": {
+     "B0": 0.007260308476413308,
+     "B1": 0.00584322590337827,
+     "B2": 0.017067285485650823,
+     "B3": 0.004786631543996648,
+     "LR_sel": 0.012215391057447303,
+     "GBDT_sel": 0.012672300066253023
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": 0.011224059582272553,
+      "lo": -0.0002082145345847325,
+      "hi": 0.032059657870427846,
+      "se": 0.008406462657234184,
+      "n_ok": 9996,
+      "n_dropped": 4
+     },
+     "LR_sel": {
+      "point": 0.006372165154069033,
+      "lo": 0.00022192251100672903,
+      "hi": 0.026904397852635695,
+      "se": 0.007081526375684949,
+      "n_ok": 9996,
+      "n_dropped": 4
+     },
+     "GBDT_sel": {
+      "point": 0.006829074162874753,
+      "lo": -0.0010125438460503705,
+      "hi": 0.029469566425935408,
+      "se": 0.007987403190922414,
+      "n_ok": 9996,
+      "n_dropped": 4
+     }
+    },
+    "b1_range": [
+     0.33413461538461536,
+     0.4330097087378641
+    ]
+   },
+   "human_q3": {
+    "n": 1472,
+    "n_pos": 101,
+    "n_neg": 1371,
+    "prevalence": 0.06861413043478261,
+    "ap": {
+     "B0": 0.08117206746622253,
+     "B1": 0.13564671830519934,
+     "B2": 0.19601240769066033,
+     "B3": 0.09372396217530643,
+     "LR_sel": 0.21097525228540132,
+     "GBDT_sel": 0.19440859878529046
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": 0.060365689385461,
+      "lo": 0.024732390448819926,
+      "hi": 0.10043453484672668,
+      "se": 0.019028249777812443,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": 0.07532853398020198,
+      "lo": 0.03282361613304756,
+      "hi": 0.13008106840907682,
+      "se": 0.02490596589140732,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": 0.05876188048009112,
+      "lo": 0.017163440215807138,
+      "hi": 0.10535226582325603,
+      "se": 0.02231431834101948,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    },
+    "b1_range": [
+     0.4332084893882647,
+     0.9949008498583569
+    ]
+   },
+   "yeast_q1": {
+    "n": 332,
+    "n_pos": 2,
+    "n_neg": 330,
+    "prevalence": 0.006024096385542169,
+    "ap": {
+     "B0": 0.0076690183085316044,
+     "B1": 0.08698296836982967,
+     "B2": 0.0048503611971104236,
+     "B3": 0.00963705134395622,
+     "LR_sel": 0.00511941242278321,
+     "GBDT_sel": 0.0049181388727108
+    },
+    "delta_vs_B1": {},
+    "note": "fewer than 10 positives: no CI",
+    "b1_range": [
+     0.08190476190476191,
+     0.20512820512820512
+    ]
+   },
+   "yeast_q2": {
+    "n": 332,
+    "n_pos": 6,
+    "n_neg": 326,
+    "prevalence": 0.018072289156626505,
+    "ap": {
+     "B0": 0.026304291454784752,
+     "B1": 0.04120862391686138,
+     "B2": 0.05082122249899193,
+     "B3": 0.15339578706080712,
+     "LR_sel": 0.06140840931185796,
+     "GBDT_sel": 0.03367511508958877
+    },
+    "delta_vs_B1": {},
+    "note": "fewer than 10 positives: no CI",
+    "b1_range": [
+     0.2051792828685259,
+     0.311804008908686
+    ]
+   },
+   "yeast_q3": {
+    "n": 332,
+    "n_pos": 52,
+    "n_neg": 280,
+    "prevalence": 0.1566265060240964,
+    "ap": {
+     "B0": 0.16317679602586554,
+     "B1": 0.6360189229748295,
+     "B2": 0.6355432449876935,
+     "B3": 0.12210025171160009,
+     "LR_sel": 0.6246109669903765,
+     "GBDT_sel": 0.6106926453790732
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": -0.00047567798713599174,
+      "lo": -0.06734641533567845,
+      "hi": 0.08256715317599213,
+      "se": 0.038107899955619945,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": -0.011407955984452989,
+      "lo": -0.08428645114962392,
+      "hi": 0.07783901143429117,
+      "se": 0.041124745399985854,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": -0.02532627759575634,
+      "lo": -0.10675734252161578,
+      "hi": 0.06855992428988314,
+      "se": 0.04485452507004294,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    },
+    "b1_range": [
+     0.3132075471698113,
+     1.0
+    ]
+   }
+  },
+  "D8_human": {
+   "n_studies_1": {
+    "n": 3474,
+    "n_pos": 21,
+    "n_neg": 3453,
+    "prevalence": 0.006044905008635579,
+    "ap": {
+     "B0": 0.00738630965469733,
+     "B1": 0.008942330648398392,
+     "B2": 0.011471092041222385,
+     "B3": 0.004453492783506094,
+     "LR_sel": 0.009454787149542218,
+     "GBDT_sel": 0.010898293935870116,
+     "B4": 0.007957355669373249
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": 0.002528761392823993,
+      "lo": -0.01404835743106899,
+      "hi": 0.009729792725778261,
+      "se": 0.006077429098603294,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": 0.0005124565011438258,
+      "lo": -0.012563890946214098,
+      "hi": 0.00808675703351037,
+      "se": 0.0051154680800476445,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": 0.0019559632874717233,
+      "lo": -0.009153451288434153,
+      "hi": 0.012322081750377422,
+      "se": 0.005240976292575892,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   },
+   "n_studies_2": {
+    "n": 585,
+    "n_pos": 27,
+    "n_neg": 558,
+    "prevalence": 0.046153846153846156,
+    "ap": {
+     "B0": 0.05216993607399122,
+     "B1": 0.14280396645687204,
+     "B2": 0.1417317874709999,
+     "B3": 0.08716950080622413,
+     "LR_sel": 0.08378343876033792,
+     "GBDT_sel": 0.07643496555463034,
+     "B4": 0.030253509264849633
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": -0.0010721789858721409,
+      "lo": -0.07792761673035357,
+      "hi": 0.07226385279441123,
+      "se": 0.037028208423931536,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": -0.059020527696534125,
+      "lo": -0.16186398647746283,
+      "hi": -0.0010980812624348387,
+      "se": 0.04210911462400011,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": -0.06636900090224171,
+      "lo": -0.17430289738030408,
+      "hi": -0.006217128277241701,
+      "se": 0.04430129055001304,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   },
+   "n_studies_>=3": {
+    "n": 356,
+    "n_pos": 75,
+    "n_neg": 281,
+    "prevalence": 0.21067415730337077,
+    "ap": {
+     "B0": 0.24082651457463364,
+     "B1": 0.4507384647753091,
+     "B2": 0.45654084578235204,
+     "B3": 0.44580172236761084,
+     "LR_sel": 0.44628962221267376,
+     "GBDT_sel": 0.384477507584224,
+     "B4": 0.29531119015645213
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": 0.005802381007042945,
+      "lo": -0.06393129898032796,
+      "hi": 0.07788463625231863,
+      "se": 0.03625652558760238,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": -0.004448842562635336,
+      "lo": -0.0917030936472758,
+      "hi": 0.0688531107301013,
+      "se": 0.04059014581261492,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": -0.0662609571910851,
+      "lo": -0.15141261164118777,
+      "hi": 0.016699905405242892,
+      "se": 0.04280240345020198,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   },
+   "stratum_averaged_ap": {
+    "B0": 0.10012758676777406,
+    "B1": 0.2008282539601932,
+    "B2": 0.20324790843152477,
+    "B3": 0.17914157198578037,
+    "LR_sel": 0.1798426160408513,
+    "GBDT_sel": 0.15727025569157482,
+    "B4": 0.11117401836355834
+   },
+   "without_harle_chan_dependent": {
+    "n": 4363,
+    "n_pos": 93,
+    "n_neg": 4270,
+    "prevalence": 0.02131560852624341,
+    "ap": {
+     "B0": 0.024212422304709956,
+     "B1": 0.09050087174380193,
+     "B2": 0.12020827699913761,
+     "B3": 0.01765610365353858,
+     "LR_sel": 0.1166253926579559,
+     "GBDT_sel": 0.10861658023814644,
+     "B4": 0.09718520252830484
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": 0.029707405255335675,
+      "lo": 0.002017880562869918,
+      "hi": 0.0599920863549632,
+      "se": 0.01462821848053855,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": 0.026124520914153973,
+      "lo": -0.004850899453792947,
+      "hi": 0.06295012029300234,
+      "se": 0.017172544650831897,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": 0.018115708494344504,
+      "lo": -0.014307697212626614,
+      "hi": 0.05097632775280433,
+      "se": 0.016589541254890518,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   },
+   "harle_chan_dependent_counts": {
+    "n": 52,
+    "n_pos": 30
+   }
+  },
+  "D10_yeast": {
+   "all_yeast": {
+    "n": 996,
+    "n_pos": 60,
+    "n_neg": 936,
+    "prevalence": 0.060240963855421686,
+    "ap": {
+     "B0": 0.059691143598388924,
+     "B1": 0.5671256032720857,
+     "B2": 0.5676402628845593,
+     "B3": 0.06340886880399438,
+     "LR_sel": 0.5582340929381202,
+     "GBDT_sel": 0.5411023497337473
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": 0.0005146596124735447,
+      "lo": -0.057859329518443615,
+      "hi": 0.07212974329243185,
+      "se": 0.03316703431052925,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": -0.008891510333965513,
+      "lo": -0.07281894532933315,
+      "hi": 0.06899590786021785,
+      "se": 0.03573734344919811,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": -0.026023253538338453,
+      "lo": -0.09660856871573076,
+      "hi": 0.05584455882254813,
+      "se": 0.039061009078761574,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   },
+   "without_orientation_conflict_positives": {
+    "n": 993,
+    "n_pos": 57,
+    "n_neg": 936,
+    "prevalence": 0.05740181268882175,
+    "ap": {
+     "B0": 0.05617752263543379,
+     "B1": 0.5643860797072962,
+     "B2": 0.5612404446116384,
+     "B3": 0.06239630174213375,
+     "LR_sel": 0.5513070656827757,
+     "GBDT_sel": 0.5344987690693441
+    },
+    "delta_vs_B1": {
+     "B2": {
+      "point": -0.003145635095657795,
+      "lo": -0.06210329540084461,
+      "hi": 0.06978104476093014,
+      "se": 0.03375247816479227,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "LR_sel": {
+      "point": -0.013079014024520497,
+      "lo": -0.07780116689514611,
+      "hi": 0.0655480131188768,
+      "se": 0.0363312480871889,
+      "n_ok": 10000,
+      "n_dropped": 0
+     },
+     "GBDT_sel": {
+      "point": -0.029887310637952025,
+      "lo": -0.10266516229089293,
+      "hi": 0.05422780141136052,
+      "se": 0.039923365424162804,
+      "n_ok": 10000,
+      "n_dropped": 0
+     }
+    }
+   },
+   "orientation_conflict_positives_removed": 3
+  },
+  "ribosomal_KW-0689": {
+   "human": {
+    "status": "unavailable",
+    "missing_file": "data/raw/uniprot_2026_03/UP000005640_KW-0689.tsv",
+    "source_url": "https://rest.uniprot.org/uniprotkb/stream?format=tsv&fields=accession&query=%28keyword%3AKW-0689%29%20AND%20%28proteome%3AUP000005640%29"
+   },
+   "yeast": {
+    "status": "unavailable",
+    "missing_file": "data/raw/uniprot_2026_03/UP000002311_KW-0689.tsv",
+    "source_url": "https://rest.uniprot.org/uniprotkb/stream?format=tsv&fields=accession&query=%28keyword%3AKW-0689%29%20AND%20%28proteome%3AUP000002311%29"
+   }
+  }
+ },
+ "end_to_end": {
+  "human": {
+   "n": 4420,
+   "n_pos": 123,
+   "n_not_called": 5,
+   "n_pos_not_called": 0,
+   "ap": {
+    "B1": 0.11830544751754216,
+    "LR_sel": 0.1793078006369673,
+    "GBDT_sel": 0.16449517708484288
+   }
+  },
+  "yeast": {
+   "n": 1205,
+   "n_pos": 62,
+   "n_not_called": 209,
+   "n_pos_not_called": 2,
+   "ap": {
+    "B1": 0.5504909800103306,
+    "LR_sel": 0.5418862925903639,
+    "GBDT_sel": 0.5253071862635514
+   }
+  },
+  "note": "caller-missed pairs scored at the minimum (one tie block) for every method, B1 included; a caller-independent direct alignment for B1 (statistics R2 item 5) is not implemented yet"
+ },
+ "runtime_s": 5626.005213975906
+}

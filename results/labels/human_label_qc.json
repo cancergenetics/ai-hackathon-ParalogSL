@@ -1,0 +1,1463 @@
+{
+ "audit_primary_positive_rate_by_n_testable": {
+  "[11, 21)": {
+   "n": 2647,
+   "pos_rate": 0.0204
+  },
+  "[2, 3)": {
+   "n": 2216,
+   "pos_rate": 0.0032
+  },
+  "[21, 100)": {
+   "n": 1684,
+   "pos_rate": 0.0534
+  },
+  "[3, 4)": {
+   "n": 405,
+   "pos_rate": 0.0198
+  },
+  "[4, 6)": {
+   "n": 888,
+   "pos_rate": 0.0236
+  },
+  "[6, 11)": {
+   "n": 422,
+   "pos_rate": 0.0995
+  }
+ },
+ "audit_sl_rate_by_expected_dko_over_T": {
+  "[-0.25, 0.0)": {
+   "n": 13758,
+   "sl_rate": 0.0225
+  },
+  "[-0.5, -0.25)": {
+   "n": 10321,
+   "sl_rate": 0.0283
+  },
+  "[-1.0, -0.5)": {
+   "n": 11501,
+   "sl_rate": 0.0547
+  },
+  "[0.0, 0.25)": {
+   "n": 16708,
+   "sl_rate": 0.0133
+  },
+  "[0.25, 0.5)": {
+   "n": 15993,
+   "sl_rate": 0.0094
+  },
+  "[0.5, inf)": {
+   "n": 38884,
+   "sl_rate": 0.0033
+  }
+ },
+ "candidate_13_pairs_status": [
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 38,
+   "n_testable": 45,
+   "pair": "CNOT7|CNOT8",
+   "primary_reason": "",
+   "studies_sl": "chan2025,chymera2020,dede2020,harle2025,in4mer2024,parrish2021,thompson2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 8,
+   "n_testable": 9,
+   "pair": "PITPNA|PITPNB",
+   "primary_reason": "",
+   "studies_sl": "chymera2020,dede2020,in4mer2024,parrish2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 7,
+   "n_testable": 7,
+   "pair": "TIA1|TIAL1",
+   "primary_reason": "",
+   "studies_sl": "chymera2020,dede2020,in4mer2024,parrish2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 35,
+   "n_testable": 38,
+   "pair": "SAR1A|SAR1B",
+   "primary_reason": "",
+   "studies_sl": "chan2025,chymera2020,dede2020,harle2025,in4mer2024,thompson2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 7,
+   "n_testable": 28,
+   "pair": "PTP4A1|PTP4A2",
+   "primary_reason": "",
+   "studies_sl": "dede2020,in4mer2024,ito2021,klingbeil2024"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 19,
+   "n_testable": 33,
+   "pair": "GSK3A|GSK3B",
+   "primary_reason": "",
+   "studies_sl": "dede2020,in4mer2024,ito2021,klingbeil2024,parrish2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 12,
+   "n_testable": 29,
+   "pair": "CSNK2A1|CSNK2A2",
+   "primary_reason": "",
+   "studies_sl": "dede2020,in4mer2024,ito2021,klingbeil2024"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 5,
+   "n_testable": 17,
+   "pair": "CSNK1D|CSNK1E",
+   "primary_reason": "",
+   "studies_sl": "chymera2020,dede2020,ito2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 12,
+   "n_testable": 25,
+   "pair": "MAPK1|MAPK3",
+   "primary_reason": "",
+   "studies_sl": "dede2020,in4mer2024,ito2021,klingbeil2024,parrish2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 23,
+   "n_testable": 44,
+   "pair": "ARFGEF1|ARFGEF2",
+   "primary_reason": "",
+   "studies_sl": "chan2025,dede2020,harle2025,in4mer2024,parrish2021,thompson2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 27,
+   "n_testable": 29,
+   "pair": "HDAC1|HDAC2",
+   "primary_reason": "",
+   "studies_sl": "dede2020,in4mer2024,ito2021,klingbeil2024"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 34,
+   "n_testable": 34,
+   "pair": "ASF1A|ASF1B",
+   "primary_reason": "",
+   "studies_sl": "chan2025,harle2025,in4mer2024,thompson2021"
+  },
+  {
+   "in_labels": true,
+   "label_lenient": 1,
+   "label_primary": 1,
+   "label_two_studies": 1,
+   "n_sl": 31,
+   "n_testable": 33,
+   "pair": "SLC25A28|SLC25A37",
+   "primary_reason": "",
+   "studies_sl": "chan2025,chymera2020,harle2025,in4mer2024,parrish2021,thompson2021"
+  }
+ ],
+ "candidate_13_pairs_summary": {
+  "1": 13
+ },
+ "chymera_late_vs_supp_table1_dko": {
+  "HAP1": {
+   "n": 692,
+   "pearson_r": 0.9897
+  },
+  "RPE1": {
+   "n": 691,
+   "pearson_r": 0.9937
+  }
+ },
+ "compara_universe": {
+  "exists": true,
+  "file": "data/interim/universe/human_paralog_pairs.tsv",
+  "n_pairs": 141164,
+  "sha256": "68e7e62ab17922f1b952f399f15ff3b78b7251ab5ff623d4f838759016524eee"
+ },
+ "config": "config/labels_human.yaml",
+ "config_version": 2,
+ "dennler_sl_lenient_agreement": {
+  "cohen_kappa": 0.4001,
+  "dennler_only": 217,
+  "dennler_only_sl": 40,
+  "n_dennler_pairs": 5316,
+  "n_dennler_sl": 403,
+  "n_ours_lenient_labelled": 10308,
+  "n_overlap": 5099,
+  "note": "report only; never used to tune any rule. Dennler IDs are Ensembl 111; ours UniProt 2026_03 xrefs",
+  "ours_only": 5209,
+  "percent_agreement": 0.8861,
+  "table": {
+   "ours_SL&dr_SL": 244,
+   "ours_SL&dr_nonSL": 462,
+   "ours_nonSL&dr_SL": 119,
+   "ours_nonSL&dr_nonSL": 4274
+  }
+ },
+ "ensembl_multi_xref_resolution": {
+  "multi_accession_exclusion": 35,
+  "opentargets": 1529,
+  "ref_proteome": 54,
+  "unresolved": 424
+ },
+ "git_commit_at_build": "ea97950ca04666ef54fed07479b16f76794859a7",
+ "harle_chan_dependent": {
+  "by_label_primary": {
+   "-1": 123,
+   "-2": 16,
+   "0": 140,
+   "1": 48
+  },
+  "definition": "primary or lenient label changes if all Harle 2025 + Chan 2025 calls are removed",
+  "n_pairs": 327
+ },
+ "klingbeil_lfc_lookup": {
+  "missing_lfc_rows": {
+   "dko": 0,
+   "single1": 185,
+   "single2": 185
+  },
+  "n_rows": 2718
+ },
+ "label_value_legend": {
+  "ambiguous": -1,
+  "negative": 0,
+  "positive": 1,
+  "untestable": -2
+ },
+ "line_scales": {
+  "chymera2020|HAP1": {
+   "T": 1.0006,
+   "m": 0.16,
+   "n_singles": 1357,
+   "s": 0.5003
+  },
+  "chymera2020|RPE1": {
+   "T": 1.0463,
+   "m": -0.1164,
+   "n_singles": 1357,
+   "s": 0.5232
+  },
+  "dede2020|A549": {
+   "T": 0.593,
+   "m": -0.05,
+   "n_singles": 789,
+   "s": 0.2965
+  },
+  "dede2020|HT29": {
+   "T": 0.5041,
+   "m": -0.01,
+   "n_singles": 789,
+   "s": 0.252
+  },
+  "dede2020|OVCAR8": {
+   "T": 0.5,
+   "m": 0.02,
+   "n_singles": 789,
+   "s": 0.2224
+  },
+  "in4mer2024|A375": {
+   "T": 1.622,
+   "m": -0.107,
+   "n_singles": 19490,
+   "s": 0.811
+  },
+  "in4mer2024|A549": {
+   "T": 0.7057,
+   "m": 0.016,
+   "n_singles": 19490,
+   "s": 0.3529
+  },
+  "in4mer2024|K562": {
+   "T": 1.0082,
+   "m": 0.002,
+   "n_singles": 19490,
+   "s": 0.5041
+  },
+  "in4mer2024|MelJuso": {
+   "T": 1.189,
+   "m": -0.039,
+   "n_singles": 19490,
+   "s": 0.5945
+  },
+  "ito2021|A549_LUNG": {
+   "T": 0.5041,
+   "m": -0.12,
+   "n_singles": 3284,
+   "s": 0.252
+  },
+  "ito2021|GI1_CENTRAL_NERVOUS_SYSTEM": {
+   "T": 0.5634,
+   "m": -0.1,
+   "n_singles": 3284,
+   "s": 0.2817
+  },
+  "ito2021|HS936T_SKIN": {
+   "T": 0.5337,
+   "m": -0.13,
+   "n_singles": 3284,
+   "s": 0.2669
+  },
+  "ito2021|HS944T_SKIN": {
+   "T": 0.5,
+   "m": -0.05,
+   "n_singles": 3284,
+   "s": 0.1779
+  },
+  "ito2021|HSC5_SKIN": {
+   "T": 0.5,
+   "m": -0.11,
+   "n_singles": 3284,
+   "s": 0.2372
+  },
+  "ito2021|IPC298_SKIN": {
+   "T": 0.5041,
+   "m": -0.07,
+   "n_singles": 3284,
+   "s": 0.252
+  },
+  "ito2021|MEL202_UVEA": {
+   "T": 0.5,
+   "m": -0.06,
+   "n_singles": 3284,
+   "s": 0.1927
+  },
+  "ito2021|MELJUSO_SKIN": {
+   "T": 0.5,
+   "m": -0.04,
+   "n_singles": 3284,
+   "s": 0.1779
+  },
+  "ito2021|MEWO_SKIN": {
+   "T": 0.5,
+   "m": -0.03,
+   "n_singles": 3284,
+   "s": 0.1483
+  },
+  "ito2021|PATU8988S_PANCREAS": {
+   "T": 0.5,
+   "m": -0.03,
+   "n_singles": 3284,
+   "s": 0.1927
+  },
+  "ito2021|PK1_PANCREAS": {
+   "T": 0.5337,
+   "m": -0.07,
+   "n_singles": 3284,
+   "s": 0.2669
+  },
+  "klingbeil2024|A549": {
+   "T": 0.8613,
+   "m": 0.0883,
+   "n_singles": 2122,
+   "s": 0.4306
+  },
+  "klingbeil2024|ASPC1": {
+   "T": 0.5,
+   "m": 0.1373,
+   "n_singles": 2122,
+   "s": 0.2368
+  },
+  "klingbeil2024|CORL311": {
+   "T": 1.7472,
+   "m": 0.0651,
+   "n_singles": 2122,
+   "s": 0.8736
+  },
+  "klingbeil2024|H1048": {
+   "T": 0.7892,
+   "m": 0.1184,
+   "n_singles": 2122,
+   "s": 0.3946
+  },
+  "klingbeil2024|H1299": {
+   "T": 0.8652,
+   "m": 0.0817,
+   "n_singles": 2122,
+   "s": 0.4326
+  },
+  "klingbeil2024|H1436": {
+   "T": 1.2358,
+   "m": 0.1836,
+   "n_singles": 2122,
+   "s": 0.6179
+  },
+  "klingbeil2024|H1836": {
+   "T": 0.8633,
+   "m": 0.1062,
+   "n_singles": 2122,
+   "s": 0.4316
+  },
+  "klingbeil2024|H209": {
+   "T": 0.8413,
+   "m": 0.0919,
+   "n_singles": 2122,
+   "s": 0.4206
+  },
+  "klingbeil2024|H211": {
+   "T": 0.9911,
+   "m": 0.0843,
+   "n_singles": 2122,
+   "s": 0.4955
+  },
+  "klingbeil2024|HEL": {
+   "T": 0.5901,
+   "m": 0.0903,
+   "n_singles": 2122,
+   "s": 0.295
+  },
+  "klingbeil2024|HPAFII": {
+   "T": 1.0234,
+   "m": 0.1682,
+   "n_singles": 2122,
+   "s": 0.5117
+  },
+  "klingbeil2024|K562": {
+   "T": 0.5343,
+   "m": 0.1086,
+   "n_singles": 2122,
+   "s": 0.2671
+  },
+  "klingbeil2024|MDAMB231": {
+   "T": 1.0961,
+   "m": 0.093,
+   "n_singles": 2122,
+   "s": 0.548
+  },
+  "klingbeil2024|MOLM13": {
+   "T": 0.6016,
+   "m": 0.1289,
+   "n_singles": 2122,
+   "s": 0.3008
+  },
+  "klingbeil2024|NOMO1": {
+   "T": 0.8373,
+   "m": 0.1385,
+   "n_singles": 2122,
+   "s": 0.4187
+  },
+  "klingbeil2024|PATU8902": {
+   "T": 1.6251,
+   "m": 0.1991,
+   "n_singles": 2122,
+   "s": 0.8125
+  },
+  "klingbeil2024|RD": {
+   "T": 0.7318,
+   "m": 0.1305,
+   "n_singles": 2122,
+   "s": 0.3659
+  },
+  "klingbeil2024|RH30": {
+   "T": 2.0378,
+   "m": 0.1793,
+   "n_singles": 2122,
+   "s": 1.0189
+  },
+  "klingbeil2024|SET2": {
+   "T": 0.7432,
+   "m": 0.1481,
+   "n_singles": 2122,
+   "s": 0.3716
+  },
+  "klingbeil2024|T3M4": {
+   "T": 0.5646,
+   "m": 0.1534,
+   "n_singles": 2122,
+   "s": 0.2823
+  },
+  "klingbeil2024|THP1": {
+   "T": 0.555,
+   "m": 0.129,
+   "n_singles": 2122,
+   "s": 0.2775
+  },
+  "klingbeil2024|YAPC": {
+   "T": 0.9351,
+   "m": 0.1839,
+   "n_singles": 2122,
+   "s": 0.4675
+  },
+  "parrish2021|HeLa": {
+   "T": 0.7858,
+   "m": -0.21,
+   "n_singles": 2060,
+   "s": 0.3929
+  },
+  "parrish2021|PC9": {
+   "T": 0.5,
+   "m": -0.13,
+   "n_singles": 2060,
+   "s": 0.2224
+  },
+  "thompson2021|A375": {
+   "T": 0.5041,
+   "m": -0.2,
+   "n_singles": 1680,
+   "s": 0.252
+  },
+  "thompson2021|MeWo": {
+   "T": 0.5,
+   "m": -0.03,
+   "n_singles": 1680,
+   "s": 0.1334
+  },
+  "thompson2021|RPE1": {
+   "T": 0.5041,
+   "m": -0.24,
+   "n_singles": 1680,
+   "s": 0.252
+  }
+ },
+ "n_pairs": 11125,
+ "note": "Thresholds pre-registered in config/labels_human.yaml (commits 513c1e5, c4e5039) before this script first ran; Dennler agreement and 13-pair status are report-only.",
+ "pair_mapping_losses": {
+  "chan2025": {
+   "source_pairs": 514,
+   "source_pairs_lost_self_pair": 0,
+   "source_pairs_lost_unmapped": 1
+  },
+  "chymera2020": {
+   "source_pairs": 688,
+   "source_pairs_lost_self_pair": 0,
+   "source_pairs_lost_unmapped": 3
+  },
+  "dede2020": {
+   "source_pairs": 403,
+   "source_pairs_lost_self_pair": 0,
+   "source_pairs_lost_unmapped": 3
+  },
+  "harle2025": {
+   "source_pairs": 472,
+   "source_pairs_lost_self_pair": 0,
+   "source_pairs_lost_unmapped": 1
+  },
+  "in4mer2024": {
+   "source_pairs": 4540,
+   "source_pairs_lost_self_pair": 0,
+   "source_pairs_lost_unmapped": 28
+  },
+  "ito2021": {
+   "source_pairs": 5065,
+   "source_pairs_lost_self_pair": 1,
+   "source_pairs_lost_unmapped": 192
+  },
+  "klingbeil2024": {
+   "source_pairs": 2524,
+   "source_pairs_lost_self_pair": 4,
+   "source_pairs_lost_unmapped": 40
+  },
+  "parrish2021": {
+   "source_pairs": 1030,
+   "source_pairs_lost_self_pair": 1,
+   "source_pairs_lost_unmapped": 7
+  },
+  "thompson2021": {
+   "source_pairs": 1191,
+   "source_pairs_lost_self_pair": 0,
+   "source_pairs_lost_unmapped": 36
+  }
+ },
+ "pairs_not_both_in_ref_proteome": 61,
+ "per_source": {
+  "chan2025": {
+   "calls": {
+    "B": 450,
+    "N": 2251,
+    "S": 319,
+    "U": 2110
+   },
+   "license_class": "open",
+   "pairs": 513,
+   "pairs_sl_in_ge1_line_within_study": 99,
+   "pairs_testable": 481,
+   "primary": {
+    "-1": 168,
+    "-2": 19,
+    "0": 241,
+    "1": 85
+   },
+   "primary_positive_rate": 0.2607,
+   "study_line_obs": 5130,
+   "within_study_positive_rate": 0.2058
+  },
+  "chymera2020": {
+   "calls": {
+    "B": 210,
+    "N": 875,
+    "S": 67,
+    "U": 218
+   },
+   "license_class": "restricted",
+   "pairs": 685,
+   "pairs_sl_in_ge1_line_within_study": 62,
+   "pairs_testable": 640,
+   "primary": {
+    "-1": 227,
+    "-2": 15,
+    "0": 366,
+    "1": 77
+   },
+   "primary_positive_rate": 0.1738,
+   "study_line_obs": 1370,
+   "within_study_positive_rate": 0.0969
+  },
+  "dede2020": {
+   "calls": {
+    "B": 21,
+    "N": 1012,
+    "S": 43,
+    "U": 124
+   },
+   "license_class": "open",
+   "pairs": 400,
+   "pairs_sl_in_ge1_line_within_study": 21,
+   "pairs_testable": 386,
+   "primary": {
+    "-1": 88,
+    "-2": 2,
+    "0": 256,
+    "1": 54
+   },
+   "primary_positive_rate": 0.1742,
+   "study_line_obs": 1200,
+   "within_study_positive_rate": 0.0544
+  },
+  "harle2025": {
+   "calls": {
+    "B": 1009,
+    "N": 5217,
+    "S": 867,
+    "U": 5624
+   },
+   "license_class": "open",
+   "pairs": 471,
+   "pairs_sl_in_ge1_line_within_study": 114,
+   "pairs_testable": 434,
+   "primary": {
+    "-1": 162,
+    "-2": 15,
+    "0": 209,
+    "1": 85
+   },
+   "primary_positive_rate": 0.2891,
+   "study_line_obs": 12717,
+   "within_study_positive_rate": 0.2627
+  },
+  "in4mer2024": {
+   "calls": {
+    "B": 305,
+    "N": 10404,
+    "S": 212,
+    "U": 1959
+   },
+   "license_class": "open",
+   "pairs": 4512,
+   "pairs_sl_in_ge1_line_within_study": 125,
+   "pairs_testable": 4161,
+   "primary": {
+    "-1": 697,
+    "-2": 245,
+    "0": 3407,
+    "1": 163
+   },
+   "primary_positive_rate": 0.0457,
+   "study_line_obs": 12880,
+   "within_study_positive_rate": 0.03
+  },
+  "ito2021": {
+   "calls": {
+    "B": 4041,
+    "N": 42008,
+    "S": 920,
+    "U": 3204,
+    "X": 3309
+   },
+   "license_class": "restricted",
+   "pairs": 4862,
+   "pairs_sl_in_ge1_line_within_study": 569,
+   "pairs_testable": 4560,
+   "primary": {
+    "-1": 1231,
+    "-2": 228,
+    "0": 3277,
+    "1": 126
+   },
+   "primary_positive_rate": 0.037,
+   "study_line_obs": 53482,
+   "within_study_positive_rate": 0.1248
+  },
+  "klingbeil2024": {
+   "calls": {
+    "B": 520,
+    "N": 42642,
+    "S": 312,
+    "U": 5057,
+    "X": 5919
+   },
+   "license_class": "nc_nd",
+   "pairs": 2475,
+   "pairs_sl_in_ge1_line_within_study": 131,
+   "pairs_testable": 2249,
+   "primary": {
+    "-1": 354,
+    "-2": 134,
+    "0": 1929,
+    "1": 58
+   },
+   "primary_positive_rate": 0.0292,
+   "study_line_obs": 54450,
+   "within_study_positive_rate": 0.0582
+  },
+  "parrish2021": {
+   "calls": {
+    "B": 93,
+    "N": 1512,
+    "S": 69,
+    "U": 370
+   },
+   "license_class": "nc_nd",
+   "pairs": 1022,
+   "pairs_sl_in_ge1_line_within_study": 55,
+   "pairs_testable": 920,
+   "primary": {
+    "-1": 233,
+    "-2": 26,
+    "0": 657,
+    "1": 106
+   },
+   "primary_positive_rate": 0.1389,
+   "study_line_obs": 2044,
+   "within_study_positive_rate": 0.0598
+  },
+  "thompson2021": {
+   "calls": {
+    "B": 183,
+    "N": 1774,
+    "S": 117,
+    "U": 1385,
+    "X": 6
+   },
+   "license_class": "open",
+   "pairs": 1155,
+   "pairs_sl_in_ge1_line_within_study": 91,
+   "pairs_testable": 839,
+   "primary": {
+    "-1": 289,
+    "-2": 258,
+    "0": 526,
+    "1": 82
+   },
+   "primary_positive_rate": 0.1349,
+   "study_line_obs": 3465,
+   "within_study_positive_rate": 0.1085
+  }
+ },
+ "primary_ambiguous_reasons": {
+  "borderline_excess": 1056,
+  "low_penetrance": 156,
+  "single_line_sl": 529,
+  "too_few_testable": 305
+ },
+ "primary_counts_only_nonopen_evidence": {
+  "-1": 1108,
+  "-2": 320,
+  "0": 4041,
+  "1": 44
+ },
+ "study_line_call_counts": {
+  "chan2025|921": {
+   "B": 47,
+   "N": 190,
+   "S": 27,
+   "U": 249
+  },
+  "chan2025|MP38": {
+   "B": 34,
+   "N": 302,
+   "S": 36,
+   "U": 141
+  },
+  "chan2025|MP41": {
+   "B": 58,
+   "N": 327,
+   "S": 30,
+   "U": 98
+  },
+  "chan2025|MP46": {
+   "B": 93,
+   "N": 218,
+   "S": 22,
+   "U": 180
+  },
+  "chan2025|Mel202": {
+   "B": 36,
+   "N": 188,
+   "S": 43,
+   "U": 246
+  },
+  "chan2025|Mel270": {
+   "B": 42,
+   "N": 181,
+   "S": 28,
+   "U": 262
+  },
+  "chan2025|Mel285": {
+   "B": 59,
+   "N": 197,
+   "S": 26,
+   "U": 231
+  },
+  "chan2025|OMM1": {
+   "B": 28,
+   "N": 174,
+   "S": 28,
+   "U": 283
+  },
+  "chan2025|OMM23": {
+   "B": 23,
+   "N": 301,
+   "S": 37,
+   "U": 152
+  },
+  "chan2025|OMM25": {
+   "B": 30,
+   "N": 173,
+   "S": 42,
+   "U": 268
+  },
+  "chymera2020|HAP1": {
+   "B": 103,
+   "N": 419,
+   "S": 51,
+   "U": 112
+  },
+  "chymera2020|RPE1": {
+   "B": 107,
+   "N": 456,
+   "S": 16,
+   "U": 106
+  },
+  "dede2020|A549": {
+   "B": 7,
+   "N": 341,
+   "S": 15,
+   "U": 37
+  },
+  "dede2020|HT29": {
+   "B": 4,
+   "N": 334,
+   "S": 15,
+   "U": 47
+  },
+  "dede2020|OVCAR8": {
+   "B": 10,
+   "N": 337,
+   "S": 13,
+   "U": 40
+  },
+  "harle2025|A-375": {
+   "B": 35,
+   "N": 170,
+   "S": 26,
+   "U": 240
+  },
+  "harle2025|A2058": {
+   "B": 30,
+   "N": 179,
+   "S": 28,
+   "U": 234
+  },
+  "harle2025|A549": {
+   "B": 47,
+   "N": 189,
+   "S": 23,
+   "U": 212
+  },
+  "harle2025|AsPC-1": {
+   "B": 23,
+   "N": 157,
+   "S": 44,
+   "U": 247
+  },
+  "harle2025|BxPC-3": {
+   "B": 32,
+   "N": 170,
+   "S": 39,
+   "U": 230
+  },
+  "harle2025|C092": {
+   "B": 52,
+   "N": 298,
+   "S": 26,
+   "U": 95
+  },
+  "harle2025|CFPAC-1": {
+   "B": 46,
+   "N": 199,
+   "S": 33,
+   "U": 193
+  },
+  "harle2025|CHL-1": {
+   "B": 65,
+   "N": 285,
+   "S": 18,
+   "U": 103
+  },
+  "harle2025|COR-L23": {
+   "B": 46,
+   "N": 180,
+   "S": 27,
+   "U": 218
+  },
+  "harle2025|Capan-1": {
+   "B": 27,
+   "N": 174,
+   "S": 40,
+   "U": 230
+  },
+  "harle2025|EBC-1": {
+   "B": 46,
+   "N": 161,
+   "S": 36,
+   "U": 228
+  },
+  "harle2025|HPAF-II": {
+   "B": 30,
+   "N": 158,
+   "S": 41,
+   "U": 242
+  },
+  "harle2025|KP-1N": {
+   "B": 32,
+   "N": 292,
+   "S": 29,
+   "U": 118
+  },
+  "harle2025|KP4": {
+   "B": 27,
+   "N": 194,
+   "S": 39,
+   "U": 211
+  },
+  "harle2025|LCLC-97TM1": {
+   "B": 41,
+   "N": 184,
+   "S": 29,
+   "U": 217
+  },
+  "harle2025|LK-2": {
+   "B": 34,
+   "N": 173,
+   "S": 32,
+   "U": 232
+  },
+  "harle2025|MIA PaCa-2": {
+   "B": 28,
+   "N": 149,
+   "S": 37,
+   "U": 257
+  },
+  "harle2025|MeWo": {
+   "B": 45,
+   "N": 198,
+   "S": 14,
+   "U": 214
+  },
+  "harle2025|NCI-H1299": {
+   "B": 35,
+   "N": 161,
+   "S": 38,
+   "U": 237
+  },
+  "harle2025|NCI-H1568": {
+   "B": 29,
+   "N": 209,
+   "S": 35,
+   "U": 198
+  },
+  "harle2025|NCI-H1975": {
+   "B": 42,
+   "N": 178,
+   "S": 38,
+   "U": 213
+  },
+  "harle2025|NCI-H23": {
+   "B": 45,
+   "N": 187,
+   "S": 24,
+   "U": 215
+  },
+  "harle2025|SK-MEL-2": {
+   "B": 27,
+   "N": 176,
+   "S": 44,
+   "U": 224
+  },
+  "harle2025|SK-MEL-28": {
+   "B": 30,
+   "N": 213,
+   "S": 32,
+   "U": 196
+  },
+  "harle2025|SK-MEL-5": {
+   "B": 38,
+   "N": 207,
+   "S": 27,
+   "U": 199
+  },
+  "harle2025|SK-MES-1": {
+   "B": 31,
+   "N": 182,
+   "S": 41,
+   "U": 217
+  },
+  "harle2025|SU.86.86": {
+   "B": 46,
+   "N": 194,
+   "S": 27,
+   "U": 204
+  },
+  "in4mer2024|A375": {
+   "B": 54,
+   "N": 3688,
+   "S": 63,
+   "U": 581
+  },
+  "in4mer2024|A549": {
+   "B": 66,
+   "N": 1516,
+   "S": 34,
+   "U": 438
+  },
+  "in4mer2024|K562": {
+   "B": 92,
+   "N": 1534,
+   "S": 49,
+   "U": 379
+  },
+  "in4mer2024|MelJuso": {
+   "B": 93,
+   "N": 3666,
+   "S": 66,
+   "U": 561
+  },
+  "ito2021|A549_LUNG": {
+   "B": 488,
+   "N": 3522,
+   "S": 140,
+   "U": 441,
+   "X": 271
+  },
+  "ito2021|GI1_CENTRAL_NERVOUS_SYSTEM": {
+   "B": 463,
+   "N": 3661,
+   "S": 87,
+   "U": 316,
+   "X": 335
+  },
+  "ito2021|HS936T_SKIN": {
+   "B": 317,
+   "N": 3788,
+   "S": 79,
+   "U": 289,
+   "X": 389
+  },
+  "ito2021|HS944T_SKIN": {
+   "B": 358,
+   "N": 3933,
+   "S": 60,
+   "U": 240,
+   "X": 271
+  },
+  "ito2021|HSC5_SKIN": {
+   "B": 536,
+   "N": 3534,
+   "S": 134,
+   "U": 335,
+   "X": 323
+  },
+  "ito2021|IPC298_SKIN": {
+   "B": 275,
+   "N": 3819,
+   "S": 108,
+   "U": 272,
+   "X": 388
+  },
+  "ito2021|MEL202_UVEA": {
+   "B": 373,
+   "N": 3864,
+   "S": 97,
+   "U": 267,
+   "X": 261
+  },
+  "ito2021|MELJUSO_SKIN": {
+   "B": 286,
+   "N": 3996,
+   "S": 40,
+   "U": 302,
+   "X": 238
+  },
+  "ito2021|MEWO_SKIN": {
+   "B": 269,
+   "N": 4182,
+   "S": 28,
+   "U": 182,
+   "X": 201
+  },
+  "ito2021|PATU8988S_PANCREAS": {
+   "B": 301,
+   "N": 3970,
+   "S": 56,
+   "U": 275,
+   "X": 260
+  },
+  "ito2021|PK1_PANCREAS": {
+   "B": 375,
+   "N": 3739,
+   "S": 91,
+   "U": 285,
+   "X": 372
+  },
+  "klingbeil2024|A549": {
+   "B": 8,
+   "N": 1992,
+   "S": 5,
+   "U": 225,
+   "X": 245
+  },
+  "klingbeil2024|ASPC1": {
+   "B": 6,
+   "N": 1890,
+   "S": 8,
+   "U": 302,
+   "X": 269
+  },
+  "klingbeil2024|CORL311": {
+   "B": 6,
+   "N": 1979,
+   "S": 1,
+   "U": 193,
+   "X": 296
+  },
+  "klingbeil2024|H1048": {
+   "B": 12,
+   "N": 1947,
+   "S": 10,
+   "U": 221,
+   "X": 285
+  },
+  "klingbeil2024|H1299": {
+   "B": 15,
+   "N": 1942,
+   "S": 15,
+   "U": 263,
+   "X": 240
+  },
+  "klingbeil2024|H1436": {
+   "B": 59,
+   "N": 2030,
+   "S": 13,
+   "U": 113,
+   "X": 260
+  },
+  "klingbeil2024|H1836": {
+   "B": 57,
+   "N": 1962,
+   "S": 28,
+   "U": 194,
+   "X": 234
+  },
+  "klingbeil2024|H209": {
+   "B": 64,
+   "N": 1836,
+   "S": 52,
+   "U": 244,
+   "X": 279
+  },
+  "klingbeil2024|H211": {
+   "N": 2001,
+   "S": 1,
+   "U": 205,
+   "X": 268
+  },
+  "klingbeil2024|HEL": {
+   "B": 36,
+   "N": 1813,
+   "S": 16,
+   "U": 324,
+   "X": 286
+  },
+  "klingbeil2024|HPAFII": {
+   "B": 11,
+   "N": 1911,
+   "S": 10,
+   "U": 201,
+   "X": 342
+  },
+  "klingbeil2024|K562": {
+   "B": 56,
+   "N": 1903,
+   "S": 24,
+   "U": 235,
+   "X": 257
+  },
+  "klingbeil2024|MDAMB231": {
+   "B": 29,
+   "N": 1959,
+   "S": 17,
+   "U": 177,
+   "X": 293
+  },
+  "klingbeil2024|MOLM13": {
+   "B": 3,
+   "N": 1905,
+   "S": 9,
+   "U": 302,
+   "X": 256
+  },
+  "klingbeil2024|NOMO1": {
+   "B": 69,
+   "N": 1959,
+   "S": 13,
+   "U": 199,
+   "X": 235
+  },
+  "klingbeil2024|PATU8902": {
+   "B": 13,
+   "N": 1962,
+   "S": 7,
+   "U": 205,
+   "X": 288
+  },
+  "klingbeil2024|RD": {
+   "B": 4,
+   "N": 1959,
+   "S": 5,
+   "U": 254,
+   "X": 253
+  },
+  "klingbeil2024|RH30": {
+   "B": 11,
+   "N": 2066,
+   "S": 8,
+   "U": 138,
+   "X": 252
+  },
+  "klingbeil2024|SET2": {
+   "B": 9,
+   "N": 1931,
+   "S": 12,
+   "U": 264,
+   "X": 259
+  },
+  "klingbeil2024|T3M4": {
+   "B": 20,
+   "N": 1944,
+   "S": 21,
+   "U": 211,
+   "X": 279
+  },
+  "klingbeil2024|THP1": {
+   "B": 27,
+   "N": 1876,
+   "S": 27,
+   "U": 295,
+   "X": 250
+  },
+  "klingbeil2024|YAPC": {
+   "B": 5,
+   "N": 1875,
+   "S": 10,
+   "U": 292,
+   "X": 293
+  },
+  "parrish2021|HeLa": {
+   "B": 39,
+   "N": 741,
+   "S": 34,
+   "U": 208
+  },
+  "parrish2021|PC9": {
+   "B": 54,
+   "N": 771,
+   "S": 35,
+   "U": 162
+  },
+  "thompson2021|A375": {
+   "B": 38,
+   "N": 517,
+   "S": 35,
+   "U": 563,
+   "X": 2
+  },
+  "thompson2021|MeWo": {
+   "B": 54,
+   "N": 646,
+   "S": 32,
+   "U": 421,
+   "X": 2
+  },
+  "thompson2021|RPE1": {
+   "B": 91,
+   "N": 611,
+   "S": 50,
+   "U": 401,
+   "X": 2
+  }
+ },
+ "supp_table1_exp_eq_sum_max_abs_diff": {
+  "Dede_A549": 0.01,
+  "Dede_HT29": 0.01,
+  "Dede_OVCAR8": 0.01,
+  "Gonatopoulos_HAP1": 0.01,
+  "Gonatopoulos_RPE1": 0.01,
+  "Ito_A549": 0.01,
+  "Ito_HS944": 0.01,
+  "Ito_HSC5": 0.01,
+  "Ito_Hs936": 0.01,
+  "Ito_IPC298": 0.01,
+  "Ito_MeWo": 0.01,
+  "Ito_Meljuso": 0.01,
+  "Ito_PATU8988s": 0.01,
+  "Ito_TIGI1": 0.01,
+  "Ito_TIMEL_202": 0.01,
+  "Ito_TIPK1": 0.01,
+  "Parrish_HeLa": 0.01,
+  "Parrish_PC9": 0.01,
+  "Thompson_A375": 0.01,
+  "Thompson_Mewo": 0.01,
+  "Thompson_RPE": 0.01
+ },
+ "symbol_mapping_by_source": {
+  "chan2025": {
+   "alias": 14,
+   "ambiguous_ensembl": 1,
+   "approved": 884
+  },
+  "chymera2020": {
+   "alias": 29,
+   "ambiguous_ensembl": 2,
+   "ambiguous_symbol": 1,
+   "approved": 1324,
+   "no_ensembl": 1
+  },
+  "dede2020": {
+   "alias": 10,
+   "ambiguous_alias": 1,
+   "approved": 775,
+   "no_ensembl": 1,
+   "unmapped": 2
+  },
+  "harle2025": {
+   "alias": 14,
+   "ambiguous_ensembl": 1,
+   "approved": 828
+  },
+  "in4mer2024": {
+   "alias": 31,
+   "ambiguous_alias": 1,
+   "ambiguous_ensembl": 10,
+   "ambiguous_symbol": 1,
+   "approved": 4044,
+   "unmapped": 2
+  },
+  "ito2021": {
+   "alias": 53,
+   "ambiguous_alias": 3,
+   "ambiguous_ensembl": 15,
+   "ambiguous_symbol": 1,
+   "approved": 3173,
+   "no_ensembl": 7,
+   "unmapped": 32
+  },
+  "klingbeil2024": {
+   "alias": 41,
+   "ambiguous_alias": 3,
+   "ambiguous_ensembl": 1,
+   "approved": 1656,
+   "no_ensembl": 1,
+   "unmapped": 7
+  },
+  "parrish2021": {
+   "alias": 46,
+   "ambiguous_alias": 1,
+   "ambiguous_ensembl": 2,
+   "approved": 2007,
+   "no_ensembl": 3,
+   "unmapped": 1
+  },
+  "thompson2021": {
+   "alias": 53,
+   "ambiguous_alias": 2,
+   "ambiguous_ensembl": 6,
+   "approved": 1589,
+   "unmapped": 30
+  }
+ },
+ "thompson_sd3_ensembl_vs_our_mapping": {
+  "different": 8,
+  "same": 2567,
+  "unmapped": 56
+ },
+ "tier_counts": {
+  "label_lenient": {
+   "-2": 817,
+   "0": 9401,
+   "1": 907
+  },
+  "label_primary": {
+   "-1": 2046,
+   "-2": 817,
+   "0": 8040,
+   "1": 222
+  },
+  "label_two_studies": {
+   "-1": 7960,
+   "-2": 817,
+   "0": 2196,
+   "1": 152
+  }
+ }
+}

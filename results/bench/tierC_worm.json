@@ -1,0 +1,25 @@
+{
+ "species": "worm",
+ "step": "tier_c_features (from cached embeddings; excludes the embedding step itself)",
+ "n_proteome": 19980,
+ "n_pairs": 260434,
+ "threads": 3,
+ "wall_s": 7.92,
+ "features_s": 7.03,
+ "load_check_s": 0.39,
+ "peak_rss_gb": 2.123,
+ "lowpowermode": "lowpowermode         0",
+ "loadavg": [
+  16.75,
+  66.810546875,
+  95.09228515625
+ ],
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_count": 10
+ },
+ "git_head_at_run": "22a390bfc86242e7d77cce487596d12f52310140",
+ "output": "data/interim/features/worm/tierC.parquet",
+ "embedding_bench": "results/bench/plm_esm2_150m_worm.json",
+ "date": "2026-10-28 10:06:46"
+}

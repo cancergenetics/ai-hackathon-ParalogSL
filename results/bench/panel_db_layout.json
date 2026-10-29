@@ -1,0 +1,45 @@
+{
+ "n_queries": 300,
+ "query_sample_seed": 11,
+ "threads": 8,
+ "settings": {
+  "sensitivity": 5.7,
+  "max_seqs": 50,
+  "evalue": 10,
+  "keep_min_bits": 40,
+  "saturation_fraction": 0.95,
+  "research_cap_factor": 5,
+  "max_research_rounds": 1
+ },
+ "taxonomy_db_build_s": 71.2,
+ "rows": [
+  {
+   "species": "YEAST",
+   "n_target": 6066,
+   "per_species_db_s": 16.92,
+   "taxon_filter_s": 369.39,
+   "cells_present_per_species": 90,
+   "cells_present_taxfilter": 90,
+   "best_hit_concordance": 1.0
+  },
+  {
+   "species": "SCHPO",
+   "n_target": 5129,
+   "per_species_db_s": 19.64,
+   "taxon_filter_s": 404.02,
+   "cells_present_per_species": 99,
+   "cells_present_taxfilter": 99,
+   "best_hit_concordance": 1.0
+  }
+ ],
+ "lowpowermode": "1",
+ "loadavg": [
+  130.14111328125,
+  130.81884765625,
+  124.8876953125
+ ],
+ "decision_rule": "per-species DBs unless the taxonomy-filtered single DB is faster per species at equal results",
+ "total_per_species_db_s": 36.6,
+ "total_taxon_filter_s": 773.4,
+ "chosen": "per_species"
+}

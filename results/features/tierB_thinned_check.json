@@ -1,0 +1,841 @@
+{
+ "checks": [
+  {
+   "species": "human",
+   "c": 0.03,
+   "file": "data/interim/features/human/tierB_dmin0.03.parquet",
+   "n_rows": 686225,
+   "aligned_with_tierA": true,
+   "n_species_kept": 76,
+   "n_removed_by_mask": 1,
+   "removed_by_mask": [
+    "MACMU"
+   ],
+   "d_nearest": 0.042557,
+   "nearest_species": "CANLF",
+   "bin_counts": {
+    "B1": 0,
+    "B2": 5,
+    "B3": 6,
+    "B4": 18,
+    "B5": 25,
+    "B6": 22
+   },
+   "constant_features": [],
+   "problems": [],
+   "nan_rate": {
+    "tb_depth": {
+     "thinned": 0.0010943932383693396,
+     "natural": 0.0003307952930890014
+    },
+    "tb_depth_range": {
+     "thinned": 0.35993442384057706,
+     "natural": 0.35960800029144957
+    },
+    "tb_discordant_frac": {
+     "thinned": 0.0010943932383693396,
+     "natural": 0.0003307952930890014
+    },
+    "tb_younger_than_nearest": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_older_than_panel": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_no_evidence": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_rel_rate": {
+     "thinned": 0.0010943932383693396,
+     "natural": 0.0003307952930890014
+    },
+    "tb_frac_pre": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_post": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_undet": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_absent": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_n_post_single": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_both": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_dupability_min": {
+     "thinned": 0.0005712412109730773,
+     "natural": 0.00016321177456373639
+    },
+    "tb_dupability_max": {
+     "thinned": 0.0005712412109730773,
+     "natural": 0.00016321177456373639
+    },
+    "tb_asym_norm": {
+     "thinned": 0.9807220663776458,
+     "natural": 0.980541367627236
+    },
+    "tb_asym_abs": {
+     "thinned": 0.9807220663776458,
+     "natural": 0.980541367627236
+    },
+    "tb_outgroup_ident_max": {
+     "thinned": 0.9807220663776458,
+     "natural": 0.980541367627236
+    },
+    "tb_n_outgroups": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_fragment_suspect": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_depth_pct": {
+     "thinned": 0.0010943932383693396,
+     "natural": 0.0003307952930890014
+    },
+    "tb_cons_min_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    }
+   },
+   "identical_row_fraction_vs_natural": 0.0
+  },
+  {
+   "species": "human",
+   "c": 0.12,
+   "file": "data/interim/features/human/tierB_dmin0.12.parquet",
+   "n_rows": 686225,
+   "aligned_with_tierA": true,
+   "n_species_kept": 71,
+   "n_removed_by_mask": 6,
+   "removed_by_mask": [
+    "BOVIN",
+    "CANLF",
+    "MACMU",
+    "MONDO",
+    "MOUSE",
+    "RAT"
+   ],
+   "d_nearest": 0.160617,
+   "nearest_species": "CHICK",
+   "bin_counts": {
+    "B1": 0,
+    "B2": 0,
+    "B3": 6,
+    "B4": 18,
+    "B5": 25,
+    "B6": 22
+   },
+   "constant_features": [],
+   "problems": [],
+   "nan_rate": {
+    "tb_depth": {
+     "thinned": 0.005788189005063937,
+     "natural": 0.0003307952930890014
+    },
+    "tb_depth_range": {
+     "thinned": 0.3617909577762396,
+     "natural": 0.35960800029144957
+    },
+    "tb_discordant_frac": {
+     "thinned": 0.005788189005063937,
+     "natural": 0.0003307952930890014
+    },
+    "tb_younger_than_nearest": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_older_than_panel": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_no_evidence": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_rel_rate": {
+     "thinned": 0.005788189005063937,
+     "natural": 0.0003307952930890014
+    },
+    "tb_frac_pre": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_post": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_undet": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_absent": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_n_post_single": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_both": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_dupability_min": {
+     "thinned": 0.003252577507377318,
+     "natural": 0.00016321177456373639
+    },
+    "tb_dupability_max": {
+     "thinned": 0.003252577507377318,
+     "natural": 0.00016321177456373639
+    },
+    "tb_asym_norm": {
+     "thinned": 0.9823585558672447,
+     "natural": 0.980541367627236
+    },
+    "tb_asym_abs": {
+     "thinned": 0.9823585558672447,
+     "natural": 0.980541367627236
+    },
+    "tb_outgroup_ident_max": {
+     "thinned": 0.9823585558672447,
+     "natural": 0.980541367627236
+    },
+    "tb_n_outgroups": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_fragment_suspect": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_depth_pct": {
+     "thinned": 0.005788189005063937,
+     "natural": 0.0003307952930890014
+    },
+    "tb_cons_min_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    }
+   },
+   "identical_row_fraction_vs_natural": 0.0
+  },
+  {
+   "species": "human",
+   "c": 0.35,
+   "file": "data/interim/features/human/tierB_dmin0.35.parquet",
+   "n_rows": 686225,
+   "aligned_with_tierA": true,
+   "n_species_kept": 65,
+   "n_removed_by_mask": 12,
+   "removed_by_mask": [
+    "BOVIN",
+    "CANLF",
+    "CHICK",
+    "DANRE",
+    "LEPOC",
+    "MACMU",
+    "MONDO",
+    "MOUSE",
+    "ORYLA",
+    "RAT",
+    "XENLA",
+    "XENTR"
+   ],
+   "d_nearest": 0.468268,
+   "nearest_species": "BRAFL",
+   "bin_counts": {
+    "B1": 0,
+    "B2": 0,
+    "B3": 0,
+    "B4": 18,
+    "B5": 25,
+    "B6": 22
+   },
+   "constant_features": [],
+   "problems": [],
+   "nan_rate": {
+    "tb_depth": {
+     "thinned": 0.040222958942037965,
+     "natural": 0.0003307952930890014
+    },
+    "tb_depth_range": {
+     "thinned": 0.37698276804255165,
+     "natural": 0.35960800029144957
+    },
+    "tb_discordant_frac": {
+     "thinned": 0.040222958942037965,
+     "natural": 0.0003307952930890014
+    },
+    "tb_younger_than_nearest": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_older_than_panel": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_no_evidence": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_rel_rate": {
+     "thinned": 0.040222958942037965,
+     "natural": 0.0003307952930890014
+    },
+    "tb_frac_pre": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_post": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_undet": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_absent": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_n_post_single": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_both": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_dupability_min": {
+     "thinned": 0.03380815330248825,
+     "natural": 0.00016321177456373639
+    },
+    "tb_dupability_max": {
+     "thinned": 0.03380815330248825,
+     "natural": 0.00016321177456373639
+    },
+    "tb_asym_norm": {
+     "thinned": 0.9860002185871981,
+     "natural": 0.980541367627236
+    },
+    "tb_asym_abs": {
+     "thinned": 0.9860002185871981,
+     "natural": 0.980541367627236
+    },
+    "tb_outgroup_ident_max": {
+     "thinned": 0.9860002185871981,
+     "natural": 0.980541367627236
+    },
+    "tb_n_outgroups": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_fragment_suspect": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_depth_pct": {
+     "thinned": 0.040222958942037965,
+     "natural": 0.0003307952930890014
+    },
+    "tb_cons_min_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    }
+   },
+   "identical_row_fraction_vs_natural": 0.0
+  },
+  {
+   "species": "yeast",
+   "c": 0.03,
+   "file": "data/interim/features/yeast/tierB_dmin0.03.parquet",
+   "n_rows": 18014,
+   "aligned_with_tierA": true,
+   "n_species_kept": 79,
+   "n_removed_by_mask": 0,
+   "removed_by_mask": [],
+   "d_nearest": 0.319122,
+   "nearest_species": "TORDC",
+   "bin_counts": {
+    "B1": 0,
+    "B2": 0,
+    "B3": 3,
+    "B4": 4,
+    "B5": 7,
+    "B6": 65
+   },
+   "constant_features": [],
+   "problems": [],
+   "nan_rate": {
+    "tb_depth": {
+     "thinned": 0.014710780504052404,
+     "natural": 0.014710780504052404
+    },
+    "tb_depth_range": {
+     "thinned": 0.5960364161207949,
+     "natural": 0.5960364161207949
+    },
+    "tb_discordant_frac": {
+     "thinned": 0.014710780504052404,
+     "natural": 0.014710780504052404
+    },
+    "tb_younger_than_nearest": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_older_than_panel": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_no_evidence": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_rel_rate": {
+     "thinned": 0.014710780504052404,
+     "natural": 0.014710780504052404
+    },
+    "tb_frac_pre": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_post": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_undet": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_absent": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_n_post_single": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_both": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_dupability_min": {
+     "thinned": 0.005939824580881536,
+     "natural": 0.005939824580881536
+    },
+    "tb_dupability_max": {
+     "thinned": 0.005939824580881536,
+     "natural": 0.005939824580881536
+    },
+    "tb_asym_norm": {
+     "thinned": 0.9408793160874875,
+     "natural": 0.9408793160874875
+    },
+    "tb_asym_abs": {
+     "thinned": 0.9408793160874875,
+     "natural": 0.9408793160874875
+    },
+    "tb_outgroup_ident_max": {
+     "thinned": 0.9408793160874875,
+     "natural": 0.9408793160874875
+    },
+    "tb_n_outgroups": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_fragment_suspect": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_depth_pct": {
+     "thinned": 0.014710780504052404,
+     "natural": 0.014710780504052404
+    },
+    "tb_cons_min_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    }
+   },
+   "identical_row_fraction_vs_natural": 1.0
+  },
+  {
+   "species": "yeast",
+   "c": 0.12,
+   "file": "data/interim/features/yeast/tierB_dmin0.12.parquet",
+   "n_rows": 18014,
+   "aligned_with_tierA": true,
+   "n_species_kept": 79,
+   "n_removed_by_mask": 0,
+   "removed_by_mask": [],
+   "d_nearest": 0.319122,
+   "nearest_species": "TORDC",
+   "bin_counts": {
+    "B1": 0,
+    "B2": 0,
+    "B3": 3,
+    "B4": 4,
+    "B5": 7,
+    "B6": 65
+   },
+   "constant_features": [],
+   "problems": [],
+   "nan_rate": {
+    "tb_depth": {
+     "thinned": 0.014710780504052404,
+     "natural": 0.014710780504052404
+    },
+    "tb_depth_range": {
+     "thinned": 0.5960364161207949,
+     "natural": 0.5960364161207949
+    },
+    "tb_discordant_frac": {
+     "thinned": 0.014710780504052404,
+     "natural": 0.014710780504052404
+    },
+    "tb_younger_than_nearest": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_older_than_panel": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_no_evidence": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_rel_rate": {
+     "thinned": 0.014710780504052404,
+     "natural": 0.014710780504052404
+    },
+    "tb_frac_pre": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_post": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_undet": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_absent": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_n_post_single": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_both": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_dupability_min": {
+     "thinned": 0.005939824580881536,
+     "natural": 0.005939824580881536
+    },
+    "tb_dupability_max": {
+     "thinned": 0.005939824580881536,
+     "natural": 0.005939824580881536
+    },
+    "tb_asym_norm": {
+     "thinned": 0.9408793160874875,
+     "natural": 0.9408793160874875
+    },
+    "tb_asym_abs": {
+     "thinned": 0.9408793160874875,
+     "natural": 0.9408793160874875
+    },
+    "tb_outgroup_ident_max": {
+     "thinned": 0.9408793160874875,
+     "natural": 0.9408793160874875
+    },
+    "tb_n_outgroups": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_fragment_suspect": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_depth_pct": {
+     "thinned": 0.014710780504052404,
+     "natural": 0.014710780504052404
+    },
+    "tb_cons_min_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    }
+   },
+   "identical_row_fraction_vs_natural": 1.0
+  },
+  {
+   "species": "yeast",
+   "c": 0.35,
+   "file": "data/interim/features/yeast/tierB_dmin0.35.parquet",
+   "n_rows": 18014,
+   "aligned_with_tierA": true,
+   "n_species_kept": 76,
+   "n_removed_by_mask": 3,
+   "removed_by_mask": [
+    "CANGA",
+    "KAZAF",
+    "TORDC"
+   ],
+   "d_nearest": 0.368013,
+   "nearest_species": "HUIN7",
+   "bin_counts": {
+    "B1": 0,
+    "B2": 0,
+    "B3": 0,
+    "B4": 4,
+    "B5": 7,
+    "B6": 65
+   },
+   "constant_features": [],
+   "problems": [],
+   "nan_rate": {
+    "tb_depth": {
+     "thinned": 0.07066725879871211,
+     "natural": 0.014710780504052404
+    },
+    "tb_depth_range": {
+     "thinned": 0.6505495725546797,
+     "natural": 0.5960364161207949
+    },
+    "tb_discordant_frac": {
+     "thinned": 0.07066725879871211,
+     "natural": 0.014710780504052404
+    },
+    "tb_younger_than_nearest": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_older_than_panel": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_no_evidence": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_rel_rate": {
+     "thinned": 0.07066725879871211,
+     "natural": 0.014710780504052404
+    },
+    "tb_frac_pre": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_post": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_undet": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_frac_absent": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_n_post_single": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_cons_both": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_min": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_dupability_min": {
+     "thinned": 0.05684467636282891,
+     "natural": 0.005939824580881536
+    },
+    "tb_dupability_max": {
+     "thinned": 0.05684467636282891,
+     "natural": 0.005939824580881536
+    },
+    "tb_asym_norm": {
+     "thinned": 0.9410458532252692,
+     "natural": 0.9408793160874875
+    },
+    "tb_asym_abs": {
+     "thinned": 0.9410458532252692,
+     "natural": 0.9408793160874875
+    },
+    "tb_outgroup_ident_max": {
+     "thinned": 0.9410458532252692,
+     "natural": 0.9408793160874875
+    },
+    "tb_n_outgroups": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_fragment_suspect": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_depth_pct": {
+     "thinned": 0.07066725879871211,
+     "natural": 0.014710780504052404
+    },
+    "tb_cons_min_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    },
+    "tb_species_rank_max_pct": {
+     "thinned": 0.0,
+     "natural": 0.0
+    }
+   },
+   "identical_row_fraction_vs_natural": 0.0
+  }
+ ],
+ "natural": {
+  "human": {
+   "n_species_usable": 77,
+   "d_nearest": 0.011452,
+   "nearest_species": "MACMU"
+  },
+  "yeast": {
+   "n_species_usable": 79,
+   "d_nearest": 0.319122,
+   "nearest_species": "TORDC"
+  }
+ },
+ "ok": true
+}

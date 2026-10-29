@@ -1,0 +1,26 @@
+{
+ "human": {
+  "n_all_labelled_universe": 8910,
+  "n_dev_rows": 5346,
+  "n_added_heldout_rows": 3564,
+  "dev_rows_identical": true,
+  "release_superset_of_dev": true,
+  "all_labels_file": "data/labels/human_labels_all.tsv",
+  "all_labels_sha256": "11ad6ef2c22edbe3ae11944201a8b87d86197a8b41a47e9aa3bea9cc4a3ecfad",
+  "dev_file_sha256": "788c38b827d74ed7f0cc83bd18279e27e040bb34db315441de4d56ce39040881",
+  "release_file": "data/labels/release/human_release.tsv",
+  "release_sha256": "eb242afcd247ba4279e6fce241db26cd11faa1cf5df82fd01675efce7a7951a7"
+ },
+ "yeast": {
+  "n_all_labelled_universe": 2739,
+  "n_dev_rows": 1570,
+  "n_added_heldout_rows": 1169,
+  "dev_rows_identical": true,
+  "release_superset_of_dev": true,
+  "all_labels_file": "data/labels/yeast_labels_all.tsv",
+  "all_labels_sha256": "e986d2d908c22872de27edc035be052e3d87c1a444508ca3d2703303d2cc7e02",
+  "dev_file_sha256": "c920d4aafc30798287297066e26c143b36d9fd1e51edd77ca411eb0d28a11938",
+  "release_file": "data/labels/release/yeast_release.tsv",
+  "release_sha256": "4521294d420ee49853bc0b03ec2dc9e90512a59ffade9b30bb96553c5a1b5f10"
+ }
+}

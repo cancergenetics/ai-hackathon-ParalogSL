@@ -1,0 +1,25 @@
+{
+ "species": "yeast",
+ "step": "tier_c_features (from cached embeddings; excludes the embedding step itself)",
+ "n_proteome": 6071,
+ "n_pairs": 18014,
+ "threads": 3,
+ "wall_s": 1.27,
+ "features_s": 0.9,
+ "load_check_s": 0.23,
+ "peak_rss_gb": 0.596,
+ "lowpowermode": "lowpowermode         0",
+ "loadavg": [
+  16.98193359375,
+  68.55810546875,
+  96.03369140625
+ ],
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_count": 10
+ },
+ "git_head_at_run": "22a390bfc86242e7d77cce487596d12f52310140",
+ "output": "data/interim/features/yeast/tierC.parquet",
+ "embedding_bench": "results/bench/plm_esm2_150m_yeast.json",
+ "date": "2026-10-28 10:06:36"
+}

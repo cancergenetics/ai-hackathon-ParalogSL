@@ -1,0 +1,9 @@
+# Gene identifier convention for per-gene proteomes and labels (DESIGN v3 §2.1).
+# Every FASTA record id and every label pair uses these IDs; one record per gene.
+human: {id_type: ensembl_gene, example_pattern: "^ENSG\\d{11}$", uniprot_proteome: UP000005640}
+yeast: {id_type: ordered_locus_name, example_pattern: "^Y[A-P][LR]\\d{3}[WC](-[A-Z])?$|^Q\\d{4}$", uniprot_proteome: UP000002311}
+arabidopsis: {id_type: agi_locus, example_pattern: "^AT[1-5CM]G\\d{5}$", uniprot_proteome: UP000006548}
+pombe: {id_type: pombase_systematic, example_pattern: "^SP", uniprot_proteome: UP000002485}
+worm: {id_type: wormbase_gene, example_pattern: "^WBGene\\d{8}$", uniprot_proteome: UP000001940}
+fly: {id_type: flybase_gene, example_pattern: "^FBgn\\d{7}$", uniprot_proteome: UP000000803}
+release: "UniProt 2026_03"

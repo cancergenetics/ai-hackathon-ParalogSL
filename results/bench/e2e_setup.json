@@ -1,0 +1,84 @@
+{
+ "command": ".venv/bin/python -m slparalog.cli setup --panel --data-dir data/release/slparalog_data -t 10 -v",
+ "returncode": 0,
+ "wall_s": 15.91,
+ "cpu_user_s": 13.0,
+ "cpu_sys_s": 1.7,
+ "peak_rss_tree_gb": 0.162,
+ "peak_rss_single_process_gb": 0.154,
+ "max_processes_in_tree": 2,
+ "rss_samples": 31,
+ "sample_interval_s": 0.5,
+ "peak_work_size_gb": 2.236,
+ "loadavg_start": [
+  8.36328125,
+  6.74072265625,
+  5.7509765625
+ ],
+ "loadavg_end": [
+  7.31640625,
+  6.5888671875,
+  5.7138671875
+ ],
+ "log": "data/release/setup.log",
+ "step": "setup",
+ "staged_local_files": {
+  "n_panel_files": 80,
+  "copied": 80
+ },
+ "note": "one-off; source proteomes were copied from the local downloads beforehand (network time not included); setup would otherwise download the 80 checksummed proteome files (config/panel_species.tsv, config/panel_sources.json)",
+ "data_dir_size_gb_after": 2.236,
+ "threads": 10,
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_model": "Apple M4",
+  "logical_cores": 10,
+  "physical_cores": 10,
+  "performance_cores": "4",
+  "efficiency_cores": "6",
+  "mem_total_gb": 25.8,
+  "pmset_g": "<redacted in public export: full local power-settings dump; Low Power Mode is in its own field>",
+  "lowpowermode": "0"
+ },
+ "git_head_at_run": "211c26446aa8cefa0542203ad0cb3b1d4cf8146c",
+ "git_tracked_changes_at_run": false,
+ "top_processes_at_start": [
+  {
+   "pid": 63205,
+   "name": "duetexpertd",
+   "cpu_pct": 101.3
+  },
+  {
+   "pid": 673,
+   "name": "siriknowledged",
+   "cpu_pct": 57.1
+  },
+  {
+   "pid": 627,
+   "name": "lsd",
+   "cpu_pct": 21.4
+  },
+  {
+   "pid": 54497,
+   "name": "Google Chrome Helper (Aperitif Renderer)",
+   "cpu_pct": 15.0
+  },
+  {
+   "pid": 889,
+   "name": "DisplayLinkUserAgent",
+   "cpu_pct": 14.2
+  },
+  {
+   "pid": 13243,
+   "name": "Claude Helper (Renderer)",
+   "cpu_pct": 13.9
+  }
+ ],
+ "loadavg_at_start": [
+  8.36328125,
+  6.74072265625,
+  5.7509765625
+ ],
+ "disk_free_gb_at_start": 542.7,
+ "python": "3.12.9"
+}

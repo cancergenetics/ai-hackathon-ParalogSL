@@ -1,0 +1,775 @@
+{
+ "config": "config/labels_yeast.yaml",
+ "config_version": 1,
+ "config_sha256": "a6132bf40a427553b85354ca7c8589634825223c34dfe29d36069acd538e4f8e",
+ "git_head_at_run": "4bf8da1e76ed63ae4e41d60913284e7a63a21e34",
+ "uncommitted_yeast_code_or_config_at_run": [],
+ "inputs_sha256": {
+  "costanzo2016": "05adf2aa309e5336cd1c3045eb033a2bc7b24e6f249d57a0cc25549ec6772522",
+  "dean2008": "c7f8a464bd5d89c35ac585c082a85ae64230c660efaf14d75074672f57074f6d",
+  "biogrid": "096a9e4d871ad5d698bd503b2b9a2409297b88f5b55bc479c710f0c700429820",
+  "gene_coordinates": "253bd4013785b3c85a6a488bd541c12d8264aa4989046c3530d0d9ea2ecc931e"
+ },
+ "strain_table": {
+  "n_strains": 10859,
+  "suffix_counts": {
+   "sn": 4071,
+   "dma": 3893,
+   "tsq": 1167,
+   "damp": 819,
+   "tsa": 792,
+   "S": 117
+  }
+ },
+ "measurements": {
+  "rows_read": {
+   "SGA_NxN.txt": 12698939,
+   "SGA_ExN_NxE.txt": 5796145
+  },
+  "suffix_combos": {
+   "SGA_NxN.txt": {
+    "sn|dma|DMA30": 12016439,
+    "sn|dma|DMA26": 418380,
+    "S|dma|DMA30": 264120
+   },
+   "SGA_ExN_NxE.txt": {
+    "tsq|dma|DMA26": 2408054,
+    "tsq|dma|DMA30": 1543513,
+    "S|dma|DMA26": 111481,
+    "S|dma|DMA30": 34821,
+    "sn|tsa|TSA26": 1676955,
+    "sn|tsa|TSA30": 20561,
+    "S|tsa|TSA26": 760
+   }
+  },
+  "null_null_rows": 12434819,
+  "unmapped_strain_rows": 0,
+  "self_pair_rows": 0,
+  "smf_source": {
+   "row": 11755688,
+   "strain_table": 0,
+   "none": 679131
+  },
+  "measurements_kept": 12434819,
+  "status_primary": {
+   "MISSING": 0,
+   "UNTESTABLE": 1207887,
+   "POS": 36556,
+   "NEG": 10580008,
+   "MID": 610368
+  },
+  "status_lenient": {
+   "MISSING": 0,
+   "UNTESTABLE": 1207887,
+   "POS": 113888,
+   "NEG": 10580008,
+   "MID": 533036
+  },
+  "strict_pos": 1643,
+  "eps_lt_m035_p_lt_005": 10702,
+  "pos_rule_rate_by_E_bin": {
+   "E<=0.5": {
+    "n": 528756,
+    "n_pos_rule": 17956,
+    "rate": 0.033958952711647714
+   },
+   "0.5<E<=0.6": {
+    "n": 326057,
+    "n_pos_rule": 17096,
+    "rate": 0.052432550136939246
+   },
+   "0.6<E<=0.7": {
+    "n": 528135,
+    "n_pos_rule": 11132,
+    "rate": 0.021077944086265822
+   },
+   "0.7<E<=0.85": {
+    "n": 1495724,
+    "n_pos_rule": 5752,
+    "rate": 0.0038456292738499884
+   },
+   "E>0.85": {
+    "n": 8877016,
+    "n_pos_rule": 2576,
+    "rate": 0.0002901876035821046
+   }
+  },
+  "E_undefined": 679131,
+  "untestable_reasons": {
+   "no_smf": 679131,
+   "sick_singles_E_le_0.5": 528756
+  },
+  "smf_fallback_note": "strain-table fallback filled no values: every strain whose row SMF is NaN also has NaN SMF in the strain table, so those measurements are untestable (no_smf)"
+ },
+ "sga_pairs": {
+  "n_pairs_measured": 9113782,
+  "sga_primary": {
+   "neg": 7337390,
+   "untestable": 1152957,
+   "amb": 589281,
+   "pos": 34154
+  },
+  "sga_lenient": {
+   "neg": 7337390,
+   "untestable": 1152957,
+   "amb": 515025,
+   "pos": 108410
+  },
+  "sga_strict": {
+   "neg": 7337390,
+   "untestable": 1152957,
+   "amb": 621871,
+   "pos": 1564
+  },
+  "untestable_sick_singles": 473826,
+  "untestable_no_smf_only": 679131,
+  "untestable_note": "pairs with n_T == 0 split by reason: sick_singles = at least one measurement with E <= 0.5; no_smf_only = every measurement lacks SMF (E undefined). Both are label 'untestable' (rule unchanged)",
+  "untestable_missing_only": 0,
+  "discordant": 0,
+  "orientation_conflict_by_sga_primary": {
+   "pos": 11164
+  },
+  "both_orientations_measured": 3321037,
+  "max_n_T": 2,
+  "sga_primary_by_n_T": {
+   "0": {
+    "untestable": 1152957
+   },
+   "1": {
+    "neg": 4428909,
+    "amb": 248924,
+    "pos": 16885
+   },
+   "2": {
+    "neg": 2908481,
+    "amb": 340357,
+    "pos": 17269
+   }
+  }
+ },
+ "dean2008": {
+  "parse": {
+   "pairs_listed": 289,
+   "measured": 201,
+   "lethal": 49
+  },
+  "calls": {
+   "neg": 114,
+   "untestable": 109,
+   "amb": 34,
+   "pos": 32
+  },
+  "sga_only_vs_dean": {
+   "amb": {
+    "pos": 6,
+    "neg": 9,
+    "amb": 8,
+    "untestable": 2,
+    "untested": 9
+   },
+   "neg": {
+    "pos": 2,
+    "neg": 82,
+    "amb": 9,
+    "untestable": 7,
+    "untested": 14
+   },
+   "pos": {
+    "pos": 17,
+    "neg": 0,
+    "amb": 1,
+    "untestable": 10,
+    "untested": 4
+   },
+   "untestable": {
+    "pos": 10,
+    "neg": 19,
+    "amb": 6,
+    "untestable": 4,
+    "untested": 70
+   }
+  }
+ },
+ "biogrid": {
+  "rows_read": 887195,
+  "genetic_rows": 600374,
+  "lt_sl_or_sgd_records_559292": 20188,
+  "dropped_no_systematic_name": 0,
+  "dropped_self": 4,
+  "sl_records_essential_member": 4774,
+  "qualifying_lt_sl_records": 3509,
+  "qualifying_lt_sl_pairs": 2840,
+  "lt_sgd_pairs_evidence_only": 5246
+ },
+ "kuzmin2020": {
+  "status": "not_obtained_dropped (R2-13 fallback)"
+ },
+ "linked_coverage_qc": {
+  "0-10k": {
+   "ordered_sn_query_dma_array_combos": 28888,
+   "of_which_pair_measured_any_orientation": 2,
+   "frac": 6.923289947382996e-05
+  },
+  "10-25k": {
+   "ordered_sn_query_dma_array_combos": 38571,
+   "of_which_pair_measured_any_orientation": 4,
+   "frac": 0.00010370485597988126
+  },
+  "25-50k": {
+   "ordered_sn_query_dma_array_combos": 62739,
+   "of_which_pair_measured_any_orientation": 14,
+   "frac": 0.00022314668706864947
+  },
+  "50-100k": {
+   "ordered_sn_query_dma_array_combos": 118742,
+   "of_which_pair_measured_any_orientation": 67,
+   "frac": 0.000564248538848933
+  },
+  "100-200k": {
+   "ordered_sn_query_dma_array_combos": 211438,
+   "of_which_pair_measured_any_orientation": 3885,
+   "frac": 0.01837418061086465
+  },
+  "200-500k": {
+   "ordered_sn_query_dma_array_combos": 437470,
+   "of_which_pair_measured_any_orientation": 173358,
+   "frac": 0.39627403021921503
+  }
+ },
+ "mapping": {
+  "pairs_both_genes_in_uniprot_proteome": 8062825,
+  "pairs_total": 9119213
+ },
+ "linked_rule": {
+  "window_bp": 50000,
+  "coordinates": "data/raw/ensembl_116/Saccharomyces_cerevisiae.R64-1-1.63.gtf.gz"
+ },
+ "unrestricted": {
+  "n_pairs": 9119213,
+  "primary": {
+   "neg": 7337413,
+   "untestable": 1152950,
+   "amb": 589270,
+   "pos": 34167,
+   "untested": 5413
+  },
+  "lenient": {
+   "neg": 7337411,
+   "untestable": 1152950,
+   "amb": 515021,
+   "pos": 108418,
+   "untested": 5413
+  },
+  "strict": {
+   "neg": 7337413,
+   "untestable": 1152950,
+   "amb": 621856,
+   "untested": 5413,
+   "pos": 1581
+  },
+  "biogrid": {
+   "neg": 7336655,
+   "untestable": 1152310,
+   "amb": 588884,
+   "pos": 36465,
+   "untested": 4899
+  },
+  "dennler_comparable": {
+   "neg": 9103802,
+   "pos": 9980,
+   "untested": 5431
+  },
+  "primary_by_source": {
+   "costanzo2016": {
+    "neg": 7334527,
+    "untestable": 1151351,
+    "amb": 588179,
+    "pos": 33261
+   },
+   "dean2008": {
+    "untested": 51,
+    "neg": 12,
+    "pos": 1
+   },
+   "costanzo2016;dean2008": {
+    "neg": 87,
+    "amb": 6,
+    "untestable": 4,
+    "pos": 1
+   },
+   "biogrid_lt": {
+    "untested": 5334
+   },
+   "costanzo2016;biogrid_lt": {
+    "neg": 2746,
+    "untestable": 1593,
+    "amb": 1075,
+    "pos": 858
+   },
+   "dean2008;biogrid_lt": {
+    "untested": 28,
+    "pos": 3,
+    "neg": 2
+   },
+   "costanzo2016;dean2008;biogrid_lt": {
+    "pos": 43,
+    "neg": 39,
+    "amb": 10,
+    "untestable": 2
+   }
+  },
+  "flags": {
+   "orientation_conflict": 11164,
+   "discordant": 0,
+   "dean_override": 0,
+   "dean_conflict": 2,
+   "biogrid_only": 2298,
+   "biogrid_conflict": 758
+  },
+  "orientation_conflict_by_primary": {
+   "pos": 11164
+  },
+  "linked": {
+   "n_linked": 148,
+   "n_unknown": 134493,
+   "primary_of_linked": {
+    "untested": 136,
+    "untestable": 11,
+    "neg": 1
+   },
+   "sga_primary_of_linked_before_rule": {
+    "untested": 137,
+    "neg": 7,
+    "amb": 3,
+    "untestable": 1
+   }
+  },
+  "nesting": {
+   "strict_pos_subset_primary_pos": true,
+   "primary_pos_subset_lenient_pos": true,
+   "primary_pos_subset_biogrid_pos": true,
+   "lenient_neg_subset_primary_neg": true,
+   "strict_neg_equals_primary_neg": true
+  },
+  "primary_prevalence": 0.004634962925180219,
+  "primary_by_min_smf": {
+   "<=0.7": {
+    "neg": 508428,
+    "untestable": 493587,
+    "amb": 76941,
+    "pos": 21504
+   },
+   "0.7-0.85": {
+    "neg": 961644,
+    "amb": 118378,
+    "untestable": 39555,
+    "pos": 9567
+   },
+   "0.85-0.95": {
+    "neg": 1396952,
+    "amb": 141691,
+    "untestable": 75366,
+    "pos": 2258
+   },
+   ">0.95": {
+    "neg": 4470375,
+    "untestable": 544442,
+    "amb": 252260,
+    "pos": 834
+   }
+  }
+ },
+ "dennler_agreement_unrestricted": {
+  "column_whitelist": [
+   "A1_ensembl",
+   "A2_ensembl",
+   "SL"
+  ],
+  "note": "report only; never used to tune any rule",
+  "ens111_yeast_SL.csv": {
+   "n_pairs": 2008,
+   "SL_values": {
+    "False": 1790,
+    "True": 218
+   },
+   "n_in_our_table": 1993,
+   "crosstab_SL_vs_dennler_comparable": {
+    "False": {
+     "absent": 15,
+     "neg": 1774,
+     "pos": 0,
+     "untested": 1
+    },
+    "True": {
+     "absent": 0,
+     "neg": 122,
+     "pos": 95,
+     "untested": 1
+    }
+   },
+   "crosstab_SL_vs_primary": {
+    "False": {
+     "absent": 15,
+     "amb": 105,
+     "neg": 1458,
+     "pos": 1,
+     "untestable": 210,
+     "untested": 1
+    },
+    "True": {
+     "absent": 0,
+     "amb": 93,
+     "neg": 5,
+     "pos": 94,
+     "untestable": 25,
+     "untested": 1
+    }
+   },
+   "crosstab_SL_vs_lenient": {
+    "False": {
+     "absent": 15,
+     "amb": 105,
+     "neg": 1458,
+     "pos": 1,
+     "untestable": 210,
+     "untested": 1
+    },
+    "True": {
+     "absent": 0,
+     "amb": 31,
+     "neg": 3,
+     "pos": 158,
+     "untestable": 25,
+     "untested": 1
+    }
+   }
+  },
+  "ens111_yeast_SL-deadly.csv": {
+   "n_pairs": 2008,
+   "SL_values": {
+    "False": 1912,
+    "True": 96
+   },
+   "n_in_our_table": 1993,
+   "crosstab_SL_vs_dennler_comparable": {
+    "False": {
+     "absent": 15,
+     "neg": 1896,
+     "pos": 0,
+     "untested": 1
+    },
+    "True": {
+     "absent": 0,
+     "neg": 0,
+     "pos": 95,
+     "untested": 1
+    }
+   },
+   "crosstab_SL_vs_primary": {
+    "False": {
+     "absent": 15,
+     "amb": 192,
+     "neg": 1463,
+     "pos": 14,
+     "untestable": 227,
+     "untested": 1
+    },
+    "True": {
+     "absent": 0,
+     "amb": 6,
+     "neg": 0,
+     "pos": 81,
+     "untestable": 8,
+     "untested": 1
+    }
+   },
+   "crosstab_SL_vs_lenient": {
+    "False": {
+     "absent": 15,
+     "amb": 135,
+     "neg": 1461,
+     "pos": 73,
+     "untestable": 227,
+     "untested": 1
+    },
+    "True": {
+     "absent": 0,
+     "amb": 1,
+     "neg": 0,
+     "pos": 86,
+     "untestable": 8,
+     "untested": 1
+    }
+   }
+  }
+ },
+ "runtime_s": 2301.7,
+ "universe": {
+  "status": "applied",
+  "file": "data/interim/universe/yeast_paralog_pairs.tsv",
+  "file_sha256": "64b3b4098c330f85a3dfbf55f17941a7463e140662a65bcf90d5df3d32a3e873",
+  "n_universe_pairs": 5650,
+  "n_pairs_before": 9119213,
+  "n_pairs_after": 2875,
+  "universe_pairs_not_tested_unlabelled": 2775,
+  "universe_pairs_not_tested_both_genes_in_sga_measured_pairs": 510,
+  "restricted": {
+   "tiers": {
+    "n_pairs": 2875,
+    "primary": {
+     "neg": 2049,
+     "untestable": 315,
+     "amb": 247,
+     "untested": 160,
+     "pos": 104
+    },
+    "lenient": {
+     "neg": 2047,
+     "untestable": 315,
+     "pos": 183,
+     "amb": 170,
+     "untested": 160
+    },
+    "strict": {
+     "neg": 2049,
+     "untestable": 315,
+     "amb": 283,
+     "untested": 160,
+     "pos": 68
+    },
+    "biogrid": {
+     "neg": 1998,
+     "untestable": 298,
+     "pos": 227,
+     "amb": 216,
+     "untested": 136
+    },
+    "dennler_comparable": {
+     "neg": 2598,
+     "untested": 177,
+     "pos": 100
+    },
+    "primary_by_source": {
+     "biogrid_lt": {
+      "untested": 91
+     },
+     "costanzo2016": {
+      "neg": 1810,
+      "untestable": 285,
+      "amb": 178,
+      "pos": 14
+     },
+     "costanzo2016;biogrid_lt": {
+      "neg": 125,
+      "amb": 54,
+      "pos": 46,
+      "untestable": 25
+     },
+     "costanzo2016;dean2008": {
+      "neg": 67,
+      "amb": 6,
+      "untestable": 3,
+      "pos": 1
+     },
+     "costanzo2016;dean2008;biogrid_lt": {
+      "pos": 39,
+      "neg": 34,
+      "amb": 9,
+      "untestable": 2
+     },
+     "dean2008": {
+      "untested": 45,
+      "neg": 11,
+      "pos": 1
+     },
+     "dean2008;biogrid_lt": {
+      "untested": 24,
+      "pos": 3,
+      "neg": 2
+     }
+    },
+    "flags": {
+     "orientation_conflict": 7,
+     "discordant": 0,
+     "dean_override": 0,
+     "dean_conflict": 1,
+     "biogrid_only": 123,
+     "biogrid_conflict": 51
+    },
+    "orientation_conflict_by_primary": {
+     "pos": 7
+    },
+    "linked": {
+     "n_linked": 14,
+     "n_unknown": 0,
+     "primary_of_linked": {
+      "untested": 13,
+      "neg": 1
+     },
+     "sga_primary_of_linked_before_rule": {
+      "untested": 14
+     }
+    },
+    "nesting": {
+     "strict_pos_subset_primary_pos": true,
+     "primary_pos_subset_lenient_pos": true,
+     "primary_pos_subset_biogrid_pos": true,
+     "lenient_neg_subset_primary_neg": true,
+     "strict_neg_equals_primary_neg": true
+    },
+    "primary_prevalence": 0.048304691128657685,
+    "primary_by_min_smf": {
+     "<=0.7": {
+      "untestable": 107,
+      "neg": 83,
+      "pos": 29,
+      "amb": 16
+     },
+     "0.7-0.85": {
+      "neg": 134,
+      "amb": 28,
+      "pos": 15,
+      "untestable": 4
+     },
+     "0.85-0.95": {
+      "neg": 252,
+      "amb": 67,
+      "pos": 24,
+      "untestable": 18
+     },
+     ">0.95": {
+      "neg": 1567,
+      "untestable": 186,
+      "amb": 136,
+      "pos": 32
+     }
+    }
+   },
+   "external_agreement": {
+    "column_whitelist": [
+     "A1_ensembl",
+     "A2_ensembl",
+     "SL"
+    ],
+    "note": "report only; never used to tune any rule",
+    "ens111_yeast_SL.csv": {
+     "n_pairs": 2008,
+     "SL_values": {
+      "False": 1790,
+      "True": 218
+     },
+     "n_in_our_table": 1987,
+     "crosstab_SL_vs_dennler_comparable": {
+      "False": {
+       "absent": 21,
+       "neg": 1768,
+       "pos": 0,
+       "untested": 1
+      },
+      "True": {
+       "absent": 0,
+       "neg": 122,
+       "pos": 95,
+       "untested": 1
+      }
+     },
+     "crosstab_SL_vs_primary": {
+      "False": {
+       "absent": 21,
+       "amb": 105,
+       "neg": 1453,
+       "pos": 1,
+       "untestable": 209,
+       "untested": 1
+      },
+      "True": {
+       "absent": 0,
+       "amb": 93,
+       "neg": 5,
+       "pos": 94,
+       "untestable": 25,
+       "untested": 1
+      }
+     },
+     "crosstab_SL_vs_lenient": {
+      "False": {
+       "absent": 21,
+       "amb": 105,
+       "neg": 1453,
+       "pos": 1,
+       "untestable": 209,
+       "untested": 1
+      },
+      "True": {
+       "absent": 0,
+       "amb": 31,
+       "neg": 3,
+       "pos": 158,
+       "untestable": 25,
+       "untested": 1
+      }
+     }
+    },
+    "ens111_yeast_SL-deadly.csv": {
+     "n_pairs": 2008,
+     "SL_values": {
+      "False": 1912,
+      "True": 96
+     },
+     "n_in_our_table": 1987,
+     "crosstab_SL_vs_dennler_comparable": {
+      "False": {
+       "absent": 21,
+       "neg": 1890,
+       "pos": 0,
+       "untested": 1
+      },
+      "True": {
+       "absent": 0,
+       "neg": 0,
+       "pos": 95,
+       "untested": 1
+      }
+     },
+     "crosstab_SL_vs_primary": {
+      "False": {
+       "absent": 21,
+       "amb": 192,
+       "neg": 1458,
+       "pos": 14,
+       "untestable": 226,
+       "untested": 1
+      },
+      "True": {
+       "absent": 0,
+       "amb": 6,
+       "neg": 0,
+       "pos": 81,
+       "untestable": 8,
+       "untested": 1
+      }
+     },
+     "crosstab_SL_vs_lenient": {
+      "False": {
+       "absent": 21,
+       "amb": 135,
+       "neg": 1456,
+       "pos": 73,
+       "untestable": 226,
+       "untested": 1
+      },
+      "True": {
+       "absent": 0,
+       "amb": 1,
+       "neg": 0,
+       "pos": 86,
+       "untestable": 8,
+       "untested": 1
+      }
+     }
+    }
+   }
+  },
+  "labels_file_sha256": "e986d2d908c22872de27edc035be052e3d87c1a444508ca3d2703303d2cc7e02"
+ }
+}

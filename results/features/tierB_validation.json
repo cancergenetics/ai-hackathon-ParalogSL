@@ -1,0 +1,2061 @@
+{
+ "git_head": "2ab485d9f6c239185fe51b16c1ef3f1af76b03f5",
+ "evaluation_only": true,
+ "sources": {
+  "timetree": {
+   "group": "timetree",
+   "files": [
+    {
+     "id": "timetree5_pairwise",
+     "filename": "timetree_pairwise.tsv",
+     "url": "https://timetree.org/api/pairwise/{a}/{b}",
+     "date": "2026-10-28T04:00:36Z",
+     "sha256": "49a72573484deeb6aa6e0def3af45ec6a0ca200d6385b3ecf016262e1f5dc217",
+     "bytes": 41423,
+     "status": "ok",
+     "fetched_at_start": "2026-10-28T03:57:39Z",
+     "n_rows": 320,
+     "n_failed": 2,
+     "queries": {
+      "human": 9606,
+      "yeast": 559292,
+      "arabidopsis": 3702,
+      "worm": 6239
+     },
+     "field_used": "adjusted_age (Mya)"
+    }
+   ]
+  },
+  "ygob": {
+   "group": "ygob",
+   "files": [
+    {
+     "id": "ygob_pillars_v7",
+     "filename": "Pillars.tab",
+     "url": "https://web.archive.org/web/20171207094339id_/http://ygob.ucd.ie/ygob/data/v7-Aug2012/Pillars.tab",
+     "date": "2026-10-28T03:51:33Z",
+     "sha256": "162c1919b762f34006d0be8ea00b090531ea6c67be43d63b6bf683c4bc48212b",
+     "bytes": 2778211,
+     "status": "ok"
+    }
+   ],
+   "url": "https://web.archive.org/web/20171207094339id_/http://ygob.ucd.ie/ygob/data/v7-Aug2012/Pillars.tab",
+   "date": "2026-10-28T03:51:33Z",
+   "sha256": "162c1919b762f34006d0be8ea00b090531ea6c67be43d63b6bf683c4bc48212b",
+   "bytes": 2778211
+  },
+  "ohnologs": {
+   "group": "ohnologs",
+   "files": [
+    {
+     "id": "ohnologs_v2_hsapiens_pairs_relaxed",
+     "filename": "hsapiens.Pairs.Relaxed.2R.txt",
+     "url": "http://ohnologs.curie.fr/cgi-bin/DownloadBrowse.cgi?crit=[C]&org=hsapiens&opt=pairs&wgd=2R",
+     "date": "2026-10-28T03:50:23Z",
+     "sha256": "c980267e247add027f4ad6a274b3b99db50dc2f0e1da1a4236ffa4e3957e0c1b",
+     "bytes": 836988,
+     "status": "ok"
+    },
+    {
+     "id": "ohnologs_v2_hsapiens_pairs_strict",
+     "filename": "hsapiens.Pairs.Strict.2R.txt",
+     "url": "http://ohnologs.curie.fr/cgi-bin/DownloadBrowse.cgi?crit=[A]&org=hsapiens&opt=pairs&wgd=2R",
+     "date": "2026-10-28T03:50:23Z",
+     "sha256": "398dbd0b6f41628f8a80606b9e0b5ad2d21459cae42342e7e12cdeb3794f5b26",
+     "bytes": 645121,
+     "status": "ok"
+    }
+   ]
+  }
+ },
+ "timetree_spearman": {
+  "human": {
+   "n_species": 77,
+   "spearman_rho": 0.7835274718883525,
+   "p_value": 3.6815054003256056e-17,
+   "n_species_without_timetree": 0,
+   "largest_rank_residuals": [
+    {
+     "code": "TX41844",
+     "d_s": 0.88,
+     "timetree_mya": 1515.8,
+     "rank_residual": -28.5
+    },
+    {
+     "code": "AMBTC",
+     "d_s": 0.8829,
+     "timetree_mya": 1515.8,
+     "rank_residual": -27.5
+    },
+    {
+     "code": "HUIN7",
+     "d_s": 1.0937,
+     "timetree_mya": 1164.3,
+     "rank_residual": 27.5
+    },
+    {
+     "code": "KAZAF",
+     "d_s": 1.0854,
+     "timetree_mya": 1164.3,
+     "rank_residual": 26.5
+    },
+    {
+     "code": "ORYSJ",
+     "d_s": 0.8892,
+     "timetree_mya": 1515.8,
+     "rank_residual": -26.5
+    },
+    {
+     "code": "PHYPA",
+     "d_s": 0.8942,
+     "timetree_mya": 1515.8,
+     "rank_residual": -25.5
+    }
+   ],
+   "per_species": {
+    "ANOGA": {
+     "d_s": 0.64082,
+     "timetree_mya": 692.17015
+    },
+    "ARATH": {
+     "d_s": 0.90798,
+     "timetree_mya": 1515.8312
+    },
+    "ASPFU": {
+     "d_s": 0.99185,
+     "timetree_mya": 1164.29781
+    },
+    "BATDJ": {
+     "d_s": 0.83424,
+     "timetree_mya": 1164.29781
+    },
+    "BOVIN": {
+     "d_s": 0.04825,
+     "timetree_mya": 89.48067
+    },
+    "BRAFL": {
+     "d_s": 0.46827,
+     "timetree_mya": 610.36865
+    },
+    "CAEEL": {
+     "d_s": 0.80886,
+     "timetree_mya": 692.17015
+    },
+    "CANAL": {
+     "d_s": 1.05185,
+     "timetree_mya": 1164.29781
+    },
+    "CANLF": {
+     "d_s": 0.04256,
+     "timetree_mya": 89.48067
+    },
+    "CHICK": {
+     "d_s": 0.16062,
+     "timetree_mya": 318.82488
+    },
+    "CHLRE": {
+     "d_s": 0.92876,
+     "timetree_mya": 1515.8312
+    },
+    "CIOIN": {
+     "d_s": 0.57249,
+     "timetree_mya": 600.96099
+    },
+    "CRYD1": {
+     "d_s": 0.98276,
+     "timetree_mya": 1164.29781
+    },
+    "DANRE": {
+     "d_s": 0.25438,
+     "timetree_mya": 435.12563
+    },
+    "DICDI": {
+     "d_s": 0.92772,
+     "timetree_mya": 1515.8312
+    },
+    "DROME": {
+     "d_s": 0.66088,
+     "timetree_mya": 692.17015
+    },
+    "GIAIC": {
+     "d_s": 1.21661,
+     "timetree_mya": 1515.8312
+    },
+    "HELRO": {
+     "d_s": 0.58849,
+     "timetree_mya": 692.17015
+    },
+    "IXOSC": {
+     "d_s": 0.55783,
+     "timetree_mya": 692.17015
+    },
+    "LEIMA": {
+     "d_s": 1.10263,
+     "timetree_mya": 1515.8312
+    },
+    "LEPOC": {
+     "d_s": 0.24351,
+     "timetree_mya": 435.12563
+    },
+    "MACMU": {
+     "d_s": 0.01145,
+     "timetree_mya": 28.89794
+    },
+    "MAIZE": {
+     "d_s": 0.90265,
+     "timetree_mya": 1515.8312
+    },
+    "MONBE": {
+     "d_s": 0.79851,
+     "timetree_mya": 892.00813
+    },
+    "MONDO": {
+     "d_s": 0.11062,
+     "timetree_mya": 159.15818
+    },
+    "MOUSE": {
+     "d_s": 0.05572,
+     "timetree_mya": 83.51396
+    },
+    "MYCMD": {
+     "d_s": 0.98399,
+     "timetree_mya": 1164.29781
+    },
+    "NEMVE": {
+     "d_s": 0.51774,
+     "timetree_mya": 692.17015
+    },
+    "NEUCR": {
+     "d_s": 0.99727,
+     "timetree_mya": 1164.29781
+    },
+    "TX35525": {
+     "d_s": 0.59155,
+     "timetree_mya": 692.17015
+    },
+    "ORYLA": {
+     "d_s": 0.27103,
+     "timetree_mya": 435.12563
+    },
+    "ORYSJ": {
+     "d_s": 0.8892,
+     "timetree_mya": 1515.8312
+    },
+    "PARTE": {
+     "d_s": 1.1317,
+     "timetree_mya": 1515.8312
+    },
+    "PHANO": {
+     "d_s": 1.01849,
+     "timetree_mya": 1164.29781
+    },
+    "PHYPA": {
+     "d_s": 0.89417,
+     "timetree_mya": 1515.8312
+    },
+    "PHYRM": {
+     "d_s": 0.89439,
+     "timetree_mya": 1515.8312
+    },
+    "PLAF7": {
+     "d_s": 1.16876,
+     "timetree_mya": 1515.8312
+    },
+    "PUCGT": {
+     "d_s": 0.98749,
+     "timetree_mya": 1164.29781
+    },
+    "RAT": {
+     "d_s": 0.06002,
+     "timetree_mya": 83.51396
+    },
+    "SCHPO": {
+     "d_s": 0.97987,
+     "timetree_mya": 1164.29781
+    },
+    "SCLS1": {
+     "d_s": 0.99603,
+     "timetree_mya": 1164.29781
+    },
+    "THAPS": {
+     "d_s": 0.94831,
+     "timetree_mya": 1515.8312
+    },
+    "TRICA": {
+     "d_s": 0.59466,
+     "timetree_mya": 692.17015
+    },
+    "TRIV3": {
+     "d_s": 1.22897,
+     "timetree_mya": 1515.8312
+    },
+    "XENLA": {
+     "d_s": 0.21718,
+     "timetree_mya": 352.08192
+    },
+    "XENTR": {
+     "d_s": 0.20709,
+     "timetree_mya": 352.08192
+    },
+    "YARLI": {
+     "d_s": 0.99569,
+     "timetree_mya": 1164.29781
+    },
+    "YEAST": {
+     "d_s": 1.07971,
+     "timetree_mya": 1164.29781
+    },
+    "CANGA": {
+     "d_s": 1.05812,
+     "timetree_mya": 1164.29781
+    },
+    "HUIN7": {
+     "d_s": 1.09375,
+     "timetree_mya": 1164.29781
+    },
+    "KAZAF": {
+     "d_s": 1.08537,
+     "timetree_mya": 1164.29781
+    },
+    "TORDC": {
+     "d_s": 1.0629,
+     "timetree_mya": 1164.29781
+    },
+    "TX1245769": {
+     "d_s": 1.06454,
+     "timetree_mya": 1164.29781
+    },
+    "EREGS": {
+     "d_s": 1.03965,
+     "timetree_mya": 1164.29781
+    },
+    "TX168575": {
+     "d_s": 0.89674,
+     "timetree_mya": 1515.8312
+    },
+    "NICAT": {
+     "d_s": 0.90007,
+     "timetree_mya": 1515.8312
+    },
+    "TX151428": {
+     "d_s": 0.90745,
+     "timetree_mya": 1515.8312
+    },
+    "CEPFO": {
+     "d_s": 0.90182,
+     "timetree_mya": 1515.8312
+    },
+    "DAUCS": {
+     "d_s": 0.90734,
+     "timetree_mya": 1515.8312
+    },
+    "TX425828": {
+     "d_s": 0.89649,
+     "timetree_mya": 1515.8312
+    },
+    "DENNO": {
+     "d_s": 0.91078,
+     "timetree_mya": 1515.8312
+    },
+    "ZOSMR": {
+     "d_s": 0.91645,
+     "timetree_mya": 1515.8312
+    },
+    "SPIIN": {
+     "d_s": 0.89904,
+     "timetree_mya": 1515.8312
+    },
+    "AMBTC": {
+     "d_s": 0.88285,
+     "timetree_mya": 1515.8312
+    },
+    "TX41844": {
+     "d_s": 0.88001,
+     "timetree_mya": 1515.8312
+    },
+    "ATTCE": {
+     "d_s": 0.60177,
+     "timetree_mya": 692.17015
+    },
+    "VESMC": {
+     "d_s": 0.6001,
+     "timetree_mya": 692.17015
+    },
+    "PHYSR": {
+     "d_s": 0.61071,
+     "timetree_mya": 692.17015
+    },
+    "TX1421715": {
+     "d_s": 0.61306,
+     "timetree_mya": 692.17015
+    },
+    "TX667449": {
+     "d_s": 0.62571,
+     "timetree_mya": 692.17015
+    },
+    "TX765133": {
+     "d_s": 0.63978,
+     "timetree_mya": 692.17015
+    },
+    "APHCR": {
+     "d_s": 0.6583,
+     "timetree_mya": 692.17015
+    },
+    "LAOST": {
+     "d_s": 0.61938,
+     "timetree_mya": 692.17015
+    },
+    "ZOONE": {
+     "d_s": 0.56085,
+     "timetree_mya": 692.17015
+    },
+    "CYLNA": {
+     "d_s": 0.76369,
+     "timetree_mya": 692.17015
+    },
+    "BRUPA": {
+     "d_s": 0.78831,
+     "timetree_mya": 692.17015
+    },
+    "THECL": {
+     "d_s": 0.80464,
+     "timetree_mya": 692.17015
+    }
+   }
+  },
+  "yeast": {
+   "n_species": 79,
+   "spearman_rho": 0.8695325669131467,
+   "p_value": 2.659475562656256e-25,
+   "n_species_without_timetree": 0,
+   "largest_rank_residuals": [
+    {
+     "code": "THECL",
+     "d_s": 1.1458,
+     "timetree_mya": 1164.3,
+     "rank_residual": 37.5
+    },
+    {
+     "code": "PHYRM",
+     "d_s": 1.0824,
+     "timetree_mya": 1515.8,
+     "rank_residual": -27.5
+    },
+    {
+     "code": "BRUPA",
+     "d_s": 1.1171,
+     "timetree_mya": 1164.3,
+     "rank_residual": 23.5
+    },
+    {
+     "code": "THAPS",
+     "d_s": 1.0884,
+     "timetree_mya": 1515.8,
+     "rank_residual": -23.5
+    },
+    {
+     "code": "CAEEL",
+     "d_s": 1.1147,
+     "timetree_mya": 1164.3,
+     "rank_residual": 22.5
+    },
+    {
+     "code": "APHCR",
+     "d_s": 1.1118,
+     "timetree_mya": 1164.3,
+     "rank_residual": 21.5
+    }
+   ],
+   "per_species": {
+    "ANOGA": {
+     "d_s": 1.08537,
+     "timetree_mya": 1164.29781
+    },
+    "ARATH": {
+     "d_s": 1.11867,
+     "timetree_mya": 1515.8312
+    },
+    "ASPFU": {
+     "d_s": 0.87296,
+     "timetree_mya": 503.01479
+    },
+    "BATDJ": {
+     "d_s": 0.92876,
+     "timetree_mya": 843.81775
+    },
+    "BOVIN": {
+     "d_s": 1.0634,
+     "timetree_mya": 1164.29781
+    },
+    "BRAFL": {
+     "d_s": 1.04564,
+     "timetree_mya": 1164.29781
+    },
+    "CAEEL": {
+     "d_s": 1.11474,
+     "timetree_mya": 1164.29781
+    },
+    "CANAL": {
+     "d_s": 0.66155,
+     "timetree_mya": 245.36294
+    },
+    "CANLF": {
+     "d_s": 1.06247,
+     "timetree_mya": 1164.29781
+    },
+    "CHICK": {
+     "d_s": 1.07131,
+     "timetree_mya": 1164.29781
+    },
+    "CHLRE": {
+     "d_s": 1.1014,
+     "timetree_mya": 1515.8312
+    },
+    "CIOIN": {
+     "d_s": 1.07787,
+     "timetree_mya": 1164.29781
+    },
+    "CRYD1": {
+     "d_s": 0.96425,
+     "timetree_mya": 622.28087
+    },
+    "DANRE": {
+     "d_s": 1.04714,
+     "timetree_mya": 1164.29781
+    },
+    "DICDI": {
+     "d_s": 1.09761,
+     "timetree_mya": 1515.8312
+    },
+    "DROME": {
+     "d_s": 1.09466,
+     "timetree_mya": 1164.29781
+    },
+    "GIAIC": {
+     "d_s": 1.31576,
+     "timetree_mya": 1515.8312
+    },
+    "GORGO": {
+     "d_s": 1.05588,
+     "timetree_mya": 1164.29781
+    },
+    "HELRO": {
+     "d_s": 1.08421,
+     "timetree_mya": 1164.29781
+    },
+    "HUMAN": {
+     "d_s": 1.04079,
+     "timetree_mya": 1164.29781
+    },
+    "IXOSC": {
+     "d_s": 1.07591,
+     "timetree_mya": 1164.29781
+    },
+    "LEIMA": {
+     "d_s": 1.20775,
+     "timetree_mya": 1515.8312
+    },
+    "LEPOC": {
+     "d_s": 1.0551,
+     "timetree_mya": 1164.29781
+    },
+    "MACMU": {
+     "d_s": 1.0511,
+     "timetree_mya": 1164.29781
+    },
+    "MAIZE": {
+     "d_s": 1.13403,
+     "timetree_mya": 1515.8312
+    },
+    "MONBE": {
+     "d_s": 1.06102,
+     "timetree_mya": 1164.29781
+    },
+    "MONDO": {
+     "d_s": 1.04697,
+     "timetree_mya": 1164.29781
+    },
+    "MOUSE": {
+     "d_s": 1.04005,
+     "timetree_mya": 1164.29781
+    },
+    "MYCMD": {
+     "d_s": 0.97034,
+     "timetree_mya": 622.28087
+    },
+    "NEMVE": {
+     "d_s": 1.03256,
+     "timetree_mya": 1164.29781
+    },
+    "NEUCR": {
+     "d_s": 0.88486,
+     "timetree_mya": 503.01479
+    },
+    "TX35525": {
+     "d_s": 1.09308,
+     "timetree_mya": 1164.29781
+    },
+    "ORYLA": {
+     "d_s": 1.03595,
+     "timetree_mya": 1164.29781
+    },
+    "ORYSJ": {
+     "d_s": 1.09609,
+     "timetree_mya": 1515.8312
+    },
+    "PANTR": {
+     "d_s": 1.05757,
+     "timetree_mya": 1164.29781
+    },
+    "PARTE": {
+     "d_s": 1.26191,
+     "timetree_mya": 1515.8312
+    },
+    "PHANO": {
+     "d_s": 0.88727,
+     "timetree_mya": 503.01479
+    },
+    "PHYPA": {
+     "d_s": 1.12238,
+     "timetree_mya": 1515.8312
+    },
+    "PHYRM": {
+     "d_s": 1.08244,
+     "timetree_mya": 1515.8312
+    },
+    "PLAF7": {
+     "d_s": 1.26521,
+     "timetree_mya": 1515.8312
+    },
+    "PUCGT": {
+     "d_s": 0.99115,
+     "timetree_mya": 622.28087
+    },
+    "RAT": {
+     "d_s": 1.0517,
+     "timetree_mya": 1164.29781
+    },
+    "SCHPO": {
+     "d_s": 0.90007,
+     "timetree_mya": 503.01479
+    },
+    "SCLS1": {
+     "d_s": 0.85764,
+     "timetree_mya": 503.01479
+    },
+    "THAPS": {
+     "d_s": 1.08839,
+     "timetree_mya": 1515.8312
+    },
+    "TRICA": {
+     "d_s": 1.07258,
+     "timetree_mya": 1164.29781
+    },
+    "TRIV3": {
+     "d_s": 1.279,
+     "timetree_mya": 1515.8312
+    },
+    "XENLA": {
+     "d_s": 1.09384,
+     "timetree_mya": 1164.29781
+    },
+    "XENTR": {
+     "d_s": 1.03607,
+     "timetree_mya": 1164.29781
+    },
+    "YARLI": {
+     "d_s": 0.73596,
+     "timetree_mya": 334.51701
+    },
+    "CANGA": {
+     "d_s": 0.33464,
+     "timetree_mya": 81.6958
+    },
+    "HUIN7": {
+     "d_s": 0.36801,
+     "timetree_mya": 82.90961
+    },
+    "KAZAF": {
+     "d_s": 0.33951,
+     "timetree_mya": 82.90961
+    },
+    "TORDC": {
+     "d_s": 0.31912,
+     "timetree_mya": 96.48047
+    },
+    "TX1245769": {
+     "d_s": 0.39519,
+     "timetree_mya": 116.40685
+    },
+    "EREGS": {
+     "d_s": 0.41016,
+     "timetree_mya": 116.40685
+    },
+    "TX168575": {
+     "d_s": 1.12566,
+     "timetree_mya": 1515.8312
+    },
+    "NICAT": {
+     "d_s": 1.12959,
+     "timetree_mya": 1515.8312
+    },
+    "TX151428": {
+     "d_s": 1.13486,
+     "timetree_mya": 1515.8312
+    },
+    "CEPFO": {
+     "d_s": 1.1336,
+     "timetree_mya": 1515.8312
+    },
+    "DAUCS": {
+     "d_s": 1.14215,
+     "timetree_mya": 1515.8312
+    },
+    "TX425828": {
+     "d_s": 1.12611,
+     "timetree_mya": 1515.8312
+    },
+    "DENNO": {
+     "d_s": 1.12409,
+     "timetree_mya": 1515.8312
+    },
+    "ZOSMR": {
+     "d_s": 1.12677,
+     "timetree_mya": 1515.8312
+    },
+    "SPIIN": {
+     "d_s": 1.13709,
+     "timetree_mya": 1515.8312
+    },
+    "AMBTC": {
+     "d_s": 1.10465,
+     "timetree_mya": 1515.8312
+    },
+    "TX41844": {
+     "d_s": 1.1253,
+     "timetree_mya": 1515.8312
+    },
+    "ATTCE": {
+     "d_s": 1.0978,
+     "timetree_mya": 1164.29781
+    },
+    "VESMC": {
+     "d_s": 1.08756,
+     "timetree_mya": 1164.29781
+    },
+    "PHYSR": {
+     "d_s": 1.07829,
+     "timetree_mya": 1164.29781
+    },
+    "TX1421715": {
+     "d_s": 1.09552,
+     "timetree_mya": 1164.29781
+    },
+    "TX667449": {
+     "d_s": 1.09192,
+     "timetree_mya": 1164.29781
+    },
+    "TX765133": {
+     "d_s": 1.10641,
+     "timetree_mya": 1164.29781
+    },
+    "APHCR": {
+     "d_s": 1.11178,
+     "timetree_mya": 1164.29781
+    },
+    "LAOST": {
+     "d_s": 1.10226,
+     "timetree_mya": 1164.29781
+    },
+    "ZOONE": {
+     "d_s": 1.07876,
+     "timetree_mya": 1164.29781
+    },
+    "CYLNA": {
+     "d_s": 1.11056,
+     "timetree_mya": 1164.29781
+    },
+    "BRUPA": {
+     "d_s": 1.11709,
+     "timetree_mya": 1164.29781
+    },
+    "THECL": {
+     "d_s": 1.14579,
+     "timetree_mya": 1164.29781
+    }
+   }
+  },
+  "arabidopsis": {
+   "n_species": 77,
+   "spearman_rho": 0.5925856684195954,
+   "p_value": 1.3663217599111065e-08,
+   "n_species_without_timetree": 2,
+   "largest_rank_residuals": [
+    {
+     "code": "PLAF7",
+     "d_s": 1.2351,
+     "timetree_mya": 1164.0,
+     "rank_residual": 59.5
+    },
+    {
+     "code": "PARTE",
+     "d_s": 1.184,
+     "timetree_mya": 1164.0,
+     "rank_residual": 50.5
+    },
+    {
+     "code": "NEMVE",
+     "d_s": 0.9169,
+     "timetree_mya": 1515.8,
+     "rank_residual": -33.0
+    },
+    {
+     "code": "MOUSE",
+     "d_s": 0.932,
+     "timetree_mya": 1515.8,
+     "rank_residual": -32.0
+    },
+    {
+     "code": "HUMAN",
+     "d_s": 0.9326,
+     "timetree_mya": 1515.8,
+     "rank_residual": -31.0
+    },
+    {
+     "code": "DANRE",
+     "d_s": 0.9326,
+     "timetree_mya": 1515.8,
+     "rank_residual": -30.0
+    }
+   ],
+   "per_species": {
+    "ANOGA": {
+     "d_s": 1.01093,
+     "timetree_mya": 1515.8312
+    },
+    "ASPFU": {
+     "d_s": 1.13468,
+     "timetree_mya": 1515.8312
+    },
+    "BATDJ": {
+     "d_s": 0.96502,
+     "timetree_mya": 1515.8312
+    },
+    "BOVIN": {
+     "d_s": 0.93711,
+     "timetree_mya": 1515.8312
+    },
+    "BRAFL": {
+     "d_s": 0.93776,
+     "timetree_mya": 1515.8312
+    },
+    "CAEEL": {
+     "d_s": 1.07699,
+     "timetree_mya": 1515.8312
+    },
+    "CANAL": {
+     "d_s": 1.18557,
+     "timetree_mya": 1515.8312
+    },
+    "CANLF": {
+     "d_s": 0.93582,
+     "timetree_mya": 1515.8312
+    },
+    "CHICK": {
+     "d_s": 0.94117,
+     "timetree_mya": 1515.8312
+    },
+    "CHLRE": {
+     "d_s": 0.82734,
+     "timetree_mya": 1025.31792
+    },
+    "CIOIN": {
+     "d_s": 0.97674,
+     "timetree_mya": 1515.8312
+    },
+    "CRYD1": {
+     "d_s": 1.09085,
+     "timetree_mya": 1515.8312
+    },
+    "DANRE": {
+     "d_s": 0.93265,
+     "timetree_mya": 1515.8312
+    },
+    "DICDI": {
+     "d_s": 0.99479,
+     "timetree_mya": 1228.31037
+    },
+    "DROME": {
+     "d_s": 1.01262,
+     "timetree_mya": 1515.8312
+    },
+    "GORGO": {
+     "d_s": 0.94215,
+     "timetree_mya": 1515.8312
+    },
+    "HELRO": {
+     "d_s": 0.99338,
+     "timetree_mya": 1515.8312
+    },
+    "HUMAN": {
+     "d_s": 0.93256,
+     "timetree_mya": 1515.8312
+    },
+    "IXOSC": {
+     "d_s": 0.97034,
+     "timetree_mya": 1515.8312
+    },
+    "LEIMA": {
+     "d_s": 1.20124,
+     "timetree_mya": 1515.8312
+    },
+    "LEPOC": {
+     "d_s": 0.93797,
+     "timetree_mya": 1515.8312
+    },
+    "MACMU": {
+     "d_s": 0.93664,
+     "timetree_mya": 1515.8312
+    },
+    "MAIZE": {
+     "d_s": 0.37582,
+     "timetree_mya": 158.95163
+    },
+    "MONBE": {
+     "d_s": 1.00668,
+     "timetree_mya": 1515.8312
+    },
+    "MONDO": {
+     "d_s": 0.95896,
+     "timetree_mya": 1515.8312
+    },
+    "MOUSE": {
+     "d_s": 0.93198,
+     "timetree_mya": 1515.8312
+    },
+    "MYCMD": {
+     "d_s": 1.11664,
+     "timetree_mya": 1515.8312
+    },
+    "NEMVE": {
+     "d_s": 0.91689,
+     "timetree_mya": 1515.8312
+    },
+    "NEUCR": {
+     "d_s": 1.14592,
+     "timetree_mya": 1515.8312
+    },
+    "TX35525": {
+     "d_s": 0.98683,
+     "timetree_mya": 1515.8312
+    },
+    "ORYLA": {
+     "d_s": 0.94893,
+     "timetree_mya": 1515.8312
+    },
+    "ORYSJ": {
+     "d_s": 0.36,
+     "timetree_mya": 158.95163
+    },
+    "PANTR": {
+     "d_s": 0.93564,
+     "timetree_mya": 1515.8312
+    },
+    "PARTE": {
+     "d_s": 1.18399,
+     "timetree_mya": 1164.02461
+    },
+    "PHANO": {
+     "d_s": 1.13843,
+     "timetree_mya": 1515.8312
+    },
+    "PHYPA": {
+     "d_s": 0.50664,
+     "timetree_mya": 482.94358
+    },
+    "PHYRM": {
+     "d_s": 0.94609,
+     "timetree_mya": 1164.02461
+    },
+    "PLAF7": {
+     "d_s": 1.23507,
+     "timetree_mya": 1164.02461
+    },
+    "PUCGT": {
+     "d_s": 1.12627,
+     "timetree_mya": 1515.8312
+    },
+    "RAT": {
+     "d_s": 0.93806,
+     "timetree_mya": 1515.8312
+    },
+    "SCHPO": {
+     "d_s": 1.09015,
+     "timetree_mya": 1515.8312
+    },
+    "SCLS1": {
+     "d_s": 1.13555,
+     "timetree_mya": 1515.8312
+    },
+    "THAPS": {
+     "d_s": 0.97821,
+     "timetree_mya": 1164.02461
+    },
+    "TRICA": {
+     "d_s": 0.97431,
+     "timetree_mya": 1515.8312
+    },
+    "XENLA": {
+     "d_s": 0.94214,
+     "timetree_mya": 1515.8312
+    },
+    "XENTR": {
+     "d_s": 0.94433,
+     "timetree_mya": 1515.8312
+    },
+    "YARLI": {
+     "d_s": 1.12465,
+     "timetree_mya": 1515.8312
+    },
+    "YEAST": {
+     "d_s": 1.20338,
+     "timetree_mya": 1515.8312
+    },
+    "CANGA": {
+     "d_s": 1.19483,
+     "timetree_mya": 1515.8312
+    },
+    "HUIN7": {
+     "d_s": 1.22071,
+     "timetree_mya": 1515.8312
+    },
+    "KAZAF": {
+     "d_s": 1.20996,
+     "timetree_mya": 1515.8312
+    },
+    "TORDC": {
+     "d_s": 1.20162,
+     "timetree_mya": 1515.8312
+    },
+    "TX1245769": {
+     "d_s": 1.1761,
+     "timetree_mya": 1515.8312
+    },
+    "EREGS": {
+     "d_s": 1.19295,
+     "timetree_mya": 1515.8312
+    },
+    "TX168575": {
+     "d_s": 0.27473,
+     "timetree_mya": 99.74702
+    },
+    "NICAT": {
+     "d_s": 0.29556,
+     "timetree_mya": 124.19733
+    },
+    "TX151428": {
+     "d_s": 0.28567,
+     "timetree_mya": 115.37691
+    },
+    "CEPFO": {
+     "d_s": 0.28241,
+     "timetree_mya": 115.37691
+    },
+    "DAUCS": {
+     "d_s": 0.30653,
+     "timetree_mya": 124.19733
+    },
+    "TX425828": {
+     "d_s": 0.27923,
+     "timetree_mya": 115.37691
+    },
+    "DENNO": {
+     "d_s": 0.37073,
+     "timetree_mya": 158.95163
+    },
+    "ZOSMR": {
+     "d_s": 0.36976,
+     "timetree_mya": 158.95163
+    },
+    "SPIIN": {
+     "d_s": 0.35298,
+     "timetree_mya": 158.95163
+    },
+    "AMBTC": {
+     "d_s": 0.34654,
+     "timetree_mya": 196.28044
+    },
+    "TX41844": {
+     "d_s": 0.48891,
+     "timetree_mya": 482.94358
+    },
+    "ATTCE": {
+     "d_s": 0.99683,
+     "timetree_mya": 1515.8312
+    },
+    "VESMC": {
+     "d_s": 0.99938,
+     "timetree_mya": 1515.8312
+    },
+    "PHYSR": {
+     "d_s": 0.99532,
+     "timetree_mya": 1515.8312
+    },
+    "TX1421715": {
+     "d_s": 1.00778,
+     "timetree_mya": 1515.8312
+    },
+    "TX667449": {
+     "d_s": 1.00863,
+     "timetree_mya": 1515.8312
+    },
+    "TX765133": {
+     "d_s": 1.02554,
+     "timetree_mya": 1515.8312
+    },
+    "APHCR": {
+     "d_s": 1.02903,
+     "timetree_mya": 1515.8312
+    },
+    "LAOST": {
+     "d_s": 0.99966,
+     "timetree_mya": 1515.8312
+    },
+    "ZOONE": {
+     "d_s": 0.96628,
+     "timetree_mya": 1515.8312
+    },
+    "CYLNA": {
+     "d_s": 1.06929,
+     "timetree_mya": 1515.8312
+    },
+    "BRUPA": {
+     "d_s": 1.07212,
+     "timetree_mya": 1515.8312
+    },
+    "THECL": {
+     "d_s": 1.11009,
+     "timetree_mya": 1515.8312
+    }
+   }
+  },
+  "worm": {
+   "n_species": 79,
+   "spearman_rho": 0.766718056298582,
+   "p_value": 1.7710747102880934e-16,
+   "n_species_without_timetree": 0,
+   "largest_rank_residuals": [
+    {
+     "code": "CHLRE",
+     "d_s": 0.9636,
+     "timetree_mya": 1515.8,
+     "rank_residual": -28.5
+    },
+    {
+     "code": "KAZAF",
+     "d_s": 1.1191,
+     "timetree_mya": 1164.3,
+     "rank_residual": 27.5
+    },
+    {
+     "code": "SPIIN",
+     "d_s": 0.9712,
+     "timetree_mya": 1515.8,
+     "rank_residual": -27.5
+    },
+    {
+     "code": "YEAST",
+     "d_s": 1.1147,
+     "timetree_mya": 1164.3,
+     "rank_residual": 26.5
+    },
+    {
+     "code": "PHYRM",
+     "d_s": 0.9736,
+     "timetree_mya": 1515.8,
+     "rank_residual": -26.5
+    },
+    {
+     "code": "HUIN7",
+     "d_s": 1.1098,
+     "timetree_mya": 1164.3,
+     "rank_residual": 25.5
+    }
+   ],
+   "per_species": {
+    "ANOGA": {
+     "d_s": 0.76245,
+     "timetree_mya": 692.17015
+    },
+    "ARATH": {
+     "d_s": 0.98479,
+     "timetree_mya": 1515.8312
+    },
+    "ASPFU": {
+     "d_s": 1.04134,
+     "timetree_mya": 1164.29781
+    },
+    "BATDJ": {
+     "d_s": 0.91748,
+     "timetree_mya": 1164.29781
+    },
+    "BOVIN": {
+     "d_s": 0.75493,
+     "timetree_mya": 692.17015
+    },
+    "BRAFL": {
+     "d_s": 0.73647,
+     "timetree_mya": 692.17015
+    },
+    "CANAL": {
+     "d_s": 1.07357,
+     "timetree_mya": 1164.29781
+    },
+    "CANLF": {
+     "d_s": 0.75528,
+     "timetree_mya": 692.17015
+    },
+    "CHICK": {
+     "d_s": 0.75361,
+     "timetree_mya": 692.17015
+    },
+    "CHLRE": {
+     "d_s": 0.96355,
+     "timetree_mya": 1515.8312
+    },
+    "CIOIN": {
+     "d_s": 0.77483,
+     "timetree_mya": 692.17015
+    },
+    "CRYD1": {
+     "d_s": 1.03533,
+     "timetree_mya": 1164.29781
+    },
+    "DANRE": {
+     "d_s": 0.73349,
+     "timetree_mya": 692.17015
+    },
+    "DICDI": {
+     "d_s": 0.97826,
+     "timetree_mya": 1515.8312
+    },
+    "DROME": {
+     "d_s": 0.77134,
+     "timetree_mya": 692.17015
+    },
+    "GIAIC": {
+     "d_s": 1.25317,
+     "timetree_mya": 1515.8312
+    },
+    "GORGO": {
+     "d_s": 0.7502,
+     "timetree_mya": 692.17015
+    },
+    "HELRO": {
+     "d_s": 0.76162,
+     "timetree_mya": 692.17015
+    },
+    "HUMAN": {
+     "d_s": 0.74374,
+     "timetree_mya": 692.17015
+    },
+    "IXOSC": {
+     "d_s": 0.73969,
+     "timetree_mya": 692.17015
+    },
+    "LEIMA": {
+     "d_s": 1.12604,
+     "timetree_mya": 1515.8312
+    },
+    "LEPOC": {
+     "d_s": 0.74709,
+     "timetree_mya": 692.17015
+    },
+    "MACMU": {
+     "d_s": 0.75067,
+     "timetree_mya": 692.17015
+    },
+    "MAIZE": {
+     "d_s": 0.98481,
+     "timetree_mya": 1515.8312
+    },
+    "MONBE": {
+     "d_s": 0.8665,
+     "timetree_mya": 892.00813
+    },
+    "MONDO": {
+     "d_s": 0.74657,
+     "timetree_mya": 692.17015
+    },
+    "MOUSE": {
+     "d_s": 0.74516,
+     "timetree_mya": 692.17015
+    },
+    "MYCMD": {
+     "d_s": 1.01262,
+     "timetree_mya": 1164.29781
+    },
+    "NEMVE": {
+     "d_s": 0.75124,
+     "timetree_mya": 692.17015
+    },
+    "NEUCR": {
+     "d_s": 1.05025,
+     "timetree_mya": 1164.29781
+    },
+    "TX35525": {
+     "d_s": 0.76105,
+     "timetree_mya": 692.17015
+    },
+    "ORYLA": {
+     "d_s": 0.7389,
+     "timetree_mya": 692.17015
+    },
+    "ORYSJ": {
+     "d_s": 0.99602,
+     "timetree_mya": 1515.8312
+    },
+    "PANTR": {
+     "d_s": 0.7539,
+     "timetree_mya": 692.17015
+    },
+    "PARTE": {
+     "d_s": 1.16346,
+     "timetree_mya": 1515.8312
+    },
+    "PHANO": {
+     "d_s": 1.05807,
+     "timetree_mya": 1164.29781
+    },
+    "PHYPA": {
+     "d_s": 0.98339,
+     "timetree_mya": 1515.8312
+    },
+    "PHYRM": {
+     "d_s": 0.97362,
+     "timetree_mya": 1515.8312
+    },
+    "PLAF7": {
+     "d_s": 1.15648,
+     "timetree_mya": 1515.8312
+    },
+    "PUCGT": {
+     "d_s": 1.02959,
+     "timetree_mya": 1164.29781
+    },
+    "RAT": {
+     "d_s": 0.75079,
+     "timetree_mya": 692.17015
+    },
+    "SCHPO": {
+     "d_s": 1.05106,
+     "timetree_mya": 1164.29781
+    },
+    "SCLS1": {
+     "d_s": 1.04261,
+     "timetree_mya": 1164.29781
+    },
+    "THAPS": {
+     "d_s": 0.99092,
+     "timetree_mya": 1515.8312
+    },
+    "TRICA": {
+     "d_s": 0.74235,
+     "timetree_mya": 692.17015
+    },
+    "TRIV3": {
+     "d_s": 1.20282,
+     "timetree_mya": 1515.8312
+    },
+    "XENLA": {
+     "d_s": 0.77036,
+     "timetree_mya": 692.17015
+    },
+    "XENTR": {
+     "d_s": 0.7348,
+     "timetree_mya": 692.17015
+    },
+    "YARLI": {
+     "d_s": 1.04484,
+     "timetree_mya": 1164.29781
+    },
+    "YEAST": {
+     "d_s": 1.11474,
+     "timetree_mya": 1164.29781
+    },
+    "CANGA": {
+     "d_s": 1.09115,
+     "timetree_mya": 1164.29781
+    },
+    "HUIN7": {
+     "d_s": 1.10978,
+     "timetree_mya": 1164.29781
+    },
+    "KAZAF": {
+     "d_s": 1.11909,
+     "timetree_mya": 1164.29781
+    },
+    "TORDC": {
+     "d_s": 1.09159,
+     "timetree_mya": 1164.29781
+    },
+    "TX1245769": {
+     "d_s": 1.08377,
+     "timetree_mya": 1164.29781
+    },
+    "EREGS": {
+     "d_s": 1.06835,
+     "timetree_mya": 1164.29781
+    },
+    "TX168575": {
+     "d_s": 0.98694,
+     "timetree_mya": 1515.8312
+    },
+    "NICAT": {
+     "d_s": 0.98228,
+     "timetree_mya": 1515.8312
+    },
+    "TX151428": {
+     "d_s": 0.99765,
+     "timetree_mya": 1515.8312
+    },
+    "CEPFO": {
+     "d_s": 0.98791,
+     "timetree_mya": 1515.8312
+    },
+    "DAUCS": {
+     "d_s": 0.98016,
+     "timetree_mya": 1515.8312
+    },
+    "TX425828": {
+     "d_s": 0.99627,
+     "timetree_mya": 1515.8312
+    },
+    "DENNO": {
+     "d_s": 1.00126,
+     "timetree_mya": 1515.8312
+    },
+    "ZOSMR": {
+     "d_s": 0.98954,
+     "timetree_mya": 1515.8312
+    },
+    "SPIIN": {
+     "d_s": 0.97116,
+     "timetree_mya": 1515.8312
+    },
+    "AMBTC": {
+     "d_s": 0.97533,
+     "timetree_mya": 1515.8312
+    },
+    "TX41844": {
+     "d_s": 0.97427,
+     "timetree_mya": 1515.8312
+    },
+    "ATTCE": {
+     "d_s": 0.76913,
+     "timetree_mya": 692.17015
+    },
+    "VESMC": {
+     "d_s": 0.77097,
+     "timetree_mya": 692.17015
+    },
+    "PHYSR": {
+     "d_s": 0.74934,
+     "timetree_mya": 692.17015
+    },
+    "TX1421715": {
+     "d_s": 0.75996,
+     "timetree_mya": 692.17015
+    },
+    "TX667449": {
+     "d_s": 0.76594,
+     "timetree_mya": 692.17015
+    },
+    "TX765133": {
+     "d_s": 0.7683,
+     "timetree_mya": 692.17015
+    },
+    "APHCR": {
+     "d_s": 0.79339,
+     "timetree_mya": 692.17015
+    },
+    "LAOST": {
+     "d_s": 0.77217,
+     "timetree_mya": 692.17015
+    },
+    "ZOONE": {
+     "d_s": 0.73604,
+     "timetree_mya": 692.17015
+    },
+    "CYLNA": {
+     "d_s": 0.37727,
+     "timetree_mya": 240.30558
+    },
+    "BRUPA": {
+     "d_s": 0.54564,
+     "timetree_mya": 362.89293
+    },
+    "THECL": {
+     "d_s": 0.56563,
+     "timetree_mya": 362.89293
+    }
+   }
+  }
+ },
+ "wgd_proxy_human_ohnologs_strict": {
+  "source": {
+   "file": "hsapiens.Pairs.Strict.2R.txt",
+   "n_ohnolog_pairs": 5640,
+   "n_pairs_both_genes_in_called_set": 5457
+  },
+  "window_species": {
+   "lower_species": [
+    "BOVIN",
+    "CANLF",
+    "CHICK",
+    "DANRE",
+    "LEPOC",
+    "MACMU",
+    "MONDO",
+    "MOUSE",
+    "ORYLA",
+    "RAT",
+    "XENLA",
+    "XENTR"
+   ],
+   "upper_species": [
+    "ANOGA",
+    "BRAFL",
+    "CAEEL",
+    "CIOIN",
+    "DROME",
+    "HELRO",
+    "IXOSC",
+    "NEMVE",
+    "TX35525",
+    "TRICA",
+    "ATTCE",
+    "VESMC",
+    "PHYSR",
+    "TX1421715",
+    "TX667449",
+    "TX765133",
+    "APHCR",
+    "LAOST",
+    "ZOONE",
+    "CYLNA",
+    "BRUPA",
+    "THECL"
+   ]
+  },
+  "n_pairs": 686225,
+  "n_ohnolog_pairs_called": 5437,
+  "tb_depth": {
+   "median_ohnolog": 0.36965080850099047,
+   "median_other": 0.8046356179757834,
+   "mean_ohnolog": 0.39395684305746476,
+   "mean_other": 0.7408740265038003,
+   "n_ohnolog_nonmissing": 5437,
+   "n_other_nonmissing": 680561,
+   "auroc_ohnolog_vs_other": 0.25175670096405284,
+   "cliffs_delta": -0.4964865980718943,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.42393963066149154
+  },
+  "tb_n_post_single": {
+   "median_ohnolog": 19.0,
+   "median_other": 0.0,
+   "mean_ohnolog": 20.78388817362516,
+   "mean_other": 5.289085589052686,
+   "n_ohnolog_nonmissing": 5437,
+   "n_other_nonmissing": 680788,
+   "auroc_ohnolog_vs_other": 0.8427089630413452,
+   "cliffs_delta": 0.6854179260826905,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.7278985054485373
+  },
+  "tb_frac_pre": {
+   "median_ohnolog": 0.15584415584415584,
+   "median_other": 0.37662337662337664,
+   "mean_ohnolog": 0.14626572618112071,
+   "mean_other": 0.41726676702910126,
+   "n_ohnolog_nonmissing": 5437,
+   "n_other_nonmissing": 680788,
+   "auroc_ohnolog_vs_other": 0.2773787128086169,
+   "cliffs_delta": -0.44524257438276615,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.5403830740612604
+  },
+  "tb_frac_post": {
+   "median_ohnolog": 0.4675324675324675,
+   "median_other": 0.05194805194805195,
+   "mean_ohnolog": 0.47886654452775473,
+   "mean_other": 0.18595458402711176,
+   "n_ohnolog_nonmissing": 5437,
+   "n_other_nonmissing": 680788,
+   "auroc_ohnolog_vs_other": 0.8137329645703311,
+   "cliffs_delta": 0.6274659291406621,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.6764323983507489
+  },
+  "tb_older_than_panel": {
+   "median_ohnolog": 0.0,
+   "median_other": 0.0,
+   "mean_ohnolog": 0.011219422475629943,
+   "mean_other": 0.36205691052133704,
+   "n_ohnolog_nonmissing": 5437,
+   "n_other_nonmissing": 680788,
+   "auroc_ohnolog_vs_other": 0.32458125597714643,
+   "cliffs_delta": -0.35083748804570714,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.4338952079213123
+  },
+  "tb_younger_than_nearest": {
+   "median_ohnolog": 0.0,
+   "median_other": 0.0,
+   "mean_ohnolog": 0.0007356998344675372,
+   "mean_other": 0.0080553711287508,
+   "n_ohnolog_nonmissing": 5437,
+   "n_other_nonmissing": 680788,
+   "auroc_ohnolog_vs_other": 0.4963401643528584,
+   "cliffs_delta": -0.0073196712942832365,
+   "mannwhitney_p": 1.584692828512212e-09,
+   "auroc_identity_stratified": 0.47716896674635945
+  },
+  "tb_species_rank_max": {
+   "median_ohnolog": 0.15584415584415584,
+   "median_other": 0.4675324675324675,
+   "mean_ohnolog": 0.20455321761188966,
+   "mean_other": 0.5695570961351204,
+   "n_ohnolog_nonmissing": 5437,
+   "n_other_nonmissing": 680788,
+   "auroc_ohnolog_vs_other": 0.21961117061839197,
+   "cliffs_delta": -0.5607776587632161,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.34047237408572084
+  },
+  "tb_cons_min": {
+   "median_ohnolog": 0.6103896103896104,
+   "median_other": 0.8571428571428571,
+   "mean_ohnolog": 0.6496444515572711,
+   "mean_other": 0.684830008678255,
+   "n_ohnolog_nonmissing": 5437,
+   "n_other_nonmissing": 680788,
+   "auroc_ohnolog_vs_other": 0.46006996491506896,
+   "cliffs_delta": -0.07986007016986207,
+   "mannwhitney_p": 1.9800452873315856e-24,
+   "auroc_identity_stratified": 0.4797405523504514
+  },
+  "wgd_window": {
+   "d_low": 0.271034,
+   "d_high": 0.468268,
+   "frac_in_window_ohnolog": 0.8526761081478756,
+   "frac_in_window_other": 0.1458706675205791,
+   "frac_in_window_ohnolog_with_depth": 0.8526761081478756,
+   "frac_in_window_other_with_depth": 0.14591932244133884
+  },
+  "wgd_signature": {
+   "late_species": [
+    "BOVIN",
+    "CANLF",
+    "CHICK",
+    "DANRE",
+    "LEPOC",
+    "MACMU",
+    "MONDO",
+    "MOUSE",
+    "ORYLA",
+    "RAT",
+    "XENLA",
+    "XENTR"
+   ],
+   "frac_pre_in_late_ohnolog_mean": 0.9040524799215253,
+   "frac_pre_in_late_other_mean": 0.8873829542628053,
+   "early_species": [
+    "ANOGA",
+    "BRAFL",
+    "CAEEL",
+    "CIOIN",
+    "DROME",
+    "HELRO",
+    "IXOSC",
+    "NEMVE",
+    "TX35525",
+    "TRICA",
+    "ATTCE",
+    "VESMC",
+    "PHYSR",
+    "TX1421715",
+    "TX667449",
+    "TX765133",
+    "APHCR",
+    "LAOST",
+    "ZOONE",
+    "CYLNA",
+    "BRUPA",
+    "THECL"
+   ],
+   "frac_post_in_early_ohnolog_mean": 0.7882940124065746,
+   "frac_post_in_early_other_mean": 0.1471150143122916,
+   "signature_rule": "frac pre over late >= 0.5 and frac post over early >= 0.5",
+   "frac_signature_ohnolog": 0.8098215927901417,
+   "frac_signature_other": 0.11326286597296074,
+   "auroc_score_ohnolog_vs_other": 0.9239139286145195,
+   "cliffs_delta_score": 0.847827857229039,
+   "mannwhitney_p": 0.0
+  }
+ },
+ "wgd_proxy_human_ohnologs_relaxed": {
+  "source": {
+   "file": "hsapiens.Pairs.Relaxed.2R.txt",
+   "n_ohnolog_pairs": 7354,
+   "n_pairs_both_genes_in_called_set": 7109
+  },
+  "window_species": {
+   "lower_species": [
+    "BOVIN",
+    "CANLF",
+    "CHICK",
+    "DANRE",
+    "LEPOC",
+    "MACMU",
+    "MONDO",
+    "MOUSE",
+    "ORYLA",
+    "RAT",
+    "XENLA",
+    "XENTR"
+   ],
+   "upper_species": [
+    "ANOGA",
+    "BRAFL",
+    "CAEEL",
+    "CIOIN",
+    "DROME",
+    "HELRO",
+    "IXOSC",
+    "NEMVE",
+    "TX35525",
+    "TRICA",
+    "ATTCE",
+    "VESMC",
+    "PHYSR",
+    "TX1421715",
+    "TX667449",
+    "TX765133",
+    "APHCR",
+    "LAOST",
+    "ZOONE",
+    "CYLNA",
+    "BRUPA",
+    "THECL"
+   ]
+  },
+  "n_pairs": 686225,
+  "n_ohnolog_pairs_called": 7054,
+  "tb_depth": {
+   "median_ohnolog": 0.36965080850099047,
+   "median_other": 0.8088637882808659,
+   "mean_ohnolog": 0.41041998595930085,
+   "mean_other": 0.7415292117261503,
+   "n_ohnolog_nonmissing": 7054,
+   "n_other_nonmissing": 678944,
+   "auroc_ohnolog_vs_other": 0.2619135630007,
+   "cliffs_delta": -0.4761728739986,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.4151718734128719
+  },
+  "tb_n_post_single": {
+   "median_ohnolog": 17.0,
+   "median_other": 0.0,
+   "mean_ohnolog": 18.715480578395237,
+   "mean_other": 5.273677763037585,
+   "n_ohnolog_nonmissing": 7054,
+   "n_other_nonmissing": 679171,
+   "auroc_ohnolog_vs_other": 0.8157139758947702,
+   "cliffs_delta": 0.6314279517895405,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.7126369513123377
+  },
+  "tb_frac_pre": {
+   "median_ohnolog": 0.15584415584415584,
+   "median_other": 0.37662337662337664,
+   "mean_ohnolog": 0.1507959010085463,
+   "mean_other": 0.41786492688842763,
+   "n_ohnolog_nonmissing": 7054,
+   "n_other_nonmissing": 679171,
+   "auroc_ohnolog_vs_other": 0.28352718026168094,
+   "cliffs_delta": -0.4329456394766381,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.5157213019092697
+  },
+  "tb_frac_post": {
+   "median_ohnolog": 0.38961038961038963,
+   "median_other": 0.05194805194805195,
+   "mean_ohnolog": 0.44955427334219505,
+   "mean_other": 0.1855616492887519,
+   "n_ohnolog_nonmissing": 7054,
+   "n_other_nonmissing": 679171,
+   "auroc_ohnolog_vs_other": 0.7944093601557732,
+   "cliffs_delta": 0.5888187203115465,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.6734883979306548
+  },
+  "tb_older_than_panel": {
+   "median_ohnolog": 0.0,
+   "median_other": 0.0,
+   "mean_ohnolog": 0.014885171533881485,
+   "mean_other": 0.3628541265748979,
+   "n_ohnolog_nonmissing": 7054,
+   "n_other_nonmissing": 679171,
+   "auroc_ohnolog_vs_other": 0.3260155224794918,
+   "cliffs_delta": -0.34796895504101644,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.42409163579324977
+  },
+  "tb_younger_than_nearest": {
+   "median_ohnolog": 0.0,
+   "median_other": 0.0,
+   "mean_ohnolog": 0.001417635384179189,
+   "mean_other": 0.00806571540893236,
+   "n_ohnolog_nonmissing": 7054,
+   "n_other_nonmissing": 679171,
+   "auroc_ohnolog_vs_other": 0.4966759599876234,
+   "cliffs_delta": -0.006648080024753145,
+   "mannwhitney_p": 4.475179839605292e-10,
+   "auroc_identity_stratified": 0.47977168294457134
+  },
+  "tb_species_rank_max": {
+   "median_ohnolog": 0.15584415584415584,
+   "median_other": 0.4675324675324675,
+   "mean_ohnolog": 0.22219685616340001,
+   "mean_other": 0.5702428631146141,
+   "n_ohnolog_nonmissing": 7054,
+   "n_other_nonmissing": 679171,
+   "auroc_ohnolog_vs_other": 0.23261200238052518,
+   "cliffs_delta": -0.5347759952389497,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.3412370858014108
+  },
+  "tb_cons_min": {
+   "median_ohnolog": 0.5584415584415584,
+   "median_other": 0.8571428571428571,
+   "mean_ohnolog": 0.6358518147574003,
+   "mean_other": 0.6850570329561628,
+   "n_ohnolog_nonmissing": 7054,
+   "n_other_nonmissing": 679171,
+   "auroc_ohnolog_vs_other": 0.4471221212700785,
+   "cliffs_delta": -0.105755757459843,
+   "mannwhitney_p": 2.7061649412584785e-53,
+   "auroc_identity_stratified": 0.4660842867974196
+  },
+  "wgd_window": {
+   "d_low": 0.271034,
+   "d_high": 0.468268,
+   "frac_in_window_ohnolog": 0.79018996314148,
+   "frac_in_window_other": 0.1448368672985154,
+   "frac_in_window_ohnolog_with_depth": 0.79018996314148,
+   "frac_in_window_other_with_depth": 0.14488529245416412
+  },
+  "wgd_signature": {
+   "late_species": [
+    "BOVIN",
+    "CANLF",
+    "CHICK",
+    "DANRE",
+    "LEPOC",
+    "MACMU",
+    "MONDO",
+    "MOUSE",
+    "ORYLA",
+    "RAT",
+    "XENLA",
+    "XENTR"
+   ],
+   "frac_pre_in_late_ohnolog_mean": 0.9061525375673377,
+   "frac_pre_in_late_other_mean": 0.8873214551269121,
+   "early_species": [
+    "ANOGA",
+    "BRAFL",
+    "CAEEL",
+    "CIOIN",
+    "DROME",
+    "HELRO",
+    "IXOSC",
+    "NEMVE",
+    "TX35525",
+    "TRICA",
+    "ATTCE",
+    "VESMC",
+    "PHYSR",
+    "TX1421715",
+    "TX667449",
+    "TX765133",
+    "APHCR",
+    "LAOST",
+    "ZOONE",
+    "CYLNA",
+    "BRUPA",
+    "THECL"
+   ],
+   "frac_post_in_early_ohnolog_mean": 0.7363327061370726,
+   "frac_post_in_early_other_mean": 0.14612814740323127,
+   "signature_rule": "frac pre over late >= 0.5 and frac post over early >= 0.5",
+   "frac_signature_ohnolog": 0.7519138077686419,
+   "frac_signature_other": 0.11220590985186352,
+   "auroc_score_ohnolog_vs_other": 0.9031149057355554,
+   "cliffs_delta_score": 0.8062298114711108,
+   "mannwhitney_p": 0.0
+  }
+ },
+ "wgd_proxy_yeast_ygob": {
+  "source": {
+   "scer_columns": [
+    11,
+    21
+   ],
+   "n_pillars": 14101,
+   "n_ohnolog_pairs": 633
+  },
+  "window_species": {
+   "lower_species": [
+    "CANGA",
+    "HUIN7",
+    "KAZAF"
+   ],
+   "upper_species": [
+    "TORDC",
+    "TX1245769",
+    "EREGS"
+   ]
+  },
+  "n_pairs": 18014,
+  "n_ohnolog_pairs_called": 522,
+  "tb_depth": {
+   "median_ohnolog": 0.19759389845053188,
+   "median_other": 1.2789957696938195,
+   "mean_ohnolog": 0.27008899789302143,
+   "mean_other": 0.9427041160079868,
+   "n_ohnolog_nonmissing": 506,
+   "n_other_nonmissing": 17243,
+   "auroc_ohnolog_vs_other": 0.20175185943588497,
+   "cliffs_delta": -0.59649628112823,
+   "mannwhitney_p": 1.9451062780770396e-124,
+   "auroc_identity_stratified": 0.3679237144941523
+  },
+  "tb_n_post_single": {
+   "median_ohnolog": 22.0,
+   "median_other": 0.0,
+   "mean_ohnolog": 25.89080459770115,
+   "mean_other": 1.3429567802423965,
+   "n_ohnolog_nonmissing": 522,
+   "n_other_nonmissing": 17492,
+   "auroc_ohnolog_vs_other": 0.9141902746126747,
+   "cliffs_delta": 0.8283805492253493,
+   "mannwhitney_p": 0.0,
+   "auroc_identity_stratified": 0.8991278819060968
+  },
+  "tb_frac_pre": {
+   "median_ohnolog": 0.0,
+   "median_other": 0.9113924050632911,
+   "mean_ohnolog": 0.0033221785731606768,
+   "mean_other": 0.5839313161604438,
+   "n_ohnolog_nonmissing": 522,
+   "n_other_nonmissing": 17492,
+   "auroc_ohnolog_vs_other": 0.1633377776200702,
+   "cliffs_delta": -0.6733244447598596,
+   "mannwhitney_p": 1.9065515879612618e-161,
+   "auroc_identity_stratified": 0.32949990202659024
+  },
+  "tb_frac_post": {
+   "median_ohnolog": 0.7974683544303798,
+   "median_other": 0.0,
+   "mean_ohnolog": 0.5901595615694263,
+   "mean_other": 0.08377428234824165,
+   "n_ohnolog_nonmissing": 522,
+   "n_other_nonmissing": 17492,
+   "auroc_ohnolog_vs_other": 0.8880710547043728,
+   "cliffs_delta": 0.7761421094087455,
+   "mannwhitney_p": 6.668269115044548e-255,
+   "auroc_identity_stratified": 0.8358844870126055
+  },
+  "tb_older_than_panel": {
+   "median_ohnolog": 0.0,
+   "median_other": 1.0,
+   "mean_ohnolog": 0.019157088122605363,
+   "mean_other": 0.5981019894809055,
+   "n_ohnolog_nonmissing": 522,
+   "n_other_nonmissing": 17492,
+   "auroc_ohnolog_vs_other": 0.2105275493208499,
+   "cliffs_delta": -0.5789449013583001,
+   "mannwhitney_p": 8.148146213659118e-154,
+   "auroc_identity_stratified": 0.38082783259678443
+  },
+  "tb_younger_than_nearest": {
+   "median_ohnolog": 1.0,
+   "median_other": 0.0,
+   "mean_ohnolog": 0.8026819923371648,
+   "mean_other": 0.2634347130116625,
+   "n_ohnolog_nonmissing": 522,
+   "n_other_nonmissing": 17492,
+   "auroc_ohnolog_vs_other": 0.7696236396627512,
+   "cliffs_delta": 0.5392472793255023,
+   "mannwhitney_p": 2.4635870409403428e-161,
+   "auroc_identity_stratified": 0.6149184659438154
+  },
+  "tb_species_rank_max": {
+   "median_ohnolog": 0.05063291139240506,
+   "median_other": 0.9873417721518988,
+   "mean_ohnolog": 0.06777729278820506,
+   "mean_other": 0.6482818908897232,
+   "n_ohnolog_nonmissing": 522,
+   "n_other_nonmissing": 17492,
+   "auroc_ohnolog_vs_other": 0.24758094121625826,
+   "cliffs_delta": -0.5048381175674834,
+   "mannwhitney_p": 1.0227175645001074e-97,
+   "auroc_identity_stratified": 0.4675159818209326
+  },
+  "tb_cons_min": {
+   "median_ohnolog": 0.7784810126582278,
+   "median_other": 0.9873417721518988,
+   "mean_ohnolog": 0.6169794849410738,
+   "mean_other": 0.6750138218701063,
+   "n_ohnolog_nonmissing": 522,
+   "n_other_nonmissing": 17492,
+   "auroc_ohnolog_vs_other": 0.4145935788489626,
+   "cliffs_delta": -0.17081284230207483,
+   "mannwhitney_p": 1.5390160251742548e-12,
+   "auroc_identity_stratified": 0.641446890107653
+  },
+  "wgd_window": {
+   "d_low": 0.368013,
+   "d_high": 0.319122,
+   "frac_in_window_ohnolog": 0.0,
+   "frac_in_window_other": 0.0,
+   "frac_in_window_ohnolog_with_depth": 0.0,
+   "frac_in_window_other_with_depth": 0.0
+  },
+  "wgd_signature": {
+   "late_species": [
+    "CANGA",
+    "HUIN7",
+    "KAZAF"
+   ],
+   "frac_pre_in_late_ohnolog_mean": 0.07854406130268199,
+   "frac_pre_in_late_other_mean": 0.7012920192087811,
+   "early_species": [
+    "TORDC",
+    "TX1245769",
+    "EREGS"
+   ],
+   "frac_post_in_early_ohnolog_mean": 0.3946360153256705,
+   "frac_post_in_early_other_mean": 0.06023706075158167,
+   "signature_rule": "frac pre over late >= 0.5 and frac post over early >= 0.5",
+   "frac_signature_ohnolog": 0.005747126436781609,
+   "frac_signature_other": 5.716899153898925e-05,
+   "auroc_score_ohnolog_vs_other": 0.29209099857800347,
+   "cliffs_delta_score": -0.41581800284399306,
+   "mannwhitney_p": 1.5557906520602782e-85
+  }
+ }
+}

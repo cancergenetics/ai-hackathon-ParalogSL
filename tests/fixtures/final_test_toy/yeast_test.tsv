@@ -1,0 +1,10 @@
+gene_a	gene_b	primary	group	lenient	strict	orientation_conflict	leakage_bsr
+ty_Q0a	ty_Q0b	neg	gyQ0	neg	neg	0	0.0
+ty_Q1a	ty_Q1b	pos	gyQ1	pos	pos	1	0.15
+ty_Q2a	ty_Q2b	neg	gyQ2	neg	neg	0	0.25
+ty_Q3a	ty_Q3b	pos	gyQ3	pos	neg	0	0.35
+ty_Q4a	ty_Q4b	neg	gyQ4	neg	neg	0	0.45
+ty_Q5a	ty_Q5b	neg	gyQ5	pos	neg	0	0.55
+ty_Q6a	ty_Q6b	neg	gyQ6	neg	neg	0	0.65
+ty_Q7a	ty_Q7b	neg	gyQ7	neg	neg	0	0.0
+ty_Q8a	ty_Q8b	neg	gyQ8	neg	neg	0	0.05

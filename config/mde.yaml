@@ -1,0 +1,64 @@
+# Pre-registered inputs of the M1 power simulation (DESIGN.md v3 §6.1 "Power", §6.3; D4;
+# reviews/round2/statistics.md must-1/2; reviews/round3/consistency.md M10, M11, S21).
+# Protected file (config/protected.sha256). Committed BEFORE scripts/eval/power_sim.py is run.
+# No score of any kind (identity included) is computed on any labelled pair: scores are simulated.
+version: 1
+
+# Constants shared with config/success.yaml (power_sim.py asserts they are equal there).
+t_target_ap: 0.04              # T = species-mean delta-AP the simulation is sized for
+power_target: 0.8
+candidate_fractions: [0.30, 0.35, 0.40]   # must equal config/splits.yaml test_assignment.candidate_fractions
+
+# ---------------------------------------------------------------- score model
+score_model: binormal
+# Within-class correlation between model and B1 (identity) scores.
+rho: 0.8                       # deciding value
+rho_report: [0.7, 0.9]         # reported only
+# Identity-baseline (B1) AUROC from the literature, not from our data:
+#   De Kegel et al. 2021 Cell Systems (10.1016/j.cels.2021.08.006): sequence identity alone AUROC ~0.73
+#   (AP ~0.10) on human DepMap-inferred SL paralog pairs (LITERATURE.md; docs/lit/methods.md).
+#   No yeast identity-baseline AUROC is documented in LITERATURE.md / docs/lit/, so yeast uses the human value.
+b1_auroc:
+  human: 0.73
+  yeast: 0.73
+# Reported only (round-2 statistics review / round-3 consistency M10 values).
+b1_auroc_report:
+  human: 0.65
+  yeast: 0.70
+# Group (cluster) random effect: one N(0, cluster_score_sd^2) offset per split group, added to both the
+# B1 and the model score of every pair in the group (statistics review power_v2 generator: 0.5).
+# Binormal means are scaled so that the marginal within-class SD is sqrt(1 + cluster_score_sd^2):
+#   mu = sqrt(2 * (1 + cluster_score_sd^2)) * Phi^-1(AUROC).
+cluster_score_sd: 0.5
+# Real labels: each simulated dataset uses the actual primary labels, group membership and group sizes
+# of the candidate test set (one draw per fraction from config/splits.yaml). Only scores are simulated.
+# Recall assumption (consistency S21): every primary-labelled test pair is scored (caller recall = 1.0);
+# the caller threshold is not used by this simulation.
+
+# ---------------------------------------------------------------- effect model
+# The model's AUROC in each species is calibrated (bisection on the binormal mean shift, common random
+# numbers) so that the expected delta-AP in THAT species equals t_target_ap at the real test composition
+# (equal effect in both species => T = t_target_ap).
+calibration:
+  n_sim: 400
+  iterations: 40
+  max_auroc: 0.995
+
+# ---------------------------------------------------------------- decision rule simulated
+# Pass = percentile 95% CI of T (stratified paired group bootstrap) excludes 0 (lower bound > 0)
+#        AND delta-AP_s > 0 in both species (point estimates).
+# Bootstrap: resampling unit = split group; strata = species composition (human-only, yeast-only, mixed)
+# x (group contains >= 1 primary positive); resamples with no positive in a species are dropped and
+# counted. Also reported: P(pass AND mean relative gain >= success.yaml relative_gain).
+n_sim: 500
+bootstrap_resamples: 1000
+ci_level: 0.95
+seed: 11
+
+# ---------------------------------------------------------------- choice
+# Smallest candidate fraction with power >= power_target at rho; if none, 0.40 and the primary comparison
+# is pre-declared underpowered. Yeast fallback (D4): if yeast has < 75 primary positives the yeast test
+# target is ceil(0.40 * n_pos) (applied in make_splits.py) and the yeast comparison is pre-declared
+# underpowered.
+yeast_fallback_min_primary_positives: 75
+output: results/mde.json

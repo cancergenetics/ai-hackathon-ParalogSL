@@ -1,0 +1,56 @@
+{
+ "species": "yeast",
+ "n_fasta_accessions": 6066,
+ "n_records_genes": 6071,
+ "n_accessions_used": 6066,
+ "n_accessions_expanded": 5,
+ "n_extra_records_from_expansion": 5,
+ "n_accessions_dropped": 0,
+ "dropped_by_reason": {},
+ "n_records_accession_fallback_id": 0,
+ "n_records_not_matching_id_pattern": 4,
+ "n_genes_reached_from_multiple_accessions": 0,
+ "mapping_notes": {},
+ "id_source_counts": {
+  "Gene_OrderedLocusName": 6071
+ },
+ "n_records_with_identical_sequence_to_another": 127,
+ "n_identical_sequence_groups": 55,
+ "expanded_accessions": {
+  "P02309": [
+   "YBR009C",
+   "YNL030W"
+  ],
+  "P02994": [
+   "YBR118W",
+   "YPR080W"
+  ],
+  "P10081": [
+   "YJL138C",
+   "YKR059W"
+  ],
+  "P32324": [
+   "YDR385W",
+   "YOR133W"
+  ],
+  "P61830": [
+   "YBR010W",
+   "YNL031C"
+  ]
+ },
+ "multi_accession_genes": [],
+ "dropped_accessions": [],
+ "uniprot_release": "UniProt 2026_03",
+ "uniprot_proteome": "UP000002311",
+ "id_type": "ordered_locus_name",
+ "id_pattern": "^Y[A-P][LR]\\d{3}[WC](-[A-Z])?$|^Q\\d{4}$",
+ "inputs_sha256": {
+  "data/raw/uniprot_2026_03/UP000002311_559292.fasta.gz": "8ed21b6c6ce28bc0b74eac295aab65ec2136286616769757b39758427642f768",
+  "data/raw/uniprot_2026_03/UP000002311_559292.idmapping.gz": "80f98beb96b69b7b3958b1ed92f9ca453b7b9dbc2bc201de047226c280c5045c"
+ },
+ "outputs_sha256": {
+  "data/interim/proteomes/yeast.fasta": "c66dc7632ba837886939864c67cc731ba083807f7dabaa52405cda8a08ff0685",
+  "data/interim/proteomes/yeast_gene2acc.tsv": "be1bd8d70e54ef2cf344d012e319495718ea5b26dfbafd26105d9990e9dcc2a4"
+ },
+ "script": "scripts/data/build_gene_proteome.py"
+}

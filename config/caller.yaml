@@ -1,0 +1,56 @@
+# Paralog caller + Tier A self-search settings.
+# Spec: DESIGN.md v3 §3; reviews/round2/algorithms_comparative.md §2.2 changes 1, 3, 4 (normative, D4).
+# Every value below enters the feature-schema hash (src/slparalog/pipeline.py); changing any of them
+# changes the hash and invalidates model bundles built on the old values.
+
+mmseqs:
+  binary: bin/mmseqs            # version + sha256 pinned in config/tools.yaml, recorded per run
+  sensitivity: 7.5              # -s
+  max_seqs: 1000                # --max-seqs (first round)
+  backtrace: true               # -a: required for exact nident/alnlen (change 1)
+  alignment_mode: 3             # --alignment-mode 3: score, start/end positions and seq. identity
+  search_evalue: 10             # -e of the search align step: permissive headroom; calling uses E' below
+  realign_evalue: inf           # -e of the pair realignment: keep every requested pair
+  # Saturation (PI decision D11, replacing the prefilter-count rule of change 4): a query is
+  # "capped" when its aligned hits passing the calling criterion (E' <= evalue_prime_max, self hit
+  # included) number >= saturation_fraction * cap; only those are re-searched with
+  # cap *= research_cap_factor, for at most max_research_rounds extra rounds (or until the cap
+  # reaches the database size). Prefilter counts are logged only.
+  saturation_rule: called_hits
+  saturation_fraction: 0.95
+  research_cap_factor: 5
+  max_research_rounds: 2
+  # Pinned scoring settings; identical in self- and panel searches (risk 5 of the review).
+  scoring:
+    sub_mat: "aa:blosum62.out,nucl:nucleotide.out"
+    seed_sub_mat: "aa:VTML80.out,nucl:nucleotide.out"
+    gap_open: "aa:11,nucl:5"
+    gap_extend: "aa:1,nucl:2"
+    comp_bias_corr: 1
+    comp_bias_corr_scale: 1.0
+    mask: 1
+    mask_prob: 0.9
+    mask_lower_case: 0
+    max_seq_len: 65535
+
+caller:
+  # Bitscore-based, proteome-size-invariant E' (change 3). A pair is called when E' <= evalue_prime_max
+  # in EITHER direction of the self-search. No identity or coverage floor (those are features).
+  N_ref: 1.1e7                  # residues, fixed (~ human proteome)
+  evalue_prime_formula: "qlen * N_ref * 2**(-bits)"
+  evalue_prime_max: 1.0e-3
+  directions: either
+
+global_alignment:
+  # Needleman-Wunsch (Gotoh affine) identity = identical columns / alignment columns.
+  # parasail has no macOS arm64 wheel; implemented in numba (src/slparalog/nw.py).
+  matrix: blosum62
+  gap_open: 11
+  gap_extend: 1
+  convention: "gap of length k costs gap_open + k*gap_extend; end gaps penalised like internal gaps"
+
+features:
+  bsr_levels: [0.1, 0.25, 0.5, 0.75]   # hits-per-gene at bits(g->p) >= level * selfbits(g)
+  mutual_coverage_min: 0.5             # mutual-coverage link: both coverages >= this
+  near_identical_min: 0.99             # QC flag on local identity (max over orientations)
+  fragment_ratio: 0.5                  # fragment_suspect: len < ratio * median length of called partners

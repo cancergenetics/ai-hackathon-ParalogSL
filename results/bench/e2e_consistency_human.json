@@ -1,0 +1,51 @@
+{
+ "species": "human",
+ "model_id": "AB-gbdt-7ff069ac",
+ "n_ref_pairs": 686225,
+ "reference": "frozen model on data/interim/features/human/tier{A,B}.parquet",
+ "tsv": {
+  "file": "results/release/human_predictions.tsv",
+  "vs_reference_rounded_to_6g_(exact_expected)": {
+   "n_pred": 686225,
+   "n_ref": 686225,
+   "pair_sets_equal": true,
+   "only_in_pred": 0,
+   "only_in_ref": 0,
+   "pred_duplicates": 0,
+   "n_compared": 686225,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "tolerance": 0.0,
+   "within_tolerance": true
+  },
+  "vs_reference_full_precision_(limited_by_%.6g)": {
+   "n_pred": 686225,
+   "n_ref": 686225,
+   "pair_sets_equal": true,
+   "only_in_pred": 0,
+   "only_in_ref": 0,
+   "pred_duplicates": 0,
+   "n_compared": 686225,
+   "max_abs_diff": 4.996146232283394e-07,
+   "max_rel_diff": 4.957998963960922e-06,
+   "tolerance": 5e-06,
+   "within_tolerance": true
+  }
+ },
+ "parquet": {
+  "file": "results/release/human_predictions_fullprec.parquet",
+  "vs_reference_full_precision": {
+   "n_pred": 686225,
+   "n_ref": 686225,
+   "pair_sets_equal": true,
+   "only_in_pred": 0,
+   "only_in_ref": 0,
+   "pred_duplicates": 0,
+   "n_compared": 686225,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "tolerance": 1e-12,
+   "within_tolerance": true
+  }
+ }
+}

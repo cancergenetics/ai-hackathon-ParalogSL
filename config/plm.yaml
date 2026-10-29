@@ -1,0 +1,25 @@
+# Protein language model embedding settings (Tier C). Revisions are pinned HF commit hashes
+# (snapshots benchmarked in docs/lit/compute_feasibility.md; resolved from models_cache/hf).
+default_model: esm2_150m
+pooling: mean_excl_special          # mean over residue positions, BOS/EOS excluded
+chunk_policy: equal_chunks_length_weighted   # L > window -> ceil(L/window) equal chunks, length-weighted mean
+hf_home: models_cache/hf            # relative to project root
+torch_home: models_cache/torch
+models:
+  esm2_150m:
+    hf_id: facebook/esm2_t30_150M_UR50D
+    revision: a695f6045e2e32885fa60af20c13cb35398ce30c
+    dim: 640
+    window: 1022
+    tok_budget: 8192                # padded tokens per batch
+    max_batch: 64
+  esm2_8m:                          # development / unit-test model only
+    hf_id: facebook/esm2_t6_8M_UR50D
+    revision: c731040fcd8d73dceaa04b0a8e6329b345b0f5df
+    dim: 320
+    window: 1022
+    tok_budget: 16384
+    max_batch: 64
+device_preference: [mps, cpu]
+dtype: {mps: fp16, cpu: fp32}      # fp16 vs fp32 on MPS: cosine >= 0.99999 (compute_feasibility.md)
+cache_shard_size: 2000              # sequences per shard flush

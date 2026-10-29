@@ -1,0 +1,97 @@
+{
+ "command": ".venv/bin/python -m slparalog.cli predict data/interim/proteomes/human.fasta -o results/release/human_predictions.tsv --model results/frozen/model --data-dir data/release/slparalog_data -t 10 --workdir data/release/bench_work_human -v",
+ "returncode": 0,
+ "wall_s": 5990.22,
+ "cpu_user_s": 47240.0,
+ "cpu_sys_s": 535.2,
+ "peak_rss_tree_gb": 2.524,
+ "peak_rss_single_process_gb": 2.387,
+ "max_processes_in_tree": 2,
+ "rss_samples": 11497,
+ "sample_interval_s": 0.5,
+ "peak_work_size_gb": 1.516,
+ "loadavg_start": [
+  4.61767578125,
+  17.57470703125,
+  22.2666015625
+ ],
+ "loadavg_end": [
+  48.56103515625,
+  60.37939453125,
+  61.2275390625
+ ],
+ "log": "results/release/human_predict.log",
+ "step": "predict",
+ "species": "human",
+ "model_dir": "results/frozen/model",
+ "data_dir": "data/release/slparalog_data",
+ "output": "results/release/human_predictions.tsv",
+ "n_pairs_scored": 686225,
+ "n_proteins": 20770,
+ "pipeline_timings": {
+  "createdb_mask_s": 0.4882051944732666,
+  "search_s": 406.2189848423004,
+  "realign_s": 112.83097195625305,
+  "features_s": 188.67791390419006,
+  "tier_b_s": 5276.765793085098,
+  "total_s": 5985.999306917191
+ },
+ "model_id": "AB-gbdt-7ff069ac",
+ "workdir_empty_at_start": true,
+ "panel_hit_cache_empty_at_start": true,
+ "setup_record": "results/bench/e2e_setup.json",
+ "threads": 10,
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_model": "Apple M4",
+  "logical_cores": 10,
+  "physical_cores": 10,
+  "performance_cores": "4",
+  "efficiency_cores": "6",
+  "mem_total_gb": 25.8,
+  "pmset_g": "<redacted in public export: full local power-settings dump; Low Power Mode is in its own field>",
+  "lowpowermode": "0"
+ },
+ "git_head_at_run": "211c26446aa8cefa0542203ad0cb3b1d4cf8146c",
+ "git_tracked_changes_at_run": false,
+ "top_processes_at_start": [
+  {
+   "pid": 673,
+   "name": "siriknowledged",
+   "cpu_pct": 100.0
+  },
+  {
+   "pid": 889,
+   "name": "DisplayLinkUserAgent",
+   "cpu_pct": 20.4
+  },
+  {
+   "pid": 63779,
+   "name": "ReportCrash",
+   "cpu_pct": 10.7
+  },
+  {
+   "pid": 23969,
+   "name": "Google Chrome Helper (Aperitif Renderer)",
+   "cpu_pct": 8.3
+  },
+  {
+   "pid": 79979,
+   "name": "Google Chrome Helper (Aperitif)",
+   "cpu_pct": 7.2
+  },
+  {
+   "pid": 24568,
+   "name": "Claude Helper",
+   "cpu_pct": 5.9
+  }
+ ],
+ "loadavg_at_start": [
+  4.61767578125,
+  17.57470703125,
+  22.2666015625
+ ],
+ "disk_free_gb_at_start": 538.1,
+ "python": "3.12.9",
+ "workdir_deleted": true
+}

@@ -1,0 +1,97 @@
+{
+ "command": ".venv/bin/python -m slparalog.cli predict data/interim/proteomes/yeast.fasta -o results/release/yeast_predictions.tsv --model results/frozen/model --data-dir data/release/slparalog_data -t 10 --workdir data/release/bench_work_yeast -v",
+ "returncode": 0,
+ "wall_s": 1114.81,
+ "cpu_user_s": 8290.5,
+ "cpu_sys_s": 221.0,
+ "peak_rss_tree_gb": 1.458,
+ "peak_rss_single_process_gb": 1.112,
+ "max_processes_in_tree": 2,
+ "rss_samples": 2143,
+ "sample_interval_s": 0.5,
+ "peak_work_size_gb": 0.188,
+ "loadavg_start": [
+  7.130859375,
+  6.56201171875,
+  5.70947265625
+ ],
+ "loadavg_end": [
+  34.1484375,
+  35.54150390625,
+  28.04443359375
+ ],
+ "log": "results/release/yeast_predict.log",
+ "step": "predict",
+ "species": "yeast",
+ "model_dir": "results/frozen/model",
+ "data_dir": "data/release/slparalog_data",
+ "output": "results/release/yeast_predictions.tsv",
+ "n_pairs_scored": null,
+ "n_proteins": 6071,
+ "pipeline_timings": {
+  "createdb_mask_s": 0.15048480033874512,
+  "search_s": 44.89900493621826,
+  "realign_s": 5.5593249797821045,
+  "features_s": 3.996584892272949,
+  "tier_b_s": 1057.9377388954163,
+  "total_s": 1112.7111282348633
+ },
+ "model_id": "AB-gbdt-7ff069ac",
+ "workdir_empty_at_start": true,
+ "panel_hit_cache_empty_at_start": true,
+ "setup_record": "results/bench/e2e_setup.json",
+ "threads": 10,
+ "machine": {
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "cpu_model": "Apple M4",
+  "logical_cores": 10,
+  "physical_cores": 10,
+  "performance_cores": "4",
+  "efficiency_cores": "6",
+  "mem_total_gb": 25.8,
+  "pmset_g": "<redacted in public export: full local power-settings dump; Low Power Mode is in its own field>",
+  "lowpowermode": "0"
+ },
+ "git_head_at_run": "211c26446aa8cefa0542203ad0cb3b1d4cf8146c",
+ "git_tracked_changes_at_run": false,
+ "top_processes_at_start": [
+  {
+   "pid": 63205,
+   "name": "duetexpertd",
+   "cpu_pct": 95.8
+  },
+  {
+   "pid": 673,
+   "name": "siriknowledged",
+   "cpu_pct": 94.9
+  },
+  {
+   "pid": 889,
+   "name": "DisplayLinkUserAgent",
+   "cpu_pct": 20.5
+  },
+  {
+   "pid": 13243,
+   "name": "Claude Helper (Renderer)",
+   "cpu_pct": 20.2
+  },
+  {
+   "pid": 666,
+   "name": "swcd",
+   "cpu_pct": 18.4
+  },
+  {
+   "pid": 79979,
+   "name": "Google Chrome Helper (Aperitif)",
+   "cpu_pct": 18.3
+  }
+ ],
+ "loadavg_at_start": [
+  7.130859375,
+  6.56201171875,
+  5.70947265625
+ ],
+ "disk_free_gb_at_start": 540.2,
+ "python": "3.12.9",
+ "workdir_deleted": true
+}

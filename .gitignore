@@ -1,0 +1,43 @@
+# Data and large artefacts are never part of this repository.
+/data/
+*.fasta
+*.fa
+*.faa
+*.parquet
+*.npy
+*.npz
+*.gz
+*.zip
+*.xlsx
+*.joblib
+# ... except the trained models (trees only, no data rows)
+!/mvp/model/*.joblib
+!/results/frozen/model/*.joblib
+!/results/release/model/*.joblib
+# ... and the synthetic (toy) test fixtures
+!/tests/fixtures/*.fasta
+!/tests/fixtures/*.parquet
+!/tests/fixtures/**/*.parquet
+
+/models_cache/
+/bin/
+/logs/
+/export/
+.venv/
+mvp/example_data/
+.slparalog/
+slparalog_data/
+
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

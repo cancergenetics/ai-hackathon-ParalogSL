@@ -1,0 +1,182 @@
+# Pre-registered yeast (S. cerevisiae) paralog SL label rules.
+# PI decision D4 (round-3 consistency), received before this file was first committed and before any label code
+# ran: where DESIGN v3 text and reviews/round2/data.md differ, the R2 rule wins (NEG needs DMF > 0.5 with the
+# floor; tiers nested exactly as R2-10; orientation conflicts follow R2-3's aggregation and are only flagged);
+# linked pairs use real gene coordinates (Ensembl 116 GTF, manifest entry ensembl_116_yeast_gtf).
+# Written 2026-10-28 BEFORE any yeast label code was run (DESIGN v3 §2.3; reviews/round2/data.md R2-1, R2-2,
+# R2-3, R2-9, R2-10, R2-11, R2-12; statistics.md item 10). Nothing below may be changed after seeing label
+# counts, model results, the 13-pair human candidate list or agreement with Dennler & Ryan. Any later change
+# needs an explicit PI decision recorded in RESEARCH_TREE.md and a new version number here.
+#
+# Only things looked at before writing this file (format, not outcomes): column headers of the four SGA files,
+# strain-ID suffix x Arraytype/Temp combinations per SGA file, the strain table's columns and suffix counts
+# (match R2-2), the Dean 2008 PDF row layout and its row counts (needed to choose the parser), the BioGRID tab3
+# header, and the column NAMES (not values) of the Dennler yeast files (needed to write the whitelist).
+
+version: 1
+status: pre-registered
+date: "2026-10-28"
+species: yeast
+gene_id: ordered_locus_name          # config/gene_ids.yaml (systematic ORF name, e.g. YAL001C)
+pair_unit: unordered                 # canonical row order gene_a < gene_b (lexicographic); no self pairs
+
+# ----------------------------------------------------------------------------------------------- sources
+sources:
+  costanzo2016:
+    zip: data/raw/costanzo2016/Costanzo2016_raw_pairwise_interaction_format.zip
+    unpack_to: data/interim/costanzo2016          # never unpack into data/raw
+    strain_table: strain_ids_and_single_mutant_fitness.xlsx
+    gene_from: "Systematic gene name"             # strain table column; never parsed from the strain ID (R2-2)
+    files_labels: [SGA_NxN.txt, SGA_ExN_NxE.txt]  # null x null rows are taken from these (R2-2)
+    files_known_answer_only: [SGA_ExE.txt, SGA_DAmP.txt]
+    chunksize: 1000000                            # rows per pandas chunk (memory < 8 GB)
+    license_note: "TheCellMap states no license; research use; raw never committed, derived calls only"
+  dean2008:
+    pdf: data/raw/dean2008/pgen.1000113.s004.pdf
+    parser: pdfplumber page.extract_text(); rows "ORF1 ORF2 [ORF1_fit ORF2_fit ORF1ORF2_fit]"
+    license_note: "CC BY 4.0 (PLoS)"
+  biogrid:
+    zip: data/raw/biogrid_5.0.262/BIOGRID-ORGANISM-5.0.262.tab3.zip
+    member: BIOGRID-ORGANISM-Saccharomyces_cerevisiae_S288c-5.0.262.tab3.txt
+    organism_id: 559292
+    license_note: "MIT"
+  kuzmin2020:
+    zip: data/raw/kuzmin2020/dryad_g79cnp5m9.zip
+    status_when_missing: dropped                  # R2-13 fallback: "Drop Kuzmin; SGA already covers most WGD pairs"
+    rule_when_present: >-
+      not implemented in v1 (Table S5 layout unverified). If the zip is present the builder records
+      'present_parser_not_implemented' in the QC JSON and does not use it; implementing it needs a new
+      config version (R2-9: apply R2-1 with p-values if S5 has them, else Dean-style point rules).
+  uniprot_idmapping: data/raw/uniprot_2026_03/UP000002311_559292.idmapping.gz   # Gene_OrderedLocusName -> in_proteome flag
+  gene_coordinates: data/raw/ensembl_116/Saccharomyces_cerevisiae.R64-1-1.63.gtf.gz   # manifest ensembl_116_yeast_gtf (linked rule only)
+
+# ------------------------------------------------------------------- allele whitelist (R2-2, D1)
+allele_whitelist:
+  primary:                                        # all tiers use null x null only
+    query_suffix: [sn]
+    array_suffix: [dma]
+    arraytype_temp: [DMA26, DMA30]                # both temperatures kept as separate measurements
+  excluded_suffixes: [tsq, tsa, damp, S]          # TS / DAmP hypomorphs (essential genes) and _S suppressor strains
+  suffix_regex: "_([A-Za-z]+)\\d*$"                 # suffix class = letters after the last underscore
+  orientation: both                               # A(query) x B(array) and B(query) x A(array)
+  self_pairs: drop                                # query gene == array gene
+
+# ---------------------------------------------------- measurement rule (R2-1; thresholds from DESIGN v3)
+measurement:
+  smf_source: >-
+    E_m = query_SMF * array_SMF from the row's own SMF columns. If either is NaN, take that strain's SMF at the
+    row's temperature (26 for *26, 30 for *30) from the strain table. If still NaN -> UNTESTABLE (reason no_smf).
+  missing: "eps, p or DMF NaN -> MISSING (not counted in n_T)"
+  testable: "E_m > 0.5"                           # testability floor; E_m <= 0.5 -> UNTESTABLE (reason sick_singles)
+  pos: {eps_lt: -0.08, p_lt: 0.05, dmf_le: 0.5}   # POS_m: eps < -0.08 and p < 0.05 and DMF <= 0.5
+  neg: "(eps >= -0.04 or (p >= 0.05 and eps >= -0.08)) and DMF > 0.5"
+  mid: "testable and neither POS nor NEG"
+  lenient_pos: "POS_m or (eps < -0.12 and p < 0.05)"   # R2-10 option 'lenient = primary U {eps<-0.12,p<0.05}'
+  strict_pos: "POS_m and DMF <= 0.2"
+  dennler_comparable_pos: "eps < -0.35 and p < 0.05"    # report-only tier, see tiers
+
+# ----------------------------------------------------- pair aggregation (R2-3; count-neutral)
+pair_aggregation:
+  n_T: "number of testable (POS/NEG/MID) null x null measurements over both orientations and temperatures"
+  positive: "n_POS >= 1 and n_POS >= n_NEG"
+  discordant: "n_POS >= 1 and n_NEG > n_POS -> ambiguous, flag discordant"
+  negative: "n_POS == 0 and n_NEG >= 1 and n_MID <= floor(0.25 * n_T)"
+  ambiguous: otherwise
+  untestable: "pair has >= 1 null x null measurement but n_T == 0 (stratum 'untestable_sick_singles' or no_smf / missing)"
+  orientation_conflict: >-
+    FLAG ONLY (PI decision D4: R2-3 aggregation decides the label). The same aggregation rule is applied within
+    each orientation (gene_a as query; gene_b as query); if both orientations are measured and one is 'positive'
+    while the other is 'negative', orientation_conflict = 1. Counts of flagged pairs per pair-level label are reported.
+  per_tier: >-
+    Each SGA tier aggregates its own measurement calls with this rule (lenient: POS replaced by lenient_pos;
+    strict: see tiers). NEG/MID/testability are identical across tiers.
+  min_smf: "min over the pair's null x null measurements of min(query_SMF, array_SMF) is stored per pair (evaluation stratifier only, never a feature)"
+
+# ------------------------------------------------------------ Dean 2008 (R2-9)
+dean2008:
+  testable: "W_A * W_B > 0.5"
+  positive: "W_AB == 0"                           # tetrad-lethal
+  negative: "W_AB - W_A * W_B >= -0.05"
+  ambiguous: otherwise
+  untestable: "not testable, or fitness values missing (pair listed with IDs only)"
+  parser_assert: {pairs_listed: 289, measured: 201, lethal: 49}   # paper (201/49); fail loudly otherwise
+  independent_qc: "SGA-only labels are built first; SGA-vs-Dean agreement table is written before merging"
+  merge:                                          # applied per tier; SGA call = that tier's SGA call
+    - "Dean pos & SGA neg -> pos, flag dean_override"
+    - "Dean neg & SGA pos -> amb, flag dean_conflict"
+    - "Dean pos & SGA in {pos, amb, untestable, linked, untested} -> pos"
+    - "Dean neg & SGA in {neg, amb, untestable, linked, untested} -> neg"
+    - "Dean amb / untestable / not listed -> SGA call"
+  strict_tier: "Dean W_AB == 0 qualifies as strict positive (R2-10)"
+
+# ----------------------------------------------------------- linked pairs (R2-11)
+linked:
+  coordinates: "GTF feature == gene, gene_id = ORF name; seqname = chromosome"
+  window_bp: 50000                                # R2-11 value; linked = same chromosome and gap between the two
+                                                  # gene intervals (0 if they overlap) <= 50,000 bp
+  missing_coordinates: "either gene absent from the GTF -> linked = NA (flag linked_unknown), treated as not linked"
+  qc_only: "measurement density of null x null SGA rows by inter-gene distance bin is reported (never used to change the window)"
+  effect: >-
+    linked pairs are SGA-untestable in every SGA-based tier (SGA call 'linked'); a Dean call or (biogrid tier
+    only) a BioGRID low-throughput SL record still labels them. Count of linked pairs lost is reported.
+
+# -------------------------------------------------------------------- tiers (R2-10, nested)
+tiers:
+  primary:  "SGA primary aggregation + linked rule + Dean merge"
+  lenient:  "SGA lenient aggregation + linked rule + Dean merge (positives superset of primary; negatives subset)"
+  strict: >-
+    positive = primary positive AND (SGA strict aggregation positive [n_SPOS >= 1 and n_SPOS >= n_NEG] OR
+    Dean W_AB == 0); negative = primary negative; else ambiguous (strict subset of primary positives).
+  biogrid: >-
+    primary, plus BioGRID low-throughput Synthetic Lethality: a pair with >= 1 qualifying record is positive
+    (flag biogrid_only if primary is not positive; flag biogrid_conflict if primary is negative). Qualifying:
+    Experimental System == 'Synthetic Lethality', Experimental System Type == 'genetic', Throughput contains
+    'Low Throughput', both organism IDs 559292, both systematic names present, not a self pair, and both genes
+    have a null (sn or dma) strain in the Costanzo strain table (viable deletion; else flag
+    biogrid_essential_member and the record is not used). 'Synthetic Growth Defect' LT records are counted
+    as evidence only. AUPRC is reported with and without biogrid_only positives (downstream).
+  dennler_comparable: >-
+    report-only, never used for training or selection: over null x null measurements with non-missing eps/p
+    (no testability floor, no DMF rule, no linked rule): positive if any measurement has eps < -0.35 and
+    p < 0.05, else negative.
+  values: [pos, neg, amb, untestable, untested]   # untestable: measured but no testable call; untested: no null x null SGA row and no Dean call
+
+# -------------------------------------------------------------------- label universe (R2-4)
+universe:
+  file: data/interim/universe/yeast_paralog_pairs.tsv   # Ensembl Compara paralogs (built by another agent)
+  pair_columns: [gene_a, gene_b]                  # unordered; canonicalised on read; fail loudly if absent
+  rule: "labels kept only for pairs in the universe; counts before/after are recorded"
+  when_missing: >-
+    build_yeast_labels.py writes all tested pairs to data/interim/labels/yeast_pair_labels_unrestricted.tsv;
+    scripts/labels/apply_universe.py (re-runnable) writes data/labels/yeast_labels_all.tsv once the universe
+    file exists. Pairs in U never tested are unlabelled, not negative.
+
+# -------------------------------------------------------------------- QC (report only; never tuned)
+qc:
+  e_bins: [0.5, 0.6, 0.7, 0.85]                   # positive rate by E bin: <=0.5 | 0.5-0.6 | 0.6-0.7 | 0.7-0.85 | >0.85
+  n_T_bins: [1, 2, 3, 5]                          # label rate by n_T: 1 | 2 | 3-4 | >=5
+  dennler:
+    file: data/raw/_quarantine/dennler2025/ens111_yeast_SL.csv
+    file_deadly: data/raw/_quarantine/dennler2025/ens111_yeast_SL-deadly.csv
+    column_whitelist: [A1_ensembl, A2_ensembl, SL]   # nothing else is read (usecols)
+    compare_to: [dennler_comparable, primary, lenient]
+  outputs:
+    calls: data/interim/labels/yeast_calls.tsv
+    pairs_unrestricted: data/interim/labels/yeast_pair_labels_unrestricted.tsv
+    labels: data/labels/yeast_labels_all.tsv
+    qc_json: results/labels/yeast_label_qc.json
+    known_answer_gaps: results/labels/known_answer_gaps.json
+
+# ------------------------------------------------------- known answers (tests/test_label_known_answers_yeast.py)
+known_answers:            # tolerances fixed here and in the test before any run
+  strain_classes: {sn: 4071, dma: 3893, tsq: 1167, damp: 819, tsa: 792, S: 117, tolerance: exact}   # R2-12 [V]
+  stringent_all_files: {value: 380059, rule: "p < 0.05 and (eps < -0.12 or eps > 0.16), all four files", tolerance_rel: 0.01, source: "Costanzo2016 BioGRID readme (HighestConfidence set)"}
+  intermediate_negative: {value: 550000, rule: "p < 0.05 and eps < -0.08, all four files", tolerance_rel: 0.05, source: "readme '550,000 negative' (rounded)"}
+  intermediate_positive: {value: 350000, rule: "p < 0.05 and eps > 0.08, all four files", tolerance_rel: 0.05, source: "readme '350,000 positive' (rounded)"}
+  nxn_rows: {value: 12698939, tolerance: exact, source: "data.md R2-1"}
+  nxn_E_le_05: {value: 528756, rule: "row SMFs, E defined (11,755,688 rows), E <= 0.5", tolerance: exact, source: "data.md R2-1"}
+  nxn_v2_pos_by_E: {E_gt_05: 36556, E_le_05: 17956, rule: "all NxN rows, eps<-0.08, p<0.05, DMF<=0.5, row SMFs", tolerance: exact, source: "data.md R2-1"}
+  nxn_null_dmf_le_02: {value: 29174, rule: "NxN sn x dma rows with DMF <= 0.2", tolerance: exact, source: "data.md R2-2"}
+  nxn_dmf_min: {value: -0.1525, tolerance: exact, source: "data.md R2-2"}
+  exn_nxe_sn_dma_rows: {value: 0, tolerance: exact, source: "data.md R2-2"}
+  dean: {pairs_listed: 289, measured: 201, lethal: 49, tolerance: exact, source: "Dean 2008 paper text (R2-9)"}

@@ -1,0 +1,14 @@
+# Pre-registered success-criterion constants (DESIGN.md v3 section 6.1-6.2).
+# Read by code via slparalog.config.load_success(); never write these as literals in code.
+# Protected file (config/protected.sha256).
+relative_gain: 0.20            # "clearly beats identity": mean relative gain AP_model/AP_B1 - 1 >= this
+bootstrap_resamples: 10000     # group bootstrap resamples
+bootstrap_seed: 11             # seed for the group bootstrap
+t_target_ap: 0.04              # T (mean delta-AP over species) the power simulation is sized for
+power_target: 0.8              # required power of the full decision rule at T
+test_fraction_range: [0.30, 0.40]   # allowed fraction of groups held out as test
+# D4 (round-3 consistency): CI type and bootstrap strata; relative gain judged on the point estimate.
+ci_type: percentile
+ci_level: 0.95
+bootstrap_strata: [species_composition, group_has_positive]
+relative_gain_on: point_estimate

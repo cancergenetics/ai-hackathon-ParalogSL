@@ -1,0 +1,130 @@
+# Pre-registered split construction (DESIGN.md v3 §6.1, §6.3; D4; reviews/round2/statistics.md must-3/4;
+# reviews/round3/consistency.md M10, M11, M13). Protected file (config/protected.sha256).
+# Written and committed BEFORE scripts/labels/make_splits.py is run for the first time. Never edit after
+# the first split run without a PI decision note; the split is then regenerated, never hand-edited.
+version: 2   # D9 (2026-10-28): size cap counts labelled pairs, oversized groups -> development, no Leiden; G6 margin
+
+# ---------------------------------------------------------------- inputs (label universe)
+labels:
+  human:
+    file: data/labels/human_labels_all.tsv
+    restrict_column: in_compara_universe     # keep rows where this column is True (DESIGN v3 label universe)
+    # "labelled in any tier": value in the column is one of these. Every such pair is contracted (no
+    # labelled pair of ANY tier can span the split) and written to the dev or sealed test table.
+    tier_columns: [label_primary, label_lenient, label_two_studies]
+    tier_labelled_values: [0, 1]
+    primary: {column: label_primary, pos: 1, neg: 0}
+  yeast:
+    file: data/labels/yeast_labels_all.tsv
+    restrict_column: null                    # already restricted to the Compara universe by the builder
+    tier_columns: [primary, lenient, strict, biogrid, dennler_comparable, sga_primary, sga_lenient,
+                   sga_strict, dean_call]
+    tier_labelled_values: [pos, neg]
+    primary: {column: primary, pos: pos, neg: neg}
+proteomes:                                   # one protein per gene; FASTA header = gene ID
+  human: data/interim/proteomes/human.fasta
+  yeast: data/interim/proteomes/yeast.fasta
+
+# ---------------------------------------------------------------- homology search (union of labelled genes)
+# One MMseqs2 all-vs-all search over the union of labelled genes of both species (any tier), with
+# backtrace (-a) so that coverages are exact. Scoring identical to config/caller.yaml.
+search:
+  binary: bin/mmseqs
+  sensitivity: 7.5             # -s
+  max_seqs: 2000               # --max-seqs (union is ~9k genes)
+  evalue: 1.0e-3               # -e
+  alignment_mode: 3
+  backtrace: true              # -a
+  threads: 8
+  sub_mat: "aa:blosum62.out,nucl:nucleotide.out"
+  seed_sub_mat: "aa:VTML80.out,nucl:nucleotide.out"
+  gap_open: "aa:11,nucl:5"
+  gap_extend: "aa:1,nucl:2"
+  comp_bias_corr: 1
+  mask: 1
+  mask_prob: 0.9
+  # Self-bitscore of every gene comes from an explicit self-alignment (mmseqs align on (g,g), -e inf),
+  # not from the search, so it exists for every gene even when masking hides the self hit.
+
+# ---------------------------------------------------------------- edge rule (within and across species)
+# Between two labelled genes a != b (same or different species), using the best-bitscore alignment
+# over both orientations:
+#   bsr(a,b)      = max(bits(a->b), bits(b->a)) / min(selfbits(a), selfbits(b))
+#   mutual cov.   = min(qcov, tcov) of that alignment (fraction of each sequence covered)
+# Edge iff evalue <= search.evalue AND bsr >= bsr_min AND mutual coverage >= mutual_coverage_min.
+# Stricter than the caller (which calls any pair with E' <= 1e-3, no coverage floor).
+edges:
+  bsr_min: 0.25
+  mutual_coverage_min: 0.5
+  weight: bsr                  # Leiden edge weight; supernode-supernode weight = max bsr over member genes
+
+# ---------------------------------------------------------------- supernodes and groups
+# 1. Every connected component of the labelled-pair graph (all tiers, both species) -> one supernode.
+# 2. Supernode graph: supernodes joined if any member genes share an edge. Group = connected component
+#    of the supernode graph.
+# 3. Size cap (D9, replaces the v1 supernode-count cap): a group holding > cap_fraction of a species'
+#    labelled pairs (pairs labelled in any tier, counted per species) is forced into development and
+#    reported (what it removes: genes, pairs, primary positives/negatives per species). Groups are never
+#    split: the Leiden fallback is disabled (kept in code for documentation only).
+size_cap:
+  unit: labelled_pairs_any_tier         # D9; v1 counted supernodes
+  cap_fraction: 0.10                    # of a species' labelled pairs; applied per species
+  leiden:
+    enabled: false                      # D9: no Leiden splitting of a homologous family
+    method: RBConfigurationVertexPartition
+    seed: first_of_config_seeds          # = 11
+    n_iterations: -1
+    gamma_grid: [0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]
+  oversized_group: development
+
+# ---------------------------------------------------------------- test assignment
+# One deterministic draw per candidate fraction f (no redraws), seed = first seed of config/seeds.yaml.
+# Groups (excluding forced-development groups) are visited in the order of a random permutation
+# (numpy default_rng(seed).permutation over groups sorted by group id). A group is added to test iff it
+# strictly lowers the loss
+#   L = sum_s [ w_pos * ((P_s_test - t_pos_s) / P_s)^2 + w_pairs * ((N_s_test - f*N_s) / N_s)^2 ]
+# where P_s = primary positives of species s, N_s = pairs labelled in any tier of species s,
+# t_pos_s = f * P_s (stratification: each species keeps fraction f of its primary positives).
+# Yeast fallback (D4, consistency M11): if yeast has < yeast_fallback.min_primary_positives primary
+# positives, the yeast positive target becomes ceil(0.40 * P_yeast) for every f, and the yeast
+# comparison is pre-declared underpowered.
+test_assignment:
+  candidate_fractions: [0.30, 0.35, 0.40]
+  seed: first_of_config_seeds            # = 11
+  w_pos: 4.0
+  w_pairs: 1.0
+  yeast_fallback:
+    min_primary_positives: 75
+    target_fraction: 0.40
+  min_yeast_test_positives: 30           # G6 check (unless yeast fallback applies)
+  # G6 check (D9, replaces the v1 [0.25, 0.40] fraction bound): per species,
+  # |test primary positives - target| <= positive_target_margin, target = f * P_s (or the yeast fallback).
+  positive_target_margin: 1
+  # The chosen fraction comes from scripts/eval/power_sim.py (results/mde.json, config/mde.yaml).
+
+# ---------------------------------------------------------------- development CV
+# 5 grouped folds over development groups, one assignment per seed of config/seeds.yaml
+# (columns fold_s<seed>). sklearn StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed),
+# groups = split group id, stratification class = species x primary label (pos / neg / not primary).
+cv:
+  n_folds: 5
+  method: StratifiedGroupKFold
+
+# ---------------------------------------------------------------- leakage (DESIGN §6.1, statistics must-4)
+# leakage(test pair) = max over its two genes g of max over development genes d of
+#   max(bits(g->d), bits(d->g)) / selfbits(g)       (any search hit with evalue <= search.evalue)
+# Development genes = genes of development pairs labelled in any tier, either species. No hit -> 0.
+# Tertile cut points are computed on primary-labelled test pairs with leakage > 0 (both species pooled);
+# the no-hit subset is reported separately (descriptive only).
+leakage:
+  tertiles_on: primary_test_pairs_with_hit
+
+# ---------------------------------------------------------------- outputs
+outputs:
+  sealed_dir: data/labels/sealed
+  candidates: split_candidates.tsv       # group -> candidate test assignment per fraction
+  groups: split_groups.tsv               # group id, genes, assignment (final)
+  test_pairs: test_pairs.tsv             # sealed test pairs (all tiers) with group + leakage
+  dev_dir: data/labels/dev               # human_dev.tsv, yeast_dev.tsv (group, cv folds)
+  interim_dir: data/interim/splits       # MMseqs2 hits + self scores (cached; regenerated by the script)
+  summary: results/splits/split_summary.json

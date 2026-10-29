@@ -1,0 +1,52 @@
+taxon_id	uniprot_proteome	oscode	name	n_proteins
+3055	UP000006906	CHLRE	Chlamydomonas reinhardtii (Chlamydomonas smithii)	17614
+3218	UP000006727	PHYPA	Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)	31356
+3702	UP000006548	ARATH	Arabidopsis thaliana (Mouse-ear cress)	27496
+4577	UP000007305	MAIZE	Zea mays (Maize)	39346
+5270	UP000000561	MYCMD	Mycosarcoma maydis (Corn smut fungus) (Ustilago maydis)	6788
+5664	UP000000542	LEIMA	Leishmania major	8038
+5888	UP000000600	PARTE	Paramecium tetraurelia	39350
+6239	UP000001940	CAEEL	Caenorhabditis elegans	19789
+6412	UP000015101	HELRO	Helobdella robusta (Californian leech)	23328
+6945	UP001735580	IXOSC	Ixodes scapularis (Black-legged tick) (Deer tick)	25977
+7070	UP000007266	TRICA	Tribolium castaneum (Red flour beetle)	16568
+7165	UP000007062	ANOGA	Anopheles gambiae (African malaria mosquito)	13029
+7227	UP000000803	DROME	Drosophila melanogaster (Fruit fly)	13817
+7719	UP000008144	CIOIN	Ciona intestinalis (Transparent sea squirt) (Ascidia intestinalis)	16680
+7739	UP000001554	BRAFL	Branchiostoma floridae (Florida lancelet) (Amphioxus)	26616
+7918	UP000018468	LEPOC	Lepisosteus oculatus (Spotted gar)	18323
+7955	UP000000437	DANRE	Danio rerio (Zebrafish) (Brachydanio rerio)	26677
+8090	UP000001038	ORYLA	Oryzias latipes (Japanese rice fish) (Japanese killifish)	23617
+8355	UP000186698	XENLA	Xenopus laevis (African clawed frog)	36352
+8364	UP000008143	XENTR	Xenopus tropicalis (Western clawed frog) (Silurana tropicalis)	21609
+9031	UP000000539	CHICK	Gallus gallus (Chicken)	18372
+9544	UP000006718	MACMU	Macaca mulatta (Rhesus macaque)	21893
+9595	UP000001519	GORGO	Gorilla gorilla gorilla (Western lowland gorilla)	21788
+9598	UP000002277	PANTR	Pan troglodytes (Chimpanzee)	23014
+9606	UP000005640	HUMAN	Homo sapiens (Human)	20652
+9615	UP000805418	CANLF	Canis lupus familiaris (Dog) (Canis familiaris)	20990
+9913	UP000009136	BOVIN	Bos taurus (Bovine)	22714
+10090	UP000000589	MOUSE	Mus musculus (Mouse)	21853
+10116	UP000002494	RAT	Rattus norvegicus (Rat)	21545
+13616	UP000002280	MONDO	Monodelphis domestica (Gray short-tailed opossum)	21225
+35128	UP000001449	THAPS	Thalassiosira pseudonana (Marine diatom) (Cyclotella nana)	11735
+35525	UP000076858	None	Daphnia magna	26600
+36329	UP000001450	PLAF7	Plasmodium falciparum (isolate 3D7)	5361
+39947	UP000059680	ORYSJ	Oryza sativa subsp. japonica (Rice)	43678
+44689	UP000002195	DICDI	Dictyostelium discoideum (Social amoeba)	12718
+45351	UP000001593	NEMVE	Nematostella vectensis (Starlet sea anemone)	24428
+81824	UP000001357	MONBE	Monosiga brevicollis (Choanoflagellate)	9156
+164328	UP000005238	PHYRM	Phytophthora ramorum (Sudden oak death agent)	15350
+184922	UP000001548	GIAIC	Giardia intestinalis (strain ATCC 50803 / WB clone C6) (Giardia lamblia)	4900
+214684	UP000002149	CRYD1	Cryptococcus deneoformans (strain JEC21 / ATCC MYA-565) (Cryptococcus neoformans var. neoformans serotype D)	6603
+237561	UP000000559	CANAL	Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)	6036
+284591	UP000001300	YARLI	Yarrowia lipolytica (strain CLIB 122 / E 150) (Yeast) (Candida lipolytica)	6449
+284812	UP000002485	SCHPO	Schizosaccharomyces pombe (strain 972 / ATCC 24843) (Fission yeast)	5129
+321614	UP000663193	PHANO	Phaeosphaeria nodorum (strain SN15 / ATCC MYA-4574 / FGSC 10173) (Glume blotch fungus) (Parastagonospora nodorum)	17429
+330879	UP000002530	ASPFU	Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 / Af293) (Neosartorya fumigata)	9647
+367110	UP000001805	NEUCR	Neurospora crassa (strain ATCC 24698 / 74-OR23-1A / CBS 708.71 / DSM 1257 / FGSC 987)	9759
+412133	UP000001542	TRIV3	Trichomonas vaginalis (strain ATCC PRA-98 / G3)	50190
+418459	UP000008783	PUCGT	Puccinia graminis f. sp. tritici (strain CRL 75-36-700-3 / race SCCL) (Black stem rust fungus)	15688
+559292	UP000002311	YEAST	Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast)	6066
+665079	UP000001312	SCLS1	Sclerotinia sclerotiorum (strain ATCC 18683 / 1980 / Ss-1) (White mold) (Whetzelinia sclerotiorum)	14445
+684364	UP000007241	BATDJ	Batrachochytrium dendrobatidis (strain JAM81 / FGSC 10211) (Frog chytrid fungus)	8610

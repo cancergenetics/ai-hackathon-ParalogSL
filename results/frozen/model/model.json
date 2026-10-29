@@ -1,0 +1,260 @@
+{
+ "artifact_version": 1,
+ "model_id": "AB-gbdt-7ff069ac",
+ "model_type": "gbdt",
+ "feature_set": "A+B",
+ "features": [
+  "ident_local_min",
+  "ident_local_max",
+  "ident_ens_min",
+  "ident_ens_max",
+  "ident_global",
+  "cov_min",
+  "cov_max",
+  "bits_pair",
+  "bsr_min",
+  "bsr_max",
+  "len_ratio",
+  "hits_all_min",
+  "hits_all_max",
+  "hits_r10_min",
+  "hits_r10_max",
+  "hits_r25_min",
+  "hits_r25_max",
+  "hits_r50_min",
+  "hits_r50_max",
+  "hits_r75_min",
+  "hits_r75_max",
+  "rank_min",
+  "rank_max",
+  "rbh",
+  "shared_third",
+  "shared_third_jacc",
+  "other_ident_min",
+  "other_ident_max",
+  "other_gap_min",
+  "other_gap_max",
+  "mc_deg_min",
+  "mc_deg_max",
+  "fam_mc_size",
+  "len_min",
+  "len_max",
+  "lowcomp_frac_min",
+  "lowcomp_frac_max",
+  "ident_local_min_pct",
+  "ident_local_max_pct",
+  "ident_ens_min_pct",
+  "ident_ens_max_pct",
+  "ident_global_pct",
+  "bsr_min_pct",
+  "bsr_max_pct",
+  "hits_all_max_pct",
+  "hits_r50_max_pct",
+  "rank_max_pct",
+  "shared_third_pct",
+  "fam_mc_size_pct",
+  "len_min_pct",
+  "tb_depth",
+  "tb_depth_range",
+  "tb_discordant_frac",
+  "tb_younger_than_nearest",
+  "tb_older_than_panel",
+  "tb_no_evidence",
+  "tb_rel_rate",
+  "tb_frac_pre",
+  "tb_frac_post",
+  "tb_frac_undet",
+  "tb_frac_absent",
+  "tb_n_post_single",
+  "tb_cons_min",
+  "tb_cons_max",
+  "tb_cons_both",
+  "tb_species_rank_min",
+  "tb_species_rank_max",
+  "tb_dupability_min",
+  "tb_dupability_max",
+  "tb_outgroup_ident_max",
+  "tb_depth_pct",
+  "tb_cons_min_pct",
+  "tb_species_rank_max_pct"
+ ],
+ "required_tiers": [
+  "A",
+  "B"
+ ],
+ "registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+ "columns_hash": "efe566c760a275c3fef6e9c0f24599bad3efcd7d237f971e6457fe9da9907991",
+ "caller_config_sha256": "25ddb4de02599892865aeb8bfe4ac0a9e872642af4fc790b25268b1cee34e94b",
+ "sklearn_version": "1.9.1",
+ "numpy_version": "2.5.4",
+ "slparalog_version": "0.1.0",
+ "model_sha256": "7ff069aca97ff9ece99fd0bf43047b8f69fb107a4d41298de75498271d750c31",
+ "params": {
+  "l2_regularization": 1.0,
+  "learning_rate": 0.03,
+  "max_iter": 100,
+  "max_leaf_nodes": 7,
+  "min_samples_leaf": 50
+ },
+ "training": {
+  "tier": "primary",
+  "label_files": {
+   "human": {
+    "path": "data/labels/dev/human_dev.tsv",
+    "sha256": "788c38b827d74ed7f0cc83bd18279e27e040bb34db315441de4d56ce39040881"
+   },
+   "yeast": {
+    "path": "data/labels/dev/yeast_dev.tsv",
+    "sha256": "c920d4aafc30798287297066e26c143b36d9fd1e51edd77ca411eb0d28a11938"
+   }
+  },
+  "feature_files": {
+   "human": {
+    "tierA": {
+     "path": "data/interim/features/human/tierA.parquet",
+     "sha256": "7764550083e0e53f87f58b888dc5c55f025b9186e88c8248a424dbe61de67d17",
+     "n_rows": 686225
+    },
+    "tierB": {
+     "path": "data/interim/features/human/tierB.parquet",
+     "sha256": "0ae50b04aad4d3dd4d9868aa68b2e4a1a9ec9c0897812137af3e1a3ad74cbc10",
+     "n_rows": 686225
+    }
+   },
+   "yeast": {
+    "tierA": {
+     "path": "data/interim/features/yeast/tierA.parquet",
+     "sha256": "8688b01f489c1a1901355a43b18a533b23be216e89b9581f54b78459d9f8ebdc",
+     "n_rows": 18014
+    },
+    "tierB": {
+     "path": "data/interim/features/yeast/tierB.parquet",
+     "sha256": "c695edfffdcfc0cd9411669d15ab10d4e0ea976af2263bb7f71c3d33676343a2",
+     "n_rows": 18014
+    }
+   }
+  },
+  "feature_tables": {
+   "data/interim/features/human/tierA.parquet": {
+    "registry_hash": "3bad3676bdb0c5e20b4ce197367ef892f5e6c987ba032d5443a966f5e0a79616",
+    "columns_hash": "593b1572616af8f8567e3491bd88508d44df185c89f55526438c5fae0e2d13c0",
+    "schema_hash": "fe2d9c54fc6f4914e9288d6540612da8ff990226700a3cf162255d3dd3a24a2d",
+    "restamped": {
+     "utc": "2026-10-28T11:40:43Z",
+     "script": "scripts/features/restamp_columns_hash.py",
+     "basis_commit": "7192e5c65a5f3bb75dac371fd3a6db9f395b1429",
+     "commit_source": "meta file untracked (data/interim is ignored): newest commit at or before its mtime 2026-10-28T08:18:32Z",
+     "table_registry_hash": "3bad3676bdb0c5e20b4ce197367ef892f5e6c987ba032d5443a966f5e0a79616",
+     "current_registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+     "note": "columns_hash added after verifying that the definitions (name, source, dtype, kind, tier, pct) of this table's columns at the basis commit equal the current ones; parquet unchanged"
+    }
+   },
+   "data/interim/features/human/tierB.parquet": {
+    "registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+    "columns_hash": "d47dcb53573ce984b550fef65093c31dfa36050c55b05acd106fc0437abbfb00",
+    "schema_hash": "332446c575cbfeff3bde25a377f5b1c36a420cd0755bde29a5d5d2673d03b130",
+    "restamped": {
+     "utc": "2026-10-28T11:40:43Z",
+     "script": "scripts/features/restamp_columns_hash.py",
+     "basis_commit": "22a390bfc86242e7d77cce487596d12f52310140",
+     "commit_source": "registry version whose registry_hash equals the meta's (commit b2cf7397 from 'meta file untracked (data/interim is ignored): newest commit at or before its mtime 2026-10-28T09:24:20Z' did not)",
+     "table_registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+     "current_registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+     "note": "columns_hash added after verifying that the definitions (name, source, dtype, kind, tier, pct) of this table's columns at the basis commit equal the current ones; parquet unchanged"
+    }
+   },
+   "data/interim/features/yeast/tierA.parquet": {
+    "registry_hash": "f9dd0979b5b2406418549cf05e11d733cec2b2b299cc048ef5e07153e22cf8f8",
+    "columns_hash": "593b1572616af8f8567e3491bd88508d44df185c89f55526438c5fae0e2d13c0",
+    "schema_hash": "10f25a182d0f84c498d992db7a84c76312ec0dc92d9b528f0ca6db8c4da64064",
+    "restamped": {
+     "utc": "2026-10-28T11:40:43Z",
+     "script": "scripts/features/restamp_columns_hash.py",
+     "basis_commit": "f761d2ce80c408faab92911421e508a12a966ef8",
+     "commit_source": "meta file untracked (data/interim is ignored): newest commit at or before its mtime 2026-10-28T03:34:55Z",
+     "table_registry_hash": "f9dd0979b5b2406418549cf05e11d733cec2b2b299cc048ef5e07153e22cf8f8",
+     "current_registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+     "note": "columns_hash added after verifying that the definitions (name, source, dtype, kind, tier, pct) of this table's columns at the basis commit equal the current ones; parquet unchanged"
+    }
+   },
+   "data/interim/features/yeast/tierB.parquet": {
+    "registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+    "columns_hash": "d47dcb53573ce984b550fef65093c31dfa36050c55b05acd106fc0437abbfb00",
+    "schema_hash": "332446c575cbfeff3bde25a377f5b1c36a420cd0755bde29a5d5d2673d03b130",
+    "restamped": {
+     "utc": "2026-10-28T11:40:43Z",
+     "script": "scripts/features/restamp_columns_hash.py",
+     "basis_commit": "e035f7716f3dc92817c09864b1a94fcbc6e5918c",
+     "commit_source": "meta file untracked (data/interim is ignored): newest commit at or before its mtime 2026-10-28T10:21:14Z",
+     "table_registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+     "current_registry_hash": "4c6f02b017e9352a21695dfb65c992d7e070c1b4f9b926826767d0c8e5583e19",
+     "note": "columns_hash added after verifying that the definitions (name, source, dtype, kind, tier, pct) of this table's columns at the basis commit equal the current ones; parquet unchanged"
+    }
+   }
+  },
+  "population": "labelled pairs called by the caller (primary population)",
+  "per_species": {
+   "human": {
+    "n_pairs": 4415,
+    "n_pos": 123,
+    "n_neg": 4292
+   },
+   "yeast": {
+    "n_pairs": 996,
+    "n_pos": 60,
+    "n_neg": 936
+   }
+  },
+  "label_counts": {
+   "human": {
+    "labelled": 4420,
+    "labelled_pos": 123,
+    "labelled_neg": 4297,
+    "called": 4415,
+    "called_pos": 123,
+    "called_neg": 4292,
+    "not_called": 5,
+    "not_called_pos": 0,
+    "not_called_neg": 5,
+    "caller_recall_all": 0.998868778280543,
+    "caller_recall_pos": 1.0
+   },
+   "yeast": {
+    "labelled": 1205,
+    "labelled_pos": 62,
+    "labelled_neg": 1143,
+    "called": 996,
+    "called_pos": 60,
+    "called_neg": 936,
+    "not_called": 209,
+    "not_called_pos": 2,
+    "not_called_neg": 207,
+    "caller_recall_all": 0.8265560165975103,
+    "caller_recall_pos": 0.967741935483871
+   }
+  },
+  "weights": "species_balanced_equal_prevalence",
+  "excluded_features": [
+   "tb_asym_abs",
+   "tb_asym_norm"
+  ],
+  "models_yaml_sha256": "16b27f22abb8288852ae8a3af1866f94dd1b155ab0fb1e97f7defdf131e189d4"
+ },
+ "git": {
+  "commit": "563b15de3fbab3461c0618fa22c1d8d15041f866",
+  "dirty": false
+ },
+ "seeds": {
+  "seed_list": [
+   11,
+   23,
+   37,
+   41,
+   59
+  ],
+  "seed_used": 11
+ },
+ "created_utc": "2026-10-28T11:55:29Z",
+ "score": "ranking score in [0, 1]; not a calibrated probability",
+ "b1_variant": "ident_global"
+}

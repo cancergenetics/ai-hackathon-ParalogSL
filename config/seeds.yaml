@@ -1,0 +1,3 @@
+# Fixed random seed list used for every stochastic step (CV splits, model fits, sampling).
+# Never change this list after results are reported.
+seeds: [11, 23, 37, 41, 59]

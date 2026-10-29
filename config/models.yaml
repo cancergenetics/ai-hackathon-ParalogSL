@@ -1,0 +1,112 @@
+# Pre-declared model grids, baselines and selection rules for the M2 development harness
+# (DESIGN v3 §5-§6; reviews/round2/statistics.md items 11, 15).
+# Declared and committed BEFORE any model or baseline score was computed on labelled pairs.
+# Read by scripts/eval/dev_report.py; every configuration is logged in results/experiments.tsv.
+
+weights:
+  # Each training species gets equal total weight and equal weighted prevalence; target prevalence =
+  # mean of the training species' prevalences (computed per training fold). Single-species training
+  # (LOSO) therefore uses uniform weights.
+  scheme: species_balanced_equal_prevalence
+
+b1:
+  # Pre-registered identity variants (slparalog.eval.baselines.B1_VARIANTS). Selection: highest
+  # development species-mean AP over the primary population (identity needs no fitting, so OOF score =
+  # the variant). Ties broken by the order below. All variants logged.
+  variants: [ident_local_min, ident_local_max, ident_ens_min, ident_ens_max, ident_ens_mean, ident_global, ident_x_cov]
+  selection: max_species_mean_ap
+  # Result of that selection on the development folds (results/dev/*.json: b1_selected = ident_global in every
+  # primary-tier run); `slparalog train` records it in model.json as b1_variant for scripts/eval/final_test.py.
+  selected: ident_global
+
+b2:
+  # identity + family size + closest-pair flag, standardised L2 logistic regression (C fixed).
+  identity: b1_selected        # the B1 variant selected above
+  family_size: fam_mc_size     # mutual-coverage local family size (log1p before standardising)
+  closest_pair: rbh            # reciprocal best hit (both partner ranks == 1)
+  C: 1.0
+
+b3:
+  # gene-prior leakage baseline; gene priors from all labelled training-fold pairs of the tier
+  # (called or not); fallback = species training prevalence.
+  pool: all_labelled_training_pairs
+
+b4:
+  # human ascertainment diagnostic (RESEARCH_TREE D8); never a tool feature.
+  column: n_testable
+
+features:
+  # all registered model features (registry kind == "feature") present in the joined tables
+  set: registry_model_features
+
+lr:
+  # log1p on registered int32 columns and bits_pair, median imputation, StandardScaler, L2 LR
+  fixed: {max_iter: 5000}
+  grid: {C: [0.01, 0.1, 1.0]}
+  simplicity: "C ascending (smaller C = stronger regularisation = simpler)"
+
+gbdt:
+  # sklearn HistGradientBoostingClassifier; no early stopping (iterations fixed by the grid)
+  fixed: {early_stopping: false}
+  grid:
+    max_iter: [100, 300]
+    learning_rate: [0.03, 0.1]
+    max_leaf_nodes: [7, 15]
+    min_samples_leaf: [20, 50]
+    l2_regularization: [0.0, 1.0]
+  simplicity: "lexicographic: max_leaf_nodes asc, max_iter*learning_rate asc, min_samples_leaf desc, l2_regularization desc"
+
+selection:
+  # D12(a) (RESEARCH_TREE.md; reviews/results/eval_harness_review.md M1): selection and adoption use the
+  # per-fold paired statistic; pooled-OOF T (the original definition) is still reported for every config.
+  metric: "T_pf = mean over species of the mean over seed x fold test sets of [AP(model) - AP(B1)] on the same fold pairs (slparalog.eval.perfold)"
+  se: "SD of T_pf over the stratified group bootstrap (config/success.yaml resamples and seed)"
+  pooled_metric_reported: "T = species-mean of AP(model) - AP(B1) on pooled OOF scores averaged over seeds (pre-D12 definition)"
+  rule: one_se   # among guard-passing configs with T_pf >= T_pf_best - SE(T_pf_best) choose the simplest
+  guard:
+    # D12(b): human stratum-averaged AP (strata = n_testable_studies 1 / 2 / >=3; pooled OOF scores; mean of
+    # the stratum APs over strata with >=1 positive) must not be below the incumbent's.
+    statistic: human_stratum_averaged_ap
+    strata: [1, 2, ">=3"]
+    incumbent: B1    # no model adopted yet; overridable with --incumbent <method>
+  adoption_rule: "D12 (as restated by the PI, 2026-10-28 batch D14): per family, the guard-passing one-SE selection on T_pf is the family's dev model; it is ADOPTED only if (i) the 95% bootstrap CI of T_pf excludes 0 (lo > 0), (ii) per-fold paired dAP > 0 in both species, and (iii) human stratum-averaged AP >= incumbent B1"
+
+deconfound:
+  # D12(c): training-only nuisance covariate (label-process metadata, never a feature, never a tool input)
+  covariate: n_testable_studies
+  coding: "indicators [==1, ==2]; reference level >=3 = both zero"
+  yeast_rows: ">=3 reference level (SGA tests pairs uniformly; closest to the most thoroughly screened human stratum)"
+  prediction_reference: 3          # every pair scored as if in the >=3 stratum
+  sensitivity_references: [1, 2]   # selected deconfounded configs re-fitted and scored at these levels
+  families: [lr_dc, gbdt_dc]       # same grids as lr / gbdt
+
+controls:
+  shuffled_label_permutations: 5          # one per seed; labels permuted within species
+  source_library_min_studies: 3           # human: heavily screened library = n_studies_testable >= 3
+  identity_strata: 3                      # tertiles of the selected B1 variant, per species
+  ribosomal_keyword: KW-0689              # UniProt keyword; evaluation-only stratifier
+  min_pos_for_ci: 10                      # strata with fewer positives: counts only (statistics R2 item 11)
+  n_lines_strata: [[1, 3], [4, 10], [11, 10000]]   # statistics R2 item 13 (2-3, 4-10, >10 testable lines; primary tier has >=2)
+
+feature_groups:
+  # Tier A ablation groups (D14 batch; declared before any ablation score). Prefix lists over registered
+  # Tier A model features; *_pct versions follow their base. The three groups partition Tier A (checked at run time).
+  sim: [ident_, cov_, bits_pair, bsr_, len_ratio]
+  fam: [hits_, rank_, rbh, shared_third, other_, mc_deg_, fam_mc_size]
+  gene: [len_min, len_max, lowcomp_frac_]
+
+anchoring:
+  # D14 identity-anchored candidates, all on feature set A
+  monotone:            # family gbdt_mono: same GBDT grid, monotonic_cst +1 on ident_global only
+    feature: ident_global
+  ensemble:            # families lr_ens / gbdt_ens: RankEnsembleModel(B1 = selected B1 variant, base model below)
+    w_grid: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+    inner_folds: 3     # GroupKFold on split groups inside the training fold
+    lr_params: {C: 0.01}          # = LR family selection in the D12 runs (157aa80, 8a321fe)
+    gbdt_params: {l2_regularization: 1.0, learning_rate: 0.03, max_iter: 100, max_leaf_nodes: 7, min_samples_leaf: 50}  # = GBDT_17
+
+excluded_features:
+  # PI decision (Tier B review reviews/results/tierB_review.md, ACCEPT WITH FIXES, item (i)); based on missingness
+  # alone (NaN for 94-98% of pairs in every species), not on any label result. Removed from every model feature set.
+  tb_asym_norm: "94-98% NaN in every species (Tier B review)"
+  tb_asym_abs: "94-98% NaN in every species (Tier B review)"

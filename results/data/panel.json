@@ -1,0 +1,509 @@
+{
+ "n_species": 80,
+ "n_core": 51,
+ "n_gap_fill": 29,
+ "n_proteins": 1552258,
+ "n_proteins_core": 976393,
+ "n_proteins_gap_fill": 575865,
+ "n_empty_sequences_skipped": 0,
+ "clade_counts": {
+  "insects": 12,
+  "eudicots": 7,
+  "other_fungi": 11,
+  "vertebrates": 15,
+  "other_metazoa": 6,
+  "nematodes": 4,
+  "green_algae": 1,
+  "other_eukaryotes": 9,
+  "monocots": 5,
+  "other_land_plants": 3,
+  "saccharomycetaceae": 7
+ },
+ "n_species_without_lineage_metadata": 0,
+ "panel_fasta_sha256": "43f03ae5e4350be015b7235b1a0af1a13969f2349e3010317131716c581994ab",
+ "panel_species_tsv_sha256": "2767b3b80eb5bbb49646dc3fe00619adc012fad3e118691d153b6d8a210c6526",
+ "species": [
+  {
+   "code": "ANOGA",
+   "upid": "UP000007062",
+   "n_proteins": 13029,
+   "fasta_sha256": "669e45ca9ab9d300779ec3895d0c1e6b84f36b6df9c021a102040d994b5d4fc8"
+  },
+  {
+   "code": "ARATH",
+   "upid": "UP000006548",
+   "n_proteins": 27496,
+   "fasta_sha256": "3fbc786fac3b1d80119382fe7c3d4a2fcd906aecc7549c6f035e31be4045f897"
+  },
+  {
+   "code": "ASPFU",
+   "upid": "UP000002530",
+   "n_proteins": 9647,
+   "fasta_sha256": "46f75a0273799cf9bce053de4966e30ca3d5b0ddcffaafac16b2e48ac571a5ee"
+  },
+  {
+   "code": "BATDJ",
+   "upid": "UP000007241",
+   "n_proteins": 8610,
+   "fasta_sha256": "f7887941a02d392c59bfd61993834f898b860e64d8af9c97bba1fab1bb299344"
+  },
+  {
+   "code": "BOVIN",
+   "upid": "UP000009136",
+   "n_proteins": 22714,
+   "fasta_sha256": "014c394279253bf2a07fe2538c0d3bb4ddd8706c9c5f32bbf719eaa87d58739b"
+  },
+  {
+   "code": "BRAFL",
+   "upid": "UP000001554",
+   "n_proteins": 26616,
+   "fasta_sha256": "0acfdb771c1c54fbcf72429810436f23ffff356a1894a424359148a3f0f4647d"
+  },
+  {
+   "code": "CAEEL",
+   "upid": "UP000001940",
+   "n_proteins": 19789,
+   "fasta_sha256": "6104a87e5fe806053eddfe6410b0de6a6e329d53fd402304478abbe5033f8e71"
+  },
+  {
+   "code": "CANAL",
+   "upid": "UP000000559",
+   "n_proteins": 6036,
+   "fasta_sha256": "79fdd0b4adabe51ca0878fa1f6e141e69cd9f67d0e37b2484c50d53d97335537"
+  },
+  {
+   "code": "CANLF",
+   "upid": "UP000805418",
+   "n_proteins": 20990,
+   "fasta_sha256": "e3fbf4380ab3760d9ffe43f89485dc80ea185789e871036c0611be4478b47e38"
+  },
+  {
+   "code": "CHICK",
+   "upid": "UP000000539",
+   "n_proteins": 18372,
+   "fasta_sha256": "9e4799e1c2719f4444e6766d0ce2d8e079d496a1bb168af37e620a544cedc178"
+  },
+  {
+   "code": "CHLRE",
+   "upid": "UP000006906",
+   "n_proteins": 17614,
+   "fasta_sha256": "90bd029c813d4ea10de03949924ab6cfb92dc6eac28e978ba74c37c8ead1b3ac"
+  },
+  {
+   "code": "CIOIN",
+   "upid": "UP000008144",
+   "n_proteins": 16680,
+   "fasta_sha256": "9a72d1749baa0edf47f355f22813988769a0dcf60101c0031e6f61905f767f32"
+  },
+  {
+   "code": "CRYD1",
+   "upid": "UP000002149",
+   "n_proteins": 6603,
+   "fasta_sha256": "d26ebd86d8b6b348a106627bfed4b0bff24238fcdb1192e88817db81536ac30f"
+  },
+  {
+   "code": "DANRE",
+   "upid": "UP000000437",
+   "n_proteins": 26677,
+   "fasta_sha256": "17d1a56ce2955b0276ee8f5c583894eb88fdeef65a8d703a1d6d0d31945f15b7"
+  },
+  {
+   "code": "DICDI",
+   "upid": "UP000002195",
+   "n_proteins": 12718,
+   "fasta_sha256": "05adbeae11c4ea7a828141a070af91fc3b53bf5e9eb5177227ad92fba5510a7e"
+  },
+  {
+   "code": "DROME",
+   "upid": "UP000000803",
+   "n_proteins": 13817,
+   "fasta_sha256": "97eb6499f1f1e94e2491e8e71e555495188fa27607c2426a23cd09ff2d06948d"
+  },
+  {
+   "code": "GIAIC",
+   "upid": "UP000001548",
+   "n_proteins": 4900,
+   "fasta_sha256": "46d09c97366907fa9efd126416b5a010b9dcf4c7409923df0f85a194eb289da4"
+  },
+  {
+   "code": "GORGO",
+   "upid": "UP000001519",
+   "n_proteins": 21788,
+   "fasta_sha256": "ba74d9472433488d8cd30c197b57c4a3f42a26c36e2180b449626b08fffb4cad"
+  },
+  {
+   "code": "HELRO",
+   "upid": "UP000015101",
+   "n_proteins": 23328,
+   "fasta_sha256": "3c9498afbe8a89497e9f53d2132450f0b2329fb0069ba7cd310450c24f324fcf"
+  },
+  {
+   "code": "HUMAN",
+   "upid": "UP000005640",
+   "n_proteins": 20652,
+   "fasta_sha256": "cf49a88c4812dabbd934cb3e2e00b449e70375816e4d47cda7cc5b77b0754024"
+  },
+  {
+   "code": "IXOSC",
+   "upid": "UP001735580",
+   "n_proteins": 25977,
+   "fasta_sha256": "bd736cb369e03e00a7bd5953e5b63c1b3718e0c508b1cfe32226604c76993024"
+  },
+  {
+   "code": "LEIMA",
+   "upid": "UP000000542",
+   "n_proteins": 8038,
+   "fasta_sha256": "04251aecacb19f029ff0fc7f5a5af4ea44bed6997f1f30d50739060473169ca6"
+  },
+  {
+   "code": "LEPOC",
+   "upid": "UP000018468",
+   "n_proteins": 18323,
+   "fasta_sha256": "d103953aee069d8c51ece99d1e3ceed2371ca054764cfa231d752761adbb9cde"
+  },
+  {
+   "code": "MACMU",
+   "upid": "UP000006718",
+   "n_proteins": 21893,
+   "fasta_sha256": "d0be9adfb3072b5c36a23025bbb19a01ac8214ba3ca3a6ff8b659f2e72bf0dd5"
+  },
+  {
+   "code": "MAIZE",
+   "upid": "UP000007305",
+   "n_proteins": 39346,
+   "fasta_sha256": "2310411637ad262fe07c37d5d4c4304bfbbc5403e8dbd90f4b2a0a1b17e9056e"
+  },
+  {
+   "code": "MONBE",
+   "upid": "UP000001357",
+   "n_proteins": 9156,
+   "fasta_sha256": "1471f733f1d7512373afecfae90a552b600df9589a828c15e78e7cf0f1e2dfcf"
+  },
+  {
+   "code": "MONDO",
+   "upid": "UP000002280",
+   "n_proteins": 21225,
+   "fasta_sha256": "e1607e1105ff6717b16dcbc3ce72bd4e9b177cf038b3ce2f938c874e932da721"
+  },
+  {
+   "code": "MOUSE",
+   "upid": "UP000000589",
+   "n_proteins": 21853,
+   "fasta_sha256": "13334d132bd8571040e65be7072f771e88e6c021746841154af6ce151f18d73f"
+  },
+  {
+   "code": "MYCMD",
+   "upid": "UP000000561",
+   "n_proteins": 6788,
+   "fasta_sha256": "4172c9f8abadbe0a71584357441a0ed7abe21f07714e114ef772a1b82a0413a2"
+  },
+  {
+   "code": "NEMVE",
+   "upid": "UP000001593",
+   "n_proteins": 24428,
+   "fasta_sha256": "3c0815dfd30e275fd6087e6d8a7662c0c9046b6b076e0d2b183eb1e53fbadaf4"
+  },
+  {
+   "code": "NEUCR",
+   "upid": "UP000001805",
+   "n_proteins": 9759,
+   "fasta_sha256": "305e77e1068da334e64c1d475ce40f7fd49b8b59f361cccf443da782f5393b08"
+  },
+  {
+   "code": "TX35525",
+   "upid": "UP000076858",
+   "n_proteins": 26600,
+   "fasta_sha256": "a42d9176e2a717ba5cad27573b1165a5b3b9323475521b62243d5fd49bec08be"
+  },
+  {
+   "code": "ORYLA",
+   "upid": "UP000001038",
+   "n_proteins": 23617,
+   "fasta_sha256": "bd4de9a89e23b278a1a316d6fccd9ae3d839f6ebe56c3feb79af91672e07a590"
+  },
+  {
+   "code": "ORYSJ",
+   "upid": "UP000059680",
+   "n_proteins": 43678,
+   "fasta_sha256": "0ca0787c6da025dc9c3a87a29d54d251b4abbb1315da67e9ddb939bafd5aa5c7"
+  },
+  {
+   "code": "PANTR",
+   "upid": "UP000002277",
+   "n_proteins": 23014,
+   "fasta_sha256": "8cb6b6cd5200e962a5c2352441f348c6a95d1e3a67c66607eda35d0ea2656227"
+  },
+  {
+   "code": "PARTE",
+   "upid": "UP000000600",
+   "n_proteins": 39350,
+   "fasta_sha256": "75449549925cc7cfc3f62fcd1ede80194f944ca33cba4ae8c48b6a19e43069d7"
+  },
+  {
+   "code": "PHANO",
+   "upid": "UP000663193",
+   "n_proteins": 17429,
+   "fasta_sha256": "187d2bf0a563afa11f654e6c4d2dc5ab9aee3f56599544bdaf5a9d0b9475d63a"
+  },
+  {
+   "code": "PHYPA",
+   "upid": "UP000006727",
+   "n_proteins": 31356,
+   "fasta_sha256": "46ed8ee4ef7c85150a6b78d6726a9c73e4fe797ed90796a399a65fb3e5035632"
+  },
+  {
+   "code": "PHYRM",
+   "upid": "UP000005238",
+   "n_proteins": 15350,
+   "fasta_sha256": "78fe6239d6f39e81b1fbb47db9eb32ebafc53f1d07b93adfd87eef89fb7a6d83"
+  },
+  {
+   "code": "PLAF7",
+   "upid": "UP000001450",
+   "n_proteins": 5361,
+   "fasta_sha256": "0fd9a8efeeef6cd421e403535bf08c047ab56bcae486e21e2939ccf22868b39f"
+  },
+  {
+   "code": "PUCGT",
+   "upid": "UP000008783",
+   "n_proteins": 15688,
+   "fasta_sha256": "a961145b898ab25c007c68f9b947f8a272fec2d9962bd238bdd2587554daae8b"
+  },
+  {
+   "code": "RAT",
+   "upid": "UP000002494",
+   "n_proteins": 21545,
+   "fasta_sha256": "9074ec1675d89d00908bd030c0ae5f6dca95a3e1c305f025a67dcf12fa9adb7d"
+  },
+  {
+   "code": "SCHPO",
+   "upid": "UP000002485",
+   "n_proteins": 5129,
+   "fasta_sha256": "47d156d4e978d0d61b77cbc751bc490cc85d8fb69dbbd86f680dbb23f98761c6"
+  },
+  {
+   "code": "SCLS1",
+   "upid": "UP000001312",
+   "n_proteins": 14445,
+   "fasta_sha256": "f11c34f0312bfd0f5a6472c766065f69b207e6a716a41216eb133b328049983f"
+  },
+  {
+   "code": "THAPS",
+   "upid": "UP000001449",
+   "n_proteins": 11735,
+   "fasta_sha256": "355ae1b3dc219c2787ed4480e94805e899dd90891dda0ce2dce66d9bca2bfbb2"
+  },
+  {
+   "code": "TRICA",
+   "upid": "UP000007266",
+   "n_proteins": 16568,
+   "fasta_sha256": "ff6ffa28427405757cebac5a6da8da68232be136e10c760a1400191ad20b45a9"
+  },
+  {
+   "code": "TRIV3",
+   "upid": "UP000001542",
+   "n_proteins": 50190,
+   "fasta_sha256": "b5225853d661ac8555c6ac1da6dac23136dee72956a67cb4674f4e1dc6528f0b"
+  },
+  {
+   "code": "XENLA",
+   "upid": "UP000186698",
+   "n_proteins": 36352,
+   "fasta_sha256": "1465588bacb9d088a8e5ccf9693e1eea034834d48357d2fe41974d1e166dfe21"
+  },
+  {
+   "code": "XENTR",
+   "upid": "UP000008143",
+   "n_proteins": 21609,
+   "fasta_sha256": "37aa7dd402fec32e6030e4e41d3c9f9b50e9c7f0125841522d3670d46dc592d3"
+  },
+  {
+   "code": "YARLI",
+   "upid": "UP000001300",
+   "n_proteins": 6449,
+   "fasta_sha256": "ba73426ec3b220ebcc38c394c0ee1a8c45ea443dd8e95386742147ef7d93050f"
+  },
+  {
+   "code": "YEAST",
+   "upid": "UP000002311",
+   "n_proteins": 6066,
+   "fasta_sha256": "d435383cdb4c5a26521a9f1c94683eeb356957be5171d2ecb32e4e12d2952424"
+  },
+  {
+   "code": "CANGA",
+   "upid": "UP000002428",
+   "n_proteins": 5198,
+   "fasta_sha256": "4b8df77d0a22cbabf5feed1fdb2be53806cc0369f96d685badcd27b8555872c5"
+  },
+  {
+   "code": "HUIN7",
+   "upid": "UP000006310",
+   "n_proteins": 5301,
+   "fasta_sha256": "bfba6a705b2658e8bf58e4b8471731901f08c7d31e48911297f820fc6d1ffe85"
+  },
+  {
+   "code": "KAZAF",
+   "upid": "UP000005220",
+   "n_proteins": 5354,
+   "fasta_sha256": "91090ff4f8a380eb3bf99580c6aa94c8ff0e91242226a0dbd996b8b4e7b8441d"
+  },
+  {
+   "code": "TORDC",
+   "upid": "UP000005627",
+   "n_proteins": 4974,
+   "fasta_sha256": "0bed8d858f9127e3d64747644710aa956e091e4a9d01dc18057a4a4cd73d0970"
+  },
+  {
+   "code": "TX1245769",
+   "upid": "UP000054304",
+   "n_proteins": 5055,
+   "fasta_sha256": "3c4922bcc9e3643976d0a1c9ba692b982c740f95a172c6bde8782300b379bc93"
+  },
+  {
+   "code": "EREGS",
+   "upid": "UP000000591",
+   "n_proteins": 4758,
+   "fasta_sha256": "5a514ca44c125f8c3c70519904590ead22a5ba1a794125bb47c87464fd91dee4"
+  },
+  {
+   "code": "TX168575",
+   "upid": "UP001280121",
+   "n_proteins": 32502,
+   "fasta_sha256": "83d045963996b9f55bbc012da663ae4a1dcce304b69f7d255094010acd73a9c1"
+  },
+  {
+   "code": "NICAT",
+   "upid": "UP000187609",
+   "n_proteins": 32918,
+   "fasta_sha256": "1191d98c0aaa83a04a50151e01b56cccb88c35a6bc460feb808eac25cda867fa"
+  },
+  {
+   "code": "TX151428",
+   "upid": "UP001730764",
+   "n_proteins": 42103,
+   "fasta_sha256": "cd4adee79bf6d87df505b287993a7778c74c5968b2d1ac0bf55dd48c37d4fcc6"
+  },
+  {
+   "code": "CEPFO",
+   "upid": "UP000187406",
+   "n_proteins": 36340,
+   "fasta_sha256": "b59b04d23fbb4af3361c29ae973a407a4d3840b4ee6d4e85d8c762712d264162"
+  },
+  {
+   "code": "DAUCS",
+   "upid": "UP000077755",
+   "n_proteins": 35531,
+   "fasta_sha256": "ff0b6f5d4151aee0887f602e71d7ef46931536ab83bb6803b9d8426103c3d59a"
+  },
+  {
+   "code": "TX425828",
+   "upid": "UP001459277",
+   "n_proteins": 35004,
+   "fasta_sha256": "3cf7fd2cbedcc0d16454566d734359bbc2dd474963c450e6042078994abc2543"
+  },
+  {
+   "code": "DENNO",
+   "upid": "UP000829196",
+   "n_proteins": 28747,
+   "fasta_sha256": "e0a387d6e28a2ccb8c28e64ed6cbb852f836167cb727051884bd5235268a58b5"
+  },
+  {
+   "code": "ZOSMR",
+   "upid": "UP000036987",
+   "n_proteins": 20358,
+   "fasta_sha256": "9785e6b2588aec6930dfc55c30664e3cab41419dc439d40670cdb661e3ed288c"
+  },
+  {
+   "code": "SPIIN",
+   "upid": "UP000663760",
+   "n_proteins": 21675,
+   "fasta_sha256": "2889d9c3a74963b1fbab1f14e35be57d2917adfb6dada0190a813535cdd0e390"
+  },
+  {
+   "code": "AMBTC",
+   "upid": "UP000017836",
+   "n_proteins": 27398,
+   "fasta_sha256": "52b6ff63b7e9ea4af8b1207c03a8dc653984a74b926e597f4f424ee63295faa7"
+  },
+  {
+   "code": "TX41844",
+   "upid": "UP001605036",
+   "n_proteins": 29203,
+   "fasta_sha256": "bdab966cc628faace2ff04d42c9adcaffe7f3f96d8218cadc50a0c68c8e8e731"
+  },
+  {
+   "code": "ATTCE",
+   "upid": "UP000005205",
+   "n_proteins": 10483,
+   "fasta_sha256": "b0ae447b00b9cda7c8ff25444bfba2637ef4caaa82e8fd4c5b5ede4bcce01d17"
+  },
+  {
+   "code": "VESMC",
+   "upid": "UP001607303",
+   "n_proteins": 21080,
+   "fasta_sha256": "e49f0f5cdbb84a29bc4da84560c4101b76450dce859c03221fe90da44cc155d6"
+  },
+  {
+   "code": "PHYSR",
+   "upid": "UP001153712",
+   "n_proteins": 11829,
+   "fasta_sha256": "c3b7ac8244cc0a26c0aca9cdcb986534293497ede62a704d097ff4229255e140"
+  },
+  {
+   "code": "TX1421715",
+   "upid": "UP001353858",
+   "n_proteins": 16446,
+   "fasta_sha256": "cebd190b27d314e2d6e3c5f2f66be76a58e959f6a9f0fb80a66e915a1000ddc9"
+  },
+  {
+   "code": "TX667449",
+   "upid": "UP001231649",
+   "n_proteins": 16857,
+   "fasta_sha256": "13f120da6a5b0273e546d5cc0ebd35fe73fc383499851f05bf629849e4b4fe63"
+  },
+  {
+   "code": "TX765133",
+   "upid": "UP000824533",
+   "n_proteins": 15321,
+   "fasta_sha256": "57adf5ee43607e61783ea86b3e1ccd3ad1a8e3f37b20aa5b802d6465a532b439"
+  },
+  {
+   "code": "APHCR",
+   "upid": "UP000478052",
+   "n_proteins": 31735,
+   "fasta_sha256": "5144b973aa0e680a93f02698804970332357e3fc193180c58a2004eb5792ea04"
+  },
+  {
+   "code": "LAOST",
+   "upid": "UP000291343",
+   "n_proteins": 17309,
+   "fasta_sha256": "a2971011b44902fd34d83ab21ae354e0084f2a5005f6d4c3bc3e0867c0acd4d6"
+  },
+  {
+   "code": "ZOONE",
+   "upid": "UP000027135",
+   "n_proteins": 14539,
+   "fasta_sha256": "408027961356db7a94ad96f7713979f424d72e5e427eb2c2a2f381b05661c087"
+  },
+  {
+   "code": "CYLNA",
+   "upid": "UP001176961",
+   "n_proteins": 22417,
+   "fasta_sha256": "4fca362ac918f1af50320f252ae45cd58a7f44bd76f600c33733595b0ab58575"
+  },
+  {
+   "code": "BRUPA",
+   "upid": "UP000278627",
+   "n_proteins": 14545,
+   "fasta_sha256": "027e117fc68f182c8dc5a76040c4c7e83678b3c6a5f0ef46ba6e97f784b716bd"
+  },
+  {
+   "code": "THECL",
+   "upid": "UP000276776",
+   "n_proteins": 10885,
+   "fasta_sha256": "996aec5d2b956d8aa97846b368f560fd78ca7025ade979bbfa246ec56b9ee6cc"
+  }
+ ],
+ "script": "scripts/data/build_panel.py assemble",
+ "config_sha256": "914f18e328d407c88c8b06c86d922ed565a282a63576af942f305b3c26b1373f"
+}

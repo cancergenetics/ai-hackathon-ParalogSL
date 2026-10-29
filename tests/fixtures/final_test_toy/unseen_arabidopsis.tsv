@@ -1,0 +1,8 @@
+gene_a	gene_b	label_strict	label_broad	single_lethal_n	note
+ta1	ta2	1	1	1	
+ta2	ta3	0	0	0	
+ta4	ta5	0	0	0	
+ta6	ta7	1	1	0	
+ta8	ta9	0	1	0	
+ta10	ta11	NA	0	0	
+ta12	ta13	0	0	0	

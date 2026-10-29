@@ -1,0 +1,302 @@
+{
+ "species": "fly",
+ "n_fasta_accessions": 13814,
+ "n_records_genes": 13965,
+ "n_accessions_used": 13814,
+ "n_accessions_expanded": 37,
+ "n_extra_records_from_expansion": 151,
+ "n_accessions_dropped": 0,
+ "dropped_by_reason": {},
+ "n_records_accession_fallback_id": 1087,
+ "n_records_not_matching_id_pattern": 1087,
+ "n_genes_reached_from_multiple_accessions": 0,
+ "mapping_notes": {
+  "orfname_xref": 244
+ },
+ "id_source_counts": {
+  "accession_fallback": 1087,
+  "orfname_xref": 244,
+  "FlyBase": 12634
+ },
+ "n_records_with_identical_sequence_to_another": 219,
+ "n_identical_sequence_groups": 52,
+ "expanded_accessions": {
+  "A0ACD4DAV5": [
+   "FBgn0288733",
+   "FBgn0288738",
+   "FBgn0288742",
+   "FBgn0288744"
+  ],
+  "A8QI13": [
+   "FBgn0085521",
+   "FBgn0288729"
+  ],
+  "A8QI32": [
+   "FBgn0085693",
+   "FBgn0288730",
+   "FBgn0288739",
+   "FBgn0288740",
+   "FBgn0288741",
+   "FBgn0288743",
+   "FBgn0288745",
+   "FBgn0288747"
+  ],
+  "M9NE78": [
+   "FBgn0263247",
+   "FBgn0263248"
+  ],
+  "M9PBB7": [
+   "FBgn0264989",
+   "FBgn0264990"
+  ],
+  "M9PD66": [
+   "FBgn0264544",
+   "FBgn0264545"
+  ],
+  "P02255": [
+   "FBgn0001195",
+   "FBgn0051617",
+   "FBgn0053804",
+   "FBgn0053810",
+   "FBgn0053813",
+   "FBgn0053816",
+   "FBgn0053819",
+   "FBgn0053822",
+   "FBgn0053825",
+   "FBgn0053828",
+   "FBgn0053831",
+   "FBgn0053837",
+   "FBgn0053840",
+   "FBgn0053843",
+   "FBgn0053846",
+   "FBgn0053849",
+   "FBgn0053852",
+   "FBgn0053864"
+  ],
+  "P02283": [
+   "FBgn0001198",
+   "FBgn0053868",
+   "FBgn0053870",
+   "FBgn0053872",
+   "FBgn0053874",
+   "FBgn0053876",
+   "FBgn0053878",
+   "FBgn0053880",
+   "FBgn0053882",
+   "FBgn0053884",
+   "FBgn0053886",
+   "FBgn0053888",
+   "FBgn0053890",
+   "FBgn0053892",
+   "FBgn0053894",
+   "FBgn0053896",
+   "FBgn0053898",
+   "FBgn0053900",
+   "FBgn0053902",
+   "FBgn0053904",
+   "FBgn0053906",
+   "FBgn0053908",
+   "FBgn0053910",
+   "FBgn0061209"
+  ],
+  "P02299": [
+   "FBgn0001199",
+   "FBgn0051613",
+   "FBgn0053803",
+   "FBgn0053806",
+   "FBgn0053809",
+   "FBgn0053812",
+   "FBgn0053815",
+   "FBgn0053818",
+   "FBgn0053821",
+   "FBgn0053824",
+   "FBgn0053827",
+   "FBgn0053830",
+   "FBgn0053833",
+   "FBgn0053836",
+   "FBgn0053839",
+   "FBgn0053842",
+   "FBgn0053845",
+   "FBgn0053848",
+   "FBgn0053851",
+   "FBgn0053854",
+   "FBgn0053857",
+   "FBgn0053860",
+   "FBgn0053863",
+   "FBgn0053866"
+  ],
+  "P84040": [
+   "FBgn0001200",
+   "FBgn0013981",
+   "FBgn0051611",
+   "FBgn0053869",
+   "FBgn0053871",
+   "FBgn0053873",
+   "FBgn0053875",
+   "FBgn0053877",
+   "FBgn0053879",
+   "FBgn0053881",
+   "FBgn0053883",
+   "FBgn0053885",
+   "FBgn0053887",
+   "FBgn0053889",
+   "FBgn0053891",
+   "FBgn0053893",
+   "FBgn0053895",
+   "FBgn0053897",
+   "FBgn0053899",
+   "FBgn0053901",
+   "FBgn0053903",
+   "FBgn0053905",
+   "FBgn0053907",
+   "FBgn0053909"
+  ],
+  "P84051": [
+   "FBgn0001196",
+   "FBgn0051618",
+   "FBgn0053808",
+   "FBgn0053814",
+   "FBgn0053817",
+   "FBgn0053820",
+   "FBgn0053823",
+   "FBgn0053826",
+   "FBgn0053829",
+   "FBgn0053832",
+   "FBgn0053835",
+   "FBgn0053838",
+   "FBgn0053841",
+   "FBgn0053844",
+   "FBgn0053847",
+   "FBgn0053850",
+   "FBgn0053862",
+   "FBgn0053865"
+  ],
+  "Q4AB54": [
+   "FBgn0053855",
+   "FBgn0053858",
+   "FBgn0053861"
+  ],
+  "Q4AB57": [
+   "FBgn0053853",
+   "FBgn0053856",
+   "FBgn0053859"
+  ],
+  "Q7KT71": [
+   "FBgn0028517",
+   "FBgn0051827"
+  ],
+  "Q7KT73": [
+   "FBgn0028864",
+   "FBgn0051780"
+  ],
+  "Q7KT85": [
+   "FBgn0028537",
+   "FBgn0260954"
+  ],
+  "Q7KT86": [
+   "FBgn0051835",
+   "FBgn0260953"
+  ],
+  "Q7KV12": [
+   "FBgn0053236",
+   "FBgn0053240",
+   "FBgn0053244",
+   "FBgn0053245"
+  ],
+  "Q7KV15": [
+   "FBgn0053239",
+   "FBgn0053241"
+  ],
+  "Q7KV18": [
+   "FBgn0003523",
+   "FBgn0053242"
+  ],
+  "Q7PL72": [
+   "FBgn0058439",
+   "FBgn0284080"
+  ],
+  "Q7PL91": [
+   "FBgn0058002",
+   "FBgn0085736"
+  ],
+  "Q86B44": [
+   "FBgn0030882",
+   "FBgn0052495"
+  ],
+  "Q8I050": [
+   "FBgn0051131",
+   "FBgn0051253"
+  ],
+  "Q8I079": [
+   "FBgn0052640",
+   "FBgn0052641"
+  ],
+  "Q8I0K9": [
+   "FBgn0052819",
+   "FBgn0052820"
+  ],
+  "Q8IRZ3": [
+   "FBgn0052823",
+   "FBgn0283432",
+   "FBgn0283433"
+  ],
+  "Q8SY96": [
+   "FBgn0052857",
+   "FBgn0053502",
+   "FBgn0285970"
+  ],
+  "Q9I7C6": [
+   "FBgn0042118",
+   "FBgn0086900"
+  ],
+  "Q9I7K4": [
+   "FBgn0037731",
+   "FBgn0052939"
+  ],
+  "Q9V449": [
+   "FBgn0028415",
+   "FBgn0028416"
+  ],
+  "Q9VNS4": [
+   "FBgn0037178",
+   "FBgn0037180"
+  ],
+  "Q9VNS7": [
+   "FBgn0037177",
+   "FBgn0052453"
+  ],
+  "Q9VW35": [
+   "FBgn0261361",
+   "FBgn0262516"
+  ],
+  "Q9VW36": [
+   "FBgn0036905",
+   "FBgn0260434"
+  ],
+  "Q9W1K2": [
+   "FBgn0034900",
+   "FBgn0083941"
+  ],
+  "X2JEG9": [
+   "FBgn0264309",
+   "FBgn0267044",
+   "FBgn0267049",
+   "FBgn0267050"
+  ]
+ },
+ "multi_accession_genes": [],
+ "dropped_accessions": [],
+ "uniprot_release": "UniProt 2026_03",
+ "uniprot_proteome": "UP000000803",
+ "id_type": "flybase_gene",
+ "id_pattern": "^FBgn\\d{7}$",
+ "inputs_sha256": {
+  "data/raw/uniprot_2026_03/UP000000803_7227.fasta.gz": "8a2cc19b821a84012038fb7a4c6071688e7847f73e74102d3e9861d07120431a",
+  "data/raw/uniprot_2026_03/UP000000803_7227.idmapping.gz": "1ba0c0f17b7974d4f2a655f1b7d0b99c3bb655ee0093f278993ae76612f5925f"
+ },
+ "outputs_sha256": {
+  "data/interim/proteomes/fly.fasta": "5a4a0f23d9650da49b624b0f31130bbcd8035cb25d402f1cadb3377d725be847",
+  "data/interim/proteomes/fly_gene2acc.tsv": "e59d3bb14d2387dd608307fe89f05dd037d8cc161916d77ada13497a176eecbf"
+ },
+ "script": "scripts/data/build_gene_proteome.py"
+}

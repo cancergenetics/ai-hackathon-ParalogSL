@@ -1,0 +1,11 @@
+gene_a	gene_b	label_primary	n_studies_testable	studies	group	n_testable	harle_chan_dependent	label_lenient	label_two_studies	leakage_bsr
+th_P0a	th_P0b	1.0	3	s1,s2	gh01	5	True	1.0	1.0	0.0
+th_P1a	th_P1b	0.0	3	s3,s1,s2	gh01	2	False	0.0	0.0	0.0
+th_P2a	th_P2b	1.0	3	s1,s2,s3	ghP2	6	False	1.0	1.0	0.2
+th_P3a	th_P3b	0.0	3	s1,s2,s3	ghP3	2	False	0.0	0.0	0.3
+th_P4a	th_P4b	0.0	3	s1,s2	ghP4	1	False	1.0	0.0	0.4
+th_P5a	th_P5b	1.0	2	s4,s5	ghP5	4	False	1.0	0.0	0.5
+th_P6a	th_P6b	0.0	2	s1,s2	ghP6	2	False	0.0	0.0	0.6
+th_P7a	th_P7b	0.0	2	s2,s1	ghP7	1	False	0.0	0.0	0.7
+th_P8a	th_P8b	1.0	3	s1,s2	ghP8	3	False	1.0	0.0	0.1
+th_P9a	th_P9b		3	s1,s2	ghP9	3	False			0.9
